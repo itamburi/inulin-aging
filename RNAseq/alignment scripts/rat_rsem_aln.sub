@@ -1,0 +1,52 @@
+#!/bin/bash
+
+#SBATCH --job-name=rat_aln
+#SBATCH --output=rat_aln
+#SBATCH --error=rat_aln
+#SBATCH -A mseldin_lab     
+#SBATCH --mail-type=fail,end
+#SBATCH --mail-user=mseldin@uci.edu
+#SBATCH --cpus-per-task=30
+#SBATCH --array=0-11  # <-- Replace <N> with total number of samples - 1
+
+
+# ==== Activate conda environment ====
+source ~/.bashrc
+conda activate rna_env
+
+# ==== Paths ====
+RAW_DIR="/dfs9/mseldin-lab/mseldin/lab_files/HPR/INS_seq_7-24-25/rat_rawdata"
+OUT_DIR="/dfs9/mseldin-lab/mseldin/lab_files/HPR/rat_rsem_output"
+REF_PREFIX="/dfs9/mseldin-lab/genomes/rat_ensembl/rn110_rsem"  # RSEM reference prefix
+STAR_PATH="/data/homezvol1/mseldin/miniconda3/envs/rna_env/bin"  # Dir containing STAR binary
+
+mkdir -p "$OUT_DIR"
+
+# ==== Get sample name from SLURM array task ====
+SAMPLES=($(ls -d $RAW_DIR/* | xargs -n1 basename))
+SAMPLE=${SAMPLES[$SLURM_ARRAY_TASK_ID]}
+
+FQ1="${RAW_DIR}/${SAMPLE}/${SAMPLE}_1.fq.gz"
+FQ2="${RAW_DIR}/${SAMPLE}/${SAMPLE}_2.fq.gz"
+
+# ==== Input validation ====
+if [[ ! -f "$FQ1" || ! -f "$FQ2" ]]; then
+    echo "? Missing FASTQ files for sample: $SAMPLE"
+    echo "Expected: $FQ1 and $FQ2"
+    exit 1
+fi
+
+# ==== Run RSEM with STAR on gzipped reads ====
+rsem-calculate-expression \
+    --paired-end \
+    --star \
+    --star-path "$STAR_PATH" \
+    --star-gzipped-read-file \
+    --output-genome-bam \
+    --temporary-folder "$OUT_DIR/tmp_${SAMPLE}" \
+    --num-threads 8 \
+    "$FQ1" "$FQ2" \
+    "$REF_PREFIX" \
+    "$OUT_DIR/${SAMPLE}"
+
+echo "? Finished sample: $SAMPLE"

@@ -1,0 +1,56 @@
+#!/bin/bash
+
+#SBATCH --job-name=rat_aln
+#SBATCH --output=rat_aln
+#SBATCH --error=rat_aln
+#SBATCH -A mseldin_lab     
+#SBATCH --mail-type=fail,end
+#SBATCH --mail-user=mseldin@uci.edu
+#SBATCH --cpus-per-task=30
+
+# Activate R environment (if needed)
+module load R  # or conda activate if using conda R
+
+# Write the R script inline
+R_SCRIPT="/dfs9/mseldin-lab/mseldin/lab_files/HPR/rat_rsem_output/rsem_merge_counts.R"
+
+cat > "$R_SCRIPT" << 'EOF'
+library(tidyverse)
+
+# Set your RSEM output directory
+rsem_dir <- "/dfs9/mseldin-lab/mseldin/lab_files/HPR/rat_rsem_output"
+
+# List result files
+gene_files <- list.files(rsem_dir, pattern = "*.genes.results$", full.names = TRUE)
+isoform_files <- list.files(rsem_dir, pattern = "*.isoforms.results$", full.names = TRUE)
+
+# Helper function to read and rename count column
+read_rsem_counts <- function(file, type = "gene") {
+  df <- read_tsv(file, show_col_types = FALSE)
+  id_col <- if (type == "gene") "gene_id" else "transcript_id"
+  sample_name <- basename(file) %>% str_remove(paste0("\\.", type, "s\\.results$"))
+  df %>% select(!!sym(id_col), expected_count) %>%
+    rename(!!sample_name := expected_count)
+}
+
+# Merge gene-level counts
+gene_counts_list <- lapply(gene_files, read_rsem_counts, type = "gene")
+gene_counts <- reduce(gene_counts_list, full_join, by = "gene_id") %>%
+  replace(is.na(.), 0)
+
+# Merge isoform-level counts
+isoform_counts_list <- lapply(isoform_files, read_rsem_counts, type = "isoform")
+isoform_counts <- reduce(isoform_counts_list, full_join, by = "transcript_id") %>%
+  replace(is.na(.), 0)
+
+# Save to file
+write_tsv(gene_counts, file.path(rsem_dir, "rsem_gene_counts_matrix.tsv"))
+write_tsv(isoform_counts, file.path(rsem_dir, "rsem_isoform_counts_matrix.tsv"))
+
+message("? Count matrices written:")
+message("  - rsem_gene_counts_matrix.tsv")
+message("  - rsem_isoform_counts_matrix.tsv")
+EOF
+
+# Run the script
+Rscript "$R_SCRIPT"

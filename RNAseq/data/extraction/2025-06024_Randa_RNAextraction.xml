@@ -1,0 +1,352 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s23">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font x:Family="Swiss" ss:Bold="1"/>
+   <Interior ss:Color="#DCDCFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s24">
+    <Font x:Family="Swiss" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s25">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font x:Family="Swiss" ss:Bold="1"/>
+   <Interior ss:Color="#DCDCFF" ss:Pattern="Solid"/>
+   <NumberFormat ss:Format="hh:mm:ss.0"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Sheet1">
+  <Table>
+  <Column ss:Index="1" ss:AutoFitWidth="0" ss:Width="120.0"/>
+  <Column ss:Index="2" ss:AutoFitWidth="0" ss:Width="120.0"/>
+  <Column ss:Index="3" ss:AutoFitWidth="0" ss:Width="120.0"/>
+  <Column ss:Index="4" ss:AutoFitWidth="0" ss:Width="120.0"/>
+  <Column ss:Index="5" ss:AutoFitWidth="0" ss:Width="120.0"/>
+  <Column ss:Index="6" ss:AutoFitWidth="0" ss:Width="120.0"/>
+  <Column ss:Index="7" ss:AutoFitWidth="0" ss:Width="120.0"/>
+  <Column ss:Index="8" ss:AutoFitWidth="0" ss:Width="120.0"/>
+  <Column ss:Index="9" ss:AutoFitWidth="0" ss:Width="120.0"/>
+  <Column ss:Index="10" ss:AutoFitWidth="0" ss:Width="120.0"/>
+  <Column ss:Index="11" ss:AutoFitWidth="0" ss:Width="120.0"/>
+  <Column ss:Index="12" ss:AutoFitWidth="0" ss:Width="120.0"/>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s23"><Data ss:Type="String">#</Data></Cell>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Sample ID</Data></Cell>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">User name</Data></Cell>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Date and Time</Data></Cell>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Nucleic Acid</Data></Cell>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Unit</Data></Cell>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">A260 (Abs)</Data></Cell>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">A280 (Abs)</Data></Cell>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">260/280</Data></Cell>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">260/230</Data></Cell>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Sample Type</Data></Cell>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Factor</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+    <Cell><Data ss:Type="String">1M1_mus</Data></Cell>
+    <Cell><Data ss:Type="String">Lee-Jang lab</Data></Cell>
+    <Cell><Data ss:Type="String">6/24/2025 4:08:36 PM</Data></Cell>
+    <Cell><Data ss:Type="Number">174.7</Data></Cell>
+    <Cell><Data ss:Type="String">ng/µl</Data></Cell>
+    <Cell><Data ss:Type="Number">4.368</Data></Cell>
+    <Cell><Data ss:Type="Number">2.150</Data></Cell>
+    <Cell><Data ss:Type="Number">2.03</Data></Cell>
+    <Cell><Data ss:Type="Number">2.02</Data></Cell>
+    <Cell><Data ss:Type="String">RNA</Data></Cell>
+    <Cell><Data ss:Type="Number">40.00</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2</Data></Cell>
+    <Cell><Data ss:Type="String">1M4_mus</Data></Cell>
+    <Cell><Data ss:Type="String">Lee-Jang lab</Data></Cell>
+    <Cell><Data ss:Type="String">6/24/2025 4:10:24 PM</Data></Cell>
+    <Cell><Data ss:Type="Number">131.8</Data></Cell>
+    <Cell><Data ss:Type="String">ng/µl</Data></Cell>
+    <Cell><Data ss:Type="Number">3.294</Data></Cell>
+    <Cell><Data ss:Type="Number">1.764</Data></Cell>
+    <Cell><Data ss:Type="Number">1.87</Data></Cell>
+    <Cell><Data ss:Type="Number">0.86</Data></Cell>
+    <Cell><Data ss:Type="String">RNA</Data></Cell>
+    <Cell><Data ss:Type="Number">40.00</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">3</Data></Cell>
+    <Cell><Data ss:Type="String">1M5_mus</Data></Cell>
+    <Cell><Data ss:Type="String">Lee-Jang lab</Data></Cell>
+    <Cell><Data ss:Type="String">6/24/2025 4:11:36 PM</Data></Cell>
+    <Cell><Data ss:Type="Number">165.5</Data></Cell>
+    <Cell><Data ss:Type="String">ng/µl</Data></Cell>
+    <Cell><Data ss:Type="Number">4.137</Data></Cell>
+    <Cell><Data ss:Type="Number">2.012</Data></Cell>
+    <Cell><Data ss:Type="Number">2.06</Data></Cell>
+    <Cell><Data ss:Type="Number">1.68</Data></Cell>
+    <Cell><Data ss:Type="String">RNA</Data></Cell>
+    <Cell><Data ss:Type="Number">40.00</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4</Data></Cell>
+    <Cell><Data ss:Type="String">1M6_mus</Data></Cell>
+    <Cell><Data ss:Type="String">Lee-Jang lab</Data></Cell>
+    <Cell><Data ss:Type="String">6/24/2025 4:13:12 PM</Data></Cell>
+    <Cell><Data ss:Type="Number">91.4</Data></Cell>
+    <Cell><Data ss:Type="String">ng/µl</Data></Cell>
+    <Cell><Data ss:Type="Number">2.284</Data></Cell>
+    <Cell><Data ss:Type="Number">1.128</Data></Cell>
+    <Cell><Data ss:Type="Number">2.03</Data></Cell>
+    <Cell><Data ss:Type="Number">1.54</Data></Cell>
+    <Cell><Data ss:Type="String">RNA</Data></Cell>
+    <Cell><Data ss:Type="Number">40.00</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">5</Data></Cell>
+    <Cell><Data ss:Type="String">1M9_mus</Data></Cell>
+    <Cell><Data ss:Type="String">Lee-Jang lab</Data></Cell>
+    <Cell><Data ss:Type="String">6/24/2025 4:14:38 PM</Data></Cell>
+    <Cell><Data ss:Type="Number">244.6</Data></Cell>
+    <Cell><Data ss:Type="String">ng/µl</Data></Cell>
+    <Cell><Data ss:Type="Number">6.114</Data></Cell>
+    <Cell><Data ss:Type="Number">2.993</Data></Cell>
+    <Cell><Data ss:Type="Number">2.04</Data></Cell>
+    <Cell><Data ss:Type="Number">1.30</Data></Cell>
+    <Cell><Data ss:Type="String">RNA</Data></Cell>
+    <Cell><Data ss:Type="Number">40.00</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">6</Data></Cell>
+    <Cell><Data ss:Type="String">1M10_mus</Data></Cell>
+    <Cell><Data ss:Type="String">Lee-Jang lab</Data></Cell>
+    <Cell><Data ss:Type="String">6/24/2025 4:15:40 PM</Data></Cell>
+    <Cell><Data ss:Type="Number">131.3</Data></Cell>
+    <Cell><Data ss:Type="String">ng/µl</Data></Cell>
+    <Cell><Data ss:Type="Number">3.283</Data></Cell>
+    <Cell><Data ss:Type="Number">1.604</Data></Cell>
+    <Cell><Data ss:Type="Number">2.05</Data></Cell>
+    <Cell><Data ss:Type="Number">1.62</Data></Cell>
+    <Cell><Data ss:Type="String">RNA</Data></Cell>
+    <Cell><Data ss:Type="Number">40.00</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">7</Data></Cell>
+    <Cell><Data ss:Type="String">1M11_mus</Data></Cell>
+    <Cell><Data ss:Type="String">Lee-Jang lab</Data></Cell>
+    <Cell><Data ss:Type="String">6/24/2025 4:17:02 PM</Data></Cell>
+    <Cell><Data ss:Type="Number">115.7</Data></Cell>
+    <Cell><Data ss:Type="String">ng/µl</Data></Cell>
+    <Cell><Data ss:Type="Number">2.891</Data></Cell>
+    <Cell><Data ss:Type="Number">1.442</Data></Cell>
+    <Cell><Data ss:Type="Number">2.01</Data></Cell>
+    <Cell><Data ss:Type="Number">1.28</Data></Cell>
+    <Cell><Data ss:Type="String">RNA</Data></Cell>
+    <Cell><Data ss:Type="Number">40.00</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8</Data></Cell>
+    <Cell><Data ss:Type="String">2M16_mus</Data></Cell>
+    <Cell><Data ss:Type="String">Lee-Jang lab</Data></Cell>
+    <Cell><Data ss:Type="String">6/24/2025 4:18:40 PM</Data></Cell>
+    <Cell><Data ss:Type="Number">195.9</Data></Cell>
+    <Cell><Data ss:Type="String">ng/µl</Data></Cell>
+    <Cell><Data ss:Type="Number">4.898</Data></Cell>
+    <Cell><Data ss:Type="Number">2.421</Data></Cell>
+    <Cell><Data ss:Type="Number">2.02</Data></Cell>
+    <Cell><Data ss:Type="Number">2.11</Data></Cell>
+    <Cell><Data ss:Type="String">RNA</Data></Cell>
+    <Cell><Data ss:Type="Number">40.00</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">9</Data></Cell>
+    <Cell><Data ss:Type="String">2M20_mus</Data></Cell>
+    <Cell><Data ss:Type="String">Lee-Jang lab</Data></Cell>
+    <Cell><Data ss:Type="String">6/24/2025 4:20:29 PM</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="String">ng/µl</Data></Cell>
+    <Cell><Data ss:Type="Number">6.400</Data></Cell>
+    <Cell><Data ss:Type="Number">3.258</Data></Cell>
+    <Cell><Data ss:Type="Number">1.96</Data></Cell>
+    <Cell><Data ss:Type="Number">0.63</Data></Cell>
+    <Cell><Data ss:Type="String">RNA</Data></Cell>
+    <Cell><Data ss:Type="Number">40.00</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">10</Data></Cell>
+    <Cell><Data ss:Type="String">2M22_mus</Data></Cell>
+    <Cell><Data ss:Type="String">Lee-Jang lab</Data></Cell>
+    <Cell><Data ss:Type="String">6/24/2025 4:22:08 PM</Data></Cell>
+    <Cell><Data ss:Type="Number">124.8</Data></Cell>
+    <Cell><Data ss:Type="String">ng/µl</Data></Cell>
+    <Cell><Data ss:Type="Number">3.120</Data></Cell>
+    <Cell><Data ss:Type="Number">1.591</Data></Cell>
+    <Cell><Data ss:Type="Number">1.96</Data></Cell>
+    <Cell><Data ss:Type="Number">1.30</Data></Cell>
+    <Cell><Data ss:Type="String">RNA</Data></Cell>
+    <Cell><Data ss:Type="Number">40.00</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">11</Data></Cell>
+    <Cell><Data ss:Type="String">2M23_mus</Data></Cell>
+    <Cell><Data ss:Type="String">Lee-Jang lab</Data></Cell>
+    <Cell><Data ss:Type="String">6/24/2025 4:23:32 PM</Data></Cell>
+    <Cell><Data ss:Type="Number">180.8</Data></Cell>
+    <Cell><Data ss:Type="String">ng/µl</Data></Cell>
+    <Cell><Data ss:Type="Number">4.521</Data></Cell>
+    <Cell><Data ss:Type="Number">2.220</Data></Cell>
+    <Cell><Data ss:Type="Number">2.04</Data></Cell>
+    <Cell><Data ss:Type="Number">1.58</Data></Cell>
+    <Cell><Data ss:Type="String">RNA</Data></Cell>
+    <Cell><Data ss:Type="Number">40.00</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">12</Data></Cell>
+    <Cell><Data ss:Type="String">2M26_mus</Data></Cell>
+    <Cell><Data ss:Type="String">Lee-Jang lab</Data></Cell>
+    <Cell><Data ss:Type="String">6/24/2025 4:24:57 PM</Data></Cell>
+    <Cell><Data ss:Type="Number">201.2</Data></Cell>
+    <Cell><Data ss:Type="String">ng/µl</Data></Cell>
+    <Cell><Data ss:Type="Number">5.030</Data></Cell>
+    <Cell><Data ss:Type="Number">2.488</Data></Cell>
+    <Cell><Data ss:Type="Number">2.02</Data></Cell>
+    <Cell><Data ss:Type="Number">1.38</Data></Cell>
+    <Cell><Data ss:Type="String">RNA</Data></Cell>
+    <Cell><Data ss:Type="Number">40.00</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">13</Data></Cell>
+    <Cell><Data ss:Type="String">2M31_mus</Data></Cell>
+    <Cell><Data ss:Type="String">Lee-Jang lab</Data></Cell>
+    <Cell><Data ss:Type="String">6/24/2025 4:26:03 PM</Data></Cell>
+    <Cell><Data ss:Type="Number">143.2</Data></Cell>
+    <Cell><Data ss:Type="String">ng/µl</Data></Cell>
+    <Cell><Data ss:Type="Number">3.579</Data></Cell>
+    <Cell><Data ss:Type="Number">1.739</Data></Cell>
+    <Cell><Data ss:Type="Number">2.06</Data></Cell>
+    <Cell><Data ss:Type="Number">2.04</Data></Cell>
+    <Cell><Data ss:Type="String">RNA</Data></Cell>
+    <Cell><Data ss:Type="Number">40.00</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">14</Data></Cell>
+    <Cell><Data ss:Type="String">4M2_mus</Data></Cell>
+    <Cell><Data ss:Type="String">Lee-Jang lab</Data></Cell>
+    <Cell><Data ss:Type="String">6/24/2025 4:27:45 PM</Data></Cell>
+    <Cell><Data ss:Type="Number">164.4</Data></Cell>
+    <Cell><Data ss:Type="String">ng/µl</Data></Cell>
+    <Cell><Data ss:Type="Number">4.110</Data></Cell>
+    <Cell><Data ss:Type="Number">2.052</Data></Cell>
+    <Cell><Data ss:Type="Number">2.00</Data></Cell>
+    <Cell><Data ss:Type="Number">1.45</Data></Cell>
+    <Cell><Data ss:Type="String">RNA</Data></Cell>
+    <Cell><Data ss:Type="Number">40.00</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">15</Data></Cell>
+    <Cell><Data ss:Type="String">4M3_mus</Data></Cell>
+    <Cell><Data ss:Type="String">Lee-Jang lab</Data></Cell>
+    <Cell><Data ss:Type="String">6/24/2025 4:28:57 PM</Data></Cell>
+    <Cell><Data ss:Type="Number">98.9</Data></Cell>
+    <Cell><Data ss:Type="String">ng/µl</Data></Cell>
+    <Cell><Data ss:Type="Number">2.472</Data></Cell>
+    <Cell><Data ss:Type="Number">1.221</Data></Cell>
+    <Cell><Data ss:Type="Number">2.02</Data></Cell>
+    <Cell><Data ss:Type="Number">1.96</Data></Cell>
+    <Cell><Data ss:Type="String">RNA</Data></Cell>
+    <Cell><Data ss:Type="Number">40.00</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16</Data></Cell>
+    <Cell><Data ss:Type="String">4M4_mus</Data></Cell>
+    <Cell><Data ss:Type="String">Lee-Jang lab</Data></Cell>
+    <Cell><Data ss:Type="String">6/24/2025 4:30:07 PM</Data></Cell>
+    <Cell><Data ss:Type="Number">159.9</Data></Cell>
+    <Cell><Data ss:Type="String">ng/µl</Data></Cell>
+    <Cell><Data ss:Type="Number">3.997</Data></Cell>
+    <Cell><Data ss:Type="Number">2.005</Data></Cell>
+    <Cell><Data ss:Type="Number">1.99</Data></Cell>
+    <Cell><Data ss:Type="Number">1.77</Data></Cell>
+    <Cell><Data ss:Type="String">RNA</Data></Cell>
+    <Cell><Data ss:Type="Number">40.00</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">17</Data></Cell>
+    <Cell><Data ss:Type="String">5M1_mus</Data></Cell>
+    <Cell><Data ss:Type="String">Lee-Jang lab</Data></Cell>
+    <Cell><Data ss:Type="String">6/24/2025 4:31:46 PM</Data></Cell>
+    <Cell><Data ss:Type="Number">290.1</Data></Cell>
+    <Cell><Data ss:Type="String">ng/µl</Data></Cell>
+    <Cell><Data ss:Type="Number">7.254</Data></Cell>
+    <Cell><Data ss:Type="Number">3.543</Data></Cell>
+    <Cell><Data ss:Type="Number">2.05</Data></Cell>
+    <Cell><Data ss:Type="Number">2.16</Data></Cell>
+    <Cell><Data ss:Type="String">RNA</Data></Cell>
+    <Cell><Data ss:Type="Number">40.00</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">18</Data></Cell>
+    <Cell><Data ss:Type="String">5M2_mus</Data></Cell>
+    <Cell><Data ss:Type="String">Lee-Jang lab</Data></Cell>
+    <Cell><Data ss:Type="String">6/24/2025 4:33:00 PM</Data></Cell>
+    <Cell><Data ss:Type="Number">292.7</Data></Cell>
+    <Cell><Data ss:Type="String">ng/µl</Data></Cell>
+    <Cell><Data ss:Type="Number">7.318</Data></Cell>
+    <Cell><Data ss:Type="Number">3.563</Data></Cell>
+    <Cell><Data ss:Type="Number">2.05</Data></Cell>
+    <Cell><Data ss:Type="Number">1.75</Data></Cell>
+    <Cell><Data ss:Type="String">RNA</Data></Cell>
+    <Cell><Data ss:Type="Number">40.00</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">19</Data></Cell>
+    <Cell><Data ss:Type="String">5M3_mus</Data></Cell>
+    <Cell><Data ss:Type="String">Lee-Jang lab</Data></Cell>
+    <Cell><Data ss:Type="String">6/24/2025 4:33:59 PM</Data></Cell>
+    <Cell><Data ss:Type="Number">181.7</Data></Cell>
+    <Cell><Data ss:Type="String">ng/µl</Data></Cell>
+    <Cell><Data ss:Type="Number">4.542</Data></Cell>
+    <Cell><Data ss:Type="Number">2.209</Data></Cell>
+    <Cell><Data ss:Type="Number">2.06</Data></Cell>
+    <Cell><Data ss:Type="Number">1.59</Data></Cell>
+    <Cell><Data ss:Type="String">RNA</Data></Cell>
+    <Cell><Data ss:Type="Number">40.00</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">20</Data></Cell>
+    <Cell><Data ss:Type="String">5M4_mus</Data></Cell>
+    <Cell><Data ss:Type="String">Lee-Jang lab</Data></Cell>
+    <Cell><Data ss:Type="String">6/24/2025 4:35:19 PM</Data></Cell>
+    <Cell><Data ss:Type="Number">154.8</Data></Cell>
+    <Cell><Data ss:Type="String">ng/µl</Data></Cell>
+    <Cell><Data ss:Type="Number">3.870</Data></Cell>
+    <Cell><Data ss:Type="Number">1.935</Data></Cell>
+    <Cell><Data ss:Type="Number">2.00</Data></Cell>
+    <Cell><Data ss:Type="Number">1.63</Data></Cell>
+    <Cell><Data ss:Type="String">RNA</Data></Cell>
+    <Cell><Data ss:Type="Number">40.00</Data></Cell>
+   </Row>
+  </Table>
+ </Worksheet>
+</Workbook>

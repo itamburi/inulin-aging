@@ -1,0 +1,41 @@
+#!/bin/bash
+
+#SBATCH --job-name=build_rat_ref
+#SBATCH --output=build_rat_ref.out
+#SBATCH --error=build_rat_ref.err
+#SBATCH -A mseldin_lab     
+#SBATCH --mail-type=fail,end
+#SBATCH --mail-user=mseldin@uci.edu
+#SBATCH --cpus-per-task=30
+
+# === Activate conda environment ===
+source ~/.bashrc
+conda activate rna_env
+
+# === Paths ===
+REF_DIR="/dfs9/mseldin-lab/genomes/rat_ensembl"
+STAR_PATH="/data/homezvol1/mseldin/miniconda3/envs/rna_env/bin"  # Directory containing STAR binary
+PREFIX="rn110_rsem"
+
+mkdir -p "$REF_DIR"
+cd "$REF_DIR"
+
+# === Download genome and annotation from Ensembl release 110 ===
+wget -c http://ftp.ensembl.org/pub/release-110/fasta/rattus_norvegicus/dna/Rattus_norvegicus.mRatBN7.2.dna.toplevel.fa.gz
+wget -c http://ftp.ensembl.org/pub/release-110/gtf/rattus_norvegicus/Rattus_norvegicus.mRatBN7.2.110.gtf.gz
+
+# === Unzip ===
+gunzip -f Rattus_norvegicus.mRatBN7.2.dna.toplevel.fa.gz
+gunzip -f Rattus_norvegicus.mRatBN7.2.110.gtf.gz
+
+# === Build STAR + RSEM reference ===
+rsem-prepare-reference \
+  --gtf Rattus_norvegicus.mRatBN7.2.110.gtf \
+  --star \
+  --star-path "$STAR_PATH" \
+  --num-threads 12 \
+  Rattus_norvegicus.mRatBN7.2.dna.toplevel.fa \
+  "$PREFIX"
+
+echo "? Rat reference build complete!"
+echo "?? STAR index located at: ${REF_DIR}/${PREFIX}.star.idx/"
