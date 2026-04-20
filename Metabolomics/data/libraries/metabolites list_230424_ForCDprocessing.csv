@@ -1,0 +1,1849 @@
+﻿CJ,HMDB Name,Formula,RT,Detected.in,confirmation,HMDB ID,other ID,Classification
+CJ0001,ciliatine,C2H8NO3P,15.16,Both,Sigma,HMDB0011747,,
+CJ0002,"1,3-diaminopropane",C3H10N2,,not detected in both,Sigma,HMDB0000002,,
+CJ0003,10-hydroxydecanoic acid,C10H20O3,2.88,Nega,Sigma,HMDB0244272,,FA
+CJ0004,17alpha-estradiol,C18H24O2,2.43,Both,Sigma,HMDB0000429,,Steroids and steroid derivatives  
+CJ0005,1-aminocyclopropanecarboxylic acid,C4H7NO2,12.6,Both,Sigma,HMDB0036458,,Amino acids related and peptides
+CJ0006,1-hydroxy-2-naphthoate,C11H8O3,1.99,Both,Sigma,,METPA0374,
+CJ0007,1-methyladenosine,C11H15N5O4,5.08,Both,Sigma,HMDB0003331,,"Nucleosides, nucleotides, and analogues  "
+CJ0008,1-methylhistidine,C7H11N3O2,18.23,Both,Sigma,HMDB0000001,,Amino acids related and peptides
+CJ0009,1-methylnicotinamide,C7H9N2O,15.64,Posi,Sigma,HMDB0000699,,"Nucleosides, nucleotides, and analogues  "
+CJ0010,1-phenylethanol,C8H10O,2.51,Posi,Sigma,HMDB0032619,,
+CJ0011,"2,3-butanediol",C4H10O2,7.65,Posi,Sigma,HMDB0003156,,
+CJ0012,"2,3-diaminopropionic acid",C3H8N2O2,18.19,Both,Sigma,HMDB0002006,,Amino acids related and peptides
+CJ0013,2-pyrocatechuic acid,C7H6O4,2.4,Nega,Sigma,HMDB0000397,,
+CJ0014,"2',4'-dihydroxyacetophenone",C8H8O3,2.51,Both,Sigma,HMDB0029659,,
+CJ0015,lumazine,C6H4N4O2,4.64,Both,Sigma,HMDB0254198,,
+CJ0016,gentisic acid,C7H6O4,9.62,Nega,Sigma,HMDB0000152,,Microbiota related
+CJ0017,gentisic acid,C7H6O4,2.38,Nega,Sigma,HMDB0000152,,Microbiota related
+CJ0018,"2,5-dimethylpyrazine",C6H8N2,9.04,Posi,Sigma,HMDB0035289,,
+CJ0019,"2,6-dihydroxypyridine",C5H5NO2,6.68,Both,Sigma,,METPA0354,
+CJ0020,25-hydroxycholesterol,C27H46O2,4.22,Posi,Sigma,HMDB0006247,,Cholesterols and derivatives  
+CJ0021,n-acetyl-b-glucosaminylamine,C8H16N2O5,12.61,Both,Sigma,HMDB0001104,,
+CJ0022,2-aminoisobutyric acid,C4H9NO2,13.11,Both,Sigma,HMDB0001906,,Amino acids related and peptides
+CJ0023,2-aminophenol,C6H7NO,2.6,Both,Sigma,,METPA0236,
+CJ0024,2-deoxy-d-glucose,C6H12O5,8.95,Both,Sigma,,YMDB00294,Carbohydrates and carbohydrate conjugates  
+CJ0025,(â±)-2-hydroxy-4-(methylthio)butanoic acid,C5H10O3S,2.87,Both,Sigma,HMDB0037115,,FA
+CJ0026,2-hydroxybutyric acid,C4H8O3,4.62,Nega,Sigma,HMDB0000008,,
+CJ0027,ortho-hydroxyphenylacetic acid,C8H8O3,2.68,Nega,Sigma,HMDB0000669,,
+CJ0028,2-hydroxypyridine,C5H5NO,3.64,Both,Sigma,HMDB0013751,,
+CJ0029,2-keto-3-deoxy-d-gluconic acid,C6H10O6,9.82,Both,Sigma,HMDB0001353,,
+CJ0030,2-methoxyethanol,C3H8O2,,not detected in both,Sigma,HMDB0245203,,
+CJ0031,(â±)-2-methylbutanal,C5H10O,2.52,Posi,Sigma,HMDB0031526,,
+CJ0032,2-methylcitric acid,C7H710O7,,not detected in both,Sigma,HMDB0000379,,
+CJ0033,2-methylglutaric acid,C6H10O4,12.05,Nega,Sigma,HMDB0000422,,FA
+CJ0034,citraconic acid,C5H6O4,6.63,Nega,Sigma,HMDB0000634,,FA
+CJ0035,2-methylpropanal,C4H8O,2.55,Both,Sigma,HMDB0031243,,
+CJ0036,2-ketobutyric acid,C4H6O3,2.62,Posi,Sigma,HMDB0000005,,
+CJ0037,2-phosphoglyceric acid,C3H7O7P,14.88,Both,Sigma,HMDB0000362,,Glycolysis
+CJ0038,acrylic acid,C3H4O2,5.69,Nega,Sigma,HMDB0031647,,
+CJ0039,quinaldic acid,C10H7NO2,2.89,Both,Sigma,HMDB0000842,,Quinoline carboxylic acids  
+CJ0040,2-undecanone,C11H22O,2.39,Posi,Sigma,HMDB0033713,,
+CJ0041,3-(2-hydroxyphenyl)propanoic acid,C9H10O3,2.46,Nega,Sigma,HMDB0033752,,
+CJ0042,4-hydroxyphenylpyruvic acid,C9H8O4,2.59,Nega,Sigma,HMDB0000707,,
+CJ0043,protocatechuic acid,C7H6O4,2.37,Nega,Sigma,HMDB0001856,,Microbiota related
+CJ0044,"3,4-dihydroxymandelic acid",C8H8O5,7.725,not detected in both,Sigma,HMDB0001866,,
+CJ0045,"3,4-dihydroxybenzeneacetic acid",C8H8O4,2.71,Both,Sigma,HMDB0001336,,
+CJ0046,"3,4-dihydroxyphenylglycol",C8H10O4,4.05,Nega,Sigma,HMDB0000318,,
+CJ0047,"3,5-diiodothyronine",C15H13I2NO4,2.97,Nega,Sigma,HMDB0000582,,Amino acids related and peptides
+CJ0048,"3,5-diiodo-l-tyrosine",C9H9I2NO3,9.75,Both,Sigma,HMDB0003474,,Amino acids related and peptides
+CJ0049,tetrahydrocortisol,C21H34O5,2.89,Nega,Sigma,HMDB0000949,,Steroids and steroid derivatives  
+CJ0050,3-amino-4-hydroxybenzoic acid,C7H7NO3,8.4,Nega,Sigma,HMDB0304941,,Microbiota related
+CJ0051,mesalazine,C7H7NO3,7.39,Posi,Sigma,HMDB0014389,,
+CJ0052,3-dehydroshikimate,C7H8O5,9.62,Nega,Sigma,,YMDB00390,
+CJ0053,3-hydroxy-3-methylglutaryl-coa,C27H44N7O20P3S,14.53,Both,Sigma,HMDB0001375,,CoAs  
+CJ0054,3-hydroxyanthranilic acid,C7H7NO3,7.69,Both,Sigma,HMDB0001476,,Microbiota related
+CJ0055,2-hydroxybenzaldehyde,C7H6O2,2.51,Nega,Sigma,HMDB0034170,,Microbiota related
+CJ0056,3-hydroxybenzoic acid,C7H6O3,3.8,Nega,Sigma,HMDB0002466,,Microbiota related
+CJ0057,3-hydroxybenzyl alcohol,C7H8O2,2.73,Nega,Sigma,HMDB0059712,,
+CJ0058,3-hydroxybutyric acid,C4H8O3,8,Posi,Sigma,HMDB0000357,,
+CJ0059,3-hydroxymethylglutaric acid,C6H10O5,12.84,Nega,Sigma,HMDB0000355,,FA
+CJ0060,3-hydroxyphenylacetic acid,C8H8O3,2.51,Both,Sigma,HMDB0000440,,
+CJ0061,vanillylmandelic acid,C9H10O5,3.78,Nega,Sigma,HMDB0000291,,
+CJ0062,3-methoxytyramine,C9H13NO2,9.93,Both,Sigma,HMDB0000022,,
+CJ0063,3-methoxytyrosine,C10H13NO4,10.27,Both,Sigma,HMDB0001434,,Amino acids related and peptides
+CJ0064,3-methyloxindole,C9H9NO,2.57,Both,Sigma,HMDB0304943,,
+CJ0065,3-methyl-2-oxovaleric acid,C6H10O3,2.35,Nega,Sigma,HMDB0000491,,
+CJ0066,3-methyladenine,C6H7N5,8.17,Both,Sigma,HMDB0011600,,"Nucleosides, nucleotides, and analogues  "
+CJ0067,3-methylcrotonyl-coa,C26H42N7O17P3S,14.1,Both,Sigma,HMDB0001493,,CoAs  
+CJ0068,3-methylglutaconic acid,C6H8O4,15.15,Both,Sigma,HMDB0000522,,FA
+CJ0069,3-methylhistamine,C6H11N3,16.26,Posi,Sigma,HMDB0001861,,
+CJ0070,3-methylhistidine,C7H11N3O2,14.26,Both,Sigma,HMDB0000479,,Amino acids related and peptides
+CJ0071,3-nitrotyrosine,C9H10N2O5,12.07,Both,Sigma,HMDB0001904,,Amino acids related and peptides
+CJ0072,3-phosphoglyceric acid,C3H7O7P,14.77,Both,Sigma,HMDB0000807,,Glycolysis
+CJ0073,3-sulfinoalanine,C3H7NO4S,13.65,Both,Sigma,HMDB0000996,,Amino acids related and peptides
+CJ0074,4-acetamidobutanoic acid,C6H11NO3,9.34,Both,Sigma,HMDB0003681,,Amino acids related and peptides
+CJ0075,4-aminobenzoate,C7H7NO2,4.4,Nega,Sigma,HMDB0304171,,Microbiota related
+CJ0076,4-hydroxycinnamic acid,C9H8O3,3.79,Nega,Sigma,HMDB0002035,,
+CJ0077,4-guanidinobutanoic acid,C5H11N3O2,14.16,Both,Sigma,HMDB0003464,,Amino acids related and peptides
+CJ0078,vanylglycol,C9H12O4,3.48,Nega,Sigma,HMDB0001490,,
+CJ0079,4-hydroxybenzaldehyde,C7H6O2,2.6,Both,Sigma,HMDB0011718,,Microbiota related
+CJ0080,4-hydroxybenzoic acid,C7H6O3,3.89,Both,Sigma,HMDB0000500,,Microbiota related
+CJ0081,4-hydroxyphenylglycine,C8H9NO3,11.36,Nega,Sigma,HMDB0244973,,Amino acids related and peptides
+CJ0082,imidazoleacetic acid,C5H6N2O2,11.85,Both,Sigma,HMDB0002024,,
+CJ0083,4-methylcatechol,C7H8O2,3.78,Nega,Sigma,HMDB0000873,,
+CJ0084,4-pyridoxic acid,C8H9NO4,2.26,Both,Sigma,HMDB0000017,,
+CJ0085,quinoline-4-carboxylic acid,C10H7NO2,3.8,Both,Sigma,HMDB0257047,,Quinoline carboxylic acids  
+CJ0086,dimethylbenzimidazole,C9H10N2,2.63,Both,Sigma,HMDB0003701,,
+CJ0087,5-aminolevulinic acid,C5H9NO3,13.1,Both,Sigma,HMDB0001149,,Amino acids related and peptides
+CJ0088,5-aminopentanoic acid,C5H11NO2,14.64,Both,Sigma,HMDB0003355,,Amino acids related and peptides
+CJ0089,5'-deoxyadenosine,C10H13N5O3,4.54,Both,Sigma,HMDB0001983,,"Nucleosides, nucleotides, and analogues  "
+CJ0090,5-hydroxyindoleacetic acid,C10H9NO3,5.39,Nega,Sigma,HMDB0000763,,Microbiota related
+CJ0091,5-hydroxylysine,C6H14N2O3,17.47,Both,Sigma,HMDB0000450,,Amino acids related and peptides
+CJ0092,5-hydroxy-l-tryptophan,C11H12N2O3,10.26,Both,Sigma,HMDB0000472,,Serotonins  
+CJ0093,5-methylcytosine,C5H7N3O,7.87,Both,Sigma,HMDB0002894,,"Nucleosides, nucleotides, and analogues  "
+CJ0094,delta-valerolactone,C5H8O2,2.78,Both,Sigma,HMDB0250981,,
+CJ0095,pimelic acid,C7H12O4,13.01,Both,Sigma,HMDB0000857,,FA
+CJ0096,6-hydroxydopamine,C8H11NO3,3.19,Posi,Sigma,HMDB0001537,,
+CJ0097,6-hydroxynicotinic acid,C6H5NO3,9.46,Both,Sigma,HMDB0002658,,
+CJ0098,6-phosphogluconic acid,C6H13O10P,14.88,Both,Sigma,HMDB0001316,,
+CJ0099,7-dehydrocholesterol,C27H44O,2.24,Posi,Sigma,HMDB0000032,,Cholesterols and derivatives  
+CJ0100,acetoacetic acid,C4H6O3,3.79,Nega,Sigma,HMDB0000060,,
+CJ0101,acetoin,C4H8O2,13.75,Nega,Sigma,HMDB0003243,,
+CJ0102,acetylcholine,C7H16NO2,,Posi,Sigma,HMDB0000895,,
+CJ0103,acetylphosphate,C2H5O5P,14.03,Posi,Sigma,HMDB0001494,,
+CJ0104,adenine,C5H5N5,6.71,Both,Sigma,HMDB0000034,,"Nucleosides, nucleotides, and analogues  "
+CJ0105,adenosine,C10H13N5O4,7.68,Both,Sigma,HMDB0000050,,"Nucleosides, nucleotides, and analogues  "
+CJ0106,"adenosine 2',3'-cyclic phosphate",C10H12N5O6P,8.54,Both,Sigma,HMDB0011616,,"Nucleosides, nucleotides, and analogues  "
+CJ0107,"adenosine 3',5'-diphosphate",C10H15N5O10P2,14.79,Both,Sigma,HMDB0000061,,"Nucleosides, nucleotides, and analogues  "
+CJ0108,adp,C10H15N5O10P2,14.69,,Sigma,HMDB0001341,,"Nucleosides, nucleotides, and analogues  "
+CJ0109,adenosine diphosphate ribose,C15H23N5O14P2,14.3,Both,Sigma,HMDB0001178,,"Nucleosides, nucleotides, and analogues  "
+CJ0110,adenosine triphosphate,C10H16N5O13P3,14.91,Both,Sigma,HMDB0000538,,"Nucleosides, nucleotides, and analogues  "
+CJ0111,adenosine monophosphate,C10H14N5O7P,14.52,Both,Sigma,HMDB0000045,,"Nucleosides, nucleotides, and analogues  "
+CJ0112,adipic acid,C6H10O4,12.39,Nega,Sigma,HMDB0000448,,FA
+CJ0113,adp-glucose,C16H25N5O15P2,14.39,Both,Sigma,HMDB0006557,,Glycolysis
+CJ0114,agmatine,C5H14N4,2.17,Posi,Sigma,HMDB0001432,,
+CJ0115,aicar,C9H15N4O8P,14.47,Both,Sigma,HMDB0001517,,
+CJ0116,allantoin,C4H6N4O3,8.16,Both,Sigma,HMDB0000462,,
+CJ0117,allose,C6H12O6,11.96,Nega,Sigma,HMDB0001151,,Carbohydrates and carbohydrate conjugates  
+CJ0118,l-allothreonine,C4H9NO3,13.81,Both,Sigma,HMDB0004041,,Amino acids related and peptides
+CJ0119,alpha-hydroxyisobutyric acid,C4H8O3,4.37,Nega,Sigma,HMDB0000729,,
+CJ0120,alpha-tocopherol,C29H50O2,2.25,Both,Sigma,HMDB0001893,,
+CJ0121,aminoadipic acid,C6H11NO4,14.29,Both,Sigma,HMDB0000510,,Amino acids related and peptides
+CJ0122,3-aminoisobutanoic acid,C4H9NO2,13.47,Both,Sigma,HMDB0003911,,Amino acids related and peptides
+CJ0123,aniline,C6H7N,2.39,Nega,Sigma,HMDB0003012,,
+CJ0124,2-aminobenzenesulfonic acid,C6H7NO3S,2.32,Both,Sigma,HMDB0304940,,
+CJ0125,anserine,C10H16N4O3,14.9,Both,Sigma,HMDB0000194,,Amino acids related and peptides
+CJ0126,arabinose,C5H10O5,9.38,Nega,Sigma,,YMDB00654,
+CJ0127,l-arabitol,C5H12O5,10.48,Both,Sigma,HMDB0001851,,Carbohydrates and carbohydrate conjugates  
+CJ0128,arachidic acid,C20H40O2,2.04,Nega,Sigma,HMDB0002212,,FA
+CJ0129,l-arginine,C6H14N4O2,18.68,Both,Sigma,HMDB0000517,,Amino acids
+CJ0130,ascorbic acid,C6H8O6,14.53,Both,Sigma,HMDB0000044,,
+CJ0131,l-asparagine,C4H8N2O3,14.36,Both,Sigma,HMDB0000168,,Amino acids
+CJ0132,l-aspartic acid,C4H7NO4,14.53,Both,Sigma,HMDB0000191,,Amino acids
+CJ0133,azelaic acid,C9H16O4,12.01,Both,Sigma,HMDB0000784,,FA
+CJ0134,benzaldehyde,C7H6O,2.46,Nega,Sigma,HMDB0006115,,
+CJ0135,benzoic acid,C7H6O2,2.59,Nega,Sigma,HMDB0001870,,Microbiota related
+CJ0136,benzyl alcohol,C7H8O,3.81,Both,Sigma,HMDB0003119,,
+CJ0137,benzylamine,C7H9N,7.49,Posi,Sigma,HMDB0033871,,
+CJ0138,beta-alanine,C3H7NO2,14.32,Both,Sigma,HMDB0000056,,Amino acids related and peptides
+CJ0139,beta-carotene,C40H56,2.28,Posi,Sigma,HMDB0000561,,
+CJ0140,beta-glycerophosphoric acid,C3H9O6P,12.61,Posi,Sigma,HMDB0002520,,
+CJ0141,betaine,C5H11NO2,10.94,Both,Sigma,HMDB0000043,,Amino acids related and peptides
+CJ0142,nad,C21H27N7O14P2,14.71,Both,Sigma,HMDB0000902,,"Nucleosides, nucleotides, and analogues  "
+CJ0143,bilirubin,C33H36N4O6,,not detected in both,Sigma,HMDB0000054,,
+CJ0144,biliverdin,C33H34N4O6,2.9,Both,Sigma,HMDB0001008,,
+CJ0145,biotin,C10H16N2O3S,9.09,Both,Sigma,HMDB0000030,,
+CJ0146,bis(2-ethylhexyl) phthalate,C24H38O4,2.04,Nega,Sigma,HMDB0249243,,
+CJ0147,butyric acid,C4H8O2,11.65,Nega,Sigma,HMDB0000039,,FA
+CJ0148,palmitic acid,C16H32O2,2.1,Nega,Sigma,HMDB0000220,,FA
+CJ0149,stearic acid,C18H36O2,2.07,Nega,Sigma,HMDB0000827,,FA
+CJ0150,oleic acid,C18H34O2,2.08,Both,Sigma,HMDB0000207,,FA
+CJ0151,linoleic acid,C18H32O2,2.1,Nega,Sigma,HMDB0000673,,
+CJ0152,nervonic acid,C24H46O2,2.01,Nega,Sigma,HMDB0002368,,FA
+CJ0153,cadaverine,C5H14N2,2.87,Posi,Sigma,HMDB0002322,,
+CJ0154,caffeic acid,C9H8O4,8.21,Nega,Sigma,HMDB0001964,,
+CJ0155,caffeine,C8H10N4O2,2.87,Posi,Sigma,HMDB0001847,,"Nucleosides, nucleotides, and analogues  "
+CJ0156,caprylic acid,C8H16O2,2.46,Nega,Sigma,HMDB0000482,,FA
+CJ0157,carbamoyl phosphate,CH4NO5P,17.08,Posi,Sigma,HMDB0001096,,
+CJ0158,dodecanoylcarnitine,C19H37NO4,2.9,Posi,Sigma,HMDB0002250,,carnitine
+CJ0159,palmitoylcarnitine,C23H45NO4,2.78,Posi,Sigma,HMDB0000846,,carnitine
+CJ0160,carnosine,C9H14N4O3,15.01,Both,Sigma,HMDB0000033,,Amino acids related and peptides
+CJ0161,cdp-ethanolamine,C11H20N4O11P2,14.75,Both,Sigma,HMDB0001564,,
+CJ0162,cellobiose,C12H22O11,14.8,Both,Sigma,HMDB0000055,,Carbohydrates and carbohydrate conjugates  
+CJ0163,chenodeoxycholic acid,C24H40O4,3.82,Both,Sigma,HMDB0000518,,Bile acids 
+CJ0164,cholic acid,C24H40O5,3.91,Both,Sigma,HMDB0000619,,Bile acids 
+CJ0165,ce(18:1(9z)),C45H78O2,,not detected in both,Sigma,HMDB0000918,,Lipids
+CJ0166,ce(16:0),C43H76O2,8.15,Posi,Sigma,HMDB0000885,,Lipids
+CJ0167,choline,C5H14NO,,Posi,Sigma,HMDB0000097,,Amino acids related and peptides
+CJ0168,cis-4-hydroxy-d-proline,C5H9NO3,14.36,Both,Sigma,HMDB0060460,,Amino acids related and peptides
+CJ0169,citicoline,C14H26N4O11P2,14.72,Both,Sigma,HMDB0001413,,
+CJ0170,citramalic acid,C5H8O5,13.42,Both,Sigma,HMDB0000426,,FA
+CJ0171,citric acid,C6H8O7,14.24,Both,Sigma,HMDB0000094,,Glycolysis
+CJ0172,citrulline,C6H13N3O3,14.58,Both,Sigma,HMDB0000904,,Amino acids related and peptides
+CJ0173,coenzyme a,C21H36N7O16P3S,14.57,Posi,Sigma,HMDB0001423,,Glycolysis
+CJ0174,coenzyme q10,C59H90O4,2.39,Both,Sigma,HMDB0001072,,
+CJ0175,cortexolone,C21H30O4,2.59,Both,Sigma,HMDB0000015,,Steroids and steroid derivatives  
+CJ0176,corticosterone,C21H30O4,2.59,Both,Sigma,HMDB0001547,,Steroids and steroid derivatives  
+CJ0177,cortisol,C21H30O5,2.77,Both,Sigma,HMDB0000063,,Steroids and steroid derivatives  
+CJ0178,cortisol 21-acetate,C23H32O6,2.44,Both,Sigma,,cas 50-03-3,
+CJ0179,cortisone,C21H28O5,2.62,Both,Sigma,HMDB0002802,,Steroids and steroid derivatives  
+CJ0180,creatine,C4H9N3O2,13.94,Both,Sigma,HMDB0000064,,Amino acids related and peptides
+CJ0181,creatinine,C4H7N3O,7.6,Both,Sigma,HMDB0000562,,Amino acids related and peptides
+CJ0182,cyanocobalamin,C63H89CoN14O14P,14.24,Posi,Sigma,HMDB0000607,,
+CJ0183,cyclic amp,C10H12N5O6P,9.15,Both,Sigma,HMDB0000058,,"Nucleosides, nucleotides, and analogues  "
+CJ0184,cyclic gmp,C10H12N5O7P,10.14,Both,Sigma,HMDB0001314,,"Nucleosides, nucleotides, and analogues  "
+CJ0185,cyclopentanone,C5H8O,4.17,Posi,Sigma,HMDB0031407,,
+CJ0186,cysteinylglycine,C5H10N2O3S,14.0425,Both,Sigma,HMDB0000078,,Amino acids related and peptides
+CJ0187,l-cystathionine,C7H14N2O4S,15.42,Both,Sigma,HMDB0000099,,Amino acids related and peptides
+CJ0188,cysteamine,C2H7NS,,not detected in both,Sigma,HMDB0002991,,
+CJ0189,cysteic acid,C3H7NO5S,13.41,Both,Sigma,HMDB0002757,,Amino acids related and peptides
+CJ0190,l-cysteine,C3H7NO2S,14.88,Nega,Sigma,HMDB0000574,,Amino acids
+CJ0191,l-cystine,C6H12N2O4S2,14.91,Both,Sigma,HMDB0000192,,Amino acids related and peptides
+CJ0192,cytidine,C9H13N3O5,9.7,Both,Sigma,HMDB0000089,,"Nucleosides, nucleotides, and analogues  "
+CJ0193,"cytidine 2',3'-cyclic phosphate",C9H12N3O7P,12.06,Both,Sigma,HMDB0011691,,"Nucleosides, nucleotides, and analogues  "
+CJ0194,cdp,C9H15N3O11P2,14.89,Both,Sigma,HMDB0001546,,"Nucleosides, nucleotides, and analogues  "
+CJ0195,cytidine monophosphate,C9H14N3O8P,14.84,Both,Sigma,HMDB0000095,,"Nucleosides, nucleotides, and analogues  "
+CJ0196,cytidine triphosphate,C9H16N3O14P3,15.03,Both,Sigma,HMDB0000082,,"Nucleosides, nucleotides, and analogues  "
+CJ0197,cytochrome c isomer,C42H52FeN8O6S2,,not detected in both,Sigma,,METPA0054,"Nucleosides, nucleotides, and analogues  "
+CJ0198,cytosine,C4H5N3O,8.47,Both,Sigma,HMDB0000630,,"Nucleosides, nucleotides, and analogues  "
+CJ0199,d-alanine,C3H7NO2,13.6,Both,Sigma,HMDB0001310,,Amino acids related and peptides
+CJ0200,capric acid,C10H20O2,2.31,Nega,Sigma,HMDB0000511,,FA
+CJ0201,dehydroascorbic acid,C6H6O6,3.7,Nega,Sigma,HMDB0001264,,
+CJ0202,deoxyadenosine,C10H13N5O3,5.68,Posi,Sigma,HMDB0000101,,"Nucleosides, nucleotides, and analogues  "
+CJ0203,deoxyadenosine monophosphate,C10H14N5O6P,14.41,Both,Sigma,HMDB0000905,,"Nucleosides, nucleotides, and analogues  "
+CJ0204,deoxyadenosine triphosphate,C10H16N5O12P3,14.89,Both,Sigma,HMDB0001532,,"Nucleosides, nucleotides, and analogues  "
+CJ0205,4-trimethylammoniobutanoic acid,C7H15NO2,14.53,Both,Sigma,HMDB0001161,,FA
+CJ0206,deoxycholic acid,C24H40O4,3.75,Both,Sigma,HMDB0000626,,Bile acids 
+CJ0207,deoxycorticosterone acetate,C23H32O4,2.35,Posi,Sigma,,cas 56-47-3,
+CJ0208,deoxycytidine,C9H13N3O4,8.72,Both,Sigma,HMDB0000014,,"Nucleosides, nucleotides, and analogues  "
+CJ0209,dcmp,C9H14N3O7P,14.61,Both,Sigma,HMDB0001202,,"Nucleosides, nucleotides, and analogues  "
+CJ0210,dcdp,C9H15N3O10P2,14.8,Both,Sigma,HMDB0001245,,"Nucleosides, nucleotides, and analogues  "
+CJ0211,deoxyguanosine,C10H13N5O4,9.14,Both,Sigma,HMDB0000085,,"Nucleosides, nucleotides, and analogues  "
+CJ0212,2'-deoxyguanosine 5'-monophosphate,C10H14N5O7P,14.52,Both,Sigma,HMDB0001044,,"Nucleosides, nucleotides, and analogues  "
+CJ0213,deoxyribose,C5H10O4,6.09,Nega,Sigma,HMDB0003224,,Carbohydrates and carbohydrate conjugates  
+CJ0214,deoxyuridine,C9H12N2O5,4.7,Both,Sigma,HMDB0000012,,"Nucleosides, nucleotides, and analogues  "
+CJ0215,deoxyuridine triphosphate,C9H15N2O14P3,14.91,Both,Sigma,HMDB0001191,,"Nucleosides, nucleotides, and analogues  "
+CJ0216,deoxyuridine-monophosphate,C9H13N2O8P,14.38,Both,Sigma,,YMDB00221,"Nucleosides, nucleotides, and analogues  "
+CJ0217,desmosterol,C27H44O,2.33,Posi,Sigma,HMDB0002719,,
+CJ0218,dethiobiotin,C10H18N2O3,8.66,Both,Sigma,HMDB0003581,,FA
+CJ0219,dgdp,C10H15N5O10P2,14.89,Both,Sigma,HMDB0000960,,
+CJ0220,"d-glucurono-6,3-lactone",C6H8O6,4.16,Nega,Sigma,HMDB0006355,,
+CJ0221,dgtp,C10H16N5O13P3,14.96,Both,Sigma,HMDB0001440,,"Nucleosides, nucleotides, and analogues  "
+CJ0222,diacetyl,C4H6O2,13.45,Nega,Sigma,HMDB0003407,,
+CJ0223,diaminopimelic acid,C7H14N2O4,15.46,Both,Sigma,HMDB0001370,,Amino acids related and peptides
+CJ0224,"1,2-didecanoyl-sn-glycero-3-phosphocholine",C28H56NO8P,,not detected in both,Sigma,HMDB0244070,,
+CJ0225,diethanolamine,C4H11NO2,13.83,Posi,Sigma,HMDB0004437,,
+CJ0226,diethyl oxalpropionate,C9H14O5,2.36,Posi,Sigma,HMDB0032306,,
+CJ0227,dihydrobiopterin,C9H13N5O3,10.66,Both,Sigma,HMDB0000038,,
+CJ0228,dihydrofolic acid,C19H21N7O6,4.04,Posi,Sigma,HMDB0001056,,Amino acids related and peptides
+CJ0229,l-dihydroorotic acid,C5H6N2O4,10.01,Both,Sigma,HMDB0003349,,Amino acids related and peptides
+CJ0230,dihydrouracil,C4H6N2O2,3.71,Both,Sigma,HMDB0000076,,"Nucleosides, nucleotides, and analogues  "
+CJ0231,dihydroxyacetone phosphate,C3H7O6P,14.46,Both,Sigma,HMDB0001473,,Glycolysis
+CJ0232,dihydroxyfumaric acid,C4H4O6,,not detected in both,Sigma,HMDB0002050,,
+CJ0233,dg(16:0/16:0/0:0),C35H68O5,2.2,Posi,Sigma,HMDB0007098,,
+CJ0234,pc(16:0/16:0),C40H80NO8P,2.13,Posi,Sigma,HMDB0000564,,Lipids
+CJ0235,pe(16:0/16:0),C37H74NO8P,3.8,Both,Sigma,HMDB0008923,,Lipids
+CJ0236,d-mannosamine,C6H13NO5,12.72,Both,Sigma,,CHEBI 62325,
+CJ0237,docosahexaenoic acid,C22H32O2,2.04,Nega,Sigma,HMDB0002183,,FA
+CJ0238,dopamine,C8H11NO2,11.84,Posi,Sigma,HMDB0000073,,
+CJ0239,d-ornithine,C5H12N2O2,17.44,Both,Sigma,HMDB0003374,,Amino acids related and peptides
+CJ0240,d-pinitol,C7H14O6,11.67,Both,Sigma,HMDB0034219,,
+CJ0241,d-ribose 5-phosphate,C5H11O8P,14.63,Both,Sigma,HMDB0001548,,Carbohydrates and carbohydrate conjugates  
+CJ0242,sedoheptulose,C7H14O7,12.02,Posi,Sigma,HMDB0003219,,Carbohydrates and carbohydrate conjugates  
+CJ0243,dtdp-d-glucose,C16H26N2O16P2,14.25,Both,Sigma,HMDB0001328,,"Nucleosides, nucleotides, and analogues  "
+CJ0244,eicosapentaenoic acid,C20H30O2,2.27,Both,Sigma,HMDB0001999,,FA
+CJ0245,elaidic acid,C18H34O2,2.07,Nega,Sigma,HMDB0000573,,FA
+CJ0246,epinephrine,C9H13NO3,,not detected in both,Sigma,HMDB0000068,,
+CJ0247,erucic acid,C22H42O2,2.01,Nega,Sigma,HMDB0002068,,FA
+CJ0248,erythritol,C4H10O4,8.78,Both,Sigma,HMDB0002994,,Carbohydrates and carbohydrate conjugates  
+CJ0249,ethanolamine,C2H7NO,,not detected in both,Sigma,HMDB0000149,,
+CJ0250,ethyl 3-indoleacetate,C12H13NO2,2.33,Both,Sigma,,cas 778-82-5,
+CJ0251,ethyl 3-ureidopropionate,C6H12N2O3,3.79,Posi,Sigma,,,
+CJ0252,ethylmalonic acid,C5H8O4,12,Nega,Sigma,HMDB0000622,,FA
+CJ0253,fad,C27H33N9O15P2,13.95,Both,Sigma,HMDB0001248,,"Nucleosides, nucleotides, and analogues  "
+CJ0254,ferulic acid,C10H10O4,2.89,Both,Sigma,HMDB0000954,,
+CJ0255,folic acid,C19H19N7O6,,not detected in both,Sigma,HMDB0000121,,
+CJ0256,formamide,CH3NO,,not detected in both,Sigma,HMDB0001536,,
+CJ0257,fructose 6-phosphate,C6H13O9P,14.72,Both,Sigma,HMDB0000124,,Glycolysis
+CJ0258,"fructose 1,6-bisphosphate",C6H14O12P2,14.67,Nega,Sigma,HMDB0001058,,Glycolysis
+CJ0259,l-fucose,C6H12O5,9.22,Nega,"Sigma, STD",HMDB0000174,,Carbohydrates and carbohydrate conjugates  
+CJ0260,fumaric acid,C4H4O4,12.72,Nega,Sigma,HMDB0000134,,
+CJ0261,galactaric acid,C6H10O8,14.66,Both,Sigma,HMDB0000639,,Carbohydrates and carbohydrate conjugates  
+CJ0262,galactitol,C6H14O6,12.61,Both,Sigma,HMDB0000107,,Carbohydrates and carbohydrate conjugates  
+CJ0263,d-(+)-galactosamine,C6H13NO5,13.78,Both,Sigma,HMDB0341150,,Carbohydrates and carbohydrate conjugates  
+CJ0264,d-galactose,C6H12O6,13.12,Nega,Sigma,HMDB0000143,,Carbohydrates and carbohydrate conjugates  
+CJ0265,galactose 1-phosphate,C6H13O9P,14.7,Both,Sigma,HMDB0000645,,Carbohydrates and carbohydrate conjugates  
+CJ0266,galacturonate,C6H10O7,14.41,Both,Sigma,,YMDB00674,
+CJ0267,"gamma,gamma-dimethylallyl pyrophosphate",C5H12O7P2,8.54,Posi,Sigma,,YMDB00095,
+CJ0268,gamma-aminobutyric acid,C4H9NO2,12.83,Both,Sigma,HMDB0000112,,Amino acids related and peptides
+CJ0269,gamma-linolenic acid,C18H30O2,2.08,Nega,Sigma,HMDB0003073,,
+CJ0270,geranyl-pp,C10H20O7P2,11.92,Nega,Sigma,HMDB0001285,,
+CJ0271,gluconic acid,C6H12O7,13.09,Both,Sigma,HMDB0000625,,Carbohydrates and carbohydrate conjugates  
+CJ0272,gluconolactone,C6H10O6,5.11,Nega,Sigma,HMDB0000150,,Carbohydrates and carbohydrate conjugates  
+CJ0273,glucosaminate,C6H13NO6,14.88,Both,Sigma,,METPA0433,
+CJ0274,glucosamine,C6H13NO5,13.04,Both,Sigma,HMDB0001514,,Carbohydrates and carbohydrate conjugates  
+CJ0275,glucosamine 6-phosphate,C6H14NO8P,14.86,Both,Sigma,HMDB0001254,,Carbohydrates and carbohydrate conjugates  
+CJ0276,glucosamine 6-sulfate,C6H13NO8S,9.79,Both,Sigma,HMDB0000592,,Carbohydrates and carbohydrate conjugates  
+CJ0277,alpha-d-glucose,C6H12O6,12.69,Both,Sigma,HMDB0000122,,Glycolysis
+CJ0278,glucose 1-phosphate,C6H13O9P,14.84,Both,Sigma,HMDB0001586,,Glycolysis
+CJ0279,glucose 6-phosphate,C6H13O9P,14.92,Both,Sigma,HMDB0001401,,Glycolysis
+CJ0280,d-glucuronic acid,C6H10O7,13.9,Both,Sigma,HMDB0000127,,Carbohydrates and carbohydrate conjugates  
+CJ0281,l-glutamic acid,C5H9NO4,14.24,Both,Sigma,HMDB0000148,,Amino acids
+CJ0282,l-glutamine,C5H10N2O3,14.28,Both,Sigma,HMDB0000641,,Amino acids
+CJ0283,glutaric acid,C5H8O4,13.24,Both,Sigma,HMDB0000661,,
+CJ0284,glutarylcarnitine,C12H21NO6,14.19,Both,Sigma,HMDB0013130,,carnitine
+CJ0285,glutathione,C10H17N3O6S,14.95,Both,Sigma,HMDB0000125,,Amino acids related and peptides
+CJ0286,glyceraldehyde,C3H6O3,12.99,Nega,Sigma,HMDB0001051,,Carbohydrates and carbohydrate conjugates  
+CJ0287,glyceraldehyde 3-phosphate,C3H7O6P,16.78,Nega,Sigma,HMDB0001112,,Glycolysis
+CJ0288,glyceric acid,C3H6O4,9.79,Both,Sigma,HMDB0000139,,Carbohydrates and carbohydrate conjugates  
+CJ0289,glycerol,C3H8O3,6,Nega,Sigma,HMDB0000131,,Carbohydrates and carbohydrate conjugates  
+CJ0290,glycerol 3-phosphate,C3H9O6P,14.57,Both,Sigma,HMDB0000126,,Glycolysis
+CJ0291,glycerol 1-myristate,C17H34O4,2.27,Both,Sigma,HMDB0304951,,
+CJ0292,tg(14:0/14:0/14:0),C45H86O6,2.24,Posi,Sigma,HMDB0042061,,TG
+CJ0293,tg(16:0/16:0/16:0),C51H98O6,3.28,Posi,Sigma,HMDB0005356,,TG
+CJ0294,glycine,C2H5NO2,14.1,Both,Sigma,HMDB0000123,,Amino acids 
+CJ0295,chenodeoxycholic acid glycine conjugate,C26H43NO5,2.9,Both,Sigma,HMDB0000637,,Bile acids 
+CJ0296,glycocholic acid,C26H43NO6,2.98,Both,Sigma,HMDB0000138,,Bile acids 
+CJ0297,glycolaldehyde,C2H4O2,14.88,Posi,Sigma,HMDB0003344,,
+CJ0298,glycolic acid,C2H4O3,8.99,Both,Sigma,HMDB0000115,,
+CJ0299,glyoxylic acid,C2H2O3,12.5,Nega,Sigma,HMDB0000119,,Carbohydrates and carbohydrate conjugates  
+CJ0300,guaiacol,C7H8O2,3.19,Nega,Sigma,HMDB0001398,,
+CJ0301,guanidoacetic acid,C3H7N3O2,14.03,Both,Sigma,HMDB0000128,,Amino acids related and peptides
+CJ0302,guanidinosuccinic acid,C5H9N3O4,14.21,Both,Sigma,HMDB0003157,,Amino acids related and peptides
+CJ0303,guanine,C5H5N5O,9.05,Both,Sigma,HMDB0000132,,"Nucleosides, nucleotides, and analogues  "
+CJ0304,guanosine,C10H13N5O5,10.22,Both,Sigma,HMDB0000133,,"Nucleosides, nucleotides, and analogues  "
+CJ0305,guanosine diphosphate,C10H15N5O11P2,14.92,Both,Sigma,HMDB0001201,,"Nucleosides, nucleotides, and analogues  "
+CJ0306,guanosine diphosphate mannose,C16H25N5O16P2,14.84,Both,Sigma,HMDB0001163,,"Nucleosides, nucleotides, and analogues  "
+CJ0307,guanosine monophosphate,C10H14N5O8P,14.79,Both,Sigma,HMDB0001397,,"Nucleosides, nucleotides, and analogues  "
+CJ0308,guanosine triphosphate,C10H16N5O14P3,15.12,Both,Sigma,HMDB0001273,,"Nucleosides, nucleotides, and analogues  "
+CJ0309,l-gulose,C6H12O6,10.49,Both,Sigma,HMDB0012326,,Carbohydrates and carbohydrate conjugates  
+CJ0310,heptadecanoic acid,C17H34O2,2.1,Nega,Sigma,HMDB0002259,,FA
+CJ0311,heptanoic acid,C7H14O2,2.55,Nega,Sigma,HMDB0000666,,FA
+CJ0312,1-hexadecanol,C16H34O,3.81,Posi,Sigma,HMDB0003424,,FA
+CJ0313,caproic acid,C6H12O2,2.82,Nega,Sigma,HMDB0000535,,FA
+CJ0314,hippuric acid,C9H9NO3,2.89,Both,Sigma,HMDB0000714,,Microbiota related
+CJ0315,histamine,C5H9N3,18.5,Posi,Sigma,HMDB0000870,,Amino acids related and peptides
+CJ0316,l-histidine,C6H9N3O2,17.46,Both,Sigma,HMDB0000177,,Amino acids
+CJ0317,histidinol,C6H11N3O,15.41,Both,Sigma,HMDB0253185,,
+CJ0318,homocysteine,C4H9NO2S,14.92,Both,Sigma,HMDB0000742,,Amino acids related and peptides
+CJ0319,homocysteine thiolactone,C4H7NOS,2.88,Posi,Sigma,HMDB0002287,,Amino acids related and peptides
+CJ0320,dl-homocystine,C8H16N2O4S2,14.69,Both,Sigma,HMDB0000575,,Amino acids related and peptides
+CJ0321,homogentisic acid,C8H8O4,3.79,Both,Sigma,HMDB0000130,,
+CJ0322,l-homoserine,C4H9NO3,14.17,Both,Sigma,HMDB0000719,,Amino acids related and peptides
+CJ0323,homovanillic acid,C9H10O4,3.78,Nega,Sigma,HMDB0000118,,
+CJ0324,hydroquinone,C6H6O2,2.38,Both,Sigma,HMDB0002434,,Microbiota related
+CJ0325,hydroxykynurenine,C10H12N2O4,9.73,Nega,Sigma,HMDB0000732,,Amino acids related and peptides
+CJ0326,hydroxyphenyllactic acid,C9H10O4,3.79,Nega,Sigma,HMDB0000755,,
+CJ0327,hydroxypyruvic acid,C3H4O4,7.75,Nega,Sigma,HMDB0001352,,
+CJ0328,hypotaurine,C2H7NO2S,13.74,Both,Sigma,HMDB0000965,,Amino acids related and peptides
+CJ0329,hypoxanthine,C5H4N4O,7.42,Both,Sigma,HMDB0000157,,"Nucleosides, nucleotides, and analogues  "
+CJ0330,indole,C8H7N,,not detected in both,Sigma,HMDB0000738,,Microbiota related
+CJ0331,indole-3-acetamide,C10H10N2O,2.76,Both,Sigma,HMDB0029739,,Microbiota related
+CJ0332,indoleacetic acid,C10H9NO2,2.89,Both,Sigma,HMDB0000197,,Microbiota related
+CJ0333,tryptophol,C10H11NO,2.52,Both,Sigma,HMDB0003447,,Microbiota related
+CJ0334,indole-3-methyl acetate,C11H11NO2,2.35,Both,Sigma,HMDB0029738,,Microbiota related
+CJ0335,indolepyruvate,C11H9NO3,2.37,Nega,Sigma,HMDB0060484,,
+CJ0336,indoleacetaldehyde,C10H9NO,2.49,Both,Sigma,HMDB0001190,,Microbiota related
+CJ0337,indoxyl sulfate,C8H7NO4S,1.94,Both,Sigma,HMDB0000682,,
+CJ0338,indican,C14H17NO6,3.39,Both,Sigma,HMDB0061755,,
+CJ0339,inosine,C10H12N4O5,9,Both,Sigma,HMDB0000195,,"Nucleosides, nucleotides, and analogues  "
+CJ0340,idp,C10H14N4O11P2,14.84,Nega,Sigma,HMDB0003335,,"Nucleosides, nucleotides, and analogues  "
+CJ0341,inosine triphosphate,C10H15N4O14P3,14.97,Both,Sigma,HMDB0000189,,"Nucleosides, nucleotides, and analogues  "
+CJ0342,inosinic acid,C10H13N4O8P,14.58,Both,Sigma,HMDB0000175,,"Nucleosides, nucleotides, and analogues  "
+CJ0343,isobutyric acid,C4H8O2,10.73,Nega,Sigma,HMDB0001873,,
+CJ0344,isocitric acid,C6H8O7,14.77,Both,Sigma,HMDB0000193,,Glycolysis
+CJ0345,l-isoleucine,C6H13NO2,10.41,Both,Sigma,HMDB0000172,,Amino acids
+CJ0346,isopentenyl pyrophosphate,C5H12O7P2,14.16,Both,Sigma,HMDB0001347,,
+CJ0347,itaconic acid,C5H6O4,13.35,Both,Sigma,HMDB0002092,,FA
+CJ0348,ketoleucine,C6H10O3,2.33,Nega,Sigma,HMDB0000695,,Amino acids related and peptides
+CJ0349,kynurenic acid,C10H7NO3,3.72,Both,Sigma,HMDB0000715,,Quinoline carboxylic acids  
+CJ0350,l-kynurenine,C10H12N2O3,9.26,Both,Sigma,HMDB0000684,,Amino acids related and peptides
+CJ0351,l-lactic acid,C3H6O3,7.2,Nega,Sigma,HMDB0000190,,Glycolysis
+CJ0352,l-lactic acid,C3H6O3,6,Nega,Sigma,HMDB0000190,,Glycolysis
+CJ0353,alpha-lactose,C12H22O11,14.85,Both,Sigma,HMDB0000186,,Carbohydrates and carbohydrate conjugates  
+CJ0354,l-alanine,C3H7NO2,13.93,Both,Sigma,HMDB0000161,,Amino acids 
+CJ0355,lanosterol,C30H50O,,not detected in both,Sigma,HMDB0001251,,
+CJ0356,dodecanoic acid,C12H24O2,2.57,Nega,Sigma,HMDB0000638,,FA
+CJ0357,l-carnitine,C7H15NO3,14.13,Both,Sigma,HMDB0000062,,carnitine
+CJ0358,l-dopa,C9H11NO4,12.74,Nega,Sigma,HMDB0000181,,Amino acids related and peptides
+CJ0359,l-leucine,C6H13NO2,9.85,Both,Sigma,HMDB0000687,,Amino acids
+CJ0360,l-gulonolactone,C6H10O6,7.39,Both,Sigma,HMDB0003466,,
+CJ0361,liothyronine,C15H12I3NO4,3.86,Both,Sigma,HMDB0000265,,Amino acids related and peptides
+CJ0362,lipoamide,C8H15NOS2,2.62,Both,Sigma,HMDB0000962,,
+CJ0363,lithocholic acid,C24H40O3,2.4,Nega,Sigma,HMDB0000761,,Bile acids 
+CJ0364,ornithine,C5H12N2O2,17.79,Both,Sigma,HMDB0000214,,Amino acids related and peptides
+CJ0365,tryptophanamide,C11H13N3O,3.71,Both,Sigma,HMDB0013318,,
+CJ0366,lumichrome,C12H10N4O2,2.9,Both,Sigma,HMDB0254199,,
+CJ0367,l-lysine,C6H14N2O2,18.29,Both,Sigma,HMDB0000182,,Amino acids
+CJ0368,pectin,C5H10O5,9.38,Nega,Sigma,HMDB0003402,,Carbohydrates and carbohydrate conjugates  
+CJ0369,d-malic acid,C4H6O5,14.42,Both,Sigma,HMDB0031518,,Glycolysis
+CJ0370,maleamic acid,C4H5NO3,,not detected in both,Sigma,HMDB0254310,,FA
+CJ0371,maleic acid,C4H4O4,5.7,Nega,Sigma,HMDB0000176,,Carbohydrates and carbohydrate conjugates  
+CJ0372,maleimide,C4H3NO2,8.32,Both,Sigma,HMDB0254312,,
+CJ0373,malonic acid,C3H4O4,13.99,Nega,Sigma,HMDB0000691,,Carbohydrates and carbohydrate conjugates  
+CJ0374,d-maltose,C12H22O11,14.92,Both,Sigma,HMDB0000163,,Carbohydrates and carbohydrate conjugates  
+CJ0375,mandelic acid,C8H8O3,2.58,Nega,Sigma,HMDB0000703,,
+CJ0376,mannitol,C6H14O6,12.46,Both,Sigma,HMDB0000765,,Carbohydrates and carbohydrate conjugates  
+CJ0377,d-mannose,C6H12O6,11.56,Nega,Sigma,HMDB0000169,,Carbohydrates and carbohydrate conjugates  
+CJ0378,mannose 6-phosphate,C6H13O9P,14.81,Both,Sigma,HMDB0001078,,Carbohydrates and carbohydrate conjugates  
+CJ0379,melanin,C18H10N2O4,14.12,Nega,Sigma,HMDB0004068,,
+CJ0380,melatonin,C13H16N2O2,2.63,Both,Sigma,HMDB0001389,,Microbiota related
+CJ0381,melibiose,C12H22O11,15.37,Both,Sigma,HMDB0000048,,Carbohydrates and carbohydrate conjugates  
+CJ0382,menatetrenone,C41H56O2,,not detected in both,Sigma,HMDB0030017,,
+CJ0383,3-mercaptopyruvic acid,C3H4O3S,,not detected in both,Sigma,HMDB0001368,,
+CJ0384,tartaric acid,C4H6O6,14.24,not detected in both,Sigma,HMDB0000956,,Carbohydrates and carbohydrate conjugates  
+CJ0385,mesoxalic acid,C3H2O5,14.29,Nega,Sigma,HMDB0031522,,
+CJ0386,l-methionine,C5H11NO2S,10.8,Both,Sigma,HMDB0000696,,Amino acids
+CJ0387,methionine sulfoximine,C5H12N2O3S,13.8,Both,Sigma,HMDB0029430,,Amino acids related and peptides
+CJ0388,methylglutaric acid,C6H10O4,12.75,Both,Sigma,HMDB0000752,,FA
+CJ0389,gamma-aminobutyric acid,C5H11NO2,10.16,Posi,Sigma,HMDB0002141,,Amino acids related and peptides
+CJ0390,methylacetoacetic acid,C5H8O3,12.44,Nega,Sigma,HMDB0000310,,
+CJ0391,methyl beta-d-glucopyranoside,C7H14O6,9.28,Both,Sigma,HMDB0029965,,
+CJ0392,methyl jasmonate,C13H20O3,,not detected in both,Sigma,HMDB0036583,,
+CJ0393,methyl vanillate,C9H10O4,2.47,Nega,Sigma,HMDB0240266,,
+CJ0394,methylguanidine,C2H7N3,11.59,Posi,Sigma,HMDB0001522,,
+CJ0395,methylmalonic acid,C4H6O4,12.74,Nega,Sigma,HMDB0000202,,
+CJ0396,5'-methylthioadenosine,C11H15N5O3S,3.31,Posi,Sigma,HMDB0001173,,"Nucleosides, nucleotides, and analogues  "
+CJ0397,mevalonolactone,C6H10O3,2.81,Both,Sigma,HMDB0006024,,
+CJ0398,mevalonic acid,C6H12O4,7.74,Nega,Sigma,HMDB0000227,,FA
+CJ0399,monoethyl malonic acid,C5H8O4,12.63,Nega,Sigma,HMDB0000576,,
+CJ0400,monomethyl glutaric acid,C6H10O4,2.38,Posi,Sigma,HMDB0000858,,FA
+CJ0401,myo-inositol,C6H12O6,15.11,Nega,Sigma,HMDB0000211,,Amino acids related and peptides
+CJ0402,myristic acid,C14H28O2,2.16,Nega,Sigma,HMDB0000806,,FA
+CJ0403,"n6,n6,n6-trimethyl-l-lysine",C9H20N2O2,19.34,Both,Sigma,HMDB0001325,,Amino acids related and peptides
+CJ0404,"n,n-dimethyl-p-phenylenediamine",C8H12N2,3.77,Posi,Sigma,HMDB0247696,,
+CJ0405,asymmetric dimethylarginine,C8H18N4O2,18.35,Both,Sigma,HMDB0001539,,Amino acids related and peptides
+CJ0406,n1-acetylspermine,C12H28N4O,,not detected in both,Sigma,HMDB0001186,,
+CJ0407,n6-(delta2-isopentenyl)-adenine,C10H13N5,2.78,Both,Sigma,,METPA1684,
+CJ0408,n-acetyl-l-alanine,C5H9NO3,8.54,Both,Sigma,HMDB0000766,,Amino acids related and peptides
+CJ0409,n-acetylasparagine,C6H10N2O4,12.08,Both,Sigma,HMDB0006028,,Amino acids related and peptides
+CJ0410,n-acetyl-l-aspartic acid,C6H9NO5,13.76,Both,Sigma,HMDB0000812,,Amino acids related and peptides
+CJ0411,acetylcysteine,C5H9NO3S,12.18,Both,Sigma,HMDB0001890,,Amino acids related and peptides
+CJ0412,n-acetylgalactosamine,C8H15NO6,10.41,Both,Sigma,HMDB0000212,,Carbohydrates and carbohydrate conjugates  
+CJ0413,n-acetyl-d-glucosamine,C8H15NO6,10.49,Both,Sigma,HMDB0000215,,Carbohydrates and carbohydrate conjugates  
+CJ0414,n-acetyl-l-glutamic acid,C7H11NO5,13.84,Both,Sigma,HMDB0001138,,Amino acids related and peptides
+CJ0415,acetylglycine,C4H7NO3,9.41,Both,Sigma,HMDB0000532,,Amino acids related and peptides
+CJ0416,n-acetylleucine,C8H15NO3,3.81,Both,Sigma,HMDB0011756,,Amino acids related and peptides
+CJ0417,n-acetylmannosamine,C8H15NO6,10.46,Nega,Sigma,HMDB0001129,,Carbohydrates and carbohydrate conjugates  
+CJ0418,n-acetyl-l-methionine,C7H13NO3S,2.92,Both,Sigma,HMDB0011745,,Amino acids related and peptides
+CJ0419,n-acetylneuraminic acid,C11H19NO9,13.72,Both,Sigma,HMDB0000230,,
+CJ0420,n-acetyl-l-phenylalanine,C11H13NO3,2.87,Both,Sigma,HMDB0000512,,Amino acids related and peptides
+CJ0421,n-acetylproline,C7H11NO3,9.13,Both,Sigma,HMDB0094701,,Amino acids related and peptides
+CJ0422,n-acetylputrescine,C6H14N2O,15.78,Posi,Sigma,HMDB0002064,,
+CJ0423,n-acetylserine,C5H9NO4,9.65,Both,Sigma,HMDB0002931,,Amino acids related and peptides
+CJ0424,n-acetylserotonin,C12H14N2O2,3.77,Both,Sigma,HMDB0001238,,
+CJ0425,n-acetyltryptophan,C13H14N2O3,2.95,Both,Sigma,HMDB0013713,,Amino acids related and peptides
+CJ0426,nadp,C21H28N7O17P3,14.85,Both,Sigma,HMDB0000217,,"Nucleosides, nucleotides, and analogues  "
+CJ0427,nadph,C21H30N7O17P3,14.7,Both,Sigma,HMDB0000221,,"Nucleosides, nucleotides, and analogues  "
+CJ0428,n-alpha-acetyl-l-lysine,C8H16N2O3,14.63,Both,Sigma,HMDB0000446,,Amino acids related and peptides
+CJ0429,n-formylglycine,C3H5NO3,9.4,Both,Sigma,HMDB0255145,,Amino acids related and peptides
+CJ0430,n-formyl-l-methionine,C6H11NO3S,3.29,Both,Sigma,HMDB0001015,,Amino acids related and peptides
+CJ0431,niacinamide,C6H6N2O,3.52,Both,Sigma,HMDB0001406,,"Nucleosides, nucleotides, and analogues  "
+CJ0432,nicotinamide hypoxanthine dinucleotide,C21H26N6O15P2,14.78,Both,Sigma,,cas 13586-58-8,
+CJ0433,nicotinamide ribotide,C11H15N2O8P,15.1,Posi,Sigma,HMDB0000229,,
+CJ0434,nicotinic acid,C6H5NO2,8.85,nega,STD,HMDB0001488,,"Nucleosides, nucleotides, and analogues  "
+CJ0435,nicotine,C10H14N2,4,Posi,Sigma,HMDB0001934,,
+CJ0436,nicotinic acid adenine dinucleotide,C21H27N6O18P3,15.2,posi,STD,HMDB0001179,,"Nucleosides, nucleotides, and analogues  "
+CJ0437,n-methyl-d-aspartic acid,C5H9NO4,13.57,Both,Sigma,HMDB0002393,,Amino acids related and peptides
+CJ0438,n-methyl-l-glutamic acid,C6H11NO4,13.64,Both,Sigma,HMDB0062660,,Amino acids related and peptides
+CJ0439,n-methyltryptamine,C11H14N2,8.99,Both,Sigma,HMDB0004370,,
+CJ0440,n-methylalanine,C4H9NO2,14.45,Both,Sigma,HMDB0094692,,Amino acids related and peptides
+CJ0441,pelargonic acid,C9H18O2,3.67,Nega,Sigma,HMDB0000847,,FA
+CJ0442,norepinephrine,C8H11NO3,,not detected in both,Sigma,HMDB0000216,,
+CJ0443,l-norleucine,C6H13NO2,9.83,Both,Sigma,HMDB0001645,,Amino acids related and peptides
+CJ0444,normetanephrine,C9H13NO3,9.34,Both,Sigma,HMDB0000819,,
+CJ0445,norspermidine,C6H17N3,,not detected in both,Sigma,HMDB0011634,,
+CJ0446,norvaline,C5H11NO2,11.24,Both,Sigma,HMDB0013716,,Amino acids related and peptides
+CJ0447,l-acetylcarnitine,C9H17NO4,12.05,Posi,Sigma,HMDB0000201,,carnitine
+CJ0448,o-acetylserine,C5H9NO4,9.78,Both,Sigma,HMDB0003011,,Amino acids related and peptides
+CJ0449,mg(18:1(9z)/0:0/0:0),C21H40O4,2.33,Both,Sigma,HMDB0011567,,
+CJ0450,12-hydroxydodecanoic acid,C12H24O3,2.58,Both,Sigma,HMDB0002059,,FA
+CJ0451,o-phosphoethanolamine,C2H8NO4P,15.08,Both,Sigma,HMDB0000224,,Lipids
+CJ0452,dl-o-phosphoserine,C3H8NO6P,14.92,Both,Sigma,HMDB0001721,,Amino acids related and peptides
+CJ0453,ophthalmic acid,C11H19N3O6,14.18,Both,Sigma,HMDB0005765,,Amino acids related and peptides
+CJ0454,orotic acid,C5H4N2O4,8.23,Both,Sigma,HMDB0000226,,"Nucleosides, nucleotides, and analogues  "
+CJ0455,o-succinyl-homoserine,C8H13NO6,14.13,Posi,Sigma,,YMDB00917,Amino acids related and peptides
+CJ0456,oxalic acid,C2H2O4,14.15,Nega,Sigma,HMDB0002329,,Carbohydrates and carbohydrate conjugates  
+CJ0457,oxalacetic acid,C4H4O5,14.45,Nega,Sigma,HMDB0000223,,Glycolysis
+CJ0458,3-oxalomalic acid,C6H6O8,2.83,Nega,Sigma,HMDB0245962,,
+CJ0459,oxoadipic acid,C6H8O5,12.43,Both,Sigma,HMDB0000225,,
+CJ0460,oxoglutaric acid,C5H6O5,12.84,Both,Sigma,HMDB0000208,,Glycolysis
+CJ0461,4-oxoproline,C5H7NO3,9.67,Both,Sigma,HMDB0304793,,Amino acids related and peptides
+CJ0462,palatinose,C12H22O11,14.59,Both,Sigma,HMDB0256083,,Carbohydrates and carbohydrate conjugates  
+CJ0463,palmitoleic acid,C16H30O2,2.21,Both,Sigma,HMDB0003229,,FA
+CJ0464,pantolactone,C6H10O3,2.88,Nega,Sigma,HMDB0059876,,
+CJ0465,pantothenic acid,C9H17NO5,9.01,Both,Sigma,HMDB0000210,,
+CJ0466,paraxanthine,C7H8N4O2,3.31,Both,Sigma,HMDB0001860,,"Nucleosides, nucleotides, and analogues  "
+CJ0467,valeric acid,C5H10O2,12.75,Nega,Sigma,HMDB0000892,,FA
+CJ0468,petroselinic acid,C18H34O2,2.08,Both,Sigma,HMDB0002080,,FA
+CJ0469,phenol,C6H6O,2.72,Nega,Sigma,HMDB0000228,,
+CJ0470,phenylacetaldehyde,C8H8O,3.8,Nega,Sigma,HMDB0006236,,
+CJ0471,l-phenylalanine,C9H11NO2,9.45,Both,Sigma,HMDB0000159,,Amino acids
+CJ0472,2-hydroxyphenethylamine,C8H11NO,8.18,Posi,Sigma,HMDB0001065,,
+CJ0473,phenylpyruvic acid,C9H8O3,2.13,Both,Sigma,HMDB0000205,,
+CJ0474,phosphocreatine,C4H10N3O5P,14.52,Both,Sigma,HMDB0001511,,Amino acids related and peptides
+CJ0475,phosphoenolpyruvic acid,C3H5O6P,14.77,Both,Sigma,HMDB0000263,,Glycolysis
+CJ0476,phosphonoacetate,C2H5O5P,14.91,Both,Sigma,HMDB0004110,,
+CJ0477,phosphoribosyl pyrophosphate,C5H13O14P3,16.75,Nega,Sigma,HMDB0000280,,
+CJ0478,phosphorylcholine,C5H14NO4P,15.22,Both,Sigma,HMDB0001565,,Lipids
+CJ0479,phosphoserine,C3H8NO6P,14.91,Both,Sigma,HMDB0000272,,Amino acids related and peptides
+CJ0480,p-hydroxyphenylacetic acid,C8H8O3,4.03,Nega,Sigma,HMDB0000020,,
+CJ0481,phylloquinone,C31H46O2,,not detected in both,Sigma,HMDB0304722,,
+CJ0482,myo-inositol hexakisphosphate,C6H18O24P6,,not detected in both,Sigma,HMDB0003502,,
+CJ0483,picolinic acid,C6H5NO2,8.38,nega,STD,HMDB0002243,,
+CJ0484,l-pipecolic acid,C6H11NO2,12.35,Both,Sigma,HMDB0000716,,Amino acids related and peptides
+CJ0485,p-octopamine,C8H11NO2,9.8,Both,Sigma,HMDB0004825,,
+CJ0486,porphobilinogen,C10H14N2O4,,Nega,Sigma,HMDB0000245,,
+CJ0487,pregnenolone sulfate,C21H32O5S,1.88,Both,Sigma,HMDB0000774,,
+CJ0488,prenol,C5H10O,2.36,Posi,Sigma,HMDB0030124,,
+CJ0489,l-proline,C5H9NO2,12.75,Both,Sigma,HMDB0000162,,Amino acids
+CJ0490,propionic acid,C3H6O2,2.85,Nega,Sigma,HMDB0000237,,
+CJ0491,protoporphyrin ix,C34H34N4O4,3.8,Both,Sigma,HMDB0000241,,
+CJ0492,d-psicose,C6H12O6,9.68,Nega,Sigma,HMDB0250793,,Carbohydrates and carbohydrate conjugates  
+CJ0493,pterin,C6H5N5O,8.34,Both,Sigma,HMDB0000802,,
+CJ0494,purine,C5H4N4,5.27,Posi,Sigma,HMDB0001366,,"Nucleosides, nucleotides, and analogues  "
+CJ0495,putrescine,C4H12N2,7.85,Posi,Sigma,HMDB0001414,,
+CJ0496,pyrazole,C3H4N2,,not detected in both,Sigma,HMDB0256947,,
+CJ0497,pyridoxal,C8H9NO3,5.65,Both,Sigma,HMDB0001545,,
+CJ0498,pyridoxal 5'-phosphate,C8H10NO6P,14.32,Both,Sigma,HMDB0001491,,
+CJ0499,pyridoxamine,C8H12N2O2,13.1,Posi,Sigma,HMDB0001431,,
+CJ0500,pyridoxine,C8H11NO3,5.13,Both,Sigma,HMDB0000239,,
+CJ0501,pyrimidine,C4H4N2,,not detected in both,Sigma,HMDB0003361,,"Nucleosides, nucleotides, and analogues  "
+CJ0502,pyrocatechol,C6H6O2,2.37,Nega,Sigma,HMDB0000957,,
+CJ0503,pyroglutamic acid,C5H7NO3,14.24,not detected in both,Sigma,HMDB0000267,,Amino acids related and peptides
+CJ0504,pyrrole-2-carboxylic acid,C5H5NO2,3.79,Nega,Sigma,HMDB0004230,,
+CJ0505,pyruvic acid,C3H4O3,3.77,Nega,Sigma,HMDB0000243,,Glycolysis
+CJ0506,pyruvaldehyde,C3H4O2,15.14,Nega,Sigma,HMDB0001167,,
+CJ0507,quinic acid,C7H12O6,12.31,Both,Sigma,HMDB0003072,,
+CJ0508,quinolinic acid,C7H5NO4,14.37,Both,Sigma,HMDB0000232,,
+CJ0509,quinoline,C9H7N,,not detected in both,Sigma,HMDB0033731,,Quinoline carboxylic acids  
+CJ0510,raffinose,C18H32O16,15.51,Both,Sigma,HMDB0003213,,Carbohydrates and carbohydrate conjugates  
+CJ0511,resorcinol monoacetate,C8H8O3,2.46,Nega,Sigma,HMDB0257165,,
+CJ0512,all-trans-retinoic acid,C20H28O2,2.1,Nega,Sigma,HMDB0001852,,Retinoids  
+CJ0513,vitamin a,C20H30O,,not detected in both,Sigma,HMDB0000305,,Retinoids  
+CJ0514,retinyl palmitate,C36H60O2,,not detected in both,Sigma,HMDB0003648,,
+CJ0515,rhamnose,C6H12O5,8.35,Nega,Sigma,HMDB0000849,,Carbohydrates and carbohydrate conjugates  
+CJ0516,ribitol,C5H12O5,10.26,Both,Sigma,HMDB0000508,,Carbohydrates and carbohydrate conjugates  
+CJ0517,riboflavin,C17H20N4O6,8.47,Both,Sigma,HMDB0000244,,
+CJ0518,d-ribose,C5H10O5,9.38,Nega,Sigma,HMDB0000283,,Carbohydrates and carbohydrate conjugates  
+CJ0519,"ribose 1,5-bisphosphate",C5H12O11P2,14.93,Nega,Sigma,HMDB0011688,,Carbohydrates and carbohydrate conjugates  
+CJ0520,rosmarinic acid,C18H16O8,3.76,Nega,Sigma,HMDB0003572,,
+CJ0521,glucaric acid,C6H10O8,14.39,Both,Sigma,HMDB0029881,,Carbohydrates and carbohydrate conjugates  
+CJ0522,s-adenosylhomocysteine,C14H20N6O5S,14.53,Both,Sigma,HMDB0000939,,"Nucleosides, nucleotides, and analogues  "
+CJ0523,s-adenosylmethionine,C15H22N6O5S,16.26,Posi,Sigma,HMDB0001185,,"Nucleosides, nucleotides, and analogues  "
+CJ0524,salicylamide,C7H7NO2,2.6,Both,Sigma,HMDB0015687,,
+CJ0525,salicylic acid,C7H6O3,3.8,Nega,Sigma,HMDB0001895,,
+CJ0526,salsolinol,C10H13NO2,,not detected in both,Sigma,HMDB0042012,,
+CJ0527,sarcosine,C3H7NO2,13.58,Both,Sigma,HMDB0000271,,Amino acids related and peptides
+CJ0528,s-carboxymethyl-l-cysteine,C5H9NO4S,13.69,Both,Sigma,HMDB0029415,,Amino acids related and peptides
+CJ0529,sebacic acid,C10H18O4,12,Both,Sigma,HMDB0000792,,FA
+CJ0530,selenocystamine,C4H12N2Se2,2.85,Both,Sigma,,cas 2697-61-2,
+CJ0531,l-serine,C3H7NO3,14.32,Both,Sigma,HMDB0000187,,Amino acids
+CJ0532,serotonin,C10H12N2O,10.28,Both,Sigma,HMDB0000259,,Serotonins  
+CJ0533,s-hexyl-glutathione isomer,C16H29N3O6S,,not detected in both,Sigma,,,
+CJ0534,shikimic acid,C7H10O5,12.91,Both,Sigma,HMDB0003070,,Microbiota related
+CJ0535,"(2e,4e)-2,4-hexadienoic acid",C6H8O2,2.82,Nega,Sigma,HMDB0029581,,FA
+CJ0536,sorbitol,C6H14O6,12.44,Both,Sigma,HMDB0000247,,Carbohydrates and carbohydrate conjugates  
+CJ0537,l-sorbose,C6H12O6,11.84,Both,Sigma,HMDB0001266,,Carbohydrates and carbohydrate conjugates  
+CJ0538,spermidine,C7H19N3,13.97,Posi,Sigma,HMDB0001257,,Amino acids related and peptides
+CJ0539,spermine,C10H26N4,6.95,Nega,Sigma,HMDB0001256,,Amino acids related and peptides
+CJ0540,sphinganine,C18H39NO2,3.82,Both,Sigma,HMDB0000269,,
+CJ0541,sm(d18:1/18:0),C41H83N2O6P,3.81,Posi,Sigma,HMDB0001348,,Lipids
+CJ0542,squalene,C30H50,,not detected in both,Sigma,HMDB0000256,,
+CJ0543,stachyose,C24H42O21,16.51,Both,Sigma,HMDB0003553,,Carbohydrates and carbohydrate conjugates  
+CJ0544,suberic acid,C8H14O4,12.46,Both,Sigma,HMDB0000893,,FA
+CJ0545,succinic acid,C4H6O4,13.95,Both,Sigma,HMDB0000254,,Glycolysis
+CJ0546,succinic acid semialdehyde,C4H6O3,7.27,Nega,Sigma,HMDB0001259,,FA
+CJ0547,sucrose,C12H22O11,14.42,Both,Sigma,HMDB0000258,,Carbohydrates and carbohydrate conjugates  
+CJ0548,d-tagatose,C6H12O6,10.98,Nega,Sigma,HMDB0003418,,Carbohydrates and carbohydrate conjugates  
+CJ0549,d-tartaric acid,C4H6O6,14.19,Nega,Sigma,HMDB0029878,,Carbohydrates and carbohydrate conjugates  
+CJ0550,taurine,C2H7NO3S,10.55,Both,Sigma,HMDB0000251,,Amino acids related and peptides
+CJ0551,lithocholyltaurine,C26H45NO5S,2.17,Both,Sigma,HMDB0000722,,Bile acids 
+CJ0552,tetrahydrofolic acid,C19H23N7O6,14.24,Posi,Sigma,HMDB0001846,,"Nucleosides, nucleotides, and analogues  "
+CJ0553,theobromine,C7H8N4O2,3.41,Both,Sigma,HMDB0002825,,"Nucleosides, nucleotides, and analogues  "
+CJ0554,theophylline,C7H8N4O2,2.93,Both,Sigma,HMDB0001889,,"Nucleosides, nucleotides, and analogues  "
+CJ0555,thiamine,C12H17N4OS,18.21,Posi,Sigma,HMDB0000235,,
+CJ0556,thiamine monophosphate,C12H17N4O4PS,15.77,Both,Sigma,HMDB0002666,,
+CJ0557,thiamine pyrophosphate,C12H18N4O7P2S,15.14,Both,Sigma,HMDB0001372,,
+CJ0558,6-methylmercaptopurine,C6H6N4S,2.9,Both,Sigma,HMDB0060412,,
+CJ0559,thiourea,CH4N2S,3.38,Posi,Sigma,HMDB0034155,,
+CJ0560,d-threitol,C4H10O4,8.81,Both,Sigma,HMDB0004136,,Carbohydrates and carbohydrate conjugates  
+CJ0561,l-threonine,C4H9NO3,13.93,Both,Sigma,HMDB0000167,,Amino acids
+CJ0562,thymidine,C10H14N2O5,4.23,Both,Sigma,HMDB0000273,,"Nucleosides, nucleotides, and analogues  "
+CJ0563,5-thymidylic acid,C10H15N2O8P,14.35,Both,Sigma,HMDB0001227,,"Nucleosides, nucleotides, and analogues  "
+CJ0564,thymine,C5H6N2O2,3.62,Both,Sigma,HMDB0000262,,"Nucleosides, nucleotides, and analogues  "
+CJ0565,thyrotropin releasing hormone,C16H22N6O4,10.22,Both,Sigma,HMDB0060080,,
+CJ0566,thyroxine,C15H11I4NO4,3.86,Both,Sigma,HMDB0000248,,Amino acids related and peptides
+CJ0567,"1,2-cyclohexanediol",C6H12O2,2.81,Nega,Sigma,HMDB0244061,,
+CJ0568,4-hydroxyproline,C5H9NO3,13.88,Both,Sigma,HMDB0000725,,Amino acids related and peptides
+CJ0569,trans-aconitic acid,C6H6O6,14.63,Nega,Sigma,HMDB0000958,,
+CJ0570,cinnamaldehyde,C9H8O,3.79,Posi,Sigma,HMDB0003441,,
+CJ0571,trans-cinnamic acid,C9H8O2,3.8,Nega,Sigma,HMDB0000930,,
+CJ0572,trehalose,C12H22O11,14.8,Both,Sigma,HMDB0000975,,Carbohydrates and carbohydrate conjugates  
+CJ0573,tricosanoic acid,C23H46O2,2.01,Nega,Sigma,HMDB0001160,,FA
+CJ0574,trigonelline,C7H7NO2,11.52,Both,Sigma,HMDB0000875,,
+CJ0575,trimethylamine,C3H9N,,not detected in both,Sigma,HMDB0000906,,Microbiota related
+CJ0576,tryptamine,C10H12N2,8.76,Both,Sigma,HMDB0000303,,
+CJ0577,d-tryptophan,C11H12N2O2,9.4,Both,Sigma,HMDB0013609,,Amino acids
+CJ0578,tyramine,C8H11NO,10.01,Both,Sigma,HMDB0000306,,"Nucleosides, nucleotides, and analogues  "
+CJ0579,l-tyrosine,C9H11NO3,11.5,both,Sigma,HMDB0000158,,Amino acids
+CJ0580,uracil,C4H4N2O2,4.12,both,Sigma,HMDB0000300,,"Nucleosides, nucleotides, and analogues  "
+CJ0581,uric acid,C5H4N4O3,11.76,Posi,Sigma,HMDB0000289,,"Nucleosides, nucleotides, and analogues  "
+CJ0582,ureidopropionic acid,C4H8N2O3,9.79,Both,Sigma,HMDB0000026,,
+CJ0583,uridine,C9H12N2O6,6.98,Both,Sigma,HMDB0000296,,"Nucleosides, nucleotides, and analogues  "
+CJ0584,uridine 5'-diphosphate,C9H14N2O12P2,14.78,Nega,Sigma,HMDB0000295,,"Nucleosides, nucleotides, and analogues  "
+CJ0585,uridine diphosphate glucose,C15H24N2O17P2,14.58,Both,Sigma,HMDB0000286,,"Nucleosides, nucleotides, and analogues  "
+CJ0586,uridine diphosphate glucuronic acid,C15H22N2O18P2,14.83,Both,Sigma,HMDB0000935,,"Nucleosides, nucleotides, and analogues  "
+CJ0587,uridine diphosphate-n-acetylgalactosamine,C17H27N3O17P2,14.42,Both,Sigma,HMDB0000304,,"Nucleosides, nucleotides, and analogues  "
+CJ0588,uridine 5'-monophosphate,C9H13N2O9P,14.64,Both,Sigma,HMDB0000288,,"Nucleosides, nucleotides, and analogues  "
+CJ0589,uridine triphosphate,C9H15N2O15P3,17.04,Nega,Sigma,HMDB0000285,,"Nucleosides, nucleotides, and analogues  "
+CJ0590,urocanic acid,C6H6N2O2,9.31,Both,Sigma,HMDB0000301,,
+CJ0591,ursodeoxycholic acid,C24H40O4,3.82,Both,Sigma,HMDB0000946,,Bile acids 
+CJ0592,l-valine,C5H11NO2,11.84,both,Sigma,HMDB0000883,,Amino acids
+CJ0593,vanillin,C8H8O3,2.59,Nega,Sigma,HMDB0012308,,
+CJ0594,ergocalciferol,C28H44O,2.31,Posi,Sigma,HMDB0000900,,
+CJ0595,xanthine,C5H4N4O2,8.98,Both,Sigma,HMDB0000292,,"Nucleosides, nucleotides, and analogues  "
+CJ0596,xanthosine,C10H12N4O6,9.84,Both,Sigma,HMDB0000299,,"Nucleosides, nucleotides, and analogues  "
+CJ0597,xanthylic acid,C10H13N4O9P,14.8,Both,Sigma,HMDB0001554,,"Nucleosides, nucleotides, and analogues  "
+CJ0598,xanthurenic acid,C10H7NO4,3.74,Nega,Sigma,HMDB0000881,,Quinoline carboxylic acids  
+CJ0599,xylitol,C5H12O5,10.52,Both,Sigma,HMDB0242149,,Carbohydrates and carbohydrate conjugates  
+CJ0600,d-xylose,C5H10O5,9.78,Nega,Sigma,HMDB0000098,,Carbohydrates and carbohydrate conjugates  
+CJ0601,uridine diphosphategalactose,C15H24N2O17P2,14.6,Nega,Sigma,HMDB0000302,,"Nucleosides, nucleotides, and analogues  "
+CJ0602,uridine diphosphate-n-acetylglucosamine,C17H27N3O17P2,14.42,Both,Sigma,HMDB0000290,,"Nucleosides, nucleotides, and analogues  "
+CJ0603,glycodehydrocholate,C26H37NO6,2.38,,Bile acids,,,Bile acids 
+CJ0604,lithocholic acid glycine conjugate,C26H43NO4,,,Bile acids,HMDB0000698,,Bile acids 
+CJ0605,sulfoglycolithocholate(2-),C26H43NO7S,2.71,,Bile acids,HMDB0062801,,Bile acids 
+CJ0606,glycoursodeoxycholic acid,C26H43NO5,4.542,,Bile acids,HMDB0000708,,Bile acids 
+CJ0607,deoxycholic acid glycine conjugate,C26H43NO5,2.85,Nega,Bile acids,HMDB0000631,,Bile acids 
+CJ0608,hyocholic acid,C24H40O5,4.041,Nega,Bile acids,HMDB0000760,,Bile acids 
+CJ0609,hyodeoxycholic acid,C24H40O4,2.86,Nega,Bile acids,HMDB0000733,,Bile acids 
+CJ0610,taurochenodeoxycholate-3-sulfate,C26H45NO9S2,,,Bile acids,HMDB0002486,,bile acids 
+CJ0611,taurocholic acid,C26H45NO7S,2.71,,Bile acids,HMDB0000036,,Bile acids 
+CJ0612,taurodehydrocholic acid,C26H39NO7S,,,Bile acids,HMDB0258743,,bile acids 
+CJ0613,taurodeoxycholic acid,C26H45NO6S,3.08,,Bile acids,HMDB0000896,,bile acids 
+CJ0614,taurolithocholic acid 3-sulfate,C26H45NO8S2,,,Bile acids,HMDB0002580,,bile acids 
+CJ0615,tauroursodeoxycholic acid,C26H45NO6S,,,Bile acids,HMDB0000874,,bile acids 
+CJ0616,decanoylcarnitine,C17H33NO4,4.28,Posi,Carnitines,HMDB0000651,,carnitine
+CJ0617,9-decenoylcarnitine,C17H31NO4,4.35,Posi,Carnitines,HMDB0013205,,carnitine
+CJ0618,"2-trans,4-cis-decadienoylcarnitine",C17H29NO4,4.89,Posi,Carnitines,HMDB0013325,,carnitine
+CJ0619,"(2e,5z,7e)-decatrienoylcarnitine",C17H27NO4,5.61,Posi,Carnitines,HMDB0240752,,carnitine
+CJ0620,5-dodecenoylcarnitine,C19H35NO4,3.93,Posi,Carnitines,HMDB0241212,,carnitine
+CJ0621,"(8z,10e)-dodeca-8,10-dienoylcarnitine",C19H33NO4,4,Posi,Carnitines,HMDB0241245,,carnitine
+CJ0622,myristoylcarnitine,C21H41NO4,3.77,Posi,Carnitines,HMDB0254979,,carnitine
+CJ0623,cis-5-tetradecenoylcarnitine,C21H39NO4,3.75,Posi,Carnitines,HMDB0002014,,carnitine
+CJ0624,"(5z,8z)-tetradecadienoylcarnitine",C21H37NO4,3.84,Posi,Carnitines,HMDB0240756,,carnitine
+CJ0625,9-hexadecenoylcarnitine,C23H43NO4,3.73,Posi,Carnitines,HMDB0013207,,carnitine
+CJ0626,"(7z,10z)-hexadecadienoylcarnitine",C23H41NO4,3.74,Posi,Carnitines,HMDB0240757,,carnitine
+CJ0627,heptadecanoyl carnitine,C24H47NO4,3.72,Posi,Carnitines,HMDB0006210,,carnitine
+CJ0628,stearoylcarnitine,C25H49NO4,3.72,Posi,Carnitines,HMDB0000848,,carnitine
+CJ0629,na,C25H47NO4,3.71,Posi,Carnitines,HMDB0013338,,carnitine
+CJ0630,"(10z,12z)-octadeca-10,12-dienoylcarnitine",C25H45NO4,3.71,Posi,Carnitines,HMDB0240822,,carnitine
+CJ0631,arachidyl carnitine,C27H53NO4,3.7,Posi,Carnitines,HMDB0006460,,carnitine
+CJ0632,arachidonoylcarnitine,C31H53NO4,3.7,Posi,Carnitines,HMDB0006455,,carnitine
+CJ0633,docosanoylcarnitine,C29H57NO4,3.69,Posi,Carnitines,HMDB0062468,,carnitine
+CJ0634,"docosa-4,7,10,13,16-pentaenoyl carnitine",C29H47NO4,3.71,Posi,Carnitines,HMDB0006321,,carnitine
+CJ0635,cervonyl carnitine,C29H45NO4,3.71,Posi,Carnitines,HMDB0006510,,carnitine
+CJ0636,lignoceroylcarnitine,C31H61NO4,3.74,Posi,Carnitines,HMDB0240665,,carnitine
+CJ0637,8-methylpentacosanoylcarnitine,C33H65NO4,2.51,Posi,Carnitines,HMDB0241013,,carnitine
+CJ0638,octacosanoylcarnitine,C35H69NO4,2.5,Posi,Carnitines,HMDB0241644,,carnitine
+CJ0639,propionylcarnitine,C10H19NO4,10.58,Posi,Carnitines,HMDB0000824,,carnitine
+CJ0640,carnitine c30:0,C37H73NO4,2.49,Posi,Carnitines,,,carnitine
+CJ0641,valerylcarnitine,C12H23NO4,8.79,Posi,Carnitines,HMDB0013128,,carnitine
+CJ0642,tiglylcarnitine,C12H21NO4,9.23,Posi,Carnitines,HMDB0002366,,carnitine
+CJ0643,3-methylpentanoylcarnitine,C13H25NO4,8.34,Posi,Carnitines,HMDB0241033,,carnitine
+CJ0644,octanoylcarnitine,C15H29NO4,5.95,Posi,Carnitines,HMDB0000791,,carnitine
+CJ0645,2-octenoylcarnitine,C15H27NO4,7.28,Posi,Carnitines,HMDB0013324,,carnitine
+CJ0646,carnosic acid,C20H28O4,2.76,Nega,,HMDB0002358,,
+CJ0647,3-hydroxybutyrylcarnitine,C11H21NO5,12.7,Posi,Carnitines,HMDB0013127,,carnitine
+CJ0648,isobutyryl-l-carnitine,C11H21NO4,9.72,Posi,Carnitines,HMDB0000736,,carnitine
+CJ0649,13-hode,C18H32O3,2.18,Nega,fatty acids,HMDB0004667,,FA
+CJ0650,adrenic acid,C22H36O2,2.04,Nega,fatty acids,HMDB0002226,,FA
+CJ0651,arachidonic acid,C20H32O2,2.05,Nega,fatty acids,HMDB0001043,,FA
+CJ0652,behenic acid,C22H44O2,2.01,Nega,fatty acids,HMDB0000944,,FA
+CJ0653,tetradecenoic acid,C14H26O2,2.17,Nega,fatty acids,HMDB0302697,,FA
+CJ0654,goshuyic acid,C14H24O2,2.17,Nega,fatty acids,HMDB0000560,,FA
+CJ0655,pentadecanoic acid,C15H30O2,2.12,Nega,fatty acids,HMDB0000826,,FA
+CJ0656,10z-pentadecenoic acid,C15H28O2,2.12,Nega,fatty acids,HMDB0304816,,FA
+CJ0657,pentadecadienoic acid,C15H26O2,2.16,Nega,fatty acids,HMDB0302695,,FA
+CJ0658,16-hydroxyhexadecanoic acid,C16H32O3,2.33,Nega,fatty acids,HMDB0006294,,FA
+CJ0659,palmitic acid alkyne,C16H28O2,2.13,Nega,fatty acids,HMDB0341371,,FA
+CJ0660,10z-heptadecenoic acid,C17H32O2,2.08,Nega,fatty acids,HMDB0060038,,FA
+CJ0661,"methyl 2e,4z-hexadecadienoate",C17H30O2,2.11,Nega,fatty acids,HMDB0031050,,FA
+CJ0662,"octadeca-2,4,6,8-tetraenoic acid",C18H28O2,2.11,Nega,fatty acids,HMDB0255898,,
+CJ0663,nonadecenoic acid,C19H38O2,2.04,Nega,fatty acids,HMDB0302287,,FA
+CJ0664,10z-nonadecenoic acid,C19H36O2,2.06,Nega,fatty acids,HMDB0013622,,FA
+CJ0665,c19:2,C19H34O2,2.1,Nega,fatty acids,,,FA
+CJ0666,c19:3,C19H32O2,,,fatty acids,,,FA
+CJ0667,c19:4,C19H30O2,2.11,Nega,fatty acids,,,FA
+CJ0668,11z-eicosenoic acid,C20H38O2,2.04,Nega,fatty acids,HMDB0002231,,FA
+CJ0669,dihomo-gamma-linolenic acid,C20H34O2,2.07,Nega,fatty acids,HMDB0002925,,FA
+CJ0670,c20:7,C20H26O2,2.1,Nega,fatty acids,,,FA
+CJ0671,heneicosanoic acid,C21H42O2,2.02,Nega,fatty acids,HMDB0002345,,FA
+CJ0672,"6,8-heneicosanedione",C21H40O2,2.03,Nega,fatty acids,HMDB0035570,,FA
+CJ0673,"(8z,11z)-henicosa-8,11-dienoic acid",C21H38O2,2.07,Nega,fatty acids,HMDB0340936,,
+CJ0674,pregnanediol,C21H36O2,2.04,Nega,fatty acids,HMDB0004025,,
+CJ0675,"(2e,5e,12z,15z)-1-hydroxy-2,5,12,15-heneicosatetraen-4-one",C21H34O2,2.12,Nega,fatty acids,HMDB0036740,,FA
+CJ0676,pregnenolone,C21H32O2,2.07,Nega,fatty acids,HMDB0000253,,
+CJ0677,c21:6,C21H30O2,2.07,Nega,fatty acids,,,FA
+CJ0678,docosadienoate (22:2n6),C22H40O2,2.03,Nega,fatty acids,HMDB0061714,,FA
+CJ0679,docosatrienoic acid,C22H38O2,2.03,Nega,fatty acids,HMDB0002823,,FA
+CJ0680,(17z)-tricos-17-enoic acid,C23H44O2,2.01,Nega,fatty acids,HMDB0340945,,FA
+CJ0681,c23:2,C23H42O2,2.04,Nega,fatty acids,,,FA
+CJ0682,c23:3,C23H40O2,2.02,Nega,fatty acids,,,FA
+CJ0683,rosterolone,C23H38O2,2.01,Nega,fatty acids,HMDB0256842,,
+CJ0684,tetracosanoic acid,C24H48O2,2.01,Nega,fatty acids,HMDB0002003,,FA
+CJ0685,"2-cyclohexen-1-one, 3-(15-hydroxypentadecyl)-2,4,4-trimethyl-",C24H44O2,2.01,Nega,fatty acids,HMDB0258756,,FA
+CJ0686,c24:3,C24H42O2,2.02,Nega,fatty acids,,,FA
+CJ0687,tetracosatetraenoic acid (24:4n-6),C24H40O2,2.02,Nega,fatty acids,HMDB0006246,,FA
+CJ0688,tetracosapentenoic acid,C24H38O2,2.02,Nega,fatty acids,HMDB0258880,,FA
+CJ0689,tetracosahexaenoic acid,C24H36O2,2.03,Nega,fatty acids,HMDB0002007,,FA
+CJ0690,pentacosanoic acid,C25H50O2,2.2,Nega,fatty acids,HMDB0002361,,FA
+CJ0691,"6,8-pentacosanedione",C25H48O2,2.2,Nega,fatty acids,HMDB0035557,,FA
+CJ0692,erucoylacetone,C25H46O2,2.2,Nega,fatty acids,HMDB0035951,,FA
+CJ0693,"5-nonadecyl-1,3-benzenediol",C25H44O2,2.2,Nega,fatty acids,HMDB0030956,,
+CJ0694,hexacosanoic acid,C26H52O2,2.33,Nega,fatty acids,HMDB0002356,,FA
+CJ0695,ximenic acid,C26H50O2,2.36,Nega,fatty acids,HMDB0035215,,FA
+CJ0696,"(13z,16z)-hexacosa-13,16-dienoic acid",C26H48O2,2.32,Nega,fatty acids,HMDB0340950,,FA
+CJ0697,c26:3,C26H46O2,2.33,Nega,fatty acids,,,FA
+CJ0698,3-hydroxy-1-phenyl-1-eicosanone,C26H44O2,2.33,Nega,fatty acids,HMDB0036371,,FA
+CJ0699,"1-phenyl-1,3-eicosanedione",C26H42O2,2.35,Nega,fatty acids,HMDB0032925,,
+CJ0700,c26:6,C26H40O2,2.37,Nega,fatty acids,,,FA
+CJ0701,eicosadienoic acid,C20H36O2,2.05,Nega,fatty acids,HMDB0005060,,FA
+CJ0702,tridecanoic acid,C13H26O2,2.17,Nega,fatty acids,HMDB0000910,,FA
+CJ0703,undecanoic acid,C11H22O2,2.25,Nega,fatty acids,HMDB0000947,,FA
+CJ0704,9-decenoic acid,C10H18O2,2.38,Nega,fatty acids,HMDB0031003,,FA
+CJ0705,9-oxoode,C18H30O3,2.19,-,fatty acids,HMDB0004669,,
+CJ0706,cer(d18:1/14:0),C32H63NO3,2.29,Posi,Lipids,HMDB0011773,,Lipids
+CJ0707,"n-[(4e,8e)-1,3-dihydroxyoctadeca-4,8-dien-2-yl]hexadecanamide",C34H65NO3,2.24,Posi,Lipids,HMDB0035480,,Lipids
+CJ0708,cer(d18:1/18:0),C36H71NO3,2.26,Posi,Lipids,HMDB0004950,,Lipids
+CJ0709,cer(d18:1/18:1(9z)),C36H69NO3,2.24,Posi,Lipids,HMDB0004948,,Lipids
+CJ0710,cer(d18:1/20:0),C38H75NO3,2.26,Posi,Lipids,HMDB0004951,,Lipids
+CJ0711,cer(d18:1/22:0),C40H79NO3,2.31,Posi,Lipids,HMDB0004952,,Lipids
+CJ0712,cer(d18:1/22:1(13z)),C40H77NO3,2.26,Posi,Lipids,HMDB0011775,,Lipids
+CJ0713,cer(d18:1/23:0),C41H81NO3,2.34,Posi,Lipids,HMDB0000950,,Lipids
+CJ0714,cer(d18:0/24:1(15z)),C42H83NO3,2.6,Posi,Lipids,HMDB0011769,,Lipids
+CJ0715,cer(d18:1/24:1(15z)),C42H81NO3,2.29,Posi,Lipids,HMDB0004953,,Lipids
+CJ0716,cer(d18:0/16:0),C34H69NO3,2.24,Posi,Lipids,HMDB0011760,,Lipids
+CJ0717,dg(16:0/18:1(9z)/0:0),C37H70O5,2.244,Posi,Lipids,HMDB0007102,,DG
+CJ0718,"dg(16:0/18:2(9z,12z)/0:0)",C37H68O5,2.264,Posi,Lipids,HMDB0007103,,DG
+CJ0719,"dg(16:0/18:3(6z,9z,12z)/0:0)",C37H66O5,2.256,Posi,Lipids,HMDB0007104,,DG
+CJ0720,"dg(16:0/18:4(6z,9z,12z,15z)/0:0)",C37H64O5,2.256,Posi,Lipids,HMDB0007106,,DG
+CJ0721,"dg(18:2(9z,12z)/18:1(11z)/0:0)",C39H70O5,2.298,Posi,Lipids,HMDB0007246,,DG
+CJ0722,"dg(18:2(9z,12z)/18:2(9z,12z)/0:0)",C39H68O5,2.3,Posi,Lipids,HMDB0007248,,DG
+CJ0723,"dg(18:2(9z,12z)/18:3(6z,9z,12z)/0:0)",C39H66O5,2.3,Posi,Lipids,HMDB0007249,,DG
+CJ0724,dg(18:2n6/0:0/18:3n3),C40H68O5,2.28,Posi,Lipids,HMDB0056290,,DG
+CJ0725,"dg(18:1(11z)/20:4(5z,8z,11z,14z)/0:0)",C41H70O5,2.28,Posi,Lipids,HMDB0007199,,DG
+CJ0726,"dg(18:1(11z)/20:5(5z,8z,11z,14z,17z)/0:0)",C41H68O5,2.217,Posi,Lipids,HMDB0007201,,DG
+CJ0727,"dg(18:3(6z,9z,12z)/20:5(5z,8z,11z,14z,17z)/0:0)",C41H64O5,2.176,Posi,Lipids,HMDB0007288,,DG
+CJ0728,dg (39:5),C42H72O5,2.2,Posi,Lipids,,,DG
+CJ0729,dg(18:2n6/0:0/20:4n6),C42H70O5,2.2,Posi,Lipids,HMDB0056286,,DG
+CJ0730,"dg(18:0/22:6(4z,7z,10z,13z,16z,19z)/0:0)",C43H72O5,2.17,Posi,Lipids,HMDB0007179,,DG
+CJ0731,"dg(18:2(9z,12z)/22:5(7z,10z,13z,16z,19z)/0:0)",C43H70O5,2.31,Posi,Lipids,HMDB0007265,,DG
+CJ0732,"dg(18:2(9z,12z)/22:6(4z,7z,10z,13z,16z,19z)/0:0)",C43H68O5,2.3,Posi,Lipids,HMDB0007266,,DG
+CJ0733,"dg(22:0/22:6(4z,7z,10z,13z,16z,19z)/0:0)",C47H80O5,2.15,Posi,Lipids,HMDB0007614,,DG
+CJ0734,"dg(22:1(13z)/22:6(4z,7z,10z,13z,16z,19z)/0:0)",C47H78O5,2.15,Posi,Lipids,HMDB0007643,,DG
+CJ0735,lysopc(p-16:0/0:0),C24H50NO6P,3.84,Posi,Lipids,HMDB0010407,,Lipids
+CJ0736,lysopc(p-18:0/0:0),C26H54NO6P,3.96,Posi,Lipids,HMDB0013122,,Lipids
+CJ0737,lysopc(p-18:1(9z)/0:0),C26H52NO6P,3.9,Posi,Lipids,HMDB0010408,,Lipids
+CJ0738,lysopc(14:1(9z)/0:0),C22H44NO7P,4.194,,Lipids,HMDB0010380,,Lipids
+CJ0739,lysopc(15:0/0:0),C23H48NO7P,3.89,Both,Lipids,HMDB0010381,,Lipids
+CJ0740,lysopc(16:0/0:0),C24H50NO7P,3.989,Posi,Lipids,HMDB0010382,,Lipids
+CJ0741,lysopc(16:1(9z)/0:0),C24H48NO7P,4.045,Posi,Lipids,HMDB0010383,,Lipids
+CJ0742,lysopc(18:0/0:0),C26H54NO7P,3.842,Posi,Lipids,HMDB0010384,,Lipids
+CJ0743,lysopc(18:1(9z)/0:0),C26H52NO7P,3.742,Posi,Lipids,HMDB0002815,,Lipids
+CJ0744,"lysopc(18:2(9z,12z)/0:0)",C26H50NO7P,3.642,Posi,Lipids,HMDB0010386,,Lipids
+CJ0745,"lysopc(18:3(6z,9z,12z)/0:0)",C26H48NO7P,3.554,Posi,Lipids,HMDB0010387,,Lipids
+CJ0746,lysopc(20:0/0:0),C28H58NO7P,3.682,Posi,Lipids,HMDB0010390,,Lipids
+CJ0747,lysopc(20:1(11z)/0:0),C28H56NO7P,3.74,Posi,Lipids,HMDB0010391,,Lipids
+CJ0748,"lysopc(20:2(11z,14z)/0:0)",C28H54NO7P,3.78,Posi,Lipids,HMDB0010392,,Lipids
+CJ0749,"lysopc(20:3(8z,11z,14z)/0:0)",C28H52NO7P,3.8,Posi,Lipids,HMDB0010394,,Lipids
+CJ0750,"lysopc(20:4(5z,8z,11z,14z)/0:0)",C28H50NO7P,3.846,Posi,Lipids,HMDB0010395,,Lipids
+CJ0751,"lysopc(20:5(5z,8z,11z,14z,17z)/0:0)",C28H48NO7P,3.84,Posi,Lipids,HMDB0010397,,Lipids
+CJ0752,lysopc(22:0/0:0),C30H62NO7P,3.582,Posi,Lipids,HMDB0010398,,Lipids
+CJ0753,lysopc(22:1(13z)/0:0),C30H60NO7P,3.695,Posi,Lipids,HMDB0010399,,Lipids
+CJ0754,"lysopc(22:4(7z,10z,13z,16z)/0:0)",C30H54NO7P,3.75,Posi,Lipids,HMDB0010401,,Lipids
+CJ0755,"lysopc(22:5(4z,7z,10z,13z,16z)/0:0)",C30H52NO7P,3.727,Posi,Lipids,HMDB0010402,,Lipids
+CJ0756,"lysopc(22:6(4z,7z,10z,13z,16z,19z)/0:0)",C30H50NO7P,3.818,Posi,Lipids,HMDB0010404,,Lipids
+CJ0757,lysopc(24:0/0:0),C32H66NO7P,3.5,Posi,Lipids,HMDB0010405,,Lipids
+CJ0758,lysopc(24:1(15z)/0:0),C32H64NO7P,3.75,Posi,Lipids,HMDB0010406,,Lipids
+CJ0759,lysope(0:0/16:0),C21H44NO6P,4.013,Posi,Lipids,HMDB0011473,,Lipids
+CJ0760,lysope(0:0/16:1(9z)),C21H42NO7P,3.948,,Lipids,HMDB0011474,,Lipids
+CJ0761,lysope(0:0/18:0),C23H48NO7P,3.9,,Lipids,HMDB0011129,,Lipids
+CJ0762,lysope(0:0/18:1(11z)),C23H46NO7P,3.904,Both,Lipids,HMDB0011475,,Lipids
+CJ0763,"lysope(0:0/18:2(9z,12z))",C23H44NO7P,3.899,Both,Lipids,HMDB0011477,,Lipids
+CJ0764,"lysope(0:0/18:3(6z,9z,12z))",C23H42NO7P,3.899,,Lipids,HMDB0011478,,Lipids
+CJ0765,lysope(0:0/20:0),C25H52NO7P,3.9,Posi,Lipids,HMDB0011481,,Lipids
+CJ0766,lysope(20:1(11z)/0:0),C25H50NO7P,3.97,Posi,Lipids,HMDB0011512,,Lipids
+CJ0767,"lysope(0:0/20:2(11z,14z))",C25H48NO7P,3.895,,Lipids,HMDB0011483,,Lipids
+CJ0768,"lysope(20:4(5z,8z,11z,14z)/0:0)",C25H44NO7P,3.889,Both,Lipids,HMDB0011517,,Lipids
+CJ0769,"lysope(0:0/20:5(5z,8z,11z,14z,17z))",C25H42NO7P,3.819,,Lipids,HMDB0011489,,Lipids
+CJ0770,lysope(22:0/0:0),C27H56NO7P,3.793,Posi,Lipids,HMDB0011520,,Lipids
+CJ0771,lysope(0:0/22:1(13z)),C27H54NO7P,3.845,Posi,Lipids,HMDB0011491,,Lipids
+CJ0772,"lysope(0:0/22:4(7z,10z,13z,16z))",C27H48NO7P,3.845,,Lipids,HMDB0011493,,Lipids
+CJ0773,"lysope(0:0/22:5(4z,7z,10z,13z,16z))",C27H46NO7P,3.845,Posi,Lipids,HMDB0011494,,Lipids
+CJ0774,"lysope(0:0/22:6(4z,7z,10z,13z,16z,19z))",C27H44NO7P,3.845,Both,Lipids,HMDB0011496,,Lipids
+CJ0775,lysope(0:0/24:0),C29H60NO7P,3.6,Posi,Lipids,HMDB0011497,,Lipids
+CJ0776,1-stearoylglycerophosphoglycerol,C24H49O9P,2.42,Posi,Lipids,HMDB0061697,,Lipids
+CJ0777,lysops(22:0) ,C28H56NO9P,3.91,,Lipids,,,Lipids
+CJ0778,pa(18:1(11z)/15:0),C36H69O8P,2.15,Posi,Lipids,HMDB0114898,,
+CJ0779,pa (34:1) isomer,C37H71O8P,,,Lipids,,,Lipids
+CJ0780,pa (34:2) isomer,C37H69O8P,,,Lipids,,,Lipids
+CJ0781,pa (36:2) isomer,C39H73O8P,,,Lipids,,,Lipids
+CJ0782,pa (36:4) isomer,C39H69O8P,,,Lipids,,,Lipids
+CJ0783,pc(14:0/14:0),C36H72NO8P,3.5,Posi,Lipids,HMDB0007866,,Lipids
+CJ0784,pc(14:0/16:0),C38H76NO8P,3.2,,Lipids,HMDB0007869,,Lipids
+CJ0785,pc(16:1(9z)/14:0),C38H74NO8P,3.2,,Lipids,HMDB0007998,,Lipids
+CJ0786,pc(16:0/16:1(9z)),C40H78NO8P,3.2,Posi,Lipids,HMDB0007969,,Lipids
+CJ0787,"pc(18:2(9z,12z)/14:0)",C40H76NO8P,3.16,Posi,Lipids,HMDB0008130,,Lipids
+CJ0788,pc(18:1(9z)/15:0),C41H80NO8P,3.14,Posi,Lipids,HMDB0008099,,Lipids
+CJ0789,"pe(18:0/18:3(9z,12z,15z))",C41H76NO8P,3.16,Both,Lipids,HMDB0008996,,Lipids
+CJ0790,pc(18:0/16:0),C42H84NO8P,3.2,,Lipids,HMDB0008034,,Lipids
+CJ0791,pc(18:1(9z)/16:0),C42H82NO8P,3.22,Posi,Lipids,HMDB0008100,,Lipids
+CJ0792,"pc(18:2(9z,12z)/16:0)",C42H80NO8P,3.24,Posi,Lipids,HMDB0008133,,Lipids
+CJ0793,"pc(18:2(9z,12z)/16:1(9z))",C42H78NO8P,3.26,,Lipids,HMDB0008134,,Lipids
+CJ0794,"pc(16:0/18:4(6z,9z,12z,15z))",C42H76NO8P,3.28,,Lipids,HMDB0007976,,Lipids
+CJ0795,"pc(14:0/20:5(5z,8z,11z,14z,17z))",C42H74NO8P,3.3,,Lipids,HMDB0007885,,Lipids
+CJ0796,"pc(18:2(9z,12z)/17:0)",C43H82NO8P,3.14,Posi,Lipids,HMDB0256162,,Lipids
+CJ0797,"pc(20:5(5z,8z,11z,14z,17z)/15:0)",C43H76NO8P,3.2,Posi,Lipids,HMDB0008494,,Lipids
+CJ0798,"pc(18:0/18:2(9z,12z))",C44H84NO8P,3.16,Posi,Lipids,HMDB0008039,,Lipids
+CJ0799,"pc(18:2(9z,12z)/18:1(11z))",C44H82NO8P,3.18,Posi,Lipids,HMDB0008136,,Lipids
+CJ0800,"pc(18:1(9z)/18:3(6z,9z,12z))",C44H80NO8P,3.2,Posi,Lipids,HMDB0008106,,Lipids
+CJ0801,"pc(18:3(9z,12z,15z)/19:1(9z))",C45H82NO8P,3.2,Posi,Lipids,HMDB0256165,,Lipids
+CJ0802,"pc(18:1(9z)/20:2(11z,14z))",C46H86NO8P,3.15,,Lipids,HMDB0008111,,Lipids
+CJ0803,"pc(18:2(9z,12z)/20:2(11z,14z))",C46H84NO8P,3.16,,Lipids,HMDB0008145,,Lipids
+CJ0804,"pc(22:5(4z,7z,10z,13z,16z)/16:0)",C46H82NO8P,3.17,,Lipids,HMDB0008659,,Lipids
+CJ0805,"pc(18:2(9z,12z)/20:4(5z,8z,11z,14z))",C46H80NO8P,3.18,Posi,Lipids,HMDB0008147,,Lipids
+CJ0806,"pc(18:0/18:3(9z,12z,15z))",C46H78NO8P,3.19,,Lipids,HMDB0008041,,Lipids
+CJ0807,"pc(18:3(9z,12z,15z)/20:5(5z,8z,11z,14z,17z))",C46H76NO8P,3.2,,Lipids,HMDB0008215,,Lipids
+CJ0808,"pc(20:4(5z,8z,11z,14z)/20:1(11z))",C48H86NO8P,3.2,,Lipids,HMDB0008439,,Lipids
+CJ0809,"pc(18:1(9z)/22:5(7z,10z,13z,16z,19z))",C48H84NO8P,3.2,,Lipids,HMDB0008122,,Lipids
+CJ0810,"pc(22:6(4z,7z,10z,13z,16z,19z)/18:3(9z,12z,15z))",C48H78NO8P,3.5,,Lipids,HMDB0008732,,Lipids
+CJ0811,pe(18:1(11z)/p-18:1(11z)),C41H78NO7P,2.75025,Both,Lipids,HMDB0009050,,Lipids
+CJ0812,"pe(p-16:0/20:4(5z,8z,11z,14z))",C41H74NO7P,2.7005,Both,Lipids,HMDB0011352,,Lipids
+CJ0813,"pe(20:4(5z,8z,11z,14z)/p-18:1(9z))",C43H76NO7P,2.92475,Both,Lipids,HMDB0009414,,Lipids
+CJ0814,"pe(p-18:0/22:6(4z,7z,10z,13z,16z,19z))",C45H78NO7P,2.818,Both,Lipids,HMDB0011394,,Lipids
+CJ0815,"pe(p-18:1(11z)/22:6(4z,7z,10z,13z,16z,19z))",C45H76NO7P,2.818,Both,Lipids,HMDB0011427,,Lipids
+CJ0816,pe(16:1(9z)/16:0),C37H72NO8P,3.7,Posi,Lipids,HMDB0008956,,Lipids
+CJ0817,pe(16:1(9z)/16:1(9z)),C37H70NO8P,3.7,,Lipids,HMDB0008957,,Lipids
+CJ0818,pc(16:0/15:0),C39H78NO8P,3.659,,Lipids,HMDB0007967,,Lipids
+CJ0819,pe(16:0/18:1(9z)),C39H76NO8P,3.659,,Lipids,HMDB0008927,,Lipids
+CJ0820,"pe(16:0/18:2(9z,12z))",C39H74NO8P,3.675,,Lipids,HMDB0008928,,Lipids
+CJ0821,"pe(16:0/18:3(6z,9z,12z))",C39H72NO8P,3.68,,Lipids,HMDB0008929,,Lipids
+CJ0822,"pe(20:2(11z,14z)/15:0)",C40H76NO8P,3.665,,Lipids,HMDB0009285,,Lipids
+CJ0823,pe(16:0/20:0),C41H82NO8P,3.6,,Lipids,HMDB0008932,,Lipids
+CJ0824,pe(18:0/18:1(9z)),C41H80NO8P,3.62,,Lipids,HMDB0008993,,Lipids
+CJ0825,"pe(18:0/18:2(9z,12z))",C41H78NO8P,3.658,,Lipids,HMDB0008994,,Lipids
+CJ0826,"pe(18:2(9z,12z)/18:1(9z))",C41H76NO8P,3.67,,Lipids,HMDB0009092,,Lipids
+CJ0827,"pe(16:0/20:4(5z,8z,11z,14z))",C41H74NO8P,3.67,,Lipids,HMDB0008937,,Lipids
+CJ0828,"pe(18:4(6z,9z,12z,15z)/p-18:1(9z))",C41H72NO7P,3.67,,Lipids,HMDB0009216,,Lipids
+CJ0829,"pe(18:3(6z,9z,12z)/18:2(9z,12z))",C41H72NO8P,3.65,,Lipids,HMDB0009126,,Lipids
+CJ0830,"pe(18:2(9z,12z)/18:4(6z,9z,12z,15z))",C41H70NO8P,3.66,,Lipids,HMDB0009096,,Lipids
+CJ0831,"pe(22:4(7z,10z,13z,16z)/15:0)",C42H76NO8P,3.6,,Lipids,HMDB0009582,,Lipids
+CJ0832,"pc(20:4(5z,8z,11z,14z)/14:1(9z))",C42H74NO8P,3.645,,Lipids,HMDB0008427,,Lipids
+CJ0833,"pe(15:0/22:6(4z,7z,10z,13z,16z,19z))",C42H72NO8P,3.693,,Lipids,HMDB0008913,,Lipids
+CJ0834,pe(16:1(9z)/22:0),C43H84NO8P,3.656,,Lipids,HMDB0008973,,Lipids
+CJ0835,"pe(16:0/22:2(13z,16z))",C43H82NO8P,3.656,,Lipids,HMDB0008942,,Lipids
+CJ0836,"pe(20:3(8z,11z,14z)/18:0)",C43H80NO8P,3.669,,Lipids,HMDB0009354,,Lipids
+CJ0837,pe (p-18:0/20:4) isomer,C43H78NO7P,,,Lipids,HMDB0009412,,Lipids
+CJ0838,"pe(18:0/20:4(8z,11z,14z,17z))",C43H78NO8P,3.7,,Lipids,HMDB0009004,,Lipids
+CJ0839,"pe(20:4(6e,8z,11z,14z)+=o(5)/p-18:1(9z))",C43H74NO8P,3.71,,Lipids,HMDB0285526,,Lipids
+CJ0840,"pe(20:5(5z,8z,11z,14z,17z)/18:2(9z,12z))",C43H72NO8P,3.72,,Lipids,HMDB0009456,,Lipids
+CJ0841,"pe(18:4(6z,9z,12z,15z)/20:4(8z,11z,14z,17z))",C43H70NO8P,3.73,,Lipids,HMDB0009202,,Lipids
+CJ0842,"pc(18:2(9z,12z)/18:2(9z,12z))",C44H80NO8P,3.359,,Lipids,HMDB0008138,,Lipids
+CJ0843,"pc(20:5(5z,8z,11z,14z,17z)/16:1(9z))",C44H76NO8P,3.4,,Lipids,HMDB0008496,,Lipids
+CJ0844,pe (39:7) ,C44H74NO8P,3.45,,Lipids,,,Lipids
+CJ0845,pe(18:0/22:1(13z)),C45H88NO8P,3.663,,Lipids,HMDB0009007,,Lipids
+CJ0846,pe(22:1(13z)/18:1(9z)),C45H86NO8P,3.663,,Lipids,HMDB0009521,,Lipids
+CJ0847,"pe(22:2(13z,16z)/18:1(11z))",C45H84NO8P,3.67,,Lipids,HMDB0009553,,Lipids
+CJ0848,"pe(p-18:0/22:4(7z,10z,13z,16z))",C45H82NO7P,2.818,,Lipids,HMDB0011391,,Lipids
+CJ0849,"pe(18:0/22:4(7z,10z,13z,16z))",C45H82NO8P,3.68,,Lipids,HMDB0009009,,Lipids
+CJ0850,"pe(p-18:1(9z)/22:4(7z,10z,13z,16z))",C45H80NO7P,2.818,,Lipids,HMDB0011457,,Lipids
+CJ0851,"pe(20:1(11z)/20:4(5z,8z,11z,14z))",C45H80NO8P,3.69,,Lipids,HMDB0009267,,Lipids
+CJ0852,"pe(18:2(9z,12z)/22:4(7z,10z,13z,16z))",C45H78NO8P,3.7,,Lipids,HMDB0009108,,Lipids
+CJ0853,"pe(20:3(5z,8z,11z)/20:4(5z,8z,11z,14z)) ",C45H76NO8P,3.71,,Lipids,HMDB0009333,,Lipids
+CJ0854,"pe(20:4(5z,8z,11z,14z)/20:4(5z,8z,11z,14z))",C45H74NO8P,3.73,,Lipids,HMDB0009399,,Lipids
+CJ0855,"pe(20:4(8z,11z,14z,17z)/20:5(5z,8z,11z,14z,17z))",C45H72NO8P,3.74,,Lipids,HMDB0009434,,Lipids
+CJ0856,pe (41:7) ,C46H78NO8P,3.6,,Lipids,,,Lipids
+CJ0857,"pe(20:4(8z,11z,14z,17z)/22:6(4z,7z,10z,13z,16z,19z))",C47H74NO8P,3.88,,Lipids,HMDB0009441,,Lipids
+CJ0858,pe(20:1(11z)/22:1(13z)),C47H90NO8P,3.795,,Lipids,HMDB0009271,,Lipids
+CJ0859,"pe(18:2(9z,12z)/24:1(15z))",C47H88NO8P,3.8,,Lipids,HMDB0009113,,Lipids
+CJ0860,"pe(20:4(8z,11z,14z,17z)/22:0)",C47H86NO8P,3.81,,Lipids,HMDB0009435,,Lipids
+CJ0861,"pe(20:0/22:5(7z,10z,13z,16z,19z))",C47H84NO8P,3.82,,Lipids,HMDB0009242,,Lipids
+CJ0862,"pe(22:2(13z,16z)/20:4(8z,11z,14z,17z))",C47H82NO8P,3.83,,Lipids,HMDB0009565,,Lipids
+CJ0863,"pe(22:4(7z,10z,13z,16z)/20:3(5z,8z,11z))",C47H80NO8P,3.84,,Lipids,HMDB0009595,,Lipids
+CJ0864,"pe(20:4(5z,8z,11z,14z)/22:4(7z,10z,13z,16z))",C47H78NO8P,3.85,,Lipids,HMDB0009405,,Lipids
+CJ0865,"pe(22:6(4z,7z,10z,13z,16z,19z)/20:3(8z,11z,14z))",C47H76NO8P,3.86,,Lipids,HMDB0009695,,Lipids
+CJ0866,"pe(22:6(4z,7z,10z,13z,16z,19z)/22:6(4z,7z,10z,13z,16z,19z))",C49H74NO8P,3.85,,Lipids,HMDB0009705,,Lipids
+CJ0867,"pe(20:4(5z,8z,11z,14z)/24:0)",C49H90NO8P,3.649,,Lipids,HMDB0009409,,Lipids
+CJ0868,"pe(22:5(4z,7z,10z,13z,16z)/22:0)",C49H88NO8P,3.807,,Lipids,HMDB0009633,,Lipids
+CJ0869,"pe(22:1(13z)/22:5(7z,10z,13z,16z,19z))",C49H86NO8P,3.81,,Lipids,HMDB0009539,,Lipids
+CJ0870,"pe(22:2(13z,16z)/22:5(4z,7z,10z,13z,16z))",C49H84NO8P,3.82,,Lipids,HMDB0009571,,Lipids
+CJ0871,"pe(22:4(7z,10z,13z,16z)/22:4(7z,10z,13z,16z))",C49H82NO8P,3.83,,Lipids,HMDB0009602,,Lipids
+CJ0872,"pe(p-18:1(11z)/18:3(6z,9z,12z))",C41H74NO7P,,,Lipids,HMDB0011410,,Lipids
+CJ0873,"pe(p-18:1(11z)/20:4(5z,8z,11z,14z))",C43H76NO7P,,,Lipids,HMDB0011418,,Lipids
+CJ0874,pemoline,C9H8N2O2,4.36,Posi,Lipids,HMDB0256214,,
+CJ0875,pentanoyl-coa,C26H44N7O17P3S,13.09,Posi,Lipids,HMDB0013037,,CoAs  
+CJ0876,na,C8HF17O3S,,,Lipids,HMDB0059586,,
+CJ0877,perillic acid,C10H14O2,,,Lipids,HMDB0004586,,
+CJ0878,d-glycero-d-galacto-heptitol,C7H16O7,,,Lipids,HMDB0033750,,Carbohydrates and carbohydrate conjugates  
+CJ0879,pg(16:0/16:1(9z)),C38H73O10P,2.132,,Lipids,HMDB0010571,,Lipids
+CJ0880,pg(18:0/16:0),C40H79O10P,2.1,,Lipids,HMDB0010600,,Lipids
+CJ0881,pg(16:0/18:1(11z)),C40H77O10P,2.143,,Lipids,HMDB0010573,,Lipids
+CJ0882,"pg(16:0/18:2(9z,12z))",C40H75O10P,2.103,,Lipids,HMDB0010575,,Lipids
+CJ0883,"pg(16:0/18:3(6z,9z,12z))",C40H73O10P,2.103,,Lipids,HMDB0010576,,Lipids
+CJ0884,pg(18:1(9z)/18:1(9z)),C42H79O10P,1.992,,Lipids,HMDB0010634,,Lipids
+CJ0885,"pg(18:2(9z,12z)/18:2(9z,12z))",C42H75O10P,2.092,,Lipids,HMDB0010650,,Lipids
+CJ0886,"pg(18:2(9z,12z)/18:3(6z,9z,12z))",C42H73O10P,2.12,,Lipids,HMDB0010651,,Lipids
+CJ0887,"pg(18:3(9z,12z,15z)/18:3(6z,9z,12z))",C42H71O10P,2.22,,Lipids,HMDB0010681,,Lipids
+CJ0888,"pg(18:0/20:3(5z,8z,11z))",C44H81O10P,1.937,,Lipids,HMDB0010608,,Lipids
+CJ0889,"pg(18:0/20:4(5z,8z,11z,14z))",C44H79O10P,2.075,,Lipids,HMDB0010610,,Lipids
+CJ0890,"pg(18:1(11z)/20:4(5z,8z,11z,14z))",C44H77O10P,1.995,,Lipids,HMDB0010625,,Lipids
+CJ0891,"pg(16:0/22:6(4z,7z,10z,13z,16z,19z))",C44H75O10P,2.019,,Lipids,HMDB0010584,,Lipids
+CJ0892,"pg(16:1(9z)/22:6(4z,7z,10z,13z,16z,19z))",C44H73O10P,1.88,,Lipids,HMDB0010599,,Lipids
+CJ0893,pg (39:7) ,C45H75O10P,1.8,,Lipids,,,Lipids
+CJ0894,"pg(18:0/22:5(4z,7z,10z,13z,16z))",C46H81O10P,1.998,,Lipids,HMDB0010612,,Lipids
+CJ0895,"pg(18:0/22:6(4z,7z,10z,13z,16z,19z))",C46H79O10P,1.935,,Lipids,HMDB0010614,,Lipids
+CJ0896,"pg(18:2(9z,12z)/22:5(7z,10z,13z,16z,19z))",C46H77O10P,1.97,,Lipids,HMDB0010658,,Lipids
+CJ0897,"pg(18:2(9z,12z)/22:6(4z,7z,10z,13z,16z,19z))",C46H75O10P,1.966,,Lipids,HMDB0010659,,Lipids
+CJ0898,"pi(16:0/18:2(9z,12z))",C43H79O13P,2.5,,Lipids,HMDB0009784,,Lipids
+CJ0899,"pi(18:1(9z)/18:3(6z,9z,12z))",C45H79O13P,2.55,Posi,Lipids,HMDB0009839,,Lipids
+CJ0900,"pi(18:0/20:4(8z,11z,14z,17z))",C47H83O13P,2.589,Posi,Lipids,HMDB0009816,,Lipids
+CJ0901,"pi(20:4(8z,11z,14z,17z)/18:1(9z))",C47H81O13P,2.6,,Lipids,HMDB0009902,,Lipids
+CJ0902,pi (40:0),C49H95O13P,2.21,Posi,Lipids,,,Lipids
+CJ0903,"pi(18:0/22:6(4z,7z,10z,13z,16z,19z))",C49H83O13P,2.6,,Lipids,HMDB0009821,,Lipids
+CJ0904,ps(14:0/14:1(9z)),C34H64NO10P,3.8,,Lipids,HMDB0012331,,Lipids
+CJ0905,ps(16:1(9z)/14:0),C36H68NO10P,3.8,,Lipids,HMDB0012363,,Lipids
+CJ0906,ps(16:0/16:1(9z)),C38H72NO10P,3.8,,Lipids,HMDB0012355,,Lipids
+CJ0907,ps(16:0/18:1(9z)),C40H76NO10P,3.843,,Lipids,HMDB0012357,,Lipids
+CJ0908,ps(18:0/18:0),C42H82NO10P,3.8,,Lipids,HMDB0012378,,Lipids
+CJ0909,ps(18:1(9z)/18:0),C42H80NO10P,3.852,,Lipids,HMDB0012389,,Lipids
+CJ0910,"ps(18:0/18:2(9z,12z))",C42H78NO10P,3.86,,Lipids,HMDB0012380,,Lipids
+CJ0911,"ps(18:0/20:3(8z,11z,14z))",C44H80NO10P,3.8,,Lipids,HMDB0012382,,Lipids
+CJ0912,"ps(16:0/22:6(4z,7z,10z,13z,16z,19z))",C44H74NO10P,3.9,,Lipids,HMDB0012362,,Lipids
+CJ0913,"ps(18:0/22:5(7z,10z,13z,16z,19z))",C46H80NO10P,3.85,,Lipids,HMDB0010166,,Lipids
+CJ0914,"ps(18:0/22:6(4z,7z,10z,13z,16z,19z))",C46H78NO10P,3.9,,Lipids,HMDB0010167,,Lipids
+CJ0915,"ps(18:1(9z)/22:6(4z,7z,10z,13z,16z,19z))",C46H76NO10P,3.9,,Lipids,HMDB0012395,,Lipids
+CJ0916,"ps(20:4(5z,8z,11z,14z)/20:4(8z,11z,14z,17z))",C46H74NO10P,3.9,,Lipids,HMDB0112644,,Lipids
+CJ0917,"ps(20:4(5z,8z,11z,14z)/20:5(5z,8z,11z,14z,17z))",C46H72NO10P,3.9,,Lipids,HMDB0112645,,Lipids
+CJ0918,"ps(20:0/22:5(7z,10z,13z,16z,19z))",C48H84NO10P,3.8,,Lipids,HMDB0112536,,Lipids
+CJ0919,"ps(20:4(5z,8z,11z,14z)/22:5(4z,7z,10z,13z,16z))",C48H76NO10P,3.8,,Lipids,HMDB0112650,,Lipids
+CJ0920,"ps(22:5(4z,7z,10z,13z,16z)/22:5(7z,10z,13z,16z,19z))",C50H78NO10P,3.8,,Lipids,HMDB0112836,,Lipids
+CJ0921,sm(d18:1/14:0),C37H75N2O6P,3.71,Posi,Lipids,HMDB0012097,,Lipids
+CJ0922,sm(d18:1/16:0),C39H79N2O6P,3.693,Posi,Lipids,HMDB0010169,,Lipids
+CJ0923,sm(d18:1/16:1(9z)),C39H77N2O6P,3.71,Posi,Lipids,HMDB0240613,,Lipids
+CJ0924,sm(d18:1/18:1(9z)),C41H81N2O6P,3.695,Posi,Lipids,HMDB0012101,,Lipids
+CJ0925,sm(d18:1/20:0),C43H87N2O6P,3.7,Posi,Lipids,HMDB0012102,,Lipids
+CJ0926,sm(d18:1/20:1(11z)),C43H85N2O6P,3.71,Posi,Lipids,HMDB0240610,,Lipids
+CJ0927,"sm(d18:0/20:2(11z,14z))",C43H83N2O6P,3.72,Posi,Lipids,HMDB0013465,,Lipids
+CJ0928,sm(d18:1/22:0),C45H91N2O6P,3.7,Posi,Lipids,HMDB0012103,,Lipids
+CJ0929,sm(d16:1/24:1(15z)),C45H89N2O6P,3.71,Posi,Lipids,HMDB0011694,,Lipids
+CJ0930,"sm(d18:1/22:2(13z,16z))",C45H87N2O6P,3.72,Posi,Lipids,HMDB0240670,,Lipids
+CJ0931,"sm(d18:0/22:3(10z,13z,16z))",C45H85N2O6P,3.73,Posi,Lipids,HMDB0013468,,Lipids
+CJ0932,sm(d18:1/23:0),C46H93N2O6P,3.65,Posi,Lipids,HMDB0012105,,Lipids
+CJ0933,sm(d18:1/24:0),C47H95N2O6P,3.6,Posi,Lipids,HMDB0011697,,Lipids
+CJ0934,sm(d18:1/24:1(15z)),C47H93N2O6P,3.61,Posi,Lipids,HMDB0012107,,Lipids
+CJ0935,lysopc(14:0/0:0),C22H46NO7P,4.194,Posi,Lipids,HMDB0010379,,Lipids
+CJ0936,dimethylguanidino valeric acid,C8H15N3O3,10.25,Posi,DDA,HMDB0240212,,
+CJ0937,"(r)-3,4-dihydro-2-(4,8,12-trimethyl-3,7,11-tridecatrienyl)-2h-1-benzopyran-6-ol",C25H36O2,2.2,Nega,DDA,HMDB0036013,,
+CJ0938,(r)-amphetamine,C9H13N,3.57,Posi,DDA,HMDB0012128,,
+CJ0939,"1-(1,2,3,4,5-pentahydroxypent-1-yl)-1,2,3,4-tetrahydro-beta-carboline-3-carboxylate",C17H22N2O7,13.98,Nega,DDA,HMDB0012492,,
+CJ0940,"1,2,3-trihydroxybenzene",C6H6O3,15.665,Both,DDA,HMDB0013674,,
+CJ0941,"1,2-benzisothiazol-3(2h)-one",C7H5NOS,2.53,Nega,DDA,HMDB0034413,,
+CJ0942,"1,3-dimethyluracil",C6H8N2O2,10.4,Posi,DDA,HMDB0002144,,"Nucleosides, nucleotides, and analogues  "
+CJ0943,"1,5-naphthalenediamine",C10H10N2,9.37,Posi,DDA,HMDB0244231,,
+CJ0944,"glyceric acid 1,3-biphosphate",C3H8O10P2,15.072,,DDA,HMDB0001270,,
+CJ0945,11(r)-hete,C20H32O3,2.4925,,DDA,HMDB0004682,,FA
+CJ0946,12-hete,C20H32O3,2.12,Nega,DDA,HMDB0006111,,FA
+CJ0947,"13,14-dihydro-15-keto-tetranor prostaglandin f1?",C16H28O5,2.76,Nega,DDA,,,
+CJ0948,12-oxo-pda,C18H28O3,3.033,,DDA,HMDB0301804,,FA
+CJ0949,13-l-hydroperoxylinoleic acid,C18H32O4,2.771,Nega,DDA,HMDB0003871,,FA
+CJ0950,13-oxoode,C18H30O3,2.2506,,DDA,HMDB0004668,,FA
+CJ0951,15-keto-prostaglandin e2,C20H30O5,2.45,Nega,DDA,HMDB0003175,,Prostaglandins and related compounds  
+CJ0952,"15-keto-13,14-dihydroprostaglandin a2",C20H30O4,2.76,Nega,DDA,HMDB0001244,,Prostaglandins and related compounds  
+CJ0953,16-dehydroprogesterone,C21H28O2,8.593,Posi,DDA,HMDB0000995,,Steroids and steroid derivatives  
+CJ0954,18-hydroxycorticosterone,C21H30O5,2.76,Posi,DDA,HMDB0000319,,Steroids and steroid derivatives  
+CJ0955,18-oxocortisol,C21H28O6,2.1,Nega,DDA,HMDB0000332,,Steroids and steroid derivatives  
+CJ0956,1-deoxy-d-glucitol,C6H14O5,5.12,Posi,DDA,HMDB0041500,,
+CJ0957,indole-3-carboxaldehyde,C9H7NO,2.71,Nega,DDA,HMDB0029737,,Microbiota related
+CJ0958,"1-methoxy-1-(2,4,5-trimethoxyphenyl)-2-propanol",C13H20O5,9.03,Nega,DDA,HMDB0031772,,
+CJ0959,1-methylinosine,C11H14N4O5,5.88,Nega,DDA,HMDB0002721,,"Nucleosides, nucleotides, and analogues  "
+CJ0960,1-pentanesulfenothioic acid,C5H12S2,8.99,Posi,DDA,HMDB0031160,,
+CJ0961,"2-(2-pyridin-3-yl-1,3-thiazol-4-yl)-n'-[4-(trifluoromethyl)benzoyl]acetohydrazide",C18H13F3N4O2S,12.7,Posi,DDA,,CID 10409042,
+CJ0962,"2-(3,4-dihydroxybenzoyloxy)-4,6-dihydroxybenzoate",C14H10O8,8.99,Posi,DDA,HMDB0059651,,
+CJ0963,tyrosol,C8H10O2,2.67,Nega,DDA,HMDB0004284,,
+CJ0964,2-(methylsulfonyl)-3-(pyrazin-2-ylamino)acrylonitrile,C8H8N4O2S,2.35,Nega,DDA,,ChemSpider ID2099038,
+CJ0965,"2,3-dinor prostaglandin e1",C18H30O5,2.951,,DDA,,,
+CJ0966,"2,4-dimethylbenzaldehyde",C9H10O,2.39,Posi,DDA,HMDB0032142,,
+CJ0967,"2,5-dihydro-2,4,5-trimethyloxazole",C6H11NO,3.744,Posi,DDA,HMDB0031199,,
+CJ0968,"2-[(5-methyl-2-furyl)methylene][1,3]thiazolo[3,2-a]benzimidazol-3(2h)-one",C15H10N2O2S,9.98,Posi,DDA,,,
+CJ0969,2-dodecylbenzenesulfonic acid,C18H30O3S,1.86,Nega,DDA,HMDB0031031,,
+CJ0970,2-fluoro-6-(4-methoxyphenoxy)benzonitrile,C14H10FNO2,10.52,Posi,DDA,,,
+CJ0971,2-hydroxy-3-methylpentanoic acid,C6H12O3,3.51,Nega,DDA,HMDB0000317,,FA
+CJ0972,leucinic acid,C11H15N5O4,5.42,Both,DDA,HMDB0000665,,FA
+CJ0973,2-hydroxyadipic acid,C6H10O5,13.08,Nega,DDA,HMDB0000321,,FA
+CJ0974,2-hydroxyglutarate,C5H8O5,8.404,Nega,DDA,HMDB0059655,,
+CJ0975,2-hydroxy-3-methylbutyric acid,C5H10O3,3.69,Nega,DDA,HMDB0000407,,FA
+CJ0976,2-hydroxymyristic acid,C14H28O3,2.46,Nega,DDA,HMDB0002261,,FA
+CJ0977,2-indolecarboxylic acid,C9H7NO2,8.49,Nega,DDA,HMDB0002285,,Microbiota related
+CJ0978,2-methoxyestradiol-3-methylether,C20H28O3,2.31,Nega,DDA,HMDB0000344,,FA
+CJ0979,2-methylbutyrylglycine,C7H13NO3,3.73,Nega,DDA,HMDB0000339,,Amino acids related and peptides
+CJ0980,2-methylhippuric acid,C10H11NO3,3.4785,,DDA,HMDB0011723,,Microbiota related
+CJ0981,2-naphthalenesulfonic acid,C10H8O3S,2.07,Nega,DDA,HMDB0255446,,
+CJ0982,2-piperidinone,C5H9NO,13.7,Posi,DDA,HMDB0011749,,
+CJ0983,"3-(1-cyano-1,2-dihydroisoquinolin-2-yl)-3-oxopropyl propionate",C16H16N2O3,2.35,Nega,DDA,,,
+CJ0984,"3-(3,4,5-trimethoxyphenyl)propanoic acid",C12H16O5,9.07,Nega,DDA,HMDB0030254,,
+CJ0985,"3-amino-4-{2-[4-(tert-butyl)phenyl]diaz-1-enyl}-4,5-dihydro-1h-pyrazol-5-one",C13H17N5O,11.73,Nega,DDA,,,
+CJ0986,3-furoic acid,C5H4O3,14.37,Nega,DDA,HMDB0000444,,
+CJ0987,3-ketosphingosine,C18H35NO2,2.32,Posi,DDA,HMDB0245914,,
+CJ0988,3-methoxy-4-hydroxyphenylethyleneglycol sulfate,C9H12O7S,2.35,Nega,DDA,HMDB0000559,,
+CJ0989,3-methyladipic acid,C7H12O4,12.34,Nega,DDA,HMDB0000555,,FA
+CJ0990,3-feruloylquinic acid,C17H20O9,15.03,Nega,DDA,HMDB0030669,,
+CJ0991,3-oxododecanoic acid,C12H22O3,2.71,Nega,DDA,HMDB0010727,,FA
+CJ0992,3-oxooctadecanoic acid,C18H34O3,2.15,Nega,DDA,HMDB0010736,,FA
+CJ0993,phosphoadenosine phosphosulfate,C10H15N5O13P2S,14.7705,,DDA,HMDB0001134,,"Nucleosides, nucleotides, and analogues  "
+CJ0994,"4-(1,1,3,3-tetramethylbutyl)-phenol",C14H22O,2.26,Nega,DDA,HMDB0013825,,
+CJ0995,"4-(1h-pyrazol-1-yl)-n,n-bis(2-pyridinylmethyl)benzenesulfonamide",C21H19N5O2S,14.97,Posi,DDA,,,
+CJ0996,"4,7-dimethylpyrazolo[5,1-c][1,2,4]triazine-3-carbonitrile",C8H7N5,3.32,Posi,DDA,,,
+CJ0997,4-aminohippuric acid,C9H10N2O3,5.58,Posi,DDA,HMDB0001867,,Microbiota related
+CJ0998,[4]-gingerol,C15H22O4,3.32,,DDA,HMDB0302125,,
+CJ0999,3-hydroxydodec-2-enedioic acid,C12H20O5,11.94671429,,DDA,HMDB0340673,,FA
+CJ1000,4-oxo-retinoic acid,C20H26O3,2.24,Nega,DDA,HMDB0006285,,Retinoids  
+CJ1001,"5-({[3-chloro-5-(trifluoromethyl)-2-pyridyl]methyl}thio)-4-pentyl-4h-1,2,4-triazol-3-ol",C14H16ClF3N4OS,14.93,Posi,DDA,,,
+CJ1002,5-(2-methylpropyl)tetrahydro-2-oxo-3-furancarboxylic acid,C9H14O4,11.82,Nega,DDA,HMDB0030988,,
+CJ1003,"5-(3',4',5'-trihydroxyphenyl)-gamma-valerolactone-3'-o-glucuronide",C17H20O11,12.64,Nega,DDA,HMDB0059984,,
+CJ1004,"5-{5-[(2s)-1-(cyclopropylmethyl)-2-pyrrolidinyl]-1,2,4-oxadiazol-3-yl}-n-(2-methoxyethyl)-2-pyridinamine",C18H25N5O2,11.86,Posi,DDA,,,
+CJ1005,5-hydroxyindole,C8H7NO,1.95,Posi,DDA,HMDB0059805,,
+CJ1006,"5-methyl-1-(1,3,5-trimethyl-1h-pyrazol-4-yl)-1h-1,2,3-triazole",C9H13N5,3.55,Posi,DDA,,,
+CJ1007,5-phosphoribosylamine,C5H12NO7P,14.167,,DDA,HMDB0001128,,Carbohydrates and carbohydrate conjugates  
+CJ1008,5-sulfosalicylic acid,C7H6O6S,3.72,Nega,DDA,HMDB0011725,,
+CJ1009,na,C24H28O8,2.08,Nega,DDA,HMDB0132661,,
+CJ1010,6-dimethylaminopurine,C7H9N5,7.372,,DDA,HMDB0000473,,
+CJ1011,6-hydroxy-1h-indole-3-acetamide,C10H10N2O2,3.32,Posi,DDA,HMDB0031173,,
+CJ1012,6-keto-prostaglandin f1a,C20H34O6,2.77,Nega,DDA,HMDB0002886,,Prostaglandins and related compounds  
+CJ1013,2-[(2-furanylmethyl)thio]-6-methylpyrazine,C10H10N2OS,3.57,Posi,DDA,HMDB0036187,,
+CJ1014,"6-methyl-8-{[5-(2-naphthyl)-1,3,4-oxadiazol-2-yl]methoxy}[1,2,4]triazolo[4,3-b]pyridazine",C19H14N6O2,12.66,Posi,DDA,,,
+CJ1015,6-methyladenine,C6H7N5,9.7725,Both,DDA,HMDB0002099,,"Nucleosides, nucleotides, and analogues  "
+CJ1016,cyclo(l-his-l-pro),C11H14N4O2,5.33,Posi,DDA,HMDB0250630,,Amino acids related and peptides
+CJ1017,"7,8-dihydroxyflavone",C15H10O4,2.813,,DDA,HMDB0247297,,
+CJ1018,7-aminomethyl-7-carbaguanine,C7H9N5O,5.24,Posi,DDA,HMDB0011690,,
+CJ1019,7-methylguanine,C6H7N5O,7.7275,Both,DDA,HMDB0000897,,"Nucleosides, nucleotides, and analogues  "
+CJ1020,7-methylhypoxanthine,C6H6N4O,6.43,Posi,DDA,HMDB0003162,,"Nucleosides, nucleotides, and analogues  "
+CJ1021,acamprosate,C5H11NO4S,3.64,Nega,DDA,HMDB0014797,,
+CJ1022,p-acetaminobenzaldehyde,C9H9NO2,3.534,,DDA,HMDB0341370,,
+CJ1023,acetylcarnosine,C11H16N4O4,11.7725,Both,DDA,HMDB0012881,,
+CJ1024,acipimox,C6H6N2O3,9.97,Posi,DDA,HMDB0247941,,
+CJ1025,d-alanyl-d-alanine,C6H12N2O3,11.92,Nega,DDA,HMDB0003459,,Amino acids related and peptides
+CJ1026,alanylproline,C8H14N2O3,14.45,Posi,DDA,HMDB0028695,,Amino acids related and peptides
+CJ1027,aldosterone,C21H28O5,2.44,Nega,DDA,HMDB0000037,,Steroids and steroid derivatives  
+CJ1028,allyl hexenoate,C9H14O2,12.068,,DDA,HMDB0038268,,FA
+CJ1029,apigenin,C15H10O5,4.4375,,DDA,HMDB0002124,,
+CJ1030,arabinonic acid,C5H10O6,11.84,Nega,DDA,HMDB0000539,,Carbohydrates and carbohydrate conjugates  
+CJ1031,arecoline,C8H13NO2,12.529,,DDA,HMDB0030353,,
+CJ1032,argininosuccinic acid,C10H18N4O6,14.92,Nega,DDA,HMDB0000052,,Amino acids related and peptides
+CJ1033,artemether,C16H26O5,2.77,Nega,DDA,HMDB0015643,,
+CJ1034,ascorbic acid 2-sulfate,C6H8O9S,3.14,Nega,DDA,HMDB0060649,,
+CJ1035,9-decenoic acid,C10H18N4O6S,3.265,,DDA,HMDB0341195,,FA
+CJ1036,baicalin,C21H18O11,3.982,,DDA,HMDB0041832,,
+CJ1037,benzyl butyl phthalate,C19H20O4,2.24,Posi,DDA,HMDB0249068,,
+CJ1038,benzylideneacetone,C10H10O,2.29,Posi,DDA,HMDB0031617,,
+CJ1039,beta-damascenone,C13H18O,2.27,Posi,DDA,HMDB0013804,,
+CJ1040,biflorin,C16H18O9,11.84,Nega,DDA,HMDB0002336,,
+CJ1041,pyrocatechol sulfate,C6H6O5S,2.1425,,DDA,HMDB0059724,,
+CJ1042,cetrimonium,C19H41N,8.16,Posi,DDA,,,
+CJ1043,cinnamoylglycine,C11H11NO3,3.183,,DDA,HMDB0011621,,Amino acids related and peptides
+CJ1044,cis-2-methylaconitate,C7H8O6,14.37,Nega,DDA,HMDB0006357,,
+CJ1045,clonazolam,C17H12ClN5O2,13.37,Posi,DDA,,,
+CJ1046,corchoionol c 9-glucoside,C19H30O8,3.992,,DDA,HMDB0029772,,FA
+CJ1047,p-cresol,C7H8O,2.68,Posi,DDA,HMDB0001858,,Microbiota related
+CJ1048,cysteine-s-sulfate,C3H7NO5S2,9.523,,DDA,HMDB0000731,,Amino acids related and peptides
+CJ1049,demethylated antipyrine,C10H10N2O,3.64,Posi,DDA,HMDB0006240,,
+CJ1050,de-o-methylsterigmatocystin,C17H10O6,11.921,,DDA,HMDB0033657,,
+CJ1051,deoxycorticosterone,C21H30O3,9.59,Posi,DDA,HMDB0000016,,Steroids and steroid derivatives  
+CJ1052,deoxyinosine,C10H12N4O4,8.11,Nega,DDA,HMDB0000071,,"Nucleosides, nucleotides, and analogues  "
+CJ1053,dibutyl oxopropanedioate ,C11H18O5,12.21425,,DDA,,cas 40420-22-2,
+CJ1054,didecyldimethylammonium,C22H47N,8.14,Posi,DDA,,cas 16165-33-6,
+CJ1055,dihydrothymine,C5H8N2O2,14.3475,Both,DDA,HMDB0000079,,"Nucleosides, nucleotides, and analogues  "
+CJ1056,"3,4-dihydroxyhydrocinnamic acid",C9H10O4,3.985,,DDA,HMDB0000423,,
+CJ1057,homoveratric acid,C10H12O4,7.807,Both,DDA,HMDB0000434,,
+CJ1058,dimethylglycine,C4H9NO2,12.26,Both,DDA,HMDB0000092,,Amino acids related and peptides
+CJ1059,dl-2-aminooctanoic acid,C8H17NO2,8.32,Nega,DDA,HMDB0000991,,Amino acids related and peptides
+CJ1060,dodecanedioic acid,C12H22O4,2.76,Nega,DDA,HMDB0000623,,FA
+CJ1061,ecgonine,C9H15NO3,13.406,,DDA,HMDB0006548,,
+CJ1062,eplerenone,C24H30O6,2.2725,Both,DDA,HMDB0014838,,
+CJ1063,13-docosenamide,C22H43NO,2.27,Posi,DDA,HMDB0244507,,FA
+CJ1064,erythronic acid,C4H8O5,11.75,Nega,DDA,HMDB0000613,,Carbohydrates and carbohydrate conjugates  
+CJ1065,ethyl 1-{[1-benzyl-3-(tert-butyl)-1h-pyrazol-5-yl]carbonyl}-4-piperidinecarboxylate,C23H31N3O3,2.31,Posi,DDA,,,
+CJ1066,ethylene brassylate,C15H26O4,3,,DDA,HMDB0040459,,
+CJ1067,d-fructose,C6H12O6,11.03,Nega,DDA,HMDB0000660,,Carbohydrates and carbohydrate conjugates  
+CJ1068,galactonic acid,C6H12O7,12.66,Nega,DDA,HMDB0000565,,
+CJ1069,gingerol,C17H26O4,1.84,Nega,DDA,HMDB0005783,,
+CJ1070,gamma-glutamylglutamic acid,C10H16N2O7,14.885,Nega,DDA,HMDB0011737,,Amino acids related and peptides
+CJ1071,gamma-glutamylphenylalanine,C14H18N2O5,11.86,Posi,DDA,HMDB0000594,,Amino acids related and peptides
+CJ1072,glutaconic acid,C5H6O4,14.39,Nega,DDA,HMDB0000620,,
+CJ1073,glutarylglycine,C7H11NO5,13.08,Nega,DDA,HMDB0000590,,Amino acids related and peptides
+CJ1074,oxidized glutathione,C20H32N6O12S2,14.86,Nega,DDA,HMDB0003337,,Amino acids related and peptides
+CJ1075,glycerol 1-propanoate diacetate,C10H16O6,9.57,-,DDA,HMDB0031640,,
+CJ1076,glycogen,C24H42O21,16.62,Nega,DDA,HMDB0000757,,Carbohydrates and carbohydrate conjugates  
+CJ1077,glycylleucine,C8H16N2O3,14.62,Posi,DDA,HMDB0000759,,Amino acids related and peptides
+CJ1078,gravelliferone,C19H22O3,1.88,Nega,DDA,HMDB0030729,,
+CJ1079,guaifenesin,C10H14O4,10.12,Nega,DDA,HMDB0004998,,
+CJ1080,heptaethylene glycol,C14H30O8,3.91,Posi,DDA,HMDB0061835,,
+CJ1081,hexadecanedioic acid,C16H30O4,2.95575,,DDA,HMDB0000672,,FA
+CJ1082,hexaethylene glycol,C12H26O7,3.87,Posi,DDA,HMDB0061822,,
+CJ1083,hexanoylglycine,C8H15NO3,2.76,Nega,DDA,HMDB0000701,,Amino acids related and peptides
+CJ1084,homocarnosine,C10H16N4O3,11.648,,DDA,HMDB0000745,,Amino acids related and peptides
+CJ1085,homocysteinesulfinic acid,C4H9NO4S,3.94,Nega,DDA,HMDB0006462,,Amino acids related and peptides
+CJ1086,hydrocinnamic acid,C9H10O2,2.68,Nega,DDA,HMDB0000764,,
+CJ1087,p-coumaraldehyde,C9H8O2,2.912,,DDA,HMDB0040986,,
+CJ1088,garcinia acid,C6H8O8,3.982,,DDA,HMDB0031159,,
+CJ1089,3-hydroxyhippuric acid,C9H9NO4,3.431666667,,DDA,HMDB0006116,,Microbiota related
+CJ1090,hydroxyoctanoic acid,C8H16O3,8.649,,DDA,HMDB0000711,,FA
+CJ1091,hydroxyvalerylglycine,C7H13NO4,2.58,,DDA,HMDB0094717,,Amino acids related and peptides
+CJ1092,ilicifolinoside a,C11H20O7,11.88,Nega,DDA,HMDB0041186,,FA
+CJ1093,indole-3-carboxylic acid,C9H7NO2,3.675,Both,DDA,HMDB0003320,,Microbiota related
+CJ1094,indole-3-acetylglycine,C12H12N2O3,3.71475,,DDA,HMDB0240661,,Amino acids related and peptides
+CJ1095,indoleacrylic acid,C11H9NO2,9.36,Posi,DDA,HMDB0000734,,Microbiota related
+CJ1096,indolelactic acid,C11H11NO3,2.7,Nega,DDA,HMDB0000671,,Microbiota related
+CJ1097,irgafos 168,C42H63O3P,2.24,Posi,DDA,,,
+CJ1098,irganox 330,C54H78O3,2.14,Nega,DDA,,,
+CJ1099,dl-isocitric acid lactone,C6H6O6,12.76,Nega,DDA,HMDB0341313,,Carboxylic acids and derivatives  
+CJ1100,isoleucylproline,C11H20N2O3,13.2,Posi,DDA,HMDB0011174,,Amino acids related and peptides
+CJ1101,2-isopropylmalic acid,C7H12O5,13.52066667,,DDA,HMDB0000402,,FA
+CJ1102,isovalerylglucuronide,C11H18O8,7.37,Posi,DDA,HMDB0002091,,
+CJ1103,isoxanthopterin,C6H5N5O2,10.71,,DDA,HMDB0000704,,
+CJ1104,jasmonic acid,C12H18O3,2.683,,DDA,HMDB0032797,,
+CJ1105,ketamine,C13H16ClNO,2.45,Posi,DDA,HMDB0015352,,
+CJ1106,l-alpha-aminobutyric acid,C4H9NO2,13.67,nega,STD,HMDB0000452,,Amino acids related and peptides
+CJ1107,laurolactam,C12H23NO,2.26,Posi,DDA,,cas 947-04-6,
+CJ1108,isolinderanolide,C21H36O3,2.327,Posi,DDA,HMDB0038105,,
+CJ1109,saccharopine,C11H20N2O6,14.76,Nega,DDA,HMDB0062698,,Amino acids related and peptides
+CJ1110,maltotriose,C18H32O16,15.92,Posi,DDA,HMDB0001262,,Carbohydrates and carbohydrate conjugates  
+CJ1111,mangostanol,C24H26O7,1.89,Nega,DDA,HMDB0029868,,
+CJ1112,mannosyl-glycerate ,C9H16O9,7.785,,DDA,,,
+CJ1113,m-coumaric acid,C9H8O3,11.756,,DDA,HMDB0001713,,
+CJ1114,mebendazole,C16H13N3O3,10.59,Nega,DDA,HMDB0014781,,
+CJ1115,melleolide b,C24H32O7,2.23,Nega,DDA,HMDB0038787,,
+CJ1116,melleolide m,C23H29ClO7,2.37,Posi,DDA,HMDB0035068,,
+CJ1117,metanephrine,C10H15NO3,2.74,Posi,DDA,HMDB0004063,,
+CJ1118,mesylate,CH4O3S,4.05,Nega,DDA,HMDB0240280,,
+CJ1119,methionine sulfoxide,C5H11NO3S,14.01,Posi,DDA,HMDB0002005,,Amino acids related and peptides
+CJ1120,3-methylcrotonylglycine,C7H11NO3,4.256,,DDA,HMDB0000459,,Amino acids related and peptides
+CJ1121,methylmalonylcarnitine,C11H19NO6,14.23,Posi,DDA,HMDB0013133,,carnitine
+CJ1122,methylpyrazine,C5H6N2,11.66,Posi,DDA,HMDB0033112,,
+CJ1123,3-methylphenylacetic acid,C9H10O2,3.79,Nega,DDA,HMDB0002222,,
+CJ1124,n1-methyl-4-pyridone-3-carboxamide,C7H8N2O2,4.36,Posi,DDA,HMDB0004194,,"Nucleosides, nucleotides, and analogues  "
+CJ1125,n-a-acetyl-l-arginine,C8H16N4O3,14.31,Posi,DDA,HMDB0004620,,Amino acids related and peptides
+CJ1126,n-acetylglucosamine 6-sulfate,C8H15NO9S,4.623,,DDA,HMDB0000814,,Carbohydrates and carbohydrate conjugates  
+CJ1127,n-acetylhistamine,C7H11N3O,5.29,Posi,DDA,HMDB0013253,,Amino acids related and peptides
+CJ1128,n2-acetylornithine,C7H14N2O3,14.369,Posi,DDA,HMDB0003357,,Amino acids related and peptides
+CJ1129,n8-acetylspermidine,C9H21N3O,18.956,,DDA,HMDB0002189,,
+CJ1130,n-acetylthreonine,C6H11NO4,14.11,Nega,DDA,HMDB0062557,,Amino acids related and peptides
+CJ1131,n-acetyl-l-tyrosine,C11H13NO4,7.066,Nega,DDA,HMDB0000866,,Amino acids related and peptides
+CJ1132,n-acetylvaline,C7H13NO3,9.885,Both,DDA,HMDB0011757,,Amino acids related and peptides
+CJ1133,nelarabine,C11H15N5O5,8.39,Posi,DDA,HMDB0015401,,"Nucleosides, nucleotides, and analogues  "
+CJ1134,neuraminic acid,C9H17NO8,8.147,,DDA,HMDB0000830,,
+CJ1135,n-lactoylleucine,C9H17NO4,11.14,Posi,DDA,HMDB0062176,,Amino acids related and peptides
+CJ1136,2-(methylamino)benzoic acid,C8H9NO2,10.96,Posi,DDA,HMDB0032609,,Microbiota related
+CJ1137,n-methyl-l-isoleucine,C7H15NO2,9.58,nega,STD,HMDB0341355,,Amino acids related and peptides
+CJ1138,n-methylnicotinamide,C7H8N2O,17.68,,DDA,HMDB0003152,,"Nucleosides, nucleotides, and analogues  "
+CJ1139,n-methyltyramine,C9H13NO,1.071,,DDA,HMDB0003633,,
+CJ1140,capryloylglycine,C10H19NO3,2.14,Posi,DDA,HMDB0000832,,Amino acids related and peptides
+CJ1141,o-benzyl-l-serine ,C10H13NO3,13.18,Posi,DDA,,cas 4726-96-9,Amino acids related and peptides
+CJ1142,oleamide,C18H35NO,2.29,Posi,DDA,HMDB0002117,,FA
+CJ1143,oleoyl ethyl amide ,C20H39NO,2.26,Posi,DDA,,cas 85075-82-7,
+CJ1144,palmitic amide,C16H33NO,2.31,Posi,DDA,HMDB0012273,,FA
+CJ1145,pentalenic acid,C15H22O3,2.351,,DDA,,,
+CJ1146,phenol sulphate,C6H6O4S,1.91,Nega,DDA,HMDB0060015,,Microbiota related
+CJ1147,phenylacetylglycine,C10H11NO3,3.71,Posi,DDA,HMDB0000821,,Amino acids related and peptides
+CJ1148,2-phenylbutyric acid,C10H12O2,2.544,,DDA,HMDB0000329,,
+CJ1149,phenylpropionylglycine,C11H13NO3,3.103,Posi,DDA,HMDB0000860,,Amino acids related and peptides
+CJ1150,piperenol a,C21H20O7,15.028,,DDA,HMDB0039634,,
+CJ1151,valylproline,C10H18N2O3,12.36,Posi,DDA,HMDB0029135,,Amino acids related and peptides
+CJ1152,proline betaine,C7H13NO2,10.77,Posi,DDA,HMDB0004827,,Amino acids related and peptides
+CJ1153,prostaglandin d2,C20H32O5,2.64,Nega,DDA,HMDB0001403,,Prostaglandins and related compounds  
+CJ1154,"2,6-pyridinedicarboxylic acid",C7H5NO4,13.87,Nega,DDA,HMDB0033161,,"Nucleosides, nucleotides, and analogues  "
+CJ1155,retinal,C20H28O,2.278,,DDA,HMDB0001358,,Retinoids  
+CJ1156,sedoheptulose 7-phosphate,C7H15O10P,14.83,Nega,DDA,HMDB0258206,,Carbohydrates and carbohydrate conjugates  
+CJ1157,shikimate-3-phosphate,C7H11O8P,14.587,,DDA,HMDB0258272,,
+CJ1158,sphingosine,C18H37NO2,3.7,Posi,DDA,HMDB0000252,,
+CJ1159,sphingosine d20:1,C20H41NO2,2.32,Posi,DDA,,cas 6918-49-6,
+CJ1160,octadecanamide,C18H37NO,2.26,Posi,DDA,HMDB0034146,,
+CJ1161,tetradecanedioic acid,C14H26O4,3.0225,,DDA,HMDB0000872,,FA
+CJ1162,traumatic acid,C12H20O4,2.978,Nega,DDA,HMDB0000933,,FA
+CJ1163,"1,2,3-propanetricarboxylic acid",C6H8O6,3.5585,,DDA,HMDB0031193,,
+CJ1164,trimethylaminoacetone,C6H13NO,10.77,Posi,DDA,HMDB0012296,,Microbiota related
+CJ1165,trimethylpyrazine,C7H10N2,1.22,Posi,DDA,HMDB0031844,,
+CJ1166,7-epi-12-hydroxyjasmonic acid,C12H18O4,2.65,Posi,DDA,HMDB0303749,cas 124649-26-9,
+CJ1167,yuccaol c,C30H22O10,16.01,Posi,DDA,HMDB0036739,,
+CJ1168,2-hydroxyethanesulfonate,C2H6O4S,3.8,-,DDA,HMDB0003903,,
+CJ1169,"cer(d18:2(4e,14z)/16:0)",C34H65NO3,2.24,+,DDA,HMDB0240686,,Lipids
+CJ1170,n-glycolylglucosamine,C8H15NO7,15.521,+,DDA,HMDB0341426,,Carbohydrates and carbohydrate conjugates  
+CJ1171,(-)-erythro-anethole glycol 1-glucoside,C16H24O8,,,,HMDB0033066,,
+CJ1172,"({2-[2-(2-hydroxypropan-2-yl)-7-oxo-2h,3h,7h-furo[3,2-g]chromen-6-yl]-2-methylbut-3-en-1-yl}oxy)sulfonic acid isomer",C19H22O8S,,,,,,
+CJ1173,"(1,3-diphenylpropoxy)sulfonic acid isomer",C15H16O4S,,,,,,
+CJ1174,"(2e)-3-(4-acetoxy-2,3-dihydroxy-2,5,5,8a-tetramethyldecahydro-1-naphthalenyl)acrylic acid isomer",C19H30O6,,,,,,
+CJ1175,"(2e)-3-[4-({2-o-[(2s,3r,4r)-3,4-dihydroxy-4-(hydroxymethyl)tetrahydro-2-furanyl]-?-d-glucopyranosyl}oxy)-3-methoxyphenyl]acrylic acid isomer",C21H28O13,,,,,,
+CJ1176,"(2r,3r,4r)-2-amino-4-hydroxy-3-methylpentanoic acid",C6H13NO3,,,,HMDB0029449,,Amino acids related and peptides
+CJ1177,"(3-oxo-1,3-diphenylpropoxy)sulfonic acid isomer",C15H14O5S,,,,,,
+CJ1178,"(4-amino-1,2,5-oxadiazol-3-yl)(1-pyrrolidinyl)methanone oxime isomer",C7H11N5O2,,,,,,
+CJ1179,"(4r,5s,7r,11x)-11,12-dihydroxy-1(10)-spirovetiven-2-one 12-glucoside",C21H34O8,,,,HMDB0030895,,
+CJ1180,na,C16H16O4S,,,,HMDB0134573,,
+CJ1181,"[5-(5-amino-3-oxo-2,3-dihydro-1,2,4-triazin-2-yl)-3,4-dihydroxytetrahydrofuran-2-yl]methyl benzoate isomer",C15H16N4O6,,,,,,
+CJ1182,"[6]-gingerdiol 3,5-diacetate",C21H32O6,,,,HMDB0040568,,FA
+CJ1183,na,C6H12O9S,,,,HMDB0125613,,
+CJ1184,"1-(2,4,6-trimethoxyphenyl)-1,3-butanedione",C13H16O5,,,,HMDB0030668,,
+CJ1185,"1-(beta-d-ribofuranosyl)-1,4-dihydronicotinamide",C11H16N2O5,,,,HMDB0011648,,
+CJ1186,glycerophosphoinositol,C9H19O11P,,,,HMDB0011649,,
+CJ1187,"1,1-dimethylbiguanide hydrochloride isomer",C4H11N5,,,,,,
+CJ1188,"1,4:3,6-dianhydro-2,5-dideoxy-2-[(ethylcarbamoyl)amino]-5-{[4-(3-fluorophenyl)-2-pyrimidinyl]amino}-l-iditol isomer",C19H22FN5O3,,,,,,
+CJ1189,"1,7-dimethylguanosine",C12H17N5O5,,,,HMDB0001961,,"Nucleosides, nucleotides, and analogues  "
+CJ1190,1-[(5-amino-5-carboxypentyl)amino]-1-deoxyfructose,C12H24N2O7,,,,HMDB0034879,,
+CJ1191,10-desacetyltaxuyunnanin c  isomer,C26H38O7,,,,,,
+CJ1192,10-hydroxy-2-decenoic acid,C10H18O3,,,,HMDB0244269,,FA
+CJ1193,11-deoxy pgf2  isomer,C20H34O4,,,,,,
+CJ1194,11-deoxy-pge1 isomer,C20H34O4,,,,,,
+CJ1195,11-prostaglandin f2 isomer,C20H34O5,,,,,,
+CJ1196,12s-hht,C17H28O3,,,,HMDB0012535,,FA
+CJ1197,13(s)-hpotre  isomer,C18H30O4,,,,,METPA0543,
+CJ1198,"13,14-dihydro-15-keto prostaglandin f2 isomer",C20H34O5,,,,,,
+CJ1199,15beta-hydroxydesogestrel,C22H30O2,,,,HMDB0060707,,Steroids and steroid derivatives  
+CJ1200,16-epidesacetylfusidic acid isomer,C29H46O5,,,,,,
+CJ1201,17-phenyl-trinor-pge2  isomer,C23H30O5,,,,,,
+CJ1202,18-hydroxycortisol,C21H30O6,,,,HMDB0000418,,Steroids and steroid derivatives  
+CJ1203,"1-adamantyl(1,4-thiazinan-4-yl)methanone isomer",C15H23NOS,,,,,,
+CJ1204,d-1-amino-2-pyrrolidinecarboxylic acid,C5H10N2O2,,,,HMDB0030405,,Amino acids related and peptides
+CJ1205,1-butanethiol,C4H10S,,,,HMDB0031322,,
+CJ1206,1-dodecanesulfonic acid isomer,C12H26O3S,,,,,,
+CJ1207,1-hydroxyepiacorone,C15H24O3,,,,HMDB0030918,,
+CJ1208,1-isomangostin hydrate,C24H28O7,,,,HMDB0029984,,
+CJ1209,1-isothiocyanato-8-(methylthio)octane,C10H19NS2,,,,HMDB0038447,,
+CJ1210,1-methoxyphaseollidin,C21H22O5,,,,HMDB0029319,,
+CJ1211,1-octen-3-yl glucoside,C14H26O6,,,,HMDB0032959,,FA
+CJ1212,1-tetradecanesulfonic acid isomer,C14H30O3S,,,,,,
+CJ1213,1-tetradecylamine isomer,C14H31N,,,,,,
+CJ1214,"2-(2,5-dihydroxy-4-methoxyphenyl)-3,5,6,7-tetrahydroxy-3,4-dihydro-2h-1-benzopyran-4-one isomer",C16H14O9,,,,,,
+CJ1215,"2-(2-hydroxyphenyl)-6-(methylthio)-4-oxo-3,4-dihydro-2h-1,3-thiazine-5-carbonitrile isomer",C12H10N2O2S2,,,,,,
+CJ1216,"2-(3,4,5-trihydroxyphenyl)-3,4-dihydro-2h-1-benzopyran-3,4,5,7-tetrol isomer",C15H14O8,,,,,,
+CJ1217,"2-(3,4-dimethoxyphenyl)-5,6,8-trihydroxy-3,7-dimethoxy-4h-chromen-4-one isomer",C19H18O9,,,,,,
+CJ1218,2-(3-carboxy-3-aminopropyl)-l-histidine,C10H16N4O4,,,,HMDB0011655,,Amino acids related and peptides
+CJ1219,"2,2,4,4-tetramethyl-6-(1-oxobutyl)-1,3,5-cyclohexanetrione",C14H20O4,,,,HMDB0033197,,
+CJ1220,"2,2-dichloro-n-(2,6-diethylphenyl)acetamide isomer",C12H15Cl2NO,,,,,,
+CJ1221,"2,2-dithiodipyridine isomer",C10H8N2S2,,,,,,
+CJ1222,"2,3,6,7-tetrahydro-7-methylcyclopent[b]azepin-8(1h)-one",C10H13NO,,,,HMDB0039661,,
+CJ1223,"2,4-bis(3-methylbut-2-en-1-yl)benzene-1,3,5-triol isomer",C16H22O3,,,,,,
+CJ1224,"2,4-diamino-6-hydroxypyrimidine",C4H6N4O,,,,HMDB0002128,,"Nucleosides, nucleotides, and analogues  "
+CJ1225,"2',4-dihydroxy-4',6'-dimethoxy-3'-prenylchalcone",C22H24O5,,,,HMDB0038815,,
+CJ1226,"2,4-dinitrophenylhydrazine  isomer",C6H6N4O4,,,,,,
+CJ1227,"2-[4-(1-adamantyl)-1,3-thiazol-2-yl]pyrazine isomer",C17H19N3S,,,,,,
+CJ1228,2-[4-(4-chlorophenyl)-4-hydroxypiperidino]-n-(2-morpholinophenyl)isonicotinamide isomer,C27H29ClN4O3,,,,,,
+CJ1229,"2-{[3,5-di(trifluoromethyl)anilino]methylidene}-5-phenylcyclohexane-1,3-dione isomer",C21H15F6NO2,,,,,,
+CJ1230,"2-{2-[4-(tert-butyl)phenyl]-4-hydroxy-1,3-thiazol-5-yl}acetic acid isomer",C15H17NO3S,,,,,,
+CJ1231,20-hete ethanolamide,C22H37NO3,,,,HMDB0013630,,
+CJ1232,2-chloro-n-(2-chlorophenyl)-n'-hydroxybenzenecarboximidamide isomer,C13H10Cl2N2O,,,,,,
+CJ1233,2-cyano-3-(4-pyridyl)acrylamide isomer,C9H7N3O,,,,,,
+CJ1234,2-furoylglycine,C7H7NO4,,,,HMDB0000439,,Amino acids related and peptides
+CJ1235,2-hexenoylcarnitine,C13H23NO4,,,,HMDB0013161,,carnitine
+CJ1236,2-hydroxydecanedioic acid,C10H18O5,,,,HMDB0000424,,FA
+CJ1237,2-hydroxyflutamide,C11H11F3N2O4,,,,HMDB0060949,,
+CJ1238,2-hydroxylauroylcarnitine,C19H37NO5,,,,HMDB0013164,,carnitine
+CJ1239,2-hydroxymexiletine,C11H17NO2,,,,HMDB0060953,,
+CJ1240,2-keto-6-acetamidocaproate,C8H13NO4,,,,HMDB0012150,,
+CJ1241,2-methoxyacetaminophen sulfate,C9H11NO6S,,,,HMDB0062550,,
+CJ1242,2-methoxyestrone 3-glucuronide,C24H32O8,,,,HMDB0004482,,
+CJ1243,2-morpholinophenyl 2-thiophenecarboxylate isomer,C15H15NO3S,,,,,,
+CJ1244,2-myristoleoyl-glycerol  isomer,C17H32O4,,,,,,
+CJ1245,2-octenoic acid,C8H14O2,,,,HMDB0000392,,FA
+CJ1246,2-octenoylglycine  isomer,C10H17NO3,,,,,,
+CJ1247,2-o-ethyl ascorbic acid  isomer,C8H12O6,,,,,,
+CJ1248,2-o-methylascorbic acid,C7H10O6,,,,HMDB0240294,,
+CJ1249,2-oxophytanate isomer,C20H38O3,,,,,,
+CJ1250,6-oxopiperidine-2-carboxylic acid,C6H11N3O2,,,,HMDB0061705,,Amino acids related and peptides
+CJ1251,2-phenylethanol glucuronide,C14H18O7,,,,HMDB0010350,,
+CJ1252,2-pyridyl hydroxymethane sulfonic acid isomer,C6H7NO4S,,,,,,
+CJ1253,"3-(2-propynylsulfanyl)-5-[4-(trifluoromethyl)phenyl]-4h-1,2,4-triazole isomer",C12H8F3N3S,,,,,,
+CJ1254,3-(2-thienylmethyl)-2-thioxotetrahydro-4h-imidazol-4-one isomer,C8H8N2OS2,,,,,,
+CJ1255,"3-(4,5-diphenyl-1h-imidazol-2-yl)pyridine isomer",C20H15N3,,,,,,
+CJ1256,3-(4-chloroanilino)-2-(isopropylsulfonyl)acrylonitrile isomer,C12H13ClN2O2S,,,,,,
+CJ1257,3-(4-fluorophenyl)-5-(methylthio)-1h-pyrazole isomer,C10H9FN2S,,,,,,
+CJ1258,3-(cyclopropylmethyl)-2-mercaptoquinazolin-4(3h)-one isomer,C12H12N2OS,,,,,,
+CJ1259,3-(dimethylamino)-n'-hydroxy-5-(trifluoromethyl)pyridine-2-carboximidamide isomer,C9H11F3N4O,,,,,,
+CJ1260,"3',4',5'-trimethoxycinnamyl alcohol acetate",C14H18O5,,,,HMDB0040891,,
+CJ1261,"3,4,5-trimethoxyphenyl acetate",C11H14O5,,,,HMDB0031722,,
+CJ1262,"3-[5-(5,6-dihydrobenzimidazo[1,2-c]quinazolin-6-yl)-2-furyl]benzenesulfonamide isomer",C24H18N4O3S,,,,,,
+CJ1263,"3-{[(4-amino-1,3,5-triazin-2-yl)thio]methyl}benzonitrile isomer",C11H9N5S,,,,,,
+CJ1264,3-acetylacetanilide  isomer,C10H11NO2,,,,,,
+CJ1265,3-amino-2-piperidone,C5H10N2O,,,,HMDB0000323,,Amino acids related and peptides
+CJ1266,"3-amino-4-(propylamino)cyclobut-3-ene-1,2-dione isomer",C7H10N2O2,,,,,,
+CJ1267,3-dehydro-2-deoxyecdysone isomer,C27H42O5,,,,,METPA1791,
+CJ1268,3-oxocholic acid,C24H38O5,,,,HMDB0000502,,Bile acids 
+CJ1269,"3-ethyl 5-methyl 2-[(2-methoxy-2-oxoethyl)thio]-6-methylpyridine-3,5-dicarboxylate isomer",C14H17NO6S,,,,,,
+CJ1270,3-hydroxybutyric acid,C4H8O3,,,,HMDB0000011,,
+CJ1271,3-hydroxyhexadecanoylcarnitine,C23H45NO5,,,,HMDB0013336,,carnitine
+CJ1272,3-hydroxymelatonin,C13H18N2O3,,,,HMDB0060742,,
+CJ1273,3-hydroxyoctadecanoylcarnitine isomer,C25H49NO5,,,,,,carnitine
+CJ1274,3-hydroxyoleoylcarnitine isomer,C25H47NO5,,,,,,carnitine
+CJ1275,3-hydroxypalmitoleoylcarnitine isomer,C23H43NO5,,,,,,carnitine
+CJ1276,3-hydroxypentadecanoic acid,C15H30O3,,,,HMDB0061657,,FA
+CJ1277,3-hydroxytetradecanoylcarnitine isomer,C21H41NO5,,,,,,carnitine
+CJ1278,3-indoleacetonitrile,C10H8N2,,,,HMDB0006524,,Microbiota related
+CJ1279,3-keto fusidic acid,C31H46O7,,,,HMDB0060745,,
+CJ1280,3-methoxybenzenepropanoic acid,C10H12O3,,,,HMDB0011751,,
+CJ1281,3-methyl-3-propyloxirane-2-carbonitrile  isomer,C7H11NO,,,,,,
+CJ1282,3-methyl-4-nitrobenzene-1-carbohydrazide isomer,C8H9N3O3,,,,,,
+CJ1283,3-methylbutyl glucosinolate,C12H23NO9S2,,,,HMDB0038412,,
+CJ1284,3-methylglutarylcarnitine  1 isomer,C13H23NO6,,,,,,carnitine
+CJ1285,3-methyluric acid,C6H6N4O3,,,,HMDB0001970,,"Nucleosides, nucleotides, and analogues  "
+CJ1286,3-nitrosalicylic acid isomer,C7H5NO5,,,,,,
+CJ1287,3-o-methylglycyrol,C22H20O6,,,,HMDB0033883,,
+CJ1288,3-o-p-coumaroylquinic acid,C16H18O8,,,,HMDB0029681,,
+CJ1289,"4-(2-aminophenyl)-2,4-dioxobutanoic acid",C10H9NO4,,,,HMDB0000978,,
+CJ1290,4-(diphenylphosphoryloxyamino)benzonitrile  isomer,C19H15N2O2P,,,,,,
+CJ1291,4-(methylthio)-2-phenyl-6-[4-(trifluoromethyl)anilino]pyrimidine-5-carbonitrile isomer,C19H13F3N4S,,,,,,
+CJ1292,"4,13,14-trihydroxy-9-oxo-8,17-dioxatetracyclo[8.7.0.0<u+00a9>???????u+0088>,<u+00a6><u+00a3><u+00a8><u+00b9><u+00a8>z.0<u+00a9>????????u+00a9>????????<u+00a9>????????u+00a6><u+00a3><u+00a8><u+00b9><u+00a8>f]heptadeca-1(10),2,4,6,11(16),12,14-heptaen-5-yl acetate isomer",C17H10O8,,,,,,
+CJ1293,"4-[5-(4-chloro-2-nitrophenyl)-2-furyl]-2,6-dimethyl-1,4-dihydropyridine-3,5-dicarbonitrile isomer",C19H13ClN4O3,,,,,,
+CJ1294,"4-chloro-2,5-dimethyl-n-(2-{[4-(trifluoromethyl)pyrimidin-2-yl]amino}ethyl)benzenesulfonamide isomer",C15H16ClF3N4O2S,,,,,,
+CJ1295,4-hydroxybenzamide isomer,C7H7NO2,,,,,,
+CJ1296,4-hydroxypropofol,C12H18O2,,,,HMDB0014018,,
+CJ1297,4-hydroxytamoxifen,C26H29NO2,,,,HMDB0060530,,
+CJ1298,l-2-amino-4-methylenepentanedioic acid,C6H9NO4,,,,HMDB0029433,,Amino acids related and peptides
+CJ1299,"4-methyl-n-[(1r,9s)-11-(1-methyl-4-piperidinyl)-6-oxo-7,11-diazatricyclo[7.3.1.02,7]trideca-2,4-dien-3-yl]benzenesulfonamide isomer",C24H32N4O3S,,,,,,
+CJ1300,"4-nitro-7-piperidino-2,1,3-benzoxadiazole isomer",C11H12N4O3,,,,,,
+CJ1301,4-piperidinecarboxamide isomer,C6H12N2O,,,,,,
+CJ1302,"5-({[5-(tert-butyl)-4h-1,2,4-triazol-3-yl]thio}methyl)-3-[3-(1h-pyrrol-1-yl)phenyl]-1,2,4-oxadiazole isomer",C19H20N6OS,,,,,,
+CJ1303,"5-(4-fluorophenyl)-2,3,5,6-tetrahydroimidazo[2,1-a]isoquinolin-5-ol isomer",C17H15FN2O,,,,,,
+CJ1304,5-hete,C20H32O3,,,,HMDB0011134,,FA
+CJ1305,"5,6-dihydrouridine",C9H14N2O6,,,,HMDB0000497,,"Nucleosides, nucleotides, and analogues  "
+CJ1306,"5,6-dihydroxyprostaglandin f1a",C20H36O7,,,,HMDB0012109,,Prostaglandins and related compounds  
+CJ1307,5b-cyprinol sulfate,C27H48O8S,,,,HMDB0006888,,
+CJ1308,5-butyl-2-(4-chlorophenyl)-6-(methoxymethyl)pyrimidin-4-ol isomer,C16H19ClN2O2,,,,,,
+CJ1309,5-carboxy-2'-deoxyuridine isomer,C10H12N2O7,,,,,,"Nucleosides, nucleotides, and analogues  "
+CJ1310,"5-chloro-1,3-dihydro-1-(4-piperidinyl)-2h-benzimidazol-2-one isomer",C12H14ClN3O,,,,,,
+CJ1311,5-ethyl-3-hydroxy-4-methyl-2(5h)-furanone,C7H10O3,,,,HMDB0033551,,
+CJ1312,5-hexyltetrahydro-2-oxo-3-furancarboxylic acid,C11H18O4,,,,HMDB0030984,,
+CJ1313,5-hydroxy-6-methoxycoumarin 7-glucoside isomer,C16H18O10,,,,,,
+CJ1314,5-hydroxyisourate,C5H4N4O4,,,,HMDB0030097,,"Nucleosides, nucleotides, and analogues  "
+CJ1315,5-hydroxymethyl-4-methyluracil,C6H8N2O3,,,,HMDB0000544,,"Nucleosides, nucleotides, and analogues  "
+CJ1316,glutamylalanine,C8H14N2O5,,,,HMDB0003764,,Amino acids related and peptides
+CJ1317,5-methoxytryptamine,C11H14N2O,,,,HMDB0004095,,
+CJ1318,5-methoxytryptophan,C12H14N2O3,,,,HMDB0002339,,Serotonins  
+CJ1319,5-methylcytidine,C10H15N3O5,,,,HMDB0000982,,"Nucleosides, nucleotides, and analogues  "
+CJ1320,5-methyldeoxycytidine,C10H15N3O4,,,,HMDB0002224,,"Nucleosides, nucleotides, and analogues  "
+CJ1321,5-methyl-lysine isomer,C7H16N2O2,,,,,,Amino acids related and peptides
+CJ1322,5-methyl-n-[(5-methyl-3-phenyl-4-isoxazolyl)methyl]-1-phenyl-1h-pyrazole-4-sulfonamide isomer,C21H20N4O3S,,,,,,
+CJ1323,5-methyl-n-[2-morpholino-5-(trifluoromethyl)phenyl]-1-phenyl-1h-pyrazole-3-carboxamide isomer,C22H21F3N4O2,,,,,,
+CJ1324,5-methyl-thf isomer,C20H25N7O6,,,,,,
+CJ1325,"6-({8,8-dimethyl-2-oxo-4-phenyl-2h,8h-pyrano[2,3-f]chromen-5-yl}oxy)-3,4,5-trihydroxyoxane-2-carboxylic acid isomer",C26H24O10,,,,,,
+CJ1326,"6-(1-carboxy-1-methylethoxy)-3,4,5-trihydroxyoxane-2-carboxylic acid isomer",C10H16O9,,,,,,
+CJ1327,"6-(2-{8,8-dimethyl-2-oxo-2h,8h-pyrano[2,3-f]chromen-3-yl}-5-methoxyphenoxy)-3,4,5-trihydroxyoxane-2-carboxylic acid isomer",C27H26O11,,,,,,
+CJ1328,"6-acetyl-1,2,3,4-tetrahydropyridine",C7H11NO,,,,HMDB0030345,,
+CJ1329,6-a-hydroxytestosterone  isomer,C19H28O3,,,,,,
+CJ1330,6-aminonicotinamide,C6H7N3O,,,,HMDB0247034,,"Nucleosides, nucleotides, and analogues  "
+CJ1331,6-beta-hydroxycortisol isomer,C21H30O6,,,,,,
+CJ1332,6-deoxohomodolichosterone,C29H50O4,,,,HMDB0034430,,
+CJ1333,6-keto-decanoylcarnitine,C17H31NO5,,,,HMDB0013202,,carnitine
+CJ1334,6-methylnicotinamide,C8H10N2O,,,,HMDB0013704,,"Nucleosides, nucleotides, and analogues  "
+CJ1335,6-methyloctanoyl-coa isomer,C30H48N7O17P3S,,,,,,Glycolysis
+CJ1336,6-phosphonoglucono-d-lactone,C6H11O9P,,,,HMDB0001127,,
+CJ1337,"7-(4-methylpiperazino)pyrimido[4,5-d]pyrimidine-2,4(1h,3h)-dithione isomer",C11H14N6S2,,,,,,
+CJ1338,7-beta-d-glucopyranosyloxybutylidenephthalide,C18H22O8,,,,HMDB0034752,,
+CJ1339,"7-chloro-2-(3,4-dimethoxyphenyl)-5,8-dihydroxy-3,6-dimethoxy-4h-chromen-4-one isomer",C19H17ClO8,,,,,,
+CJ1340,7-ethoxycoumarin  isomer,C11H10O3,,,,,,
+CJ1341,7-hydroxy-2-methyl-4-oxo-4h-1-benzopyran-5-carboxylic acid 7-glucoside,C17H18O10,,,,HMDB0036377,,
+CJ1342,7-ketocholesterol,C27H44O2,,,,HMDB0000501,,Cholesterols and derivatives  
+CJ1343,"7-methoxy-1-methyl-3h,4h,9h-pyrido[3,4-b]indole isomer",C13H14N2O,,,,,,
+CJ1344,7-methyl-3-oxooctanoyl-coa isomer,C30H50N7O18P3S,,,,,,Glycolysis
+CJ1345,7-sulfocholic acid,C24H40O8S,,,,HMDB0002421,,Bile acids 
+CJ1346,8-acetylegelolide,C16H20O6,,,,HMDB0037772,,
+CJ1347,"8-chloro-6-(trifluoromethyl)imidazo[1,2-a]pyridine-2-carbohydrazide isomer",C9H6ClF3N4O,,,,,,
+CJ1348,abscisic acid,C15H20O4,,,,HMDB0036093,,
+CJ1349,acetoacetyl-coa,C25H40N7O18P3S,,,,HMDB0001484,,CoAs  
+CJ1350,acetyl methylcarbamoyl cysteine isomer,C7H12N2O4S,,,,,,
+CJ1351,acetyl-2-sulfoethyl-asparagine isomer,C8H14N2O7S,,,,,,
+CJ1352,acetyl-coa,C23H38N7O17P3S,,,,HMDB0001206,,CoAs  
+CJ1353,achalensolide  isomer,C15H18O3,,,,,,
+CJ1354,a-cmbhc isomer,C19H28O4,,,,,,
+CJ1355,adynerin  isomer,C30H44O7,,,,,,
+CJ1356,aflatoxin b1,C17H12O6,,,,HMDB0006552,,
+CJ1357,aica-riboside,C9H14N4O5,,,,HMDB0062179,,
+CJ1358,salbutamol,C13H21NO3,,,,HMDB0001937,,
+CJ1359,allantoic acid,C4H8N4O4,,,,HMDB0001209,,Amino acids related and peptides
+CJ1360,"alpha-(1,2-dihydroxyethyl)-1,2,3,4-tetrahydro-7-hydroxy-9-methoxy-3,4-dioxocyclopenta[c][1]benzopyran-6-acetaldehyde",C17H16O8,,,,HMDB0062442,,
+CJ1361,alpha-dihydroartemisinin isomer,C15H24O5,,,,,,
+CJ1362,alpha-ketoisovaleric acid,C5H8O3,,,,HMDB0000019,,
+CJ1363,a-l-threo-4-hex-4-enopyranuronosyl-d-galacturonic acid isomer,C12H16O12,,,,,,
+CJ1364,aminohydroxyphenylalanine  isomer,C9H12N2O3,,,,,,
+CJ1365,aminoisophthalic acid isomer,C8H7NO4,,,,,,
+CJ1366,aminomalonic acid,C3H5NO4,,,,HMDB0001147,,Amino acids related and peptides
+CJ1367,aminopentyl acetamide isomer,C7H16N2O,,,,,,
+CJ1368,aminophosphonopropionic acid isomer,C3H8NO5P,,,,,,
+CJ1369,alpha-amyrone,C30H48O,,,,HMDB0036659,,
+CJ1370,annoglabasin f,C22H34O5,,,,HMDB0035508,,
+CJ1371,2-aminobenzoic acid,C7H7NO2,,,,HMDB0001123,,Microbiota related
+CJ1372,cysteinylglycine,C5H10N2O3S,14.06,Both,,HMDB0000078,,Amino acids related and peptides
+CJ1373,apigenin 7-sulfate,C15H10O8S,,,,HMDB0037851,,
+CJ1374,aprobarbital,C10H14N2O3,,,,HMDB0015441,,
+CJ1375,arborinine,C16H15NO4,,,,HMDB0030177,,
+CJ1376,arg ala isomer,C9H19N5O3,,,,,,Amino acids related and peptides
+CJ1377,arg thr arg asn  isomer,C31H39N5O4,,,,,,Amino acids related and peptides
+CJ1378,arginylglutamic acid,C11H21N5O5,,,,HMDB0028708,,Amino acids related and peptides
+CJ1379,arginylhydroxyproline,C11H21N5O4,,,,HMDB0028710,,Amino acids related and peptides
+CJ1380,artabsinolide a,C15H20O5,,,,HMDB0035620,,
+CJ1381,arteether  isomer,C17H28O5,,,,,,
+CJ1382,asparaginylglutamic acid,C9H15N3O6,,,,HMDB0028730,,Amino acids related and peptides
+CJ1383,asp lys isomer,C10H19N3O5,,,,,,Amino acids related and peptides
+CJ1384,asparaginylhydroxyproline,C9H15N3O5,,,,HMDB0028732,,Amino acids related and peptides
+CJ1385,asparagoside a,C33H54O8,,,,HMDB0030046,,
+CJ1386,aspartylglycosamine,C12H21N3O8,,,,HMDB0000489,,Carbohydrates and carbohydrate conjugates  
+CJ1387,athyriol  isomer,C14H10O6,,,,,,
+CJ1388,austalide l,C25H32O6,,,,HMDB0030158,,
+CJ1389,avenanthramide e  isomer,C17H15NO5,,,,,,
+CJ1390,azadirone isomer,C21H41O7P,,,,,,
+CJ1391,barbital,C8H12N2O3,,,,HMDB0248870,,
+CJ1392,bb-22 3-carboxyindole metabolite isomer,C16H19NO2,,,,,,
+CJ1393,behenoylglycine,C24H47NO3,,,,HMDB0013219,,Amino acids related and peptides
+CJ1394,oxybuprocaine,C17H28N2O3,,,,HMDB0015029,,
+CJ1395,quinone,C6H4O2,,,,HMDB0003364,,
+CJ1396,benzyl b-l-arabinopyranoside isomer,C13H18O4,,,,,,
+CJ1397,(r)-2-benzylsuccinate,C11H12O4,,,,HMDB0012127,,
+CJ1398,bergaptol,C11H6O4,,,,HMDB0013679,,
+CJ1399,betamethasone,C22H29FO5,,,,HMDB0014586,,Steroids and steroid derivatives  
+CJ1400,bethanechol,C7H16N2O2,,,,HMDB0015154,,
+CJ1401,b-hydroxyisobutyryl-coa isomer,C25H42N7O18P3S,,,,,,Glycolysis
+CJ1402,bicine,C6H13NO4,,,,HMDB0011727,,Amino acids related and peptides
+CJ1403,biotin amide,C10H17N3O2S,,,,HMDB0001458,,
+CJ1404,bisnorcholic acid,C22H36O5,,,,HMDB0002082,,Bile acids 
+CJ1405,bisoprolol,C18H31NO4,,,,HMDB0014750,,
+CJ1406,bis-tert-butoxycarbonyl-amino-oxy-acetic acid  isomer,C12H21NO7,,,,,,
+CJ1407,blumenol c glucoside,C19H32O7,,,,HMDB0040668,,FA
+CJ1408,b-octylglucoside  isomer,C14H28O6,,,,,,
+CJ1409,bosentan,C27H29N5O6S,,,,HMDB0014699,,
+CJ1410,bt2(sigma) isomer,C9H5ClO2S,,,,,,
+CJ1411,budesonide,C25H34O6,,,,HMDB0015353,,Steroids and steroid derivatives  
+CJ1412,butyl isodecyl phthalate  isomer,C22H34O4,,,,,,
+CJ1413,butyryl-coa,C25H42N7O17P3S,,,,HMDB0001088,,CoAs  
+CJ1414,cabergoline,C26H37N5O2,,,,HMDB0014393,,
+CJ1415,calcitriol,C27H44O3,,,,HMDB0001903,,
+CJ1416,calonectrin,C19H26O6,,,,HMDB0034915,,
+CJ1417,canrenone,C22H28O3,,,,HMDB0003033,,
+CJ1418,caproylcholine,C11H23NO2,,,,HMDB0013224,,
+CJ1419,carbamazepine-o-quinone,C15H10N2O3,,,,HMDB0060566,,
+CJ1420,carboxymethyl-glutamate  isomer,C7H11NO6,,,,,,
+CJ1421,carnosol,C20H26O4,,,,HMDB0002121,,
+CJ1422,chaparrinone  isomer,C20H26O7,,,,,,
+CJ1423,cholesterol sulfate,C27H46O4S,,,,HMDB0000653,,Cholesterols and derivatives  
+CJ1424,chondroitin,C14H21NO11,,,,HMDB0000629,,
+CJ1425,cibaric acid,C18H28O5,,,,HMDB0038580,,
+CJ1426,cincassiol b,C20H32O8,,,,HMDB0036855,,
+CJ1427,citronellyl propionate,C13H24O2,,,,HMDB0037226,,FA
+CJ1428,citrusin e,C17H24O9,,,,HMDB0039234,,
+CJ1429,ubiquinone-4,C29H42O4,,,,HMDB0006710,,
+CJ1430,corey pg-lactone diol  isomer,C15H24O4,,,,,,
+CJ1431,corosolic acid  isomer,C30H48O4,,,,,,
+CJ1432,cortisol 21-sulfate,C21H30O8S,,,,HMDB0062779,,Steroids and steroid derivatives  
+CJ1433,coscinalactone  isomer,C25H36O3,,,,,,
+CJ1434,cpa(18:0/0:0),C21H41O6P,,,,HMDB0007004,,
+CJ1435,creatine riboside,C9H17N3O6,,,,HMDB0240254,,
+CJ1436,cresol sulfate isomer,C7H8O4S,,,,,,
+CJ1437,cucurbic acid,C12H20O3,,,,HMDB0029388,,
+CJ1438,cuminaldehyde,C10H12O,,,,HMDB0002214,,
+CJ1439,cyclocalopin f,C15H18O6,,,,HMDB0039825,,
+CJ1440,cyclodopa glucoside,C15H19NO9,,,,HMDB0029833,,Amino acids related and peptides
+CJ1441,cyclovariegatin,C18H10O8,,,,HMDB0029682,,
+CJ1442,cystathionine ketimine,C7H9NO4S,,,,HMDB0002015,,Amino acids related and peptides
+CJ1443,cysteine-glutathione disulphide isomer,C13H22N4O8S2,,,,,,
+CJ1444,dctp,C9H16N3O13P3,,,,HMDB0000998,,"Nucleosides, nucleotides, and analogues  "
+CJ1445,decenoyl-coa isomer,C31H52N7O17P3S,,,,,,Glycolysis
+CJ1446,decyloxybenzene-sulfonic acid isomer,C16H26O4S,,,,,,
+CJ1447,decylubiquinone  isomer,C19H30O4,,,,,,
+CJ1448,dedimethylchlorpromazine,C15H15ClN2S,,,,HMDB0061134,,
+CJ1449,dehydrocarnitine,C7H13NO3,13.724,,,,,carnitine
+CJ1450,dehydrocholate isomer,C24H34O5,,,,,,Bile acids 
+CJ1451,dehydrogeissoschizine  isomer,C19H21N5O2,,,,,,
+CJ1452,dehydroglutathione isomer,C10H15N3O6S,,,,,,
+CJ1453,vitamin a2 aldehyde,C20H26O,,,,HMDB0035695,,Retinoids  
+CJ1454,demeton-s-methyl sulfone isomer,C6H15O5PS2,,,,,,
+CJ1455,deoxynivalenol,C15H20O6,,,,HMDB0036156,,
+CJ1456,deoxyribose 5-phosphate,C5H11O7P,,,,HMDB0001031,,Carbohydrates and carbohydrate conjugates  
+CJ1457,deoxy-thioinosine monophosphate isomer,C10H13N4O7PS,,,,,,
+CJ1458,dephospho-coa,C21H35N7O13P2S,,,,HMDB0001373,,CoAs  
+CJ1459,d-glucoside isomer,C7H14O6,,,,,METPA0222,
+CJ1460,d-glucuronic acid 1-phosphate,C6H11O10P,,,,HMDB0003976,,Carbohydrates and carbohydrate conjugates  
+CJ1461,d-glycero-l-galacto-octulose,C8H16O8,,,,HMDB0029954,,Carbohydrates and carbohydrate conjugates  
+CJ1462,dibenzothiopyran  isomer,C13H10S,,,,,,
+CJ1463,dicaffeoylputrescine,C22H24N2O6,,,,HMDB0033467,,
+CJ1464,diethyl tartrate,C8H14O6,,,,HMDB0033584,,
+CJ1465,diethylcarbamazine n-oxide  isomer,C10H21N3O2,,,,,,
+CJ1466,diethylthiophosphate,C4H11O3PS,,,,HMDB0001460,,
+CJ1467,digalacturonate isomer,C12H18O13,,,,,,
+CJ1468,dihete  isomer,C20H32O4,,,,,,
+CJ1469,dihydro prostaglandin f1 isomer,C20H38O5,,,,,,
+CJ1470,dihydroactinidiolide,C11H16O2,,,,HMDB0035240,,
+CJ1471,dihydrocarvone,C10H16O,,,,HMDB0036079,,
+CJ1472,dihydroceramide,C20H41NO3,,,,HMDB0006752,,
+CJ1473,dihydroergotamine,C33H37N5O5,,,,HMDB0014465,,
+CJ1474,dihydromorelloflavone  isomer,C30H22O11,,,,,,
+CJ1475,dihydronaringenin-o-sulphate,C15H14O8S,,,,HMDB0059996,,
+CJ1476,dihydronepetalactone,C10H16O2,,,,HMDB0035829,,
+CJ1477,dihydroxycholesterol isomer,C27H46O3,,,,,,Bile acids 
+CJ1478,dihydroxyeicosanoic acid  isomer,C20H40O4,,,,,,
+CJ1479,dihydroxyphenylglycol sulfate isomer,C8H10O7S,,,,,,
+CJ1480,"1,25-dihydroxyvitamin d3-26,23-lactone",C27H40O5,,,,HMDB0000969,,
+CJ1481,diketo-metribuzin isomer,C7H12N4O2,,,,,,
+CJ1482,dimethoxy-sulphobenzoic acid isomer,C9H10O7S,,,,,,
+CJ1483,dimethyl phosphate isomer,C2H6O4S,,,,,,
+CJ1484,"n,n-dimethylformamide",C3H7NO,,,,HMDB0001888,,
+CJ1485,dimethylnonanoyl carnitine isomer,C18H35NO4,,,,,,carnitine
+CJ1486,dimp,C10H13N4O7P,,,,HMDB0006555,,"Nucleosides, nucleotides, and analogues  "
+CJ1487,di-n-pentyl phthalate  isomer,C18H26O4,,,,,,
+CJ1488,dioctyl phosphate isomer,C22H50NO7P,,,,,,
+CJ1489,"4,7-dioxoheptanoic acid",C7H10O4,,,,HMDB0246616,,FA
+CJ1490,dityrosine,C18H20N2O6,,,,HMDB0006045,,
+CJ1491,dl-lanthionine,C6H12N2O4S,,,,HMDB0251521,,Amino acids related and peptides
+CJ1492,docosanamide,C22H45NO,,,,HMDB0000583,,FA
+CJ1493,(2e)-dodecenoyl-coa,C33H56N7O17P3S,,,,HMDB0003712,,CoAs  
+CJ1494,dolichyl diphosphate,C12H26O7P2,,,,HMDB0001513,,
+CJ1495,donepezil metabolite m4,C17H23NO3,,,,HMDB0013960,,
+CJ1496,doxazosin,C23H25N5O5,,,,HMDB0014728,,
+CJ1497,doxycycline,C22H24N2O8,,,,HMDB0014399,,
+CJ1498,d-pantethine,C22H42N4O8S2,,,,HMDB0003828,,Amino acids related and peptides
+CJ1499,dracunculin,C11H8O5,,,,HMDB0030789,,
+CJ1500,dtdp,C10H16N2O11P2,,,,HMDB0001274,,"Nucleosides, nucleotides, and analogues  "
+CJ1501,thymidine 5'-triphosphate,C10H17N2O14P3,,,,HMDB0001342,,"Nucleosides, nucleotides, and analogues  "
+CJ1502,encelin,C15H16O3,,,,HMDB0034723,,
+CJ1503,endoxifen o-glucuronide isomer,C31H37NO8,,,,,,
+CJ1504,enilconazole,C14H14Cl2N2O,,,,HMDB0031794,,
+CJ1505,enterodiol,C18H22O4,,,,HMDB0005056,,
+CJ1506,ephedrine,C10H15NO,,,,HMDB0015451,,
+CJ1507,equol 7-o-glucuronide,C21H22O9,,,,HMDB0041732,,
+CJ1508,equol,C15H14O3,,,,HMDB0002209,,
+CJ1509,equol sulfate isomer,C15H14O6S,,,,,,
+CJ1510,eremopetasinorol,C13H20O2,,,,HMDB0029668,,
+CJ1511,erinacine b,C25H36O6,,,,HMDB0040390,,
+CJ1512,esculentic acid  isomer,C30H46O6,,,,,,
+CJ1513,estrone sulfate,C18H22O5S,,,,HMDB0001425,,
+CJ1514,ethyl 2-(methylthio)-4-{[(5-nitro-2-furyl)carbonyl]amino}-1-(2-thienylmethyl)-1h-imidazole-5-carboxylate isomer,C17H16N4O6S2,,,,,,
+CJ1515,ethyl 2-[2-(2-thienylcarbonyl)hydrazino]-4-(trifluoromethyl)pyrimidine-5-carboxylate isomer,C13H11F3N4O3S,,,,,,
+CJ1516,"ethyl 2-[5-(4-chlorophenyl)-1,3,4-oxadiazol-2-yl]acetate isomer",C12H11ClN2O3,,,,,,
+CJ1517,"ethyl 2-amino-8h-indeno[2,1-b]thiophene-3-carboxylate isomer",C14H13NO2S,,,,,,
+CJ1518,ethyl 2-cyano-3-[(2-oxoazepan-3-yl)amino]acrylate isomer,C12H17N3O3,,,,,,
+CJ1519,ethyl glucuronide,C8H14O7,,,,HMDB0010325,,
+CJ1520,ethyl serine  isomer,C5H11NO3,,,,,,Amino acids related and peptides
+CJ1521,ethylmethylmaleimide  isomer,C7H9NO2,,,,,,
+CJ1522,etiprednol  isomer,C22H30O5,,,,,,
+CJ1523,fapy-adenine,C5H7N5O,,,,HMDB0004816,,"Nucleosides, nucleotides, and analogues  "
+CJ1524,fasciculol c,C30H52O6,,,,HMDB0035853,,
+CJ1525,ferulic acid 4-o-sulfate,C10H10O7S,,,,HMDB0029200,,
+CJ1526,flavidulol c,C34H42O4,,,,HMDB0039150,,
+CJ1527,floribundoside,C21H22O10,,,,HMDB0033739,,
+CJ1528,flumequine,C14H12FNO3,,,,HMDB0041895,,Quinoline carboxylic acids  
+CJ1529,flurandrenolide,C24H33FO6,,,,HMDB0014984,,Steroids and steroid derivatives  
+CJ1530,flavin mononucleotide,C17H21N4O9P,,,,HMDB0001520,,
+CJ1531,foeniculoside viii,C16H28O8,,,,HMDB0033009,,
+CJ1532,folinic acid,C20H23N7O7,,,,HMDB0001562,,
+CJ1533,fructosyl-glycine isomer,C8H15NO7,,,,,,
+CJ1534,4-fumarylacetoacetic acid,C8H8O6,,,,HMDB0001268,,
+CJ1535,furandicarboxylic acid isomer,C6H4O5,,,,,,
+CJ1536,furazolidone,C8H7N3O5,,,,HMDB0014752,,
+CJ1537,"galactose-beta-1,4-xylose",C11H20O10,,,,HMDB0011677,,Carbohydrates and carbohydrate conjugates  
+CJ1538,galactosylhydroxylysine,C12H24N2O8,,,,HMDB0000600,,Amino acids related and peptides
+CJ1539,gamma glutamyl ornithine,C10H19N3O5,,,,HMDB0002248,,Amino acids related and peptides
+CJ1540,gamma-glutamyltyrosine,C14H18N2O6,,,,HMDB0011741,,Amino acids related and peptides
+CJ1541,ganoderic acid  isomer,C30H44O6,,,,,,
+CJ1542,ganolucidic acid b,C30H46O6,,,,HMDB0035751,,
+CJ1543,gelcohol isomer,C16H26O4,,,,,,
+CJ1544,gentianadine  isomer,C8H7NO2,,,,,,
+CJ1545,gentianaine  isomer,C6H7NO3,,,,,,
+CJ1546,geranyl acetoacetate,C14H22O3,,,,HMDB0038256,,FA
+CJ1547,gerberinol,C21H16O6,,,,HMDB0033304,,
+CJ1548,glabric acid,C30H46O5,,,,HMDB0034689,,
+CJ1549,glaucasterol  isomer,C27H42O,,,,,,
+CJ1550,n2-gamma-glutamylglutamine,C10H17N3O6,,,,HMDB0011738,,Amino acids related and peptides
+CJ1551,glu gly  isomer,C7H12N2O5,,,,,,Amino acids related and peptides
+CJ1552,glucosamine 1-phosphate isomer,C6H14NO8P,,,,,,
+CJ1553,gly his isomer,C8H12N4O3,,,,,,
+CJ1554,glycerophosphocholine,C8H20NO6P,,,,HMDB0000086,,Carbohydrates and carbohydrate conjugates  
+CJ1555,glycerylphosphorylethanolamine,C5H14NO6P,,,,HMDB0000114,,
+CJ1556,glycodiazine,C13H15N3O4S,,,,HMDB0015461,,
+CJ1557,glycyl-lysine,C8H17N3O3,,,,HMDB0028846,,Amino acids related and peptides
+CJ1558,glycyl-phenylalanine,C11H14N2O3,,,,HMDB0028848,,Amino acids related and peptides
+CJ1559,glycyl-proline isomer,C7H12N2O3,,,,,,Amino acids related and peptides
+CJ1560,glycylprolylhydroxyproline,C12H19N3O5,,,,HMDB0002171,,Amino acids related and peptides
+CJ1561,glycyltyrosine,C11H14N2O4,,,,HMDB0028853,,Amino acids related and peptides
+CJ1562,gly-pro-gly  isomer,C9H15N3O4,,,,,,Amino acids related and peptides
+CJ1563,gonyautoxin i,C10H17N7O9S,,,,HMDB0033506,,
+CJ1564,o-methoxycatechol-o-sulphate,C7H8O5S,,,,HMDB0060013,,
+CJ1565,hecogenin acetate isomer,C29H44O5,,,,,,
+CJ1566,helenalin isomer,C15H18O4,,,,,,
+CJ1567,heliohoustine  isomer,C14H23NO4,,,,,,
+CJ1568,heptanoylcarnitine,C14H27NO4,,,,HMDB0013238,,carnitine
+CJ1569,heptyl 4-hydroxybenzoate,C14H20O3,,,,HMDB0034462,,
+CJ1570,hesperetin 3'-o-sulfate,C16H14O9S,,,,HMDB0029202,,
+CJ1571,heterophylol isomer,C26H32O4,,,,,,
+CJ1572,hexadecanedioic acid carnitine ester isomer,C23H43NO6,,,,,,carnitine
+CJ1573,hexanoyl-coa,C27H46N7O17P3S,,,,HMDB0002845,,CoAs  
+CJ1574,glutaminylhistidine,C11H17N5O4,,,,HMDB0028799,,Amino acids related and peptides
+CJ1575,homo-l-arginine,C7H16N4O2,,,,HMDB0000670,,Amino acids related and peptides
+CJ1576,homobaldrinal  isomer,C15H16O4,,,,,,
+CJ1577,homocitrulline,C7H15N3O3,,,,HMDB0000679,,Amino acids related and peptides
+CJ1578,l-homocysteic acid,C4H9NO5S,,,,HMDB0002205,,Amino acids related and peptides
+CJ1579,(s)-homostachydrine,C8H15NO2,,,,HMDB0033433,,Amino acids related and peptides
+CJ1580,hyaluronic acid,C28H44N2O23,,,,HMDB0010366,,
+CJ1581,hydantoin-5-propionic acid,C6H8N2O4,,,,HMDB0001212,,
+CJ1582,hydroxyaspergillic acid isomer,C12H20N2O3,,,,,,
+CJ1583,4-hydroxycyclohexylcarboxylic acid,C7H12O3,,,,HMDB0001988,,
+CJ1584,trans-4-hydroxycyclohexylacetic acid,C8H14O3,,,,HMDB0000909,,
+CJ1585,hydroxygaleon,C20H22O5,,,,HMDB0031535,,
+CJ1586,3-hydroxyhexanoylcarnitine,C13H25NO5,,,,HMDB0013131,,carnitine
+CJ1587,hydroxymandelic acid isomer,C8H8O4,,,,,,
+CJ1588,hydroxymethylphosphonate isomer,CH5O4P,,,,,,
+CJ1589,hydroxynonenoic acid  isomer,C9H16O3,,,,,,
+CJ1590,hydroxy-nonylbenzene-sulfonic acid isomer,C15H24O4S,,,,,,
+CJ1591,hydroxyprolyl-valine,C10H18N2O4,,,,HMDB0028876,,Amino acids related and peptides
+CJ1592,hydroxytetradecadienoyl-carnitine isomer,C21H37NO5,,,,,,carnitine
+CJ1593,hymexazol n-glucoside  isomer,C10H15NO7,,,,,,
+CJ1594,idebenone  isomer,C19H30O5,,,,,,
+CJ1595,ile cys  isomer,C9H18N2O3S,,,,,,Amino acids related and peptides
+CJ1596,imidazolepropionic acid,C6H8N2O2,,,,HMDB0002271,,
+CJ1597,imidazoleacetic acid ribotide,C10H15N2O9P,,,,HMDB0006032,,"Nucleosides, nucleotides, and analogues  "
+CJ1598,indole-3-acetaldoxime n-oxide isomer,C10H10N2O2,,,,,,
+CJ1599,indole-3-carboxilic acid-sulphate isomer,C9H7NO5S,,,,,,
+CJ1600,indole-3-propionic acid,C11H11NO2,,,,HMDB0002302,,Microbiota related
+CJ1601,indole-quinone isomer,C8H5NO2,,,,,,
+CJ1602,indoxyl glucuronide,C14H15NO7,,,,HMDB0010319,,
+CJ1603,inositol cyclic phosphate,C6H11O8P,,,,HMDB0001125,,
+CJ1604,isoalantolactone,C15H20O2,,,,HMDB0035934,,
+CJ1605,isobutyryl-coa,C25H42N7O17P3S,,,,HMDB0001243,,CoAs  
+CJ1606,isobutyrylglycine,C6H11NO3,,,,HMDB0000730,,Amino acids related and peptides
+CJ1607,isocaucalol  isomer,C15H26O3,,,,,,
+CJ1608,isoelemicin,C12H16O3,,,,HMDB0029867,,
+CJ1609,isoleucyl-tyrosine,C15H22N2O4,,,,HMDB0028919,,Amino acids related and peptides
+CJ1610,isoliquiritigenin,C15H12O4,,,,HMDB0037316,,
+CJ1611,isoniazid alpha-ketoglutaric acid,C11H11N3O5,,,,HMDB0060663,,
+CJ1612,na,C10H18O7,,,,HMDB0032353,,
+CJ1613,isosorbide mononitrate,C6H9NO6,,,,HMDB0015155,,
+CJ1614,isovaleroylglycine isomer,C7H13NO3,,,,,,
+CJ1615,isradipine,C19H21N3O5,,,,HMDB0014415,,
+CJ1616,janthitrem e,C37H49NO6,,,,HMDB0030529,,
+CJ1617,juglone glucoside,C16H16O8,,,,HMDB0033563,,
+CJ1618,juvenile hormone iii acid diol  isomer,C15H26O4,,,,,,
+CJ1619,kammogenin  isomer,C27H40O5,,,,,,
+CJ1620,kessyl glycol  isomer,C15H26O3,,,,,,
+CJ1621,ketorolac,C15H13NO3,,,,HMDB0014608,,
+CJ1622,kikkanol f  isomer,C15H26O3,,,,,,
+CJ1623,kynuramine,C9H12N2O,,,,HMDB0012246,,Amino acids related and peptides
+CJ1624,l-acetopine,C8H16N4O4,,,,HMDB0039111,,Amino acids related and peptides
+CJ1625,lactapiperanol c,C16H26O4,,,,HMDB0033630,,
+CJ1626,lariciresinol isomer,C20H24O6,,,,,,
+CJ1627,l-aspartyl-phe isomer,C13H16N2O5,,,,,,Amino acids related and peptides
+CJ1628,l-beta-aspartyl-l-glutamic acid,C9H14N2O7,,,,HMDB0011164,,
+CJ1629,leu asp  isomer,C10H18N2O5,,,,,,Amino acids related and peptides
+CJ1630,leu leu isomer,C12H24N2O3,,,,,,Amino acids related and peptides
+CJ1631,leu ser  isomer,C9H18N2O4,,,,,,Amino acids related and peptides
+CJ1632,threonylleucine,C10H20N2O4,,,,HMDB0029065,,Amino acids related and peptides
+CJ1633,leu val isomer,C11H22N2O3,,,,,,Amino acids related and peptides
+CJ1634,leucyl-alanine,C9H18N2O3,,,,HMDB0304783,,Amino acids related and peptides
+CJ1635,levetiracetam,C8H14N2O2,,,,HMDB0015333,,Amino acids related and peptides
+CJ1636,limocitrol,C18H16O9,,,,HMDB0037691,,
+CJ1637,linolenoyl ethanolamide isomer,C20H35NO2,,,,,,
+CJ1638,(r)-lipoic acid,C8H14O2S2,,,,HMDB0001451,,
+CJ1639,l-menthyl acetoacetate,C14H24O3,,,,HMDB0032369,,
+CJ1640,lomefloxacin,C17H19F2N3O3,,,,HMDB0015113,,
+CJ1641,luguine  isomer,C19H13NO5,,,,,,
+CJ1642,lys leu isomer,C12H25N3O3,,,,,,Amino acids related and peptides
+CJ1643,lysyltyrosine,C15H23N3O4,,,,HMDB0028963,,Amino acids related and peptides
+CJ1644,macrocarpal c,C28H38O5,,,,HMDB0038705,,
+CJ1645,maesol  isomer,C28H42O4,,,,,,
+CJ1646,magellanine  isomer,C17H25NO2,,,,,,
+CJ1647,malonyl-coa,C24H38N7O19P3S,,,,HMDB0001175,,CoAs  
+CJ1648,maltopentaose,C30H52O26,,,,HMDB0012254,,Carbohydrates and carbohydrate conjugates  
+CJ1649,malyl-coa,C25H40N7O20P3S,,,,HMDB0001021,,CoAs  
+CJ1650,mammea e/bb,C24H30O7,,,,HMDB0030814,,
+CJ1651,mecarbam,C10H20NO5PS2,,,,HMDB0031800,,
+CJ1652,melibiouronic acid isomer,C12H20O12,,,,,,
+CJ1653,melleolide e,C23H30O7,,,,HMDB0038785,,
+CJ1654,menadione,C11H8O2,,,,HMDB0001892,,
+CJ1655,meprobamate,C9H18N2O4,,,,HMDB0014515,,Amino acids related and peptides
+CJ1656,mescaline  isomer,C11H17NO3,,,,,,
+CJ1657,betulin,C29H48O3,,,,HMDB0036838,,
+CJ1658,(â±)-metalaxyl,C15H21NO4,,,,HMDB0031802,,Amino acids related and peptides
+CJ1659,methacholine,C8H17NO2,14.64,Posi,,HMDB0015654,,
+CJ1660,methacrylyl-coa,C25H40N7O17P3S,,,,HMDB0001011,,CoAs  
+CJ1661,metharbital,C9H14N2O3,,,,HMDB0014606,,
+CJ1662,methionyl-glycine,C7H14N2O3S,,,,HMDB0028973,,Amino acids related and peptides
+CJ1663,methyl 2-acetyl-3-oxodecanoate  isomer,C13H22O4,,,,,,
+CJ1664,"methyl 5-(4-fluorophenyl)-3-methylthieno[3,2-b]thiophene-2-carboxylate isomer",C15H11FO2S2,,,,,,
+CJ1665,methyl equol sulfate isomer,C16H16O6S,,,,,,
+CJ1666,methyl farnesoate  isomer,C16H26O2,,,,,,
+CJ1667,methyl pantothenate  isomer,C10H19NO5,,,,,,
+CJ1668,n-methylethanolaminium phosphate,C3H10NO4P,,,,HMDB0060173,,Lipids
+CJ1669,methyladenosine monophosphate isomer,C11H15N5O7P,,,,,,
+CJ1670,methylcysteine,C4H9NO2S,,,,HMDB0002108,,Amino acids related and peptides
+CJ1671,methylgingerol,C18H28O4,,,,HMDB0029852,,
+CJ1672,1-methylguanosine,C11H16N5O5,,,,HMDB0001563,,"Nucleosides, nucleotides, and analogues  "
+CJ1673,sulcatone,C8H14O,,,,HMDB0035915,,
+CJ1674,methylimidazole acetaldehyde,C6H8N2O,,,,HMDB0004181,,
+CJ1675,methylindole isomer,C9H9N,,,,,,
+CJ1676,methylmalonyl-coa,C25H40N7O19P3S,,,,HMDB0001269,,CoAs  
+CJ1677,methyl-pyridone-carboxamide isomer,C7H8N2O2,,,,,,
+CJ1678,methylsynephrine  isomer,C10H15NO2,,,,,,
+CJ1679,methyprylon,C10H17NO2,,,,HMDB0015239,,
+CJ1680,mg(22:4) isomer,C25H42O4,,,,,,
+CJ1681,midodrine,C12H18N2O4,,,,HMDB0014356,,
+CJ1682,minabeolide-8 isomer,C29H42O5,,,,,,
+CJ1683,modafinil,C15H15NO2S,,,,HMDB0014883,,
+CJ1684,mollicellin a,C21H18O7,,,,HMDB0033339,,
+CJ1685,momordicilin,C36H60O3,,,,HMDB0030896,,
+CJ1686,mono-trans-p-coumaroylmesotartaric acid,C14H14O8,,,,HMDB0029783,,
+CJ1687,montecristin,C37H66O4,,,,HMDB0029795,,
+CJ1688,monuron,C9H11ClN2O,,,,HMDB0254876,,
+CJ1689,morphine 3-sulfate,C17H19NO6S,,,,HMDB0254891,,
+CJ1690,muramic acid,C9H17NO7,,,,HMDB0003254,,Carbohydrates and carbohydrate conjugates  
+CJ1691,myristicin,C11H12O3,,,,HMDB0035873,,
+CJ1692,n6-carbamoyl-threonyladenosine isomer,C15H20N6O8,,,,,,"Nucleosides, nucleotides, and analogues  "
+CJ1693,n6-dicarboxyethyl-amp isomer,C14H18N5O11P,,,,,,
+CJ1694,n6-galacturonyl-l-lysine,C12H22N2O8,,,,HMDB0033106,,Amino acids related and peptides
+CJ1695,n-alpha-acetyl-l-citrulline,C8H15N3O4,,,,HMDB0000856,,Amino acids related and peptides
+CJ1696,n-acetyl-fucosamine isomer,C8H15NO5,,,,,,
+CJ1697,n-acetylglutamine,C7H12N2O4,,,,HMDB0006029,,Amino acids related and peptides
+CJ1698,n-acetyl-glucosaminate  isomer,C8H15NO7,,,,,,
+CJ1699,n-acetyl-d-glucosamine 6-phosphate,C8H16NO9P,,,,HMDB0001062,,Carbohydrates and carbohydrate conjugates  
+CJ1700,n-acetylhistidine,C8H11N3O3,,,,HMDB0032055,,Amino acids related and peptides
+CJ1701,n-acetylkynurenine isomer,C12H14N2O4,,,,,,
+CJ1702,n-acetyl-l-2-aminoadipate(2-),C8H13NO5,,,,HMDB0062715,,Amino acids related and peptides
+CJ1703,n-acetyl-d-lactosamine,C14H25NO11,,,,HMDB0341344,,
+CJ1704,nadh,C21H29N7O14P2,,,,HMDB0001487,,"Nucleosides, nucleotides, and analogues  "
+CJ1705,n-carbamoylsarcosine,C4H8N2O3,,,,HMDB0012265,,Amino acids related and peptides
+CJ1706,n-decanoylglycine,C12H23NO3,,,,HMDB0013267,,Amino acids related and peptides
+CJ1707,neoabietic acid isomer,C20H30O2,,,,,,
+CJ1708,neocnidilide,C12H18O2,,,,HMDB0034450,,
+CJ1709,neosolaspigenin  isomer,C27H44O5,,,,,,
+CJ1710,neotigogenin acetate isomer,C29H46O4,,,,,,
+CJ1711,netilmicin,C21H41N5O7,,,,HMDB0015090,,
+CJ1712,n-formylanthranilic acid isomer,C8H7NO3,,,,,,
+CJ1713,n'-formylkynurenine,C11H12N2O4,,,,HMDB0001200,,Amino acids related and peptides
+CJ1714,n-heptanoylglycine,C9H17NO3,,,,HMDB0013010,,Amino acids related and peptides
+CJ1715,nicotinuric acid,C8H8N2O3,,,,HMDB0003269,,Amino acids related and peptides
+CJ1716,n-lauroylglycine,C14H27NO3,,,,HMDB0013272,,Amino acids related and peptides
+CJ1717,nn-diacetylspermidine isomer,C11H24N3O2,,,,,,
+CJ1718,n-nonanoylglycine,C11H21NO3,,,,HMDB0013279,,Amino acids related and peptides
+CJ1719,oleoyl glycine,C20H37NO3,,,,HMDB0013631,,Amino acids related and peptides
+CJ1720,2-nonenoic acid,C9H16O2,,,,HMDB0031271,,FA
+CJ1721,nonoxynol-9,C19H32O3,,,,HMDB0015680,,
+CJ1722,n-palmitoyl tyrosine,C25H41NO4,,,,HMDB0062340,,Amino acids related and peptides
+CJ1723,octanal,C8H16O,,,,HMDB0001140,,
+CJ1724,octanoyl-coa,C29H50N7O17P3S,,,,HMDB0001070,,CoAs  
+CJ1725,octanoylglucuronide,C14H24O8,,,,HMDB0010347,,
+CJ1726,octulose-8-phosphate isomer,C8H17O11P,,,,,,
+CJ1727,oleandolide  isomer,C20H34O7,,,,,,
+CJ1728,oleanolic acid beta-glucosiduronic acid isomer,C36H56O9,,,,,,
+CJ1729,o-nonanoyl-l-carnitine isomer,C16H31NO4,,,,,,carnitine
+CJ1730,o-phospho-4-hydroxy-threonine isomer,C4H10NO7P,,,,,,
+CJ1731,orlistat,C29H53NO5,,,,HMDB0015215,,Amino acids related and peptides
+CJ1732,orotidylic acid,C10H13N2O11P,,,,HMDB0000218,,"Nucleosides, nucleotides, and analogues  "
+CJ1733,orotidine-5-phosphate isomer,C10H13N2O11P,,,,,,
+CJ1734,na,C16H12O5,,,,HMDB0128584,,
+CJ1735,succinylcarnitine,C11H19NO6,,,,HMDB0061717,,carnitine
+CJ1736,n-palmitoyl glutamic acid,C21H39NO5,,,,HMDB0241925,,Amino acids related and peptides
+CJ1737,palmitoyl glutamate  isomer,C21H39NO5,,,,,,
+CJ1738,palmitoyl serinol,C19H39NO3,,,,HMDB0013654,,
+CJ1739,palmityl-coa,C37H66N7O17P3S,,,,HMDB0001338,,CoAs  
+CJ1740,palythinol  isomer,C13H22N2O6,,,,,,
+CJ1741,pantetheine,C11H22N2O4S,,,,HMDB0003426,,Amino acids related and peptides
+CJ1742,prostaglandin f1a,C20H36O5,,,,HMDB0002685,,Prostaglandins and related compounds  
+CJ1743,phenyl glucuronide isomer,C12H14O7,,,,,,
+CJ1744,phenylbutazone,C19H20N2O2,,,,HMDB0014950,,
+CJ1745,phenylglycol 3-o-sulfate isomer,C8H10O6S,,,,,,
+CJ1746,phenylglyoxylic acid,C8H6O3,,,,HMDB0001587,,
+CJ1747,phenyllactic acid,C9H10O3,,,,HMDB0000779,,
+CJ1748,5-phenylvaleric acid,C11H14O2,,,,HMDB0002043,,FA
+CJ1749,phosphocreatinine,C4H8N3O4P,,,,HMDB0041624,,Amino acids related and peptides
+CJ1750,phosphonoacetaldehyde,C2H5O4P,,,,HMDB0256485,,
+CJ1751,phytosphingosine,C18H39NO3,,,,HMDB0004610,,
+CJ1752,pinoresinol isomer,C20H22O6,,,,,,
+CJ1753,4-nitrophenol,C6H5NO3,,,,HMDB0001232,,
+CJ1754,podecdysone b  isomer,C27H42O6,,,,,,
+CJ1755,podophyllotoxone  isomer,C22H20O8,,,,,,
+CJ1756,polyphloroglucinol phosphate isomer,C6H7O6P,,,,,,
+CJ1757,portuloside a,C16H26O7,,,,HMDB0031382,,FA
+CJ1758,ppgpp,C10H11N5O17P4,,,,HMDB0304468,,"Nucleosides, nucleotides, and analogues  "
+CJ1759,pramanicin  isomer,C19H31NO6,,,,,,
+CJ1760,pregnenolone acetate isomer,C23H34O3,,,,,,
+CJ1761,prenylbenzoquinone isomer,C11H12O2,,,,,,
+CJ1762,pro asp isomer,C9H14N2O5,,,,,,Amino acids related and peptides
+CJ1763,glutamylproline,C10H16N2O5,,,,HMDB0028827,,Amino acids related and peptides
+CJ1764,pro ser  isomer,C8H14N2O4,,,,,,Amino acids related and peptides
+CJ1765,pro thr isomer,C9H16N2O4,,,,,,Amino acids related and peptides
+CJ1766,propapyriogenin a2  isomer,C30H44O5,,,,,,
+CJ1767,propionyl-coa,C24H40N7O17P3S,,,,HMDB0001275,,CoAs  
+CJ1768,prosapogenin,C36H54O11,,,,HMDB0041131,,
+CJ1769,prostaglandin e2,C20H32O5,,,,HMDB0001220,,Prostaglandins and related compounds  
+CJ1770,prostaglandin e3,C20H30O5,,,,HMDB0002664,,Prostaglandins and related compounds  
+CJ1771,prostaglandin j2,C20H30O4,,,,HMDB0002710,,Prostaglandins and related compounds  
+CJ1772,pteroic acid,C14H12N6O3,,,,HMDB0256914,,
+CJ1773,pteroside b,C20H28O7,,,,HMDB0030760,,
+CJ1774,pteroside p  isomer,C20H28O8,,,,,,
+CJ1775,pubescenol,C28H42O6,,,,HMDB0030085,,
+CJ1776,quadrone isomer,C15H20O3,,,,,,
+CJ1777,reserpine,C33H40N2O9,,,,HMDB0014351,,
+CJ1778,ribothymidine,C10H14N2O6,,,,HMDB0000884,,"Nucleosides, nucleotides, and analogues  "
+CJ1779,ricinoleic acid methyl ester isomer,C19H36O3,,,,,,
+CJ1780,ritalinic acid  isomer,C13H17NO2,,,,,,
+CJ1781,s-3-oxodecanoyl cysteamine,C12H23NO2S,,,,HMDB0059773,,FA
+CJ1782,s-adenosyl-l-methioninamine,C14H23N6O3S,,,,HMDB0304476,,"Nucleosides, nucleotides, and analogues  "
+CJ1783,salvigenin,C18H16O6,,,,HMDB0128577,,
+CJ1784,saringosterol isomer,C29H48O2,,,,,,
+CJ1785,secoisolariciresinol,C20H26O6,,,,HMDB0013692,,
+CJ1786,sepiapterin,C9H11N5O3,,,,HMDB0000238,,
+CJ1787,alanylserine,C6H12N2O4,,,,HMDB0028696,,Amino acids related and peptides
+CJ1788,solasodine,C27H43NO2,,,,HMDB0035282,,
+CJ1789,sorbitol-6-phosphate,C6H15O9P,,,,HMDB0005831,,Carbohydrates and carbohydrate conjugates  
+CJ1790,sphingosine 1-phosphate,C18H38NO5P,,,,HMDB0000277,,Lipids
+CJ1791,sphingosylphosphorylcholine,C23H50N2O5P,,,,HMDB0258420,,
+CJ1792,spiroxamine  isomer,C18H35NO2,,,,,,
+CJ1793,(s)-succinyldihydrolipoamide,C12H21NO4S2,,,,HMDB0001177,,FA
+CJ1794,stoloniferone c  isomer,C28H44O3,,,,,,
+CJ1795,suberyl glycine isomer,C10H17NO5,,,,,,
+CJ1796,succinyl-coa,C25H40N7O19P3S,,,,HMDB0001022,,CoAs  
+CJ1797,supinine  isomer,C15H25NO4,,,,,,
+CJ1798,p-synephrine,C9H13NO2,,,,HMDB0004826,,
+CJ1799,tangeritin,C20H20O7,,,,HMDB0030539,,
+CJ1800,taxuyunnanin  isomer,C28H40O8,,,,,,
+CJ1801,terbutaline,C12H19NO3,,,,HMDB0015009,,
+CJ1802,tetradecadienoyl-coa isomer,C35H58N7O17P3S,,,,,,Glycolysis
+CJ1803,tetradecanoyl-coa,C35H62N7O17P3S,,,,HMDB0001521,,CoAs  
+CJ1804,tetrahydrodeoxycorticosterone,C21H34O3,,,,HMDB0000879,,Steroids and steroid derivatives  
+CJ1805,thiamine-phosphate isomer,C12H18N4O4PS,,,,,,
+CJ1806,thiodiacetic acid,C4H6O4S,,,,HMDB0042032,,
+CJ1807,"trans-3,3',4',5,5',7-hexahydroxyflavanone",C15H12O8,,,,HMDB0030835,,
+CJ1808,dehydroepiandrosterone,C19H28O2,,,,HMDB0000077,,
+CJ1809,melilotoside,C15H18O8,,,,HMDB0033581,,
+CJ1810,trans-trans-muconic acid,C6H6O4,,,,HMDB0002349,,FA
+CJ1811,trehalose 6-phosphate,C12H23O14P,,,,HMDB0001124,,Carbohydrates and carbohydrate conjugates  
+CJ1812,trichocarposide,C22H24O9,,,,HMDB0031723,,
+CJ1813,tricyclazole,C9H7N3S,,,,HMDB0031809,,
+CJ1814,tridecanoyl carnitine isomer,C20H39NO4,,,,,,carnitine
+CJ1815,triethanolamine,C6H15NO3,,,,HMDB0032538,,
+CJ1816,trihydroxycoprostanoic acid,C28H48O5,,,,HMDB0002163,,
+CJ1817,trimethoprim impurity b isomer,C14H16N4O4,,,,,,
+CJ1818,trimethoxycinnamic acid isomer,C12H14O5,,,,,,
+CJ1819,trimethylamine n-oxide,C3H9NO,,,,HMDB0000925,,Microbiota related
+CJ1820,trp lys  isomer,C17H24N4O3,,,,,,Amino acids related and peptides
+CJ1821,tyrosol 4-sulfate,C8H10O5S,,,,HMDB0041785,,
+CJ1822,udp-d-xylose,C14H22N2O16P2,,,,HMDB0001018,,"Nucleosides, nucleotides, and analogues  "
+CJ1823,undecylenoyl glycine isomer,C13H23NO3,,,,,,
+CJ1824,uralenol,C20H18O7,,,,HMDB0039732,,
+CJ1825,urea,CH4N2O,,,,HMDB0000294,,
+CJ1826,ureidosuccinic acid,C5H8N2O5,,,,HMDB0000828,,Amino acids related and peptides
+CJ1827,val asp  isomer,C9H16N2O5,,,,,,Amino acids related and peptides
+CJ1828,val gly isomer,C7H14N2O3,,,,,,Amino acids related and peptides
+CJ1829,val lys isomer,C11H23N3O3,,,,,,Amino acids related and peptides
+CJ1830,val tyr isomer,C14H20N2O4,,,,,,Amino acids related and peptides
+CJ1831,valerenic acid,C15H22O2,,,,HMDB0030016,,
+CJ1832,valeroidine isomer,C13H23NO3,,,,,,
+CJ1833,valpromide,C8H17NO,,,,HMDB0259756,,
+CJ1834,valylvaline,C10H20N2O3,,,,HMDB0029140,,Amino acids related and peptides
+CJ1835,vanillic acid 4-o-sulfate,C8H8O7S,,,,HMDB0041788,,
+CJ1836,vanilloylglycine,C10H11NO5,,,,HMDB0060026,,Microbiota related
+CJ1837,vanillyl mandelate,C9H10O5,,,,HMDB0304531,,
+CJ1838,volkenin  isomer,C12H17NO7,,,,,,
+CJ1839,wedelolactone,C16H10O7,,,,HMDB0259891,,
+CJ1840,"(s,e)-zearalenone",C18H22O5,,,,HMDB0031752,,
+CJ1841,nicotinic acid ribonucleoside,C11H13NO6,12.49,posi,STD,HMDB0006809,,
+CJ1842,nicotinic acid mononucleotide,C11H14NO9P,15.71,posi,STD,HMDB0001132,,"Nucleosides, nucleotides, and analogues  "
+CJ1843,l-formylkynurenine,C11H12N2O4,10.15,posi,STD,HMDB0060485,,
+CJ1844,adipostatin a,C21H36O2,3.2,nega,STD,HMDB0031009,,
+CJ1845,(s)-beta-aminoisobutyric acid,C4H9NO2,14.08,nega,STD,HMDB0002166,,Amino acids related and peptides
+CJ1846,n-methyl-l-histidine,C7H11N3O2,15.51,nega,STD,HMDB0255176,,Amino acids related and peptides
+CJ1847,geranylgeranyl pyrophosphate,C20H36O7P2,9.24,nega,STD,HMDB0004486,,Cholestrol synthesis
+CJ1848,farnesyl pyrophosphate,C15H28O7P2,10.27,nega,STD,HMDB0000961,,Cholestrol synthesis

@@ -7,16 +7,59 @@ here::i_am("code/01 Process tissue metabolomics.R")
 source(here::here("code/z-source.R"))
 #
 
+# ========== 0.0 - Enviornment ==========
+# --
+require_local_file <- function(path) {
+  full_path <- here::here(path)
+  if (!file.exists(full_path)) {
+    stop(paste0("Missing required file: ", path), call. = FALSE)
+  }
+  full_path
+}
+
+require_local_dir <- function(path) {
+  full_path <- here::here(path)
+  if (!dir.exists(full_path)) {
+    stop(paste0("Missing required directory: ", path), call. = FALSE)
+  }
+  full_path
+}
+
+dir.create(here::here("data/processed/ion counts"), recursive = TRUE, showWarnings = FALSE)
+dir.create(here::here("data/processed/ion counts/maven merger"), recursive = TRUE, showWarnings = FALSE)
+
+run_maven_and_downstream_steps <- FALSE
+
+get_tissue_from_raw_file <- function(raw_file) {
+  dplyr::case_when(
+    grepl("muscle", raw_file, ignore.case = TRUE) ~ "Muscle",
+    grepl("liver", raw_file, ignore.case = TRUE) ~ "Liver",
+    TRUE ~ NA_character_
+  )
+}
+
+get_ion_mode_from_text <- function(x) {
+  dplyr::case_when(
+    grepl("negative|_neg", x, ignore.case = TRUE) ~ "nega",
+    grepl("positive|_pos", x, ignore.case = TRUE) ~ "posi",
+    TRUE ~ NA_character_
+  )
+}
+
+get_tissue_cohort <- function(sequence_id) {
+  stringr::str_extract(sequence_id, "^\\d+")
+}
+
+get_tissue_sample <- function(sequence_id) {
+  sub("_(neg|pos)", "", sequence_id)
+}
+
 # ========== 1.0 - Convert xlsx to csv ==========
 # --
-here::i_am("code/01 convert xlsx to csv.R")
-
-library(tidyverse)
-library(here)
 library(readxl)
 
 # Loop through each .xlsx file and convert to .csv
-CD_files <- list.files(here("data/raw/compound discoverer"), pattern = "\\.xlsx$", full.names = TRUE)
+CD_files <- list.files(here("data/raw tissue"), pattern = "\\.xlsx$", full.names = TRUE)
 
 for (CD_file in CD_files) {
 
@@ -24,7 +67,7 @@ for (CD_file in CD_files) {
 
   data = readxl::read_xlsx(CD_file)   # Read .xlsx file
   
-  csv_file = file.path(here("data/raw"), paste0(file_name, ".csv"))   # Set the output .csv file path
+  csv_file = file.path(here("data/raw tissue"), paste0(file_name, ".csv"))   # Set the output .csv file path
 
   write.csv(data, csv_file, row.names = FALSE)  # Write data to .csv file
   cat("Converted", CD_file, "to", csv_file, "\n")
@@ -34,7 +77,7 @@ for (CD_file in CD_files) {
 # --
 
 # List all CD .csv files in the raw directory
-csv_files = list.files(here("data/raw/compound discoverer"), pattern = "\\.csv$", full.names = TRUE)
+csv_files = list.files(here("data/raw tissue"), pattern = "\\.csv$", full.names = TRUE)
 
 # Loop through each .csv file and read into a list of data frames
 csv_data_list = list()
@@ -46,19 +89,47 @@ for (csv_file in csv_files) {
 
 # Function to tidy each data frame. Remove/rename columns, and reshape the structure
 tidy_df_list <- function(filename) {
-  
-  #tidy = csv_data_list[[1]] %>%
-  tidy = csv_data_list[[filename]] %>%
-    select(
-      # remove columns containing these strings....
-      #-contains("Annot..Source"),
-      -c("Annot..Source..Predicted.Compositions","X..mzCloud.Results", "mzCloud.Best.Match", "mzCloud.Best.Sim..Match"),
-      -contains("Mass.List."), -contains("X..Adducts"), -contains("MS2"), -contains("Reference.Ion")
-      # With all these parameters in place, we end up retaining just the columns indicated in the pivot_longer() line
-    ) %>% 
-    # delete these strings from columns containing them
-    rename_with(~str_remove(., "Area..")) %>% 
-    rename_with(~str_remove(., ".raw..*")) %>%
+
+  cd_df = csv_data_list[[filename]]
+  file_label = basename(filename)
+
+  measurement_cols = character()
+  if (grepl("muscle", file_label, ignore.case = TRUE)) {
+    measurement_cols = names(cd_df)[
+      grepl("^Area\\.\\.", names(cd_df)) &
+        names(cd_df) != "Area..Max.."
+    ]
+  } else if (grepl("liver", file_label, ignore.case = TRUE)) {
+    measurement_cols = names(cd_df)[
+      grepl("^Group\\.Area\\.\\.", names(cd_df))
+    ]
+  }
+
+  if (length(measurement_cols) == 0) {
+    stop(paste0("No ion-count columns found for file: ", file_label), call. = FALSE)
+  }
+
+  cleaned_sequence_ids = measurement_cols
+  if (grepl("muscle", file_label, ignore.case = TRUE)) {
+    cleaned_sequence_ids = cleaned_sequence_ids %>%
+      str_remove("^Area\\.\\.") %>%
+      str_remove("\\.raw\\.\\..*$")
+  } else if (grepl("liver", file_label, ignore.case = TRUE)) {
+    cleaned_sequence_ids = cleaned_sequence_ids %>%
+      str_remove("^Group\\.Area\\.\\.")
+  }
+
+  id_cols = intersect(
+    c(
+      "Name", "Formula", "Calc..MW", "m.z", "RT..min.",
+      "Annot..Source..mzCloud.Search", "Annot..Source..MassList.Search",
+      "mzCloud.Best.Match.Confidence", "Annot..DeltaMass..ppm."
+    ),
+    names(cd_df)
+  )
+
+  tidy = cd_df %>%
+    select(all_of(c(id_cols, measurement_cols))) %>%
     rename(
       mz = m.z,
       calc.mw = Calc..MW,
@@ -68,14 +139,15 @@ tidy_df_list <- function(filename) {
       mzcloud.conf = mzCloud.Best.Match.Confidence,
       delta.mass.ppm = Annot..DeltaMass..ppm.
     ) %>%
-    # melt to ion count observation per row
-    pivot_longer(.,
-                 cols = !c("Name", "Formula", "calc.mw", "mz", "rt.min", "annot.source.masslist","annot.source.mzcloud","mzcloud.conf", "delta.mass.ppm"),
-                 names_to = "sequence.id",
-                 values_to = "ion.count") %>%
+    pivot_longer(
+      cols = all_of(measurement_cols),
+      names_to = "sequence.id",
+      values_to = "ion.count"
+    ) %>%
     mutate(
-      Formula = gsub(" ","", Formula),
-      raw.file = gsub(".*/", "", filename) # make a new column referencing the source CD file
+      sequence.id = cleaned_sequence_ids[match(sequence.id, measurement_cols)],
+      Formula = gsub(" ", "", Formula),
+      raw.file = file_label
     ) %>%
     rename_with(tolower)
   
@@ -89,16 +161,6 @@ tidy_df_list <- function(filename) {
 tidy_list = lapply(names(csv_data_list), tidy_df_list)
 tidy_df = bind_rows(tidy_list)
 
-
-# We realized that LDL15_2 should actually be LDL16. Previously we just excluded it in 06. Now we will make the change
-t = tidy_df %>%
-  filter(grepl("ldl15_2",sequence.id)) %>%
-  group_by( sequence.id ) %>%
-  summarise(n())
-
-# change P_CS_060_ldl15_2 to ldl16
-tidy_df$sequence.id <- ifelse(tidy_df$sequence.id == "P_CS_060m_ldl15_2", "P_CS_060m_ldl16", tidy_df$sequence.id)
-
 # save all features:
 write.csv(tidy_df, here("data/processed/ion counts/raw CD observations combined and melted.csv"), row.names = FALSE)
 
@@ -110,11 +172,12 @@ tidy_df2 = tidy_df %>%
     # (2) remove similar to compounds
     grepl("\\[Similar to:", name) == FALSE,
     # (3) remove blanks
-    grepl("_blank", sequence.id) == FALSE,
+    grepl("blank", sequence.id, ignore.case = TRUE) == FALSE,
     # (4) Remove delta mass outside of +/- 10 ppm
     abs(delta.mass.ppm) <= 10
   )
 
+# *** Do we want to do any chemspider removal here?
 
 # save annotated compounds:
 write.csv(tidy_df2, here("data/processed/ion counts/filtered CD observations combined and melted.csv"), row.names = FALSE)
@@ -122,6 +185,9 @@ write.csv(tidy_df2, here("data/processed/ion counts/filtered CD observations com
 # *** note that these samples do not exist: ***
 # S_060m_ldl08, E_000m_ldl16, E_060m_ldl11
 
+
+
+# --- decide if we want to take out the chemspider annotations
 
 # ========== 3.0 - Check Annotations Against Reference List, Apply mz Confidence Score Filtering ==========
 
@@ -134,9 +200,9 @@ cpds = expdata %>%
   select(name, name.exp, everything())
 length(unique(cpds$name))
 
-# -- 1) Check against reference list.
+ # -- 1) Check against reference list.
 # -- > If a name matches our reference list but the RT is > 3 min away from the reference list, we will flag it for removal
-reference_list = read.csv(here("data/libraries/metabolites list_230424_ForCDprocessing.csv"), fileEncoding = "UTF-8-BOM") %>%
+reference_list = read.csv(require_local_file("data/libraries/metabolites list_230424_ForCDprocessing.csv"), fileEncoding = "UTF-8-BOM") %>%
   #filter(is.na(RT) == FALSE) %>%
   rename_with(~ tolower(.)) %>%
   select( "hmdb.name", "rt", "formula") %>%
@@ -201,10 +267,9 @@ write.csv(expdata2, here("data/processed/ion counts/CD data filtered by mismatch
 
 expdata = read.csv(here("data/processed/ion counts/CD data filtered by mismatches to ref and mz cloud conf.csv")) %>%
   mutate(
-    cohort = case_when(
-      grepl("ldl0[0-9]|ldl10", sequence.id) ~ "3mo",
-      grepl("ldl[11-20]", sequence.id) ~ "5mo"
-    )
+    cohort = get_tissue_cohort(sequence.id),
+    tissue = get_tissue_from_raw_file(raw.file),
+    ion.mode = get_ion_mode_from_text(raw.file)
   )
 
 unique(expdata$cohort)
@@ -225,23 +290,14 @@ n = expdata %>%
 # the function is run separately by cohort and ion mode to preserve within-batch consistency, and concordance between cohorts is assessed after.
 
 
-# -- Make a list of data frames for each ion mode, per cohort. "raw.file" corresponds to posi/nega
-batch_list =  expdata %>%
-  filter(cohort == "3mo") %>%
-  group_by( raw.file ) %>%
+# -- Make a list of data frames for each tissue acquisition batch.
+# -- Run isomer selection separately within each cohort and raw file to preserve within-batch consistency.
+batch_list = expdata %>%
+  filter(is.na(cohort) == FALSE) %>%
+  group_by(cohort, raw.file) %>%
   group_split(.)
 
-batch_3mo = lapply(batch_list, select_top_isomer3)
-
-batch_list =  expdata %>%
-  filter(cohort == "5mo") %>%
-  group_by( raw.file ) %>%
-  group_split(.)
-
-batch_5mo = lapply(batch_list, select_top_isomer3)
-
-# -- data with secondary isomers annotated
-expdata2 = bind_rows(batch_3mo, batch_5mo)
+expdata2 = bind_rows(lapply(batch_list, select_top_isomer3))
 
 # -- data frame with secondary isomers removed
 expdata3 = expdata2 %>% filter(grepl(": isomer", name) == FALSE)
@@ -263,20 +319,24 @@ expdata4 = expdata3 %>%
 # * note mz can be different bw cohorts, but here we are evaluating by RT consensus *
 anno = expdata4 %>%
   distinct(raw.file, name, rt, cohort) %>% 
-  pivot_wider(names_from = cohort, values_from = rt) %>%
-  mutate(
-    diff =  abs(`3mo` - `5mo`)
+  group_by(raw.file, name) %>%
+  summarise(
+    n.cohorts = n_distinct(cohort),
+    rt.min = min(rt, na.rm = TRUE),
+    rt.max = max(rt, na.rm = TRUE),
+    diff = abs(rt.max - rt.min),
+    cohort.rt = paste0(cohort, ":", round(rt, 3), collapse = " | "),
+    .groups = "drop"
   ) %>%
   filter(
+    n.cohorts > 1,
     diff > 0
   ) %>%
   arrange(desc(diff))
-# ... 363 annotations did not align between cohorts; select_top_isomer() chose different annotations
 # After manual checking of this list and examining the chromatograms produced in '00b Isomer analysis.R' proceeding as follows:
 # - RT difference of < 1.0 min between batches are reasonable RT drift and these can be kept/merged
 # - RT diff > 1.0 lack consensus and so are unreliable -> remove
 # - nonsense names, isomers from cmpd disc. will be removed
-# ... remove:
 isomers = anno %>% filter(grepl("isomer",name)) %>% pull(name) 
 nonsense = c("4,7-dimethylpyrazolo[5,1-c][1,2,4]triazine-3-carbonitrile","4-(1H-1,2,4-triazol-1-yl)aniline","4,7-dimethylpyrazolo[5,1-c][1,2,4]triazine-3-carbonitrile",
              "5-methyl-1-(1,3,5-trimethyl-1h-pyrazol-4-yl)-1h-1,2,3-triazole","n6-(delta2-isopentenyl)-adenine")
@@ -330,11 +390,9 @@ write.csv(remove, here("data/processed/ion counts/names removed due to cohort RT
 # -- read in dereplicated data
 expdata = read.csv(here("data/processed/ion counts/annotated and dereplicated CD obs without repeat isomers.csv"), fileEncoding = "UTF-8-BOM") %>%
   mutate(
-    ion.mode = case_when(
-      raw.file == "LDL1_2_neg_230831.csv" ~ "nega",
-      raw.file == "LDL1_2_pos_230913.csv" ~ "posi"
-    ),
-    sample = gsub("^N_|^P_","",sequence.id)
+    tissue = get_tissue_from_raw_file(raw.file),
+    ion.mode = get_ion_mode_from_text(raw.file),
+    sample = get_tissue_sample(sequence.id)
   ) 
 
 # -- confirm the n annotations per mode as in previous step
@@ -350,18 +408,18 @@ n_modes = expdata %>%
 
 # -- Determine the median of every metabolite 'Name' per ion mode
 ic_medians = expdata %>%
-  group_by( name, ion.mode, formula) %>%
+  group_by(name, ion.mode, formula) %>%
   summarise(median.ic = median(ion.count)) %>%
   ungroup() %>%
   group_by(name) %>%
   mutate(n = n())
 
 # -- Extract the annotation with the larger median across all the samples
-# ** notice how we are not grouping by cohort; we want the ion modes per metabolite to match across cohorts
+# ** we do not group by tissue here; the preferred ion mode should match across tissues
 top_mode = ic_medians %>% group_by(name) %>% top_n(1, median.ic) 
 length(unique(top_mode$name))
 nrow(top_mode)
-# rows == # names, we know we selected one each
+# rows == # names when a single top mode is selected for each metabolite
 
 # -- Select from expdata only the top median annotations
 expdata2 = inner_join(expdata, top_mode %>% select(-median.ic, -n) )
@@ -374,21 +432,28 @@ n_modes2 = expdata2 %>%
 
 
 names(expdata2)
-expdata3 = expdata2 %>% select(cohort, raw.file, sequence.id, ion.mode, sample, name, formula, mz, rt, ion.count)
+expdata3 = expdata2 %>% select(cohort, tissue, raw.file, sequence.id, ion.mode, sample, name, formula, mz, rt, ion.count)
 
 # -- save the data consolidated by ion mode
 write.csv(expdata3, here("data/processed/ion counts/annotated and processed CD obs consolidated by top ion mode.csv"), row.names = FALSE)
 #
 
+if (!run_maven_and_downstream_steps) {
+  message("CD processing complete. Skipping Maven merge and downstream normalization steps.")
+} else {
 
 # ========== 5.0 - Merge and Consolidate CD and Maven Observations ==========
 # --
 
 # -- Skip to (B) if (A) is complete
 # -- (A) Build Maven data frames and dfs of unique maven and CD annotations --
-mav_files1 = list.files(here("../../Metabolites/Serum/Maven/serum data"), pattern = "\\.csv$", full.names = TRUE)
-mav_files2 = list.files(here("../../Metabolites/Serum/Maven/BA"), pattern = "\\.csv$", full.names = TRUE)
-mav_files3 = list.files(here("../../Metabolites/Serum/Maven/Bicine"), pattern = "\\.csv$", full.names = TRUE)
+mav_dir1 = require_local_dir("../../Metabolites/Serum/Maven/serum data")
+mav_dir2 = require_local_dir("../../Metabolites/Serum/Maven/BA")
+mav_dir3 = require_local_dir("../../Metabolites/Serum/Maven/Bicine")
+
+mav_files1 = list.files(mav_dir1, pattern = "\\.csv$", full.names = TRUE)
+mav_files2 = list.files(mav_dir2, pattern = "\\.csv$", full.names = TRUE)
+mav_files3 = list.files(mav_dir3, pattern = "\\.csv$", full.names = TRUE)
 mav_files = c(mav_files1, mav_files2, mav_files3)
 
 csv_data_list = list()
@@ -965,4 +1030,4 @@ valic = bind_rows(csv_data_list) %>%
   ) %>%
   ungroup() %>%
   distinct(sequence.id, is.outlier, val.ic)
-
+}
