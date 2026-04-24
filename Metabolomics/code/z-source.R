@@ -7,7 +7,7 @@ library(broom)
 library(cowplot)
 library(ComplexHeatmap)
 library(grid)
-
+library(ggplot2)
 # ========== set_tissue_levels() ==========
 # --
 set_tissue_levels <- function(df) { df %>% dplyr::mutate( tissue = factor(tissue, levels=c("Intestine","Colon","Liver","Spleen","Head","Leg","Kidney","Skin","Heart","Lung")))}
