@@ -309,3 +309,358 @@ for (current_tissue in unique(old_mouse_heatmap_data$tissue)) {
 
   dev.off()
 }
+
+
+# ========== 3.0 - PCA across all experimental groups ==========
+# -- use sample-level median adjusted ion counts and include Young CD, Old CD, and Old ID samples
+all_group_sample_abundance = expdata %>%
+  filter(!is.na(group), !is.na(med.adj.ic)) %>%
+  group_by(tissue, name, sample.clean, group, cohort, age, diet, animal) %>%
+  summarise(
+    med.adj.ic = median(med.adj.ic, na.rm = TRUE),
+    n_obs = dplyr::n(),
+    .groups = "drop"
+  )
+
+readr::write_csv(
+  all_group_sample_abundance,
+  here::here("data/processed/all group sample-level median adjusted ion counts.csv")
+)
+
+all_group_pca_scores = list()
+all_group_pca_loadings = list()
+all_group_pca_variance = list()
+
+for (current_tissue in unique(all_group_sample_abundance$tissue)) {
+
+  current_sample_data = all_group_sample_abundance %>%
+    filter(tissue == current_tissue) %>%
+    distinct(sample.clean, group, cohort, age, diet, animal) %>%
+    arrange(group, cohort, animal, sample.clean)
+
+  current_matrix_long = all_group_sample_abundance %>%
+    filter(tissue == current_tissue) %>%
+    select(name, sample.clean, med.adj.ic)
+
+  current_matrix = current_matrix_long %>%
+    tidyr::pivot_wider(
+      names_from = name,
+      values_from = med.adj.ic
+    ) %>%
+    arrange(match(sample.clean, current_sample_data$sample.clean))
+
+  current_matrix_values = current_matrix %>%
+    select(-sample.clean)
+
+  keep_metabolites = colSums(!is.na(current_matrix_values)) >= 2
+  current_matrix_values = current_matrix_values[, keep_metabolites, drop = FALSE]
+
+  current_matrix_values = current_matrix_values[, colSums(!is.na(current_matrix_values)) > 0, drop = FALSE]
+
+  metabolite_medians = purrr::map_dbl(
+    current_matrix_values,
+    ~ median(.x, na.rm = TRUE)
+  )
+
+  for (metabolite_index in seq_along(metabolite_medians)) {
+    current_missing = is.na(current_matrix_values[[metabolite_index]])
+    if (any(current_missing)) {
+      current_matrix_values[[metabolite_index]][current_missing] = metabolite_medians[[metabolite_index]]
+    }
+  }
+
+  current_matrix_final = as.matrix(current_matrix_values)
+  rownames(current_matrix_final) = current_matrix$sample.clean
+
+  current_pca = prcomp(current_matrix_final, center = TRUE, scale. = TRUE)
+
+  current_scores = as_tibble(current_pca$x, rownames = "sample.clean") %>%
+    left_join(current_sample_data, by = "sample.clean") %>%
+    mutate(tissue = current_tissue) %>%
+    relocate(tissue, sample.clean, group, cohort, age, diet, animal)
+
+  current_loadings = as_tibble(current_pca$rotation, rownames = "name") %>%
+    mutate(tissue = current_tissue) %>%
+    relocate(tissue, name)
+
+  current_variance = tibble(
+    tissue = current_tissue,
+    pc = paste0("PC", seq_along(current_pca$sdev)),
+    std_dev = current_pca$sdev,
+    variance_explained = (current_pca$sdev ^ 2) / sum(current_pca$sdev ^ 2),
+    cumulative_variance = cumsum(variance_explained)
+  )
+
+  all_group_pca_scores[[current_tissue]] = current_scores
+  all_group_pca_loadings[[current_tissue]] = current_loadings
+  all_group_pca_variance[[current_tissue]] = current_variance
+
+  pc1_var = scales::percent(current_variance$variance_explained[1], accuracy = 0.1)
+  pc2_var = scales::percent(current_variance$variance_explained[2], accuracy = 0.1)
+  n_imputed = sum(is.na(current_matrix %>% select(-sample.clean)))
+
+  current_plot = current_scores %>%
+    ggplot(aes(x = PC1, y = PC2, color = group, shape = cohort, label = sample.clean)) +
+    geom_hline(yintercept = 0, linewidth = 0.3, color = "grey80") +
+    geom_vline(xintercept = 0, linewidth = 0.3, color = "grey80") +
+    geom_point(size = 3, alpha = 0.9) +
+    geom_text(vjust = -0.9, size = 3, check_overlap = TRUE, show.legend = FALSE) +
+    scale_color_manual(
+      values = c(
+        "Young CD" = "#1f78b4",
+        "Old CD" = "#33a02c",
+        "Old ID" = "#e31a1c"
+      )
+    ) +
+    labs(
+      title = paste(current_tissue, "PCA"),
+      subtitle = paste0(
+        "All experimental groups | median-adjusted ion counts | ",
+        n_imputed,
+        " missing values replaced with tissue metabolite medians"
+      ),
+      x = paste0("PC1 (", pc1_var, ")"),
+      y = paste0("PC2 (", pc2_var, ")"),
+      color = "Group",
+      shape = "Cohort"
+    ) +
+    theme_minimal(base_size = 11) +
+    theme(
+      panel.grid.minor = element_blank(),
+      plot.title = element_text(face = "bold"),
+      legend.position = "right"
+    )
+
+  ggsave(
+    filename = here::here("plots", paste0(current_tissue, " PCA all experimental groups.pdf")),
+    plot = current_plot,
+    width = 8,
+    height = 6
+  )
+}
+
+readr::write_csv(
+  bind_rows(all_group_pca_scores),
+  here::here("data/processed/all group PCA scores.csv")
+)
+
+readr::write_csv(
+  bind_rows(all_group_pca_loadings),
+  here::here("data/processed/all group PCA loadings.csv")
+)
+
+readr::write_csv(
+  bind_rows(all_group_pca_variance),
+  here::here("data/processed/all group PCA variance explained.csv")
+)
+
+
+# ========== 4.0 - PCA across old mice only ==========
+# -- restrict PCA to old mice so variation can be viewed across diet without the young cohort
+old_mouse_pca_scores = list()
+old_mouse_pca_loadings = list()
+old_mouse_pca_variance = list()
+
+for (current_tissue in unique(old_mouse_sample_abundance$tissue)) {
+
+  current_sample_data = old_mouse_sample_abundance %>%
+    filter(tissue == current_tissue) %>%
+    distinct(sample.clean, diet, cohort, animal) %>%
+    arrange(diet, cohort, animal, sample.clean)
+
+  current_matrix_long = old_mouse_sample_abundance %>%
+    filter(tissue == current_tissue) %>%
+    select(name, sample.clean, med.adj.ic)
+
+  current_matrix = current_matrix_long %>%
+    tidyr::pivot_wider(
+      names_from = name,
+      values_from = med.adj.ic
+    ) %>%
+    arrange(match(sample.clean, current_sample_data$sample.clean))
+
+  current_matrix_values = current_matrix %>%
+    select(-sample.clean)
+
+  keep_metabolites = colSums(!is.na(current_matrix_values)) >= 2
+  current_matrix_values = current_matrix_values[, keep_metabolites, drop = FALSE]
+
+  current_matrix_values = current_matrix_values[, colSums(!is.na(current_matrix_values)) > 0, drop = FALSE]
+
+  metabolite_medians = purrr::map_dbl(
+    current_matrix_values,
+    ~ median(.x, na.rm = TRUE)
+  )
+
+  for (metabolite_index in seq_along(metabolite_medians)) {
+    current_missing = is.na(current_matrix_values[[metabolite_index]])
+    if (any(current_missing)) {
+      current_matrix_values[[metabolite_index]][current_missing] = metabolite_medians[[metabolite_index]]
+    }
+  }
+
+  current_matrix_final = as.matrix(current_matrix_values)
+  rownames(current_matrix_final) = current_matrix$sample.clean
+
+  current_pca = prcomp(current_matrix_final, center = TRUE, scale. = TRUE)
+
+  current_scores = as_tibble(current_pca$x, rownames = "sample.clean") %>%
+    left_join(current_sample_data, by = "sample.clean") %>%
+    mutate(
+      tissue = current_tissue,
+      group = dplyr::if_else(diet == "CD", "Old CD", "Old ID")
+    ) %>%
+    relocate(tissue, sample.clean, group, diet, cohort, animal)
+
+  current_loadings = as_tibble(current_pca$rotation, rownames = "name") %>%
+    mutate(tissue = current_tissue) %>%
+    relocate(tissue, name)
+
+  current_variance = tibble(
+    tissue = current_tissue,
+    pc = paste0("PC", seq_along(current_pca$sdev)),
+    std_dev = current_pca$sdev,
+    variance_explained = (current_pca$sdev ^ 2) / sum(current_pca$sdev ^ 2),
+    cumulative_variance = cumsum(variance_explained)
+  )
+
+  old_mouse_pca_scores[[current_tissue]] = current_scores
+  old_mouse_pca_loadings[[current_tissue]] = current_loadings
+  old_mouse_pca_variance[[current_tissue]] = current_variance
+
+  pc1_var = scales::percent(current_variance$variance_explained[1], accuracy = 0.1)
+  pc2_var = scales::percent(current_variance$variance_explained[2], accuracy = 0.1)
+  n_imputed = sum(is.na(current_matrix %>% select(-sample.clean)))
+
+  current_plot = current_scores %>%
+    ggplot(aes(x = PC1, y = PC2, color = diet, shape = cohort, label = sample.clean)) +
+    geom_hline(yintercept = 0, linewidth = 0.3, color = "grey80") +
+    geom_vline(xintercept = 0, linewidth = 0.3, color = "grey80") +
+    geom_point(size = 3, alpha = 0.9) +
+    geom_text(vjust = -0.9, size = 3, check_overlap = TRUE, show.legend = FALSE) +
+    scale_color_manual(
+      values = c(
+        "CD" = "#1b9e77",
+        "ID" = "#d95f02"
+      )
+    ) +
+    labs(
+      title = paste(current_tissue, "old mouse PCA"),
+      subtitle = paste0(
+        "Old mice only | CD vs ID | ",
+        n_imputed,
+        " missing values replaced with tissue metabolite medians"
+      ),
+      x = paste0("PC1 (", pc1_var, ")"),
+      y = paste0("PC2 (", pc2_var, ")"),
+      color = "Diet",
+      shape = "Cohort"
+    ) +
+    theme_minimal(base_size = 11) +
+    theme(
+      panel.grid.minor = element_blank(),
+      plot.title = element_text(face = "bold"),
+      legend.position = "right"
+    )
+
+  ggsave(
+    filename = here::here("plots", paste0(current_tissue, " PCA old mice only.pdf")),
+    plot = current_plot,
+    width = 8,
+    height = 6
+  )
+}
+
+readr::write_csv(
+  bind_rows(old_mouse_pca_scores),
+  here::here("data/processed/old mouse PCA scores.csv")
+)
+
+readr::write_csv(
+  bind_rows(old_mouse_pca_loadings),
+  here::here("data/processed/old mouse PCA loadings.csv")
+)
+
+readr::write_csv(
+  bind_rows(old_mouse_pca_variance),
+  here::here("data/processed/old mouse PCA variance explained.csv")
+)
+
+
+# ========== 5.0 - Top old-mouse PCA metabolite contributions ==========
+# -- summarize which metabolites contribute most strongly to the old-mouse PCA structure within each tissue
+old_mouse_pca_loadings_tbl = bind_rows(old_mouse_pca_loadings)
+old_mouse_pca_variance_tbl = bind_rows(old_mouse_pca_variance)
+
+old_mouse_pca_metabolite_contributions = old_mouse_pca_loadings_tbl %>%
+  left_join(
+    old_mouse_pca_variance_tbl %>%
+      filter(pc == "PC1") %>%
+      select(tissue, pc1_variance_explained = variance_explained),
+    by = "tissue"
+  ) %>%
+  mutate(
+    variance_explained = (PC1 ^ 2) * pc1_variance_explained,
+    abs_variance_explained = abs(PC1) * pc1_variance_explained
+  ) %>%
+  select(tissue, name, PC1, pc1_variance_explained, variance_explained, abs_variance_explained) %>%
+  group_by(tissue) %>%
+  arrange(desc(abs_variance_explained), .by_group = TRUE) %>%
+  mutate(rank = row_number()) %>%
+  ungroup()
+
+readr::write_csv(
+  old_mouse_pca_metabolite_contributions,
+  here::here("data/processed/old mouse PCA metabolite contributions.csv")
+)
+
+old_mouse_top10_pca_metabolites = old_mouse_pca_metabolite_contributions %>%
+  filter(rank <= 10) %>%
+  mutate(
+    metabolite_label = name %>%
+      stringr::str_replace("^\\([^)]{1,25}\\)-", "") %>%
+      stringr::str_replace("^\\([^)]{1,25}\\)", "") %>%
+      stringr::str_replace_all("α", "alpha") %>%
+      stringr::str_replace_all("β", "beta") %>%
+      stringr::str_replace_all("γ", "gamma") %>%
+      stringr::str_replace_all("δ", "delta") %>%
+      stringr::str_squish(),
+    metabolite_label = ifelse(
+      nchar(metabolite_label) > 50,
+      stringr::str_trunc(metabolite_label, width = 50),
+      metabolite_label
+    )
+  )
+
+for (current_tissue in unique(old_mouse_top10_pca_metabolites$tissue)) {
+
+  current_plot_data = old_mouse_top10_pca_metabolites %>%
+    filter(tissue == current_tissue) %>%
+    arrange(abs_variance_explained) %>%
+    mutate(
+      metabolite_label = factor(metabolite_label, levels = metabolite_label)
+    )
+
+  current_plot = current_plot_data %>%
+    ggplot(aes(x = metabolite_label, y = abs_variance_explained)) +
+    geom_col(fill = "#4c78a8", width = 0.75) +
+    coord_flip() +
+    labs(
+      title = paste(current_tissue, "old-mouse PC1 metabolite contributions"),
+      subtitle = "Top 10 metabolites ranked by absolute PC1 contribution",
+      x = NULL,
+      y = "Absolute variance contribution"
+    ) +
+    theme_minimal(base_size = 11) +
+    theme(
+      panel.grid.minor = element_blank(),
+      plot.title = element_text(face = "bold")
+    )
+
+  ggsave(
+    filename = here::here("plots", paste0(current_tissue, " old mouse PC1 top 10 metabolite contributions.pdf")),
+    plot = current_plot,
+    width = 8,
+    height = 6
+  )
+}

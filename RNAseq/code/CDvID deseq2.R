@@ -19,7 +19,7 @@ length(unique(gsub("\\.\\d+", "", x$gene_id)))
 #library(ensembldb)
 library(EnsDb.Mmusculus.v79)
 
-x = read.delim(here("rsem_gene_counts_matrix.tsv")) %>%
+x = read.delim(here("data/raw/rsem_gene_counts_matrix.tsv")) %>%
   mutate(
     gene_id = gsub("\\.\\d+", "", gene_id)
   )
@@ -60,7 +60,7 @@ write.csv(cnts,here("data/processed/counts matrix with mouse gene symbols.csv"),
 
 
 # ========== 1.0 - Filter and PCA ==========
-meta = read.csv(here("data/metadata.csv")) %>%
+meta = read.csv(here("data/metadata/metadata.csv")) %>%
   mutate(sample = paste0("r",sample)) %>%
   arrange(diet, age.grp) %>%
   column_to_rownames(var = "sample")
@@ -107,22 +107,68 @@ pc_contributions = as.data.frame(pca$x)
 pc = pc_contributions %>%
   rownames_to_column(var="sample") %>%
   dplyr::select(sample, PC1, PC2, PC3, PC4, PC5, PC6, PC7,PC8) %>%
-  left_join(., meta)
+  left_join(., meta) %>%
+  mutate(
+    pca.label = paste0(sample, "\n", age.grp, " ", diet, ", C", cohort)
+  )
+
+pc %>%
+  ggplot(., aes(PC1, PC2, color = diet, shape = age.grp)) +
+  geom_point(size = 3) +
+  ggrepel::geom_text_repel(
+    aes(label = pca.label),
+    color = "grey20",
+    size = 3,
+    box.padding = 0.3,
+    max.overlaps = Inf,
+    segment.alpha = 0.4,
+    show.legend = FALSE
+  ) +
+  labs(
+    title = "Pre-filtered PCA by diet, age, and cohort",
+    color = "Diet",
+    shape = "Age"
+  ) +
+  theme_bw()
 
 pc %>%
   ggplot(.,aes(PC1, PC2, color = diet) ) +
   geom_point() +
   stat_ellipse(type = "norm", linetype = 2) +
+  ggrepel::geom_text_repel(
+    aes(label = pca.label),
+    size = 3,
+    box.padding = 0.3,
+    max.overlaps = Inf,
+    segment.alpha = 0.4,
+    show.legend = FALSE
+  ) +
   theme_bw()
 pc %>%
   ggplot(.,aes(PC1, PC2, color = age.grp) ) +
   geom_point() +
   stat_ellipse(type = "norm", linetype = 2) +
+  ggrepel::geom_text_repel(
+    aes(label = pca.label),
+    size = 3,
+    box.padding = 0.3,
+    max.overlaps = Inf,
+    segment.alpha = 0.4,
+    show.legend = FALSE
+  ) +
   theme_bw()
 pc %>%
   ggplot(.,aes(PC1, PC2, color = factor(cohort)) ) +
   geom_point() +
   stat_ellipse(type = "norm", linetype = 2) +
+  ggrepel::geom_text_repel(
+    aes(label = pca.label),
+    size = 3,
+    box.padding = 0.3,
+    max.overlaps = Inf,
+    segment.alpha = 0.4,
+    show.legend = FALSE
+  ) +
   theme_bw()
 # the variation over PC1/PC2 by diet seems low. The variation seems to be driven by age
 
@@ -136,21 +182,48 @@ pc_contributions = as.data.frame(pca$x)
 pc = pc_contributions %>%
   rownames_to_column(var="sample") %>%
   dplyr::select(sample, PC1, PC2, PC3, PC4, PC5, PC6, PC7,PC8) %>%
-  left_join(., meta %>% rownames_to_column(var="sample"))
+  left_join(., meta) %>%
+  mutate(
+    pca.label = paste0(sample, "\n", age.grp, " ", diet, ", C", cohort)
+  )
 pc %>%
   ggplot(.,aes(PC1, PC2, color = diet) ) +
   geom_point() +
   stat_ellipse(type = "norm", linetype = 2) +
+  ggrepel::geom_text_repel(
+    aes(label = pca.label),
+    size = 3,
+    box.padding = 0.3,
+    max.overlaps = Inf,
+    segment.alpha = 0.4,
+    show.legend = FALSE
+  ) +
   theme_bw()
 pc %>%
   ggplot(.,aes(PC1, PC2, color = age.grp) ) +
   geom_point() +
   stat_ellipse(type = "norm", linetype = 2) +
+  ggrepel::geom_text_repel(
+    aes(label = pca.label),
+    size = 3,
+    box.padding = 0.3,
+    max.overlaps = Inf,
+    segment.alpha = 0.4,
+    show.legend = FALSE
+  ) +
   theme_bw()
 pc %>%
   ggplot(.,aes(PC1, PC2, color = factor(cohort)) ) +
   geom_point() +
   stat_ellipse(type = "norm", linetype = 2) +
+  ggrepel::geom_text_repel(
+    aes(label = pca.label),
+    size = 3,
+    box.padding = 0.3,
+    max.overlaps = Inf,
+    segment.alpha = 0.4,
+    show.legend = FALSE
+  ) +
   theme_bw()
 # not substantially different from unfiltered
 
@@ -160,42 +233,444 @@ library(edgeR)
 library(limma)
 library(sva)
 
-# Model matrix
-# Full model: diet (main effect) + age group + cohort
-mod  <- model.matrix(~ age.grp + diet, data = meta)
-# Null model: exclude diet
-mod0 <- model.matrix(~ age.grp, data = meta)
+# SVA estimates hidden expression-wide structure, such as unrecorded batch or
+# sample quality effects. Because there are no young ID samples, estimate SVs
+# only within old mice, where the ID vs CD comparison is actually balanced
+# across cohorts 1 and 2.
+meta_sva <- meta %>%
+  dplyr::filter(age.grp == "old") %>%
+  mutate(
+    cohort = factor(cohort),
+    diet = factor(diet, levels = c("CD", "ID"))
+  ) %>%
+  arrange(cohort, diet) %>%
+  column_to_rownames(var = "sample")
 
-k_est <- num.sv(dge$counts, mod, method = "leek")
-k_safe <- min(k_est, nrow(meta) - qr(mod)$rank - 1)
-svobj <- svaseq(dat = dge$counts, mod = mod, mod0 = mod0, n.sv = k_safe)
-dim(svobj$sv)
+dge_sva <- dge[, rownames(meta_sva), keep.lib.sizes = FALSE]
+dge_sva <- calcNormFactors(dge_sva)
+
+# Preserve the known biological/model structure while estimating SVs.
+# Full model: cohort + diet, where diet is the effect of interest.
+# Null model: cohort only, so SVA can estimate hidden variation without
+# intentionally removing the diet contrast.
+mod_sva  <- model.matrix(~ cohort + diet, data = meta_sva)
+mod0_sva <- model.matrix(~ cohort, data = meta_sva)
+
+k_est <- num.sv(dge_sva$counts, mod_sva, method = "leek")
+
+# With 13 old samples, using every estimated SV can overfit the model. Keep this
+# conservative for the primary exploratory comparison; increase only after
+# inspecting SV correlations and residual degrees of freedom.
+max_sv_to_use <- 2
+min_residual_df <- 4
+k_safe <- max(0, min(
+  k_est,
+  max_sv_to_use,
+  nrow(meta_sva) - qr(mod_sva)$rank - min_residual_df
+))
+cat("\nSVA estimated ", k_est, " surrogate variables; using ", k_safe, ".\n", sep = "")
+
+if (k_safe > 0) {
+  svobj <- svaseq(dat = dge_sva$counts, mod = mod_sva, mod0 = mod0_sva, n.sv = k_safe)
+  sv_df <- as.data.frame(svobj$sv)
+  colnames(sv_df) <- paste0("SV", seq_len(ncol(sv_df)))
+  rownames(sv_df) <- rownames(meta_sva)
+  
+  # Inspect whether SVs are tracking known covariates. If an SV is strongly
+  # correlated with diet, treat the adjusted DE results cautiously.
+  pairs(sv_df)
+  sv_covariate_cor <- sapply(sv_df, function(z) {
+    c(
+      cohort = cor(z, as.numeric(meta_sva$cohort)),
+      diet = cor(z, as.numeric(meta_sva$diet))
+    )
+  })
+  sv_covariate_cor
+  
+} else {
+  svobj <- NULL
+  sv_df <- data.frame(row.names = rownames(meta_sva))
+}
+
+meta_with_SV <- cbind(meta_sva, sv_df)
+
+# Build the final DE model dynamically so the code works whether SVA estimates
+# zero, one, two, or more surrogate variables.
+sv_terms <- colnames(sv_df)
+if (length(sv_terms) > 0) {
+  sva_formula <- as.formula(paste("~ cohort + diet +", paste(sv_terms, collapse = " + ")))
+} else {
+  sva_formula <- ~ cohort + diet
+}
+
+design_sva <- model.matrix(sva_formula, data = meta_with_SV)
+
+# voom + limma fit for old ID vs old CD, adjusted for cohort and any SVs.
+v_sva <- voom(dge_sva, design_sva, plot = FALSE)
+fit_sva <- lmFit(v_sva, design_sva)
+fit_sva <- eBayes(fit_sva)
+
+dex_sva <- topTable(fit_sva, coef = "dietID", number = Inf) %>%
+  rownames_to_column(var = "gene.id")
+dex_sva_signif <- dex_sva %>% dplyr::filter(P.Value <= 0.05)
+
+# Compare the diet effect with and without SVA. Both models use the same old
+# samples and adjust for known cohort; the only difference is whether SVs are
+# included as additional covariates.
+design_no_sva <- model.matrix(~ cohort + diet, data = meta_sva)
+v_no_sva <- voom(dge_sva, design_no_sva, plot = FALSE)
+fit_no_sva <- lmFit(v_no_sva, design_no_sva)
+fit_no_sva <- eBayes(fit_no_sva)
+
+dex_no_sva <- topTable(fit_no_sva, coef = "dietID", number = Inf) %>%
+  rownames_to_column(var = "gene.id")
+dex_no_sva_signif <- dex_no_sva %>% dplyr::filter(P.Value <= 0.05)
+
+sva_diet_comparison <- dex_no_sva %>%
+  dplyr::select(
+    gene.id,
+    logFC_no_sva = logFC,
+    P.Value_no_sva = P.Value
+  ) %>%
+  inner_join(
+    dex_sva %>%
+      dplyr::select(
+        gene.id,
+        logFC_sva = logFC,
+        P.Value_sva = P.Value
+      ),
+    by = "gene.id"
+  ) %>%
+  mutate(
+    sig_no_sva = P.Value_no_sva <= 0.05,
+    sig_sva = P.Value_sva <= 0.05,
+    sig_status = case_when(
+      sig_no_sva & sig_sva ~ "Significant in both",
+      sig_no_sva & !sig_sva ~ "No SVA only",
+      !sig_no_sva & sig_sva ~ "SVA only",
+      TRUE ~ "Not significant"
+    )
+  ) %>%
+  dplyr::select(
+    gene.id,
+    logFC_no_sva,
+    logFC_sva,
+    P.Value_no_sva,
+    P.Value_sva,
+    sig_status
+  )
+
+sva_diet_summary <- sva_diet_comparison %>%
+  count(sig_status)
+
+sva_diet_summary
+
+genes_sva_only <- sva_diet_comparison %>%
+  dplyr::filter(sig_status == "SVA only") %>%
+  arrange(P.Value_sva, desc(abs(logFC_sva)))
+
+genes_no_sva_only <- sva_diet_comparison %>%
+  dplyr::filter(sig_status == "No SVA only") %>%
+  arrange(P.Value_no_sva, desc(abs(logFC_no_sva)))
+
+genes_sva_only
+genes_no_sva_only
+
+# ----- GO BP ORA on method-specific genes -----
+# Split unique genes by direction before ORA. This avoids mixing pathways from
+# genes that increase in ID with pathways from genes that decrease in ID.
+library(enrichR)
+go_bp_db <- "GO_Biological_Process_2025"
+
+genes_sva_only_up <- genes_sva_only %>%
+  dplyr::filter(logFC_sva > 0)
+
+genes_sva_only_down <- genes_sva_only %>%
+  dplyr::filter(logFC_sva < 0)
+
+genes_no_sva_only_up <- genes_no_sva_only %>%
+  dplyr::filter(logFC_no_sva > 0)
+
+genes_no_sva_only_down <- genes_no_sva_only %>%
+  dplyr::filter(logFC_no_sva < 0)
+
+genes_sva_only_up_vec <- genes_sva_only_up %>%
+  pull(gene.id)
+
+genes_sva_only_down_vec <- genes_sva_only_down %>%
+  pull(gene.id)
+
+genes_no_sva_only_up_vec <- genes_no_sva_only_up %>%
+  pull(gene.id)
+
+genes_no_sva_only_down_vec <- genes_no_sva_only_down %>%
+  pull(gene.id)
+
+# ----- GO BP ORA: SVA-only up genes -----
+if (length(genes_sva_only_up_vec) > 0) {
+  go_bp_sva_only_up <- enrichr(genes_sva_only_up_vec, databases = go_bp_db)
+  go_bp_sva_only_up_tbl <- go_bp_sva_only_up[[go_bp_db]] %>%
+    dplyr::filter(P.value <= 0.05)
+} else {
+  go_bp_sva_only_up <- NULL
+  go_bp_sva_only_up_tbl <- tibble()
+}
+
+# ----- GO BP ORA: SVA-only down genes -----
+if (length(genes_sva_only_down_vec) > 0) {
+  go_bp_sva_only_down <- enrichr(genes_sva_only_down_vec, databases = go_bp_db)
+  go_bp_sva_only_down_tbl <- go_bp_sva_only_down[[go_bp_db]] %>%
+    dplyr::filter(P.value <= 0.05)
+} else {
+  go_bp_sva_only_down <- NULL
+  go_bp_sva_only_down_tbl <- tibble()
+}
+
+# ----- GO BP ORA: no-SVA-only up genes -----
+if (length(genes_no_sva_only_up_vec) > 0) {
+  go_bp_no_sva_only_up <- enrichr(genes_no_sva_only_up_vec, databases = go_bp_db)
+  go_bp_no_sva_only_up_tbl <- go_bp_no_sva_only_up[[go_bp_db]] %>%
+    dplyr::filter(P.value <= 0.05)
+} else {
+  go_bp_no_sva_only_up <- NULL
+  go_bp_no_sva_only_up_tbl <- tibble()
+}
+
+# ----- GO BP ORA: no-SVA-only down genes -----
+if (length(genes_no_sva_only_down_vec) > 0) {
+  go_bp_no_sva_only_down <- enrichr(genes_no_sva_only_down_vec, databases = go_bp_db)
+  go_bp_no_sva_only_down_tbl <- go_bp_no_sva_only_down[[go_bp_db]] %>%
+    dplyr::filter(P.value <= 0.05)
+} else {
+  go_bp_no_sva_only_down <- NULL
+  go_bp_no_sva_only_down_tbl <- tibble()
+}
+
+go_bp_sva_only_up_tbl
+go_bp_sva_only_down_tbl
+go_bp_no_sva_only_up_tbl
+go_bp_no_sva_only_down_tbl
+
+# ----- Plot GO BP ORA results as a compact dot plot -----
+# Dot size is the gene overlap count, and the x-axis/color show enrichment
+# strength as -log10(P-value). Facets keep the four method/direction groups
+# separate without compressing bars.
+go_bp_unique_tbl <- bind_rows(
+  go_bp_sva_only_up_tbl %>%
+    mutate(comparison = "SVA only up"),
+  go_bp_sva_only_down_tbl %>%
+    mutate(comparison = "SVA only down"),
+  go_bp_no_sva_only_up_tbl %>%
+    mutate(comparison = "No SVA only up"),
+  go_bp_no_sva_only_down_tbl %>%
+    mutate(comparison = "No SVA only down")
+)
+
+if (nrow(go_bp_unique_tbl) > 0) {
+  go_bp_unique_dotplot_data <- go_bp_unique_tbl %>%
+    group_by(comparison) %>%
+    slice_min(P.value, n = 8, with_ties = FALSE) %>%
+    ungroup() %>%
+    mutate(
+      comparison = factor(
+        comparison,
+        levels = c(
+          "No SVA only up",
+          "SVA only up",
+          "No SVA only down",
+          "SVA only down"
+        )
+      ),
+      overlap_count = as.numeric(str_extract(Overlap, "^[0-9]+")),
+      neg_log10_p = -log10(P.value),
+      term_wrapped = str_wrap(Term, width = 55)
+    ) %>%
+    arrange(comparison, P.value) %>%
+    mutate(
+      term_for_plot = paste(term_wrapped, comparison, sep = "___"),
+      term_for_plot = factor(term_for_plot, levels = rev(unique(term_for_plot)))
+    )
+  
+  go_bp_unique_plot <- ggplot(
+    go_bp_unique_dotplot_data,
+    aes(neg_log10_p, term_for_plot)
+  ) +
+    geom_point(aes(size = overlap_count, color = neg_log10_p), alpha = 0.85) +
+    facet_wrap(~comparison, scales = "free_y", ncol = 2) +
+    scale_y_discrete(labels = function(x) sub("___.*$", "", x)) +
+    scale_color_gradient(low = "#4575B4", high = "#D73027", name = "-log10(P)") +
+    labs(
+      title = "GO Biological Process ORA for SVA/no-SVA Unique Genes",
+      x = "-log10(P-value)",
+      y = "",
+      size = "Gene count"
+    ) +
+    theme_bw() +
+    theme(
+      legend.position = "top",
+      strip.text = element_text(face = "bold"),
+      axis.text.y = element_text(size = 8)
+    )
+} else {
+  go_bp_unique_plot <- ggdraw() +
+    draw_label("No GO BP ORA plots available for unique SVA/no-SVA gene sets", size = 12)
+}
+
+go_bp_unique_plot
+
+fc_sva_comparison_plot <- ggplot(sva_diet_comparison, aes(logFC_no_sva, logFC_sva, color = sig_status)) +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "grey50") +
+  geom_point(alpha = 0.5, size = 0.8) +
+  labs(
+    title = "Diet Effect With vs Without SVA",
+    x = "Log2FC ID/CD without SVA",
+    y = "Log2FC ID/CD with SVA",
+    color = ""
+  ) +
+  theme_bw()
+
+pvalue_axis_max <- ceiling(max(
+  -log10(sva_diet_comparison$P.Value_no_sva),
+  -log10(sva_diet_comparison$P.Value_sva),
+  na.rm = TRUE
+))
+
+pvalue_sva_comparison_plot <- ggplot(sva_diet_comparison, aes(-log10(P.Value_no_sva), -log10(P.Value_sva), color = sig_status)) +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "grey50") +
+  geom_point(alpha = 0.5, size = 0.8) +
+  coord_equal(xlim = c(0, pvalue_axis_max), ylim = c(0, pvalue_axis_max)) +
+  labs(
+    title = "Diet P-values With vs Without SVA",
+    x = "-log10(P-value) without SVA",
+    y = "-log10(P-value) with SVA",
+    color = ""
+  ) +
+  theme_bw() +
+  theme(
+    legend.position = "top",
+    aspect.ratio = 1
+  )
+
+fc_sva_comparison_plot
+pvalue_sva_comparison_plot
+
+# Volcano plots for the same old ID vs CD diet effect.
+# Green genes are significant in both approaches. Blue genes are significant
+# only in the approach shown in that panel. Everything else is grey.
+volcano_no_sva_data <- sva_diet_comparison %>%
+  mutate(
+    volcano_group = case_when(
+      sig_status == "Significant in both" ~ "Both",
+      sig_status == "No SVA only" ~ "Contrasting",
+      TRUE ~ "Other"
+    )
+  )
+
+volcano_sva_data <- sva_diet_comparison %>%
+  mutate(
+    volcano_group = case_when(
+      sig_status == "Significant in both" ~ "Both",
+      sig_status == "SVA only" ~ "Contrasting",
+      TRUE ~ "Other"
+    )
+  )
+
+volcano_colors <- c(
+  "Both" = "#1B9E77",
+  "Contrasting" = "#D73027",
+  "Other" = "grey80"
+)
+
+volcano_no_sva_labels <- volcano_no_sva_data %>%
+  dplyr::filter(volcano_group == "Contrasting") %>%
+  slice_min(P.Value_no_sva, n = 60, with_ties = FALSE)
+
+volcano_sva_labels <- volcano_sva_data %>%
+  dplyr::filter(volcano_group == "Contrasting") %>%
+  slice_min(P.Value_sva, n = 60, with_ties = FALSE)
+
+volcano_no_sva <- ggplot(volcano_no_sva_data, aes(logFC_no_sva, -log10(P.Value_no_sva))) +
+  geom_hline(yintercept = -log10(0.05), linetype = "dashed", color = "grey50") +
+  geom_vline(xintercept = 0, linetype = "dotted", color = "grey50") +
+  geom_point(aes(color = volcano_group), alpha = 0.55, size = 0.7) +
+  ggrepel::geom_text_repel(
+    data = volcano_no_sva_labels,
+    aes(label = gene.id),
+    size = 2.7,
+    max.overlaps = Inf,
+    box.padding = 0.6,
+    point.padding = 0.25,
+    min.segment.length = 0,
+    segment.alpha = 0.35,
+    show.legend = FALSE
+  ) +
+  scale_color_manual(values = volcano_colors, name = "") +
+  labs(
+    title = "No SVA",
+    x = "Log2FC ID/CD",
+    y = "-log10(P-value)"
+  ) +
+  theme_bw() +
+  theme(
+    legend.position = "top"
+  )
+
+volcano_sva <- ggplot(volcano_sva_data, aes(logFC_sva, -log10(P.Value_sva))) +
+  geom_hline(yintercept = -log10(0.05), linetype = "dashed", color = "grey50") +
+  geom_vline(xintercept = 0, linetype = "dotted", color = "grey50") +
+  geom_point(aes(color = volcano_group), alpha = 0.55, size = 0.7) +
+  ggrepel::geom_text_repel(
+    data = volcano_sva_labels,
+    aes(label = gene.id),
+    size = 2.7,
+    max.overlaps = Inf,
+    box.padding = 0.6,
+    point.padding = 0.25,
+    min.segment.length = 0,
+    segment.alpha = 0.35,
+    show.legend = FALSE
+  ) +
+  scale_color_manual(values = volcano_colors, name = "") +
+  labs(
+    title = "SVA",
+    x = "Log2FC ID/CD",
+    y = "-log10(P-value)"
+  ) +
+  theme_bw() +
+  theme(
+    legend.position = "top"
+  )
+
+volcano_sva_comparison_plot <- plot_grid(volcano_no_sva, volcano_sva, nrow = 1)
+volcano_sva_comparison_plot
+
+# ----- Save SVA vs no-SVA summary figure -----
+# This figure combines the p-value comparison, method-specific volcano plots,
+# and GO BP ORA plots for genes unique to each method/direction.
+sva_no_sva_summary_figure <- plot_grid(
+  plot_grid(NULL, pvalue_sva_comparison_plot, NULL, nrow = 1, rel_widths = c(0.7, 1, 0.7)),
+  volcano_sva_comparison_plot,
+  go_bp_unique_plot,
+  ncol = 1,
+  rel_heights = c(1.15, 1.2, 1.8)
+)
+
+sva_no_sva_summary_figure
+
+ggsave(
+  here("plots/sva vs no sva comparison pvalues volcano ora.pdf"),
+  sva_no_sva_summary_figure,
+  height = 16,
+  width = 12
+)
+
+# Carry the selected primary result forward for downstream interactive code.
+# Proceed with the cohort-adjusted no-SVA model for old ID vs CD.
+dex <- dex_no_sva
+dex_signif <- dex_no_sva_signif
 
 
-# As a data frame
-sv_df <- as.data.frame(svobj$sv)
-colnames(sv_df) <- paste0("SV", seq_len(ncol(sv_df)))
 
-# Add to your meta / DGEList
-dge$samples <- cbind(dge$samples, sv_df)
-meta_with_SV <- cbind(meta, sv_df)
-
-# Pairwise scatter of first few SVs
-pairs(svobj$sv[, 1:min(5, ncol(svobj$sv))])
-
-# Or check correlation with known covariates
-cor(svobj$sv[,1], as.numeric(factor(meta$cohort)))
-
-design <- model.matrix(~ age.grp + diet + SV1 + SV2, data = meta_with_SV[, c("age.grp", "diet", "SV1","SV2")])
-
-# voom transform and fit
-v <- voom(dge, design, plot = FALSE)
-fit <- lmFit(v, design)
-fit <- eBayes(fit)
-
-# Extract DE for the group coefficient
-dex = topTable(fit, coef = "dietID", number = Inf)
-dex_signif = dex %>% filter(P.Value <= 0.05)
 
 
 # ========== 3.0 - Deseq2 ==========
@@ -665,4 +1140,3 @@ enr2= plotEnrich(enriched_dn[[1]], showTerms = 20, numChar = 100, y = "Count", o
 
 library(cowplot)
 plot_grid(enr1, enr2, nrow=1)
-

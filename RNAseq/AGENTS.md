@@ -2,7 +2,7 @@
 
 ## Project Guidance
 
-This repository is primarily an interactive R analysis workflow for metabolomics data.
+This repository is primarily an interactive R analysis workflow for RNAseq data.
 Before making changes, reference the `README.md` in the parent directory for higher-level project context and workflow notes.
 
 ## Coding Style
