@@ -376,7 +376,7 @@ genes_no_sva_only <- sva_diet_comparison %>%
 genes_sva_only
 genes_no_sva_only
 
-# ----- GO BP ORA on method-specific genes -----
+# ----- GO BP ORA on method-specific genes ---
 # Split unique genes by direction before ORA. This avoids mixing pathways from
 # genes that increase in ID with pathways from genes that decrease in ID.
 library(enrichR)
@@ -406,7 +406,7 @@ genes_no_sva_only_up_vec <- genes_no_sva_only_up %>%
 genes_no_sva_only_down_vec <- genes_no_sva_only_down %>%
   pull(gene.id)
 
-# ----- GO BP ORA: SVA-only up genes -----
+# ----- GO BP ORA: SVA-only up genes ---
 if (length(genes_sva_only_up_vec) > 0) {
   go_bp_sva_only_up <- enrichr(genes_sva_only_up_vec, databases = go_bp_db)
   go_bp_sva_only_up_tbl <- go_bp_sva_only_up[[go_bp_db]] %>%
@@ -416,7 +416,7 @@ if (length(genes_sva_only_up_vec) > 0) {
   go_bp_sva_only_up_tbl <- tibble()
 }
 
-# ----- GO BP ORA: SVA-only down genes -----
+# ----- GO BP ORA: SVA-only down genes ---
 if (length(genes_sva_only_down_vec) > 0) {
   go_bp_sva_only_down <- enrichr(genes_sva_only_down_vec, databases = go_bp_db)
   go_bp_sva_only_down_tbl <- go_bp_sva_only_down[[go_bp_db]] %>%
@@ -426,7 +426,7 @@ if (length(genes_sva_only_down_vec) > 0) {
   go_bp_sva_only_down_tbl <- tibble()
 }
 
-# ----- GO BP ORA: no-SVA-only up genes -----
+# ----- GO BP ORA: no-SVA-only up genes ---
 if (length(genes_no_sva_only_up_vec) > 0) {
   go_bp_no_sva_only_up <- enrichr(genes_no_sva_only_up_vec, databases = go_bp_db)
   go_bp_no_sva_only_up_tbl <- go_bp_no_sva_only_up[[go_bp_db]] %>%
@@ -436,7 +436,7 @@ if (length(genes_no_sva_only_up_vec) > 0) {
   go_bp_no_sva_only_up_tbl <- tibble()
 }
 
-# ----- GO BP ORA: no-SVA-only down genes -----
+# ----- GO BP ORA: no-SVA-only down genes ---
 if (length(genes_no_sva_only_down_vec) > 0) {
   go_bp_no_sva_only_down <- enrichr(genes_no_sva_only_down_vec, databases = go_bp_db)
   go_bp_no_sva_only_down_tbl <- go_bp_no_sva_only_down[[go_bp_db]] %>%
@@ -451,7 +451,7 @@ go_bp_sva_only_down_tbl
 go_bp_no_sva_only_up_tbl
 go_bp_no_sva_only_down_tbl
 
-# ----- Plot GO BP ORA results as a compact dot plot -----
+# ----- Plot GO BP ORA results as a compact dot plot ---
 # Dot size is the gene overlap count, and the x-axis/color show enrichment
 # strength as -log10(P-value). Facets keep the four method/direction groups
 # separate without compressing bars.
@@ -644,7 +644,7 @@ volcano_sva <- ggplot(volcano_sva_data, aes(logFC_sva, -log10(P.Value_sva))) +
 volcano_sva_comparison_plot <- plot_grid(volcano_no_sva, volcano_sva, nrow = 1)
 volcano_sva_comparison_plot
 
-# ----- Save SVA vs no-SVA summary figure -----
+# ----- Save SVA vs no-SVA summary figure ---
 # This figure combines the p-value comparison, method-specific volcano plots,
 # and GO BP ORA plots for genes unique to each method/direction.
 sva_no_sva_summary_figure <- plot_grid(
@@ -673,95 +673,60 @@ dex_signif <- dex_no_sva_signif
 
 
 
-# ========== 3.0 - Deseq2 ==========
+# ========== 3.0 - DESeq2 ~cohort + diet (old only) ==========
 # --
 
-meta = read.csv(here("data/metadata.csv")) %>%
+meta = read.csv(here("data/metadata/metadata.csv")) %>%
   mutate(sample = paste0("r",sample)) %>%
   arrange(diet, age.grp) %>%
   column_to_rownames(var = "sample")
 
 filt = dge$counts
 length(unique(rownames(filt)))
-# 12768 genes after filtering
+# genes after edgeR expression and variance filtering
 
 library(DESeq2)
-run_deseq = function(age = c("old","young"), numerator, denominator){
-  
-  cat(paste0("...\n...\nStarting ", numerator, "/", denominator))
-  
-  # denominator = "CD"
-  # numerator   = "ID"
-  # age         = c("old", "young")
-  
-  samples = meta %>%
-    filter(age.grp %in% age) %>%
-    arrange(diet, cohort)
-  
-  x = cnts[, rownames(samples)]
-  x[is.na(x)] = 0
-  
-  # -------------------------------
-  # 1. Run DESeq2 with diet as sole design factor
-  # -------------------------------
-  cat("\nUsing design formula ~diet\n")
-  ddsA <- DESeqDataSetFromMatrix(countData = x, colData = samples, design = ~ diet)
-  ddsA2 <- DESeq(ddsA)
-  resA  <- results(ddsA2, contrast = c("diet", numerator, denominator))
-  
-  lfcA = data.frame(resA) %>%
-    arrange(-log2FoldChange) %>%
-    rownames_to_column(var = "gene.id") %>%
-    mutate(design = "~diet")
-  
-  # -------------------------------
-  # 2. If multiple age groups exist, add age as a covariate
-  # -------------------------------
-  if(length(unique(samples$age.grp)) > 1){
-    cat("\nUsing design formula ~age.grp + diet\n")
-    ddsB  <- DESeqDataSetFromMatrix(countData = x, colData = samples, design = ~ age.grp + diet)
-    ddsB2 <- DESeq(ddsB)
-    resB  <- results(ddsB2, contrast = c("diet", numerator, denominator))
-    
-    lfcB = data.frame(resB) %>%
-      arrange(-log2FoldChange) %>%
-      rownames_to_column(var = "gene.id") %>%
-      mutate(design = "~age.grp + diet")
-    
-    lfc = rbind(lfcA, lfcB)
-    
-  } else {
-    lfc = lfcA
-  }
-  
-  cat(paste0("\nCompleted ", numerator, "/", denominator, " !\n"))
-  return(lfc)
-}
 
+samples = meta %>%
+  dplyr::filter(age.grp == "old") %>%
+  mutate(
+    cohort = factor(cohort),
+    diet = factor(diet, levels = c("CD", "ID"))
+  ) %>%
+  arrange(cohort, diet)
 
-res1 = run_deseq(age = c("old","young"), "ID", "CD")
-tmp1 = res1 %>% filter(padj<=0.05)
-#write.csv(res1, here("data/processed/deseq2 ID vs CD old and young design w and wo age grp covariate.csv"))
+x = filt[, rownames(samples)]
+x[is.na(x)] = 0
+x = round(as.matrix(x))
+storage.mode(x) = "integer"
+stopifnot(identical(colnames(x), rownames(samples)))
 
+cat("\nUsing old samples with design formula ~ cohort + diet\n")
+dds <- DESeqDataSetFromMatrix(countData = x, colData = samples, design = ~ cohort + diet)
+dds <- DESeq(dds)
+res <- results(dds, contrast = c("diet", "ID", "CD"))
 
-res2 = run_deseq(age = c("old"), "ID", "CD")
-tmp2 = res2 %>% filter(pvalue<=0.05)
-# write.csv(res2, here("data/processed/deseq2 ID vs CD old only.csv"))
+res2 = data.frame(res) %>%
+  arrange(padj, pvalue) %>%
+  rownames_to_column(var = "gene.id") %>%
+  mutate(
+    design = "~cohort + diet",
+    comparison = "old ID vs CD"
+  )
 
-dex1 = res1 %>%
-  filter(pvalue<=0.05, design == "~age.grp + diet") %>%
-  mutate(score = -log10(pvalue)*abs(log2FoldChange)) %>%
-  arrange(desc(score))
+tmp2 = res2 %>% dplyr::filter(pvalue <= 0.05)
+write.csv(res2, here("data/processed/deseq2 ID vs CD old only cohort adjusted.csv"), row.names = FALSE)
 
 dex2 = res2 %>%
-  filter(pvalue<=0.05) %>%
+  dplyr::filter(pvalue <= 0.05) %>%
   mutate(score = -log10(pvalue)*abs(log2FoldChange)) %>%
   arrange(desc(score))
-  
-unique(dex$gene.id)
+
+unique(dex2$gene.id)
 
 
-# ========== preliminary Volcano ==========
+
+# ========== 4.0 - Volcano ~cohort + diet (old only) ====
 
 # -- Some aging genes I got from GPT
 geneset = c(
@@ -783,76 +748,12 @@ geneset = c(
   "Wnt3a", "Hspg2", "Fgd6", "Apod", "Gprc5b", "Tpp1"
 )
 
-res = read.csv(here("data/processed/deseq2 ID vs CD old and young design w and wo age grp covariate.csv")) %>%
-  filter(
-    design == "~age.grp + diet"
-  ) %>%
-  mutate(X = NULL)
-
-lfc = data.frame(res) %>%
-  filter(!is.na(log2FoldChange)) %>%
-  mutate(sig.label = ifelse(pvalue <=0.05, gene.id, NA))
-
-vol = ggplot(lfc, aes(log2FoldChange, -log10(pvalue))) +
-  geom_hline(yintercept = -log10(0.05), linetype = "dashed", color = "red") +
-  geom_vline(xintercept = 1, linetype = "dotted", color = "black", alpha = .5) +
-  geom_vline(xintercept = -1, linetype = "dotted", color = "black", alpha = .5) +
-  geom_point(size = .2, alpha = .4, color = "grey80") +
-  geom_point(size = .2,
-             data = subset(lfc, is.na(sig.label) == FALSE),
-             color = "black"
-  ) +
-  labs( x="Log2FC(ID/CD)", "Muscle Gene Expression Inulin Diet vs Control") +
-  xlim(-7,7) + ylim(0,6)+
-  ggrepel::geom_text_repel( aes( label = sig.label ),
-                            vjust = 1.0,
-                            box.padding = 0.5,
-                            size = 2.0,
-                            max.overlaps = 50, alpha = 0.7, segment.alpha = .2 ) +
-  theme_bw()
-
-
-
-
-
-# ========== Pathway Enrichment ==========
-
-library(enrichR)
-dbs = as.data.frame(listEnrichrDbs())
-mydb = "MSigDB_Hallmark_2020"
-mydb = "GO_Cellular_Component_2025" #Collagen-Containing Extracellular Matrix (GO:0062023)
-
-
-up = subset(lfc, log2FoldChange > 0 & pvalue <= 0.05 )$gene.id
-enriched_up = enrichr(up,databases = mydb)
-df1 = as.data.frame(enriched)
-colnames(df1) = sub(".*?\\.", "", colnames(df1))
-df1 = subset(df1, P.value <= 0.05)
-enr1= plotEnrich(enriched_up[[1]], showTerms = 20, numChar = 100, y = "Count", orderBy = "P.value", title="Upregulated Pathways in ID")
-
-dn = subset(lfc, log2FoldChange < 0 & pvalue <= 0.05 )$gene.id
-enriched_dn = enrichr(dn,databases = mydb)
-df1 = as.data.frame(enriched)
-colnames(df1) = sub(".*?\\.", "", colnames(df1))
-df1 = subset(df1, P.value <= 0.05)
-enr2= plotEnrich(enriched_dn[[1]], showTerms = 20, numChar = 100, y = "Count", orderBy = "P.value", title="Downregulated Pathways in ID")
-
-
-library(cowplot)
-enr = plot_grid(enr1, enr2, nrow=1)
-plot_grid(vol, enr, ncol=1, rel_heights = c(1.5,1))
-
-
-# ========== Plot fig for only ID vs CD ==========
-# --
-
-res = read.csv(here("data/processed/deseq2 ID vs CD old only.csv")) %>%
-  mutate(X = NULL)
-
-lfc = data.frame(res) %>%
-  filter(!is.na(log2FoldChange))
-
-# ========== (A) Volcano ====
+lfc = res2 %>%
+  filter(!is.na(log2FoldChange), !is.na(pvalue)) %>%
+  mutate(
+    sig.label = ifelse(gene.id %in% dex2$gene.id, gene.id, NA_character_),
+    neg_log10_pvalue = -log10(pmax(pvalue, .Machine$double.xmin))
+  )
 
 # categories
 # -- A. Macrophage / immune --
@@ -911,14 +812,14 @@ voldata = lfc %>%
     ),
   )
 
-# Define color palette (high-contrast, colorblind-safe)
+# Muted, print-friendly palette for manuscript-style figures.
 cat_colors <- c(
-  "Macrophage / immune"       = "#D73027",  # red
-  "ECM / fibrosis"            = "#4575B4",  # blue
-  "Vascular / endothelial"    = "#1A9850",  # green
-  "Neural / glial / nerve"    = "#E66101",  # gold
-  "Metabolic / mitochondrial" = "#984EA3",  # purple
-  "Other"                     = "grey80"
+  "Macrophage / immune"       = "#B2182B",
+  "ECM / fibrosis"            = "#2166AC",
+  "Vascular / endothelial"    = "#1B7837",
+  "Neural / glial / nerve"    = "#D95F02",
+  "Metabolic / mitochondrial" = "#762A83",
+  "Other"                     = "#D9D9D9"
 )
 
 # Ensure factor order
@@ -927,43 +828,786 @@ voldata$category <- factor(
   levels = names(cat_colors)
 )
 
-vol_cat = ggplot(voldata, aes(x = log2FoldChange, y = -log10(pvalue))) +
-  geom_hline(yintercept = -log10(0.05), linetype = "dashed", color = "red") +
-  geom_vline(xintercept = c(-1, 1), linetype = "dotted", color = "black", alpha = .5) +
+volcano_labels = voldata %>%
+  dplyr::filter(!is.na(sig.label), category != "Other") %>%
+  arrange(pvalue, desc(abs(log2FoldChange))) %>%
+  slice_head(n = 20)
+
+x_axis_limit = max(2, quantile(abs(voldata$log2FoldChange), 0.995, na.rm = TRUE))
+x_axis_limit = min(3, ceiling(x_axis_limit * 2) / 2)
+y_axis_limit = max(2, quantile(voldata$neg_log10_pvalue, 0.995, na.rm = TRUE))
+y_axis_limit = min(4, ceiling(y_axis_limit * 2) / 2)
+
+vol_cat = ggplot(voldata, aes(x = log2FoldChange, y = neg_log10_pvalue)) +
+  geom_hline(
+    yintercept = -log10(0.05),
+    linetype = "22",
+    color = "grey55",
+    linewidth = 0.35
+  ) +
+  geom_vline(xintercept = 0, color = "grey85", linewidth = 0.25) +
+  geom_vline(
+    xintercept = c(-1, 1),
+    linetype = "22",
+    color = "grey55",
+    linewidth = 0.35
+  ) +
   geom_point(
     data = subset(voldata, category == "Other"),
-    color = "grey80", size = 0.3, alpha = 0.3
+    color = "#D0D0D0",
+    size = 1.1,
+    alpha = 0.55,
+    stroke = 0
   ) +
   geom_point(
     data = subset(voldata, category != "Other"),
     aes(color = category),
-    size = 1, alpha = 0.9
+    size = 2.2,
+    alpha = 0.95,
+    stroke = 0
   ) +
   ggrepel::geom_text_repel(
-    data = subset(voldata, !is.na(sig.label) & category != "Other"),
-    aes(label = sig.label, color = category),
-    size = 4,
-    box.padding = 0.6,
-    max.overlaps = 60,
-    segment.alpha = 0.25,
+    data = volcano_labels,
+    aes(label = sig.label),
+    color = "grey15",
+    size = 3.6,
+    box.padding = 0.45,
+    point.padding = 0.35,
+    min.segment.length = 0,
+    max.overlaps = Inf,
+    segment.color = "grey70",
+    segment.size = 0.3,
+    segment.alpha = 0.7,
     show.legend = FALSE
   ) +
-  scale_color_manual(values = cat_colors, name = "Category") +
+  scale_color_manual(values = cat_colors, name = NULL, drop = FALSE) +
   labs(
-    x = "Log2FC (ID/CD)",
-    y = "-log10(P-value)",
-    title = "Muscle DEx Inulin vs Control (Aged Mice)"
+    x = expression(log[2]~fold~change~"(ID/CD)"),
+    y = expression(-log[10]~italic(P)),
+    title = "Old muscle: inulin diet vs control",
+    subtitle = "DESeq2 model: ~ cohort + diet"
   ) +
-  xlim(-3.5, 3.5) + ylim(0, 3.5) +
-  theme_bw(base_size = 13) +
+  coord_cartesian(xlim = c(-x_axis_limit, x_axis_limit), ylim = c(0, y_axis_limit)) +
+  theme_classic(base_size = 12, base_family = "Helvetica") +
   theme(
+    axis.line = element_line(color = "black", linewidth = 0.5),
+    axis.ticks = element_line(color = "black", linewidth = 0.45),
+    axis.ticks.length = unit(2, "mm"),
+    axis.text = element_text(color = "black", size = 11),
+    axis.title = element_text(color = "black", size = 13),
+    plot.title = element_text(face = "bold", size = 15, hjust = 0),
+    plot.subtitle = element_text(size = 12, color = "grey30", hjust = 0),
+    plot.margin = margin(6, 8, 6, 6),
     legend.position = "top",
-    legend.title = element_blank(),
-    legend.text = element_text(size = 12)
+    legend.justification = "left",
+    legend.direction = "horizontal",
+    legend.text = element_text(size = 10),
+    legend.key.width = unit(5, "mm"),
+    legend.key.height = unit(4, "mm")
   ) +
   guides(
-    col = guide_legend(ncol = 3)
+    color = guide_legend(
+      nrow = 2,
+      byrow = TRUE,
+      override.aes = list(size = 3, alpha = 1)
+    )
   )
+
+vol_cat
+
+
+
+# ========== 5.0 - GO BP GSEA and ORA ==========
+# Uses the old ID vs CD DESeq2 result from the ~ cohort + diet model above.
+
+library(clusterProfiler)
+library(org.Mm.eg.db)
+library(msigdbr)
+library(cowplot)
+
+run_gobp_enrichment = function(gsea_rank_by) {
+  gsea_rank_column <- case_when(
+    gsea_rank_by == "stat" ~ "stat",
+    gsea_rank_by == "logFC" ~ "log2FoldChange",
+    TRUE ~ NA_character_
+  )
+  stopifnot(!is.na(gsea_rank_column))
+  
+  gobp_de = res2 %>%
+    dplyr::filter(
+      !is.na(log2FoldChange),
+      !is.na(pvalue),
+      !is.na(.data[[gsea_rank_column]])
+    )
+  
+  gene_symbol_to_entrez = AnnotationDbi::select(
+    org.Mm.eg.db,
+    keys = unique(gobp_de$gene.id),
+    keytype = "SYMBOL",
+    columns = c("SYMBOL", "ENTREZID")
+  ) %>%
+    as_tibble() %>%
+    dplyr::filter(!is.na(ENTREZID))
+  
+  gobp_ranked_genes = gobp_de %>%
+    mutate(rank_value = .data[[gsea_rank_column]]) %>%
+    inner_join(gene_symbol_to_entrez, by = c("gene.id" = "SYMBOL")) %>%
+    arrange(desc(abs(rank_value))) %>%
+    distinct(ENTREZID, .keep_all = TRUE)
+  
+  gobp_gene_ranks = gobp_ranked_genes$rank_value
+  names(gobp_gene_ranks) = gobp_ranked_genes$ENTREZID
+  gobp_gene_ranks = sort(gobp_gene_ranks, decreasing = TRUE)
+  
+  gsea_gobp = gseGO(
+    geneList = gobp_gene_ranks,
+    OrgDb = org.Mm.eg.db,
+    keyType = "ENTREZID",
+    ont = "BP",
+    minGSSize = 10,
+    maxGSSize = 500,
+    pvalueCutoff = 0.10,
+    pAdjustMethod = "BH",
+    eps = 0,
+    verbose = FALSE
+  )
+  
+  gsea_gobp_tbl = as.data.frame(gsea_gobp) %>%
+    as_tibble() %>%
+    arrange(p.adjust)
+  gsea_gobp_table_file = here(
+    "data/processed",
+    paste0("go bp gsea old ID vs CD ", gsea_rank_by, " ranking.csv")
+  )
+  write.csv(gsea_gobp_tbl, gsea_gobp_table_file, row.names = FALSE)
+  
+  if (nrow(gsea_gobp_tbl) > 0) {
+    gsea_gobp_plot_data = gsea_gobp_tbl %>%
+      mutate(
+        direction = ifelse(NES > 0, "Activated in ID", "Suppressed in ID"),
+        direction = factor(direction, levels = c("Activated in ID", "Suppressed in ID")),
+        pathway = stringr::str_wrap(Description, width = 60)
+      ) %>%
+      group_by(direction) %>%
+      slice_min(p.adjust, n = 20, with_ties = FALSE) %>%
+      ungroup() %>%
+      arrange(direction, NES) %>%
+      mutate(
+        pathway_for_plot = paste(pathway, direction, sep = "___"),
+        pathway_for_plot = factor(pathway_for_plot, levels = unique(pathway_for_plot)),
+        neg_log10_padj = -log10(pmax(p.adjust, .Machine$double.xmin))
+      )
+    
+    gsea_nes_limit = max(abs(gsea_gobp_plot_data$NES), na.rm = TRUE)
+    gsea_nes_limit = ceiling(gsea_nes_limit * 2) / 2
+    
+    gsea_gobp_plot = ggplot(gsea_gobp_plot_data, aes(NES, pathway_for_plot)) +
+      geom_vline(xintercept = 0, color = "grey75", linewidth = 0.35) +
+      geom_point(aes(size = setSize, color = neg_log10_padj), alpha = 0.9) +
+      facet_grid(
+        direction ~ .,
+        scales = "free_y",
+        space = "free_y"
+      ) +
+      scale_y_discrete(labels = function(x) sub("___.*$", "", x)) +
+      scale_color_viridis_c(name = expression(-log[10]~adjusted~italic(P))) +
+      coord_cartesian(xlim = c(-gsea_nes_limit, gsea_nes_limit)) +
+      labs(
+        title = paste0("GO BP GSEA ranked by ", gsea_rank_by),
+        x = "Normalized enrichment score",
+        y = NULL,
+        size = "Gene set size"
+      ) +
+      theme_bw() +
+      theme(
+        strip.text = element_text(face = "bold"),
+        axis.text.y = element_text(size = 8, lineheight = 0.9),
+        panel.grid.major.y = element_blank(),
+        plot.margin = margin(5.5, 5.5, 5.5, 28),
+        legend.position = "bottom",
+        legend.box = "horizontal"
+      ) +
+      guides(
+        color = guide_colorbar(
+          title.position = "top",
+          barwidth = grid::unit(35, "mm"),
+          barheight = grid::unit(3, "mm")
+        ),
+        size = guide_legend(title.position = "top")
+      )
+  } else {
+    gsea_gobp_plot_data = tibble()
+    gsea_gobp_plot = ggdraw() +
+      draw_label("No GO BP GSEA terms passed the selected cutoff", size = 12)
+  }
+  
+  # ORA uses the significant old ID vs CD genes from dex2, split by direction.
+  gobp_universe = unique(gobp_ranked_genes$ENTREZID)
+  
+  ora_up_genes = dex2 %>%
+    dplyr::filter(log2FoldChange > 0) %>%
+    inner_join(gene_symbol_to_entrez, by = c("gene.id" = "SYMBOL")) %>%
+    pull(ENTREZID) %>%
+    unique()
+  
+  ora_down_genes = dex2 %>%
+    dplyr::filter(log2FoldChange < 0) %>%
+    inner_join(gene_symbol_to_entrez, by = c("gene.id" = "SYMBOL")) %>%
+    pull(ENTREZID) %>%
+    unique()
+  
+  ora_up_gobp = enrichGO(
+    gene = ora_up_genes,
+    universe = gobp_universe,
+    OrgDb = org.Mm.eg.db,
+    keyType = "ENTREZID",
+    ont = "BP",
+    pAdjustMethod = "BH",
+    pvalueCutoff = 0.05,
+    qvalueCutoff = 1,
+    readable = TRUE
+  )
+  
+  ora_down_gobp = enrichGO(
+    gene = ora_down_genes,
+    universe = gobp_universe,
+    OrgDb = org.Mm.eg.db,
+    keyType = "ENTREZID",
+    ont = "BP",
+    pAdjustMethod = "BH",
+    pvalueCutoff = 0.05,
+    qvalueCutoff = 1,
+    readable = TRUE
+  )
+  
+  ora_up_gobp_tbl = as.data.frame(ora_up_gobp) %>% as_tibble()
+  ora_down_gobp_tbl = as.data.frame(ora_down_gobp) %>% as_tibble()
+  
+  if (nrow(ora_up_gobp_tbl) > 0) {
+    ora_up_gobp_plot = dotplot(ora_up_gobp, showCategory = 10) +
+      labs(title = "GO BP ORA: upregulated in ID", x = "Gene ratio", y = NULL) +
+      theme_bw()
+  } else {
+    ora_up_gobp_plot = ggdraw() +
+      draw_label("No GO BP ORA terms for upregulated genes", size = 12)
+  }
+  
+  if (nrow(ora_down_gobp_tbl) > 0) {
+    ora_down_gobp_plot = dotplot(ora_down_gobp, showCategory = 10) +
+      labs(title = "GO BP ORA: downregulated in ID", x = "Gene ratio", y = NULL) +
+      theme_bw()
+  } else {
+    ora_down_gobp_plot = ggdraw() +
+      draw_label("No GO BP ORA terms for downregulated genes", size = 12)
+  }
+  
+  ora_gobp_plot = plot_grid(ora_up_gobp_plot, ora_down_gobp_plot, nrow = 1)
+  gobp_enrichment_plot = plot_grid(
+    gsea_gobp_plot,
+    ora_gobp_plot,
+    ncol = 1,
+    rel_heights = c(1.35, 1)
+  )
+  
+  output_file = here(
+    "plots",
+    paste0("go bp gsea ora old ID vs CD ", gsea_rank_by, " ranking.pdf")
+  )
+  ggsave(output_file, gobp_enrichment_plot, width = 13, height = 12)
+  
+  list(
+    gsea = gsea_gobp,
+    gsea_tbl = gsea_gobp_tbl,
+    gsea_plot_data = gsea_gobp_plot_data,
+    gsea_plot = gsea_gobp_plot,
+    ora_up = ora_up_gobp,
+    ora_up_tbl = ora_up_gobp_tbl,
+    ora_down = ora_down_gobp,
+    ora_down_tbl = ora_down_gobp_tbl,
+    ora_plot = ora_gobp_plot,
+    combined_plot = gobp_enrichment_plot,
+    gsea_table_file = gsea_gobp_table_file,
+    output_file = output_file
+  )
+}
+
+gsea_rank_modes = c("stat", "logFC")
+gobp_enrichment_results = setNames(
+  lapply(gsea_rank_modes, run_gobp_enrichment),
+  gsea_rank_modes
+)
+
+gobp_stat = gobp_enrichment_results$stat
+gobp_logFC = gobp_enrichment_results$logFC
+
+# Keep stat-ranked results in the original object names for interactive follow-up.
+gsea_gobp = gobp_stat$gsea
+gsea_gobp_tbl = gobp_stat$gsea_tbl
+gsea_gobp_plot = gobp_stat$gsea_plot
+
+ora_up_gobp = gobp_stat$ora_up
+ora_up_gobp_tbl = gobp_stat$ora_up_tbl
+ora_down_gobp = gobp_stat$ora_down
+ora_down_gobp_tbl = gobp_stat$ora_down_tbl
+ora_gobp_plot = gobp_stat$ora_plot
+
+gobp_enrichment_plot = gobp_stat$combined_plot
+gobp_enrichment_plot
+
+
+# ========== 5.1 - GO CC GSEA ==========
+# Uses the same old ID vs CD DESeq2 result and ranking options as the GO BP GSEA.
+
+run_gocc_gsea = function(gsea_rank_by) {
+  gsea_rank_column <- case_when(
+    gsea_rank_by == "stat" ~ "stat",
+    gsea_rank_by == "logFC" ~ "log2FoldChange",
+    TRUE ~ NA_character_
+  )
+  stopifnot(!is.na(gsea_rank_column))
+  
+  gocc_de = res2 %>%
+    dplyr::filter(
+      !is.na(log2FoldChange),
+      !is.na(pvalue),
+      !is.na(.data[[gsea_rank_column]])
+    )
+  
+  gene_symbol_to_entrez = AnnotationDbi::select(
+    org.Mm.eg.db,
+    keys = unique(gocc_de$gene.id),
+    keytype = "SYMBOL",
+    columns = c("SYMBOL", "ENTREZID")
+  ) %>%
+    as_tibble() %>%
+    dplyr::filter(!is.na(ENTREZID))
+  
+  gocc_ranked_genes = gocc_de %>%
+    mutate(rank_value = .data[[gsea_rank_column]]) %>%
+    inner_join(gene_symbol_to_entrez, by = c("gene.id" = "SYMBOL")) %>%
+    arrange(desc(abs(rank_value))) %>%
+    distinct(ENTREZID, .keep_all = TRUE)
+  
+  gocc_gene_ranks = gocc_ranked_genes$rank_value
+  names(gocc_gene_ranks) = gocc_ranked_genes$ENTREZID
+  gocc_gene_ranks = sort(gocc_gene_ranks, decreasing = TRUE)
+  
+  gsea_gocc = gseGO(
+    geneList = gocc_gene_ranks,
+    OrgDb = org.Mm.eg.db,
+    keyType = "ENTREZID",
+    ont = "CC",
+    minGSSize = 10,
+    maxGSSize = 500,
+    pvalueCutoff = 0.10,
+    pAdjustMethod = "BH",
+    eps = 0,
+    verbose = FALSE
+  )
+  
+  gsea_gocc_tbl = as.data.frame(gsea_gocc) %>%
+    as_tibble() %>%
+    arrange(p.adjust)
+  gsea_gocc_table_file = here(
+    "data/processed",
+    paste0("go cc gsea old ID vs CD ", gsea_rank_by, " ranking.csv")
+  )
+  write.csv(gsea_gocc_tbl, gsea_gocc_table_file, row.names = FALSE)
+  
+  if (nrow(gsea_gocc_tbl) > 0) {
+    gsea_gocc_plot_data = gsea_gocc_tbl %>%
+      mutate(
+        direction = ifelse(NES > 0, "Activated in ID", "Suppressed in ID"),
+        direction = factor(direction, levels = c("Activated in ID", "Suppressed in ID")),
+        pathway = stringr::str_wrap(Description, width = 60)
+      ) %>%
+      group_by(direction) %>%
+      slice_min(p.adjust, n = 20, with_ties = FALSE) %>%
+      ungroup() %>%
+      arrange(direction, NES) %>%
+      mutate(
+        pathway_for_plot = paste(pathway, direction, sep = "___"),
+        pathway_for_plot = factor(pathway_for_plot, levels = unique(pathway_for_plot)),
+        neg_log10_padj = -log10(pmax(p.adjust, .Machine$double.xmin))
+      )
+    
+    gocc_nes_limit = max(abs(gsea_gocc_plot_data$NES), na.rm = TRUE)
+    gocc_nes_limit = ceiling(gocc_nes_limit * 2) / 2
+    
+    gsea_gocc_plot = ggplot(gsea_gocc_plot_data, aes(NES, pathway_for_plot)) +
+      geom_vline(xintercept = 0, color = "grey75", linewidth = 0.35) +
+      geom_point(aes(size = setSize, color = neg_log10_padj), alpha = 0.9) +
+      facet_grid(
+        direction ~ .,
+        scales = "free_y",
+        space = "free_y"
+      ) +
+      scale_y_discrete(labels = function(x) sub("___.*$", "", x)) +
+      scale_color_viridis_c(name = expression(-log[10]~adjusted~italic(P))) +
+      coord_cartesian(xlim = c(-gocc_nes_limit, gocc_nes_limit)) +
+      labs(
+        title = paste0("GO CC GSEA ranked by ", gsea_rank_by),
+        x = "Normalized enrichment score",
+        y = NULL,
+        size = "Gene set size"
+      ) +
+      theme_bw() +
+      theme(
+        strip.text = element_text(face = "bold"),
+        axis.text.y = element_text(size = 8, lineheight = 0.9),
+        panel.grid.major.y = element_blank(),
+        plot.margin = margin(5.5, 5.5, 5.5, 28),
+        legend.position = "bottom",
+        legend.box = "horizontal"
+      ) +
+      guides(
+        color = guide_colorbar(
+          title.position = "top",
+          barwidth = grid::unit(35, "mm"),
+          barheight = grid::unit(3, "mm")
+        ),
+        size = guide_legend(title.position = "top")
+      )
+  } else {
+    gsea_gocc_plot_data = tibble()
+    gsea_gocc_plot = ggdraw() +
+      draw_label("No GO CC GSEA terms passed the selected cutoff", size = 12)
+  }
+  
+  output_file = here(
+    "plots",
+    paste0("go cc gsea old ID vs CD ", gsea_rank_by, " ranking.pdf")
+  )
+  ggsave(output_file, gsea_gocc_plot, width = 10, height = 8)
+  
+  list(
+    gsea = gsea_gocc,
+    gsea_tbl = gsea_gocc_tbl,
+    gsea_plot_data = gsea_gocc_plot_data,
+    gsea_plot = gsea_gocc_plot,
+    gsea_table_file = gsea_gocc_table_file,
+    output_file = output_file
+  )
+}
+
+gocc_enrichment_results = setNames(
+  lapply(gsea_rank_modes, run_gocc_gsea),
+  gsea_rank_modes
+)
+
+gocc_stat = gocc_enrichment_results$stat
+gocc_logFC = gocc_enrichment_results$logFC
+gsea_gocc = gocc_stat$gsea
+gsea_gocc_tbl = gocc_stat$gsea_tbl
+gsea_gocc_plot = gocc_stat$gsea_plot
+gsea_gocc_plot
+
+
+# ========== 5.2 - MSigDB Hallmark GSEA ==========
+# Uses the same old ID vs CD DESeq2 result and ranking options as the GO BP GSEA.
+
+hallmark_term2gene = msigdbr(
+  db_species = "MM",
+  species = "Mus musculus",
+  collection = "MH"
+) %>%
+  dplyr::select(gs_name, gene_symbol) %>%
+  distinct()
+
+run_hallmark_gsea = function(gsea_rank_by) {
+  gsea_rank_column <- case_when(
+    gsea_rank_by == "stat" ~ "stat",
+    gsea_rank_by == "logFC" ~ "log2FoldChange",
+    TRUE ~ NA_character_
+  )
+  stopifnot(!is.na(gsea_rank_column))
+  
+  hallmark_ranked_genes = res2 %>%
+    dplyr::filter(
+      !is.na(log2FoldChange),
+      !is.na(pvalue),
+      !is.na(.data[[gsea_rank_column]])
+    ) %>%
+    mutate(rank_value = .data[[gsea_rank_column]]) %>%
+    semi_join(hallmark_term2gene, by = c("gene.id" = "gene_symbol")) %>%
+    arrange(desc(abs(rank_value))) %>%
+    distinct(gene.id, .keep_all = TRUE)
+  
+  hallmark_gene_ranks = hallmark_ranked_genes$rank_value
+  names(hallmark_gene_ranks) = hallmark_ranked_genes$gene.id
+  hallmark_gene_ranks = sort(hallmark_gene_ranks, decreasing = TRUE)
+  
+  hallmark_gsea = GSEA(
+    geneList = hallmark_gene_ranks,
+    TERM2GENE = hallmark_term2gene,
+    minGSSize = 10,
+    maxGSSize = 500,
+    pvalueCutoff = 1,
+    pAdjustMethod = "BH",
+    eps = 0,
+    verbose = FALSE
+  )
+  
+  hallmark_gsea_tbl = as.data.frame(hallmark_gsea) %>%
+    as_tibble() %>%
+    arrange(p.adjust)
+  hallmark_gsea_table_file = here(
+    "data/processed",
+    paste0("msigdb hallmark gsea old ID vs CD ", gsea_rank_by, " ranking.csv")
+  )
+  write.csv(hallmark_gsea_tbl, hallmark_gsea_table_file, row.names = FALSE)
+  
+  if (nrow(hallmark_gsea_tbl) > 0) {
+    hallmark_gsea_plot_data = hallmark_gsea_tbl %>%
+      mutate(
+        direction = ifelse(NES > 0, "Activated in ID", "Suppressed in ID"),
+        direction = factor(direction, levels = c("Activated in ID", "Suppressed in ID")),
+        pathway = Description %>%
+          str_remove("^HALLMARK_") %>%
+          str_replace_all("_", " ") %>%
+          str_to_sentence() %>%
+          stringr::str_wrap(width = 60)
+      ) %>%
+      group_by(direction) %>%
+      slice_min(p.adjust, n = 20, with_ties = FALSE) %>%
+      ungroup() %>%
+      arrange(direction, NES) %>%
+      mutate(
+        pathway_for_plot = paste(pathway, direction, sep = "___"),
+        pathway_for_plot = factor(pathway_for_plot, levels = unique(pathway_for_plot)),
+        neg_log10_padj = -log10(pmax(p.adjust, .Machine$double.xmin))
+      )
+    
+    hallmark_nes_limit = max(abs(hallmark_gsea_plot_data$NES), na.rm = TRUE)
+    hallmark_nes_limit = ceiling(hallmark_nes_limit * 2) / 2
+    
+    hallmark_gsea_plot = ggplot(hallmark_gsea_plot_data, aes(NES, pathway_for_plot)) +
+      geom_vline(xintercept = 0, color = "grey75", linewidth = 0.35) +
+      geom_point(aes(size = setSize, color = neg_log10_padj), alpha = 0.9) +
+      facet_grid(
+        direction ~ .,
+        scales = "free_y",
+        space = "free_y"
+      ) +
+      scale_y_discrete(labels = function(x) sub("___.*$", "", x)) +
+      scale_color_viridis_c(name = expression(-log[10]~adjusted~italic(P))) +
+      coord_cartesian(xlim = c(-hallmark_nes_limit, hallmark_nes_limit)) +
+      labs(
+        title = paste0("MSigDB Hallmark GSEA ranked by ", gsea_rank_by),
+        x = "Normalized enrichment score",
+        y = NULL,
+        size = "Gene set size"
+      ) +
+      theme_bw() +
+      theme(
+        strip.text = element_text(face = "bold"),
+        axis.text.y = element_text(size = 9, lineheight = 0.9),
+        panel.grid.major.y = element_blank(),
+        plot.margin = margin(5.5, 5.5, 5.5, 28),
+        legend.position = "bottom",
+        legend.box = "horizontal"
+      ) +
+      guides(
+        color = guide_colorbar(
+          title.position = "top",
+          barwidth = grid::unit(35, "mm"),
+          barheight = grid::unit(3, "mm")
+        ),
+        size = guide_legend(title.position = "top")
+      )
+  } else {
+    hallmark_gsea_plot_data = tibble()
+    hallmark_gsea_plot = ggdraw() +
+      draw_label("No Hallmark GSEA terms available", size = 12)
+  }
+  
+  output_file = here(
+    "plots",
+    paste0("msigdb hallmark gsea old ID vs CD ", gsea_rank_by, " ranking.pdf")
+  )
+  ggsave(output_file, hallmark_gsea_plot, width = 10, height = 8)
+  
+  list(
+    gsea = hallmark_gsea,
+    gsea_tbl = hallmark_gsea_tbl,
+    gsea_plot_data = hallmark_gsea_plot_data,
+    gsea_plot = hallmark_gsea_plot,
+    gsea_table_file = hallmark_gsea_table_file,
+    output_file = output_file
+  )
+}
+
+hallmark_enrichment_results = setNames(
+  lapply(gsea_rank_modes, run_hallmark_gsea),
+  gsea_rank_modes
+)
+
+hallmark_stat = hallmark_enrichment_results$stat
+hallmark_logFC = hallmark_enrichment_results$logFC
+hallmark_gsea = hallmark_stat$gsea
+hallmark_gsea_tbl = hallmark_stat$gsea_tbl
+hallmark_gsea_plot = hallmark_stat$gsea_plot
+hallmark_gsea_plot
+
+
+# ========== 5.3 - Summary figure: volcano plus stat-ranked GSEA ==========
+# Volcano highlights significant genes in the top activated/suppressed GO BP
+# GSEA terms from the stat-ranked analysis.
+
+top_gobp_terms_per_direction = 4
+top_gobp_pathways = gsea_gobp_tbl %>%
+  dplyr::filter(!is.na(NES)) %>%
+  mutate(direction = ifelse(NES > 0, "Activated", "Suppressed")) %>%
+  group_by(direction) %>%
+  slice_min(p.adjust, n = top_gobp_terms_per_direction, with_ties = FALSE) %>%
+  ungroup() %>%
+  arrange(factor(direction, levels = c("Activated", "Suppressed")), p.adjust) %>%
+  mutate(
+    pathway_rank = row_number(),
+    pathway_label = paste0(
+      direction,
+      ": ",
+      stringr::str_wrap(Description, width = 34)
+    )
+  )
+
+# Use full GO term membership for volcano coloring, not only GSEA leading-edge genes.
+top_gobp_symbols = AnnotationDbi::select(
+  org.Mm.eg.db,
+  keys = unique(top_gobp_pathways$ID),
+  keytype = "GOALL",
+  columns = c("GOALL", "SYMBOL", "ONTOLOGYALL")
+) %>%
+  as_tibble() %>%
+  dplyr::filter(
+    GOALL %in% top_gobp_pathways$ID,
+    ONTOLOGYALL == "BP",
+    !is.na(SYMBOL)
+  ) %>%
+  distinct(GOALL, SYMBOL)
+
+top_gobp_gene_categories = top_gobp_symbols %>%
+  inner_join(
+    top_gobp_pathways %>% dplyr::select(GOALL = ID, pathway_rank, pathway_label),
+    by = "GOALL"
+  ) %>%
+  arrange(pathway_rank) %>%
+  distinct(SYMBOL, .keep_all = TRUE) %>%
+  dplyr::select(gene.id = SYMBOL, pathway_label)
+
+top_up_gene_labels = dex2 %>%
+  dplyr::filter(log2FoldChange > 0) %>%
+  arrange(pvalue, desc(log2FoldChange)) %>%
+  slice_head(n = 15) %>%
+  pull(gene.id)
+
+top_down_gene_labels = dex2 %>%
+  dplyr::filter(log2FoldChange < 0) %>%
+  arrange(pvalue, log2FoldChange) %>%
+  slice_head(n = 15) %>%
+  pull(gene.id)
+
+summary_volcano_data = lfc %>%
+  mutate(is_significant = gene.id %in% dex2$gene.id) %>%
+  left_join(top_gobp_gene_categories, by = "gene.id") %>%
+  mutate(
+    pathway_label = ifelse(!is.na(pathway_label), pathway_label, "Other"),
+    pathway_label = factor(pathway_label, levels = c(unique(top_gobp_pathways$pathway_label), "Other")),
+    gene_label = ifelse(is_significant & pathway_label != "Other", gene.id, NA_character_)
+  )
+
+summary_volcano_labels = summary_volcano_data %>%
+  dplyr::filter(!is.na(gene_label), is_significant, pathway_label != "Other")
+
+summary_pathway_palette = c(
+  "#0072B2", "#D55E00", "#009E73", "#CC79A7",
+  "#E69F00", "#56B4E9", "#7F3C8D", "#11A579"
+)
+
+summary_volcano_colors = c(
+  setNames(
+    summary_pathway_palette[seq_len(nrow(top_gobp_pathways))],
+    top_gobp_pathways$pathway_label
+  ),
+  "Other" = "#D0D0D0"
+)
+
+summary_x_limit = max(2, quantile(abs(summary_volcano_data$log2FoldChange), 0.995, na.rm = TRUE))
+summary_x_limit = min(3, ceiling(summary_x_limit * 2) / 2)
+summary_y_limit = max(2, quantile(summary_volcano_data$neg_log10_pvalue, 0.995, na.rm = TRUE))
+summary_y_limit = min(4, ceiling(summary_y_limit * 2) / 2)
+
+summary_volcano = ggplot(summary_volcano_data, aes(log2FoldChange, neg_log10_pvalue)) +
+  geom_hline(yintercept = -log10(0.05), linetype = "22", color = "grey55", linewidth = 0.35) +
+  geom_vline(xintercept = 0, color = "grey85", linewidth = 0.25) +
+  geom_vline(xintercept = c(-1, 1), linetype = "22", color = "grey55", linewidth = 0.35) +
+  geom_point(
+    data = summary_volcano_data %>% dplyr::filter(pathway_label == "Other"),
+    color = "#D0D0D0",
+    size = 1.1,
+    alpha = 0.45,
+    stroke = 0
+  ) +
+  geom_point(
+    data = summary_volcano_data %>% dplyr::filter(pathway_label != "Other"),
+    aes(color = pathway_label),
+    size = 2.2,
+    alpha = 0.95,
+    stroke = 0
+  ) +
+  ggrepel::geom_text_repel(
+    data = summary_volcano_labels,
+    aes(label = gene_label),
+    color = "grey15",
+    size = 3.5,
+    box.padding = 0.45,
+    point.padding = 0.35,
+    min.segment.length = 0,
+    max.overlaps = Inf,
+    segment.color = "grey70",
+    segment.size = 0.3,
+    segment.alpha = 0.7,
+    show.legend = FALSE
+  ) +
+  scale_color_manual(values = summary_volcano_colors, name = "Top GO BP pathways", drop = FALSE) +
+  coord_cartesian(xlim = c(-summary_x_limit, summary_x_limit), ylim = c(0, summary_y_limit)) +
+  labs(
+    title = "Old muscle: inulin diet vs control",
+    subtitle = "Highlighted points are genes in top stat-ranked GO BP pathways",
+    x = expression(log[2]~fold~change~"(ID/CD)"),
+    y = expression(-log[10]~italic(P))
+  ) +
+  theme_classic(base_size = 12, base_family = "Helvetica") +
+  theme(
+    axis.line = element_line(color = "black", linewidth = 0.5),
+    axis.ticks = element_line(color = "black", linewidth = 0.45),
+    axis.text = element_text(color = "black", size = 11),
+    axis.title = element_text(color = "black", size = 13),
+    plot.title = element_text(face = "bold", size = 15),
+    plot.subtitle = element_text(size = 11, color = "grey30"),
+    legend.position = "top",
+    legend.direction = "vertical",
+    legend.title = element_text(size = 10),
+    legend.text = element_text(size = 8)
+  ) +
+  guides(color = guide_legend(ncol = 2, override.aes = list(size = 3, alpha = 1)))
+
+volcano_gsea_summary_figure = plot_grid(
+  summary_volcano,
+  hallmark_gsea_plot,
+  gsea_gobp_plot,
+  gsea_gocc_plot,
+  ncol = 1,
+  rel_heights = c(1.1, 1, 1.25, 1.25)
+)
+
+volcano_gsea_summary_figure
+ggsave(
+  here("plots/volcano with top gobp pathways and stat gsea.pdf"),
+  volcano_gsea_summary_figure,
+  width = 13,
+  height = 24
+)
 
 
 
@@ -975,7 +1619,7 @@ df2 <- lfc %>%
     ID = 2^log2FoldChange,  # fold-change vs CD
     CD = 1                  # reference group
   ) %>%
-  select(gene.id, ID, CD, pvalue) %>%
+  dplyr::select(gene.id, ID, CD, pvalue) %>%
   pivot_longer(
     cols      = c("ID", "CD"),
     names_to  = "group",
@@ -1112,31 +1756,3 @@ gg_mac
 
 plot_grid(vol_cat, gg_graber, plot_grid(gg_collagen, gg_top, gg_mac, nrow=1),ncol=1, rel_heights = c(1,.6,.6))
 ggsave(here("plots/volcano and lfc barplots.pdf"),h=13,w=9)
-
-
-# ========== (C) Pwy enrichment ==========
-# --
-
-library(enrichR)
-dbs = as.data.frame(listEnrichrDbs())
-mydb = "MSigDB_Hallmark_2020"
-#mydb = "GO_Cellular_Component_2025" #Collagen-Containing Extracellular Matrix (GO:0062023)
-
-
-up = subset(lfc, log2FoldChange > 0 & pvalue <= 0.05 )$gene.id
-enriched_up = enrichr(up,databases = mydb)
-df1 = as.data.frame(enriched_up)
-colnames(df1) = sub(".*?\\.", "", colnames(df1))
-df1 = subset(df1, P.value <= 0.05)
-enr1= plotEnrich(enriched_up[[1]], showTerms = 20, numChar = 100, y = "Count", orderBy = "P.value", title="Upregulated Pathways in ID")
-
-dn = subset(lfc, log2FoldChange < 0 & pvalue <= 0.05 )$gene.id
-enriched_dn = enrichr(dn,databases = mydb)
-df1 = as.data.frame(enriched_dn)
-colnames(df1) = sub(".*?\\.", "", colnames(df1))
-df1 = subset(df1, P.value <= 0.05)
-enr2= plotEnrich(enriched_dn[[1]], showTerms = 20, numChar = 100, y = "Count", orderBy = "P.value", title="Downregulated Pathways in ID")
-
-
-library(cowplot)
-plot_grid(enr1, enr2, nrow=1)
