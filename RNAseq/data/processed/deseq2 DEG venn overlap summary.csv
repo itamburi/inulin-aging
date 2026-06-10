@@ -1,0 +1,3 @@
+"direction","id_cd_label","age_cd_label","id_cd_total","age_cd_total","id_cd_only","shared","age_cd_only"
+"Upregulated","Old ID > old CD","Young CD > old CD",233,2675,153,80,2595
+"Downregulated","Old ID < old CD","Young CD < old CD",158,2874,88,70,2804

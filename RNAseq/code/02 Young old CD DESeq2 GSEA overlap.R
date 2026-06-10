@@ -295,14 +295,18 @@ overlap_pathways = age_sig_pathways %>%
   ) %>%
   mutate(
     direction_label = case_when(
-      direction == "Up" ~ "Up in young CD and old ID",
-      direction == "Down" ~ "Down in young CD and old ID",
+      direction == "Up" ~ "Activated",
+      direction == "Down" ~ "Down",
       TRUE ~ direction
+    ),
+    direction_label = factor(
+      direction_label,
+      levels = c("Activated", "Down")
     ),
     best_p.adjust = pmin(age_p.adjust, diet_p.adjust, na.rm = TRUE),
     worst_p.adjust = pmax(age_p.adjust, diet_p.adjust, na.rm = TRUE)
   ) %>%
-  arrange(ontology, direction, worst_p.adjust)
+  arrange(ontology, direction_label, worst_p.adjust)
 
 write.csv(
   overlap_pathways,
@@ -327,9 +331,15 @@ make_overlap_plot = function(ontology_code, ontology_label, output_file) {
     slice_min(worst_p.adjust, n = top_overlap_pathways_per_panel, with_ties = FALSE) %>%
     ungroup() %>%
     mutate(
-      pathway = str_wrap(Description, width = 54),
+      pathway = str_wrap(Description, width = 76),
       pathway_for_plot = paste(pathway, direction_label, sep = "___")
     )
+  
+  overlap_pathway_levels = overlap_plot_terms %>%
+    arrange(direction_label, worst_p.adjust) %>%
+    pull(pathway_for_plot) %>%
+    unique() %>%
+    rev()
   
   overlap_plot_data = bind_rows(
     overlap_plot_terms %>%
@@ -357,17 +367,23 @@ make_overlap_plot = function(ontology_code, ontology_label, output_file) {
       comparison = factor(comparison, levels = names(comparison_outline_colors)),
       neg_log10_padj = -log10(pmax(p.adjust, .Machine$double.xmin))
     ) %>%
-    arrange(direction_label, NES) %>%
     mutate(
-      pathway_for_plot = factor(pathway_for_plot, levels = unique(pathway_for_plot))
+      pathway_for_plot = factor(pathway_for_plot, levels = overlap_pathway_levels)
     )
   
   if (nrow(overlap_plot_data) > 0) {
     overlap_nes_limit = max(abs(overlap_plot_data$NES), na.rm = TRUE)
     overlap_nes_limit = ceiling(overlap_nes_limit * 2) / 2
+    overlap_nes_color_limits = range(overlap_plot_data$neg_log10_padj, na.rm = TRUE)
+    overlap_nes_size_limits = range(overlap_plot_data$setSize, na.rm = TRUE)
+    
+    overlap_plot_terms = overlap_plot_terms %>%
+      mutate(
+        pathway_for_plot = factor(pathway_for_plot, levels = overlap_pathway_levels)
+      )
     
     overlap_plot = ggplot(overlap_plot_data, aes(NES, pathway_for_plot)) +
-      geom_vline(xintercept = 0, color = "grey78", linewidth = 0.35) +
+      geom_vline(xintercept = 0, color = "grey75", linewidth = 0.35) +
       geom_segment(
         data = overlap_plot_terms,
         aes(
@@ -377,7 +393,7 @@ make_overlap_plot = function(ontology_code, ontology_label, output_file) {
           yend = pathway_for_plot
         ),
         inherit.aes = FALSE,
-        color = "grey72",
+        color = "grey75",
         linewidth = 0.45
       ) +
       geom_point(
@@ -390,31 +406,54 @@ make_overlap_plot = function(ontology_code, ontology_label, output_file) {
         alpha = 0.95,
         stroke = 1
       ) +
-      facet_grid(direction_label ~ ., scales = "free_y") +
-      scale_y_discrete(labels = function(x) sub("___.*$", "", x)) +
+      facet_grid(direction_label ~ ., scales = "free_y", space = "free_y") +
+      scale_y_discrete(
+        labels = function(x) sub("___.*$", "", x),
+        expand = expansion(add = c(0.55, 0.55))
+      ) +
       scale_shape_manual(values = comparison_shapes, name = NULL) +
       scale_color_manual(values = comparison_outline_colors, name = NULL) +
       scale_fill_viridis_c(
         name = expression(-log[10]~adjusted~italic(P)),
-        option = "magma"
+        limits = overlap_nes_color_limits
+      ) +
+      scale_size_continuous(
+        name = "Gene set size",
+        limits = overlap_nes_size_limits,
+        range = c(2.4, 6.2)
       ) +
       coord_cartesian(xlim = c(-overlap_nes_limit, overlap_nes_limit)) +
       labs(
         title = paste0("Overlapping ", ontology_label, " pathways"),
         subtitle = paste0("Pathways shown pass adjusted P <= ", gsea_padj_cutoff, " in both contrasts and the same direction"),
         x = "Normalized enrichment score",
-        y = NULL,
-        size = "Gene set size"
+        y = NULL
       ) +
-      theme_bw() +
+      theme_bw(base_size = 12, base_family = "Helvetica") +
       theme(
-        strip.text = element_text(face = "bold"),
-        axis.text.y = element_text(size = 8, lineheight = 0.9),
+        strip.background = element_blank(),
+        strip.text = element_text(face = "bold", size = 13, color = "black", margin = margin(3, 0, 3, 0)),
+        axis.text.y = element_text(size = 11.5, lineheight = 0.9, color = "black"),
+        axis.text.x = element_text(size = 11.5, color = "black"),
+        axis.title.x = element_text(size = 14, color = "black"),
         panel.grid.major.y = element_blank(),
         legend.position = "top",
         legend.box = "horizontal",
         legend.justification = "left",
-        plot.margin = margin(5.5, 5.5, 5.5, 28)
+        legend.margin = margin(0, 0, 0, 0),
+        legend.box.margin = margin(0, 0, 0, 0),
+        plot.margin = margin(4, 10, 6, 10)
+      ) +
+      guides(
+        fill = guide_colorbar(
+          title.position = "top",
+          barwidth = grid::unit(35, "mm"),
+          barheight = grid::unit(3, "mm"),
+          order = 1
+        ),
+        size = guide_legend(title.position = "top", order = 2),
+        shape = guide_legend(order = 3),
+        color = guide_legend(order = 3)
       )
   } else {
     overlap_plot = ggdraw() +
