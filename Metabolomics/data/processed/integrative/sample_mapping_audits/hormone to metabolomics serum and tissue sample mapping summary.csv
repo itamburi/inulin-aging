@@ -1,0 +1,17 @@
+pairing,mapping_status,metadata_review_status,n_rows
+liver tissue metabolites vs SAC hormones,hormone_only_no_metabolomics,needs collaborator confirmation,32
+liver tissue metabolites vs SAC hormones,matched,present in current metabolomics metadata,13
+liver tissue metabolites vs SAC hormones,metabolomics_only_no_hormone,present in current metabolomics metadata,9
+muscle tissue metabolites vs SAC hormones,hormone_only_no_metabolomics,needs collaborator confirmation,32
+muscle tissue metabolites vs SAC hormones,matched,present in current metabolomics metadata,13
+muscle tissue metabolites vs SAC hormones,metabolomics_only_no_hormone,present in current metabolomics metadata,9
+serum TP4 metabolites vs GTT hormones,hormone_only_no_metabolomics,needs collaborator confirmation,4
+serum TP4 metabolites vs GTT hormones,matched,needs collaborator confirmation,36
+serum pv metabolites vs SAC hormones,hormone_only_no_metabolomics,needs collaborator confirmation,1
+serum pv metabolites vs SAC hormones,matched,needs collaborator confirmation,31
+serum pv metabolites vs SAC hormones,matched,present in current metabolomics metadata,13
+serum pv metabolites vs SAC hormones,metabolomics_only_no_hormone,present in current metabolomics metadata,9
+serum systemic SAC metabolites vs SAC hormones,hormone_only_no_metabolomics,needs collaborator confirmation,4
+serum systemic SAC metabolites vs SAC hormones,hormone_only_no_metabolomics,present in current metabolomics metadata,2
+serum systemic SAC metabolites vs SAC hormones,matched,needs collaborator confirmation,28
+serum systemic SAC metabolites vs SAC hormones,matched,present in current metabolomics metadata,11

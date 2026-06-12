@@ -60,6 +60,9 @@ Within `Metabolomics `:
 - `Metabolomics/code/integrative`
   Cross-assay metabolite correlation scripts.
 
+- `Metabolomics/code/integrative/03_serum_hormone_metabolite_correlations.R`
+  Serum metabolite correlations with blood hormones, pairing PV and systemic sacrifice metabolites with SAC hormones and TP4 metabolites with GTT hormones.
+
 - `Metabolomics/data/raw/tissue/compound_discoverer`
   Raw Compound Discoverer Excel exports. Current files are liver and muscle runs in positive and negative mode.
 

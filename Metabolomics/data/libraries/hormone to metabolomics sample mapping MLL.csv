@@ -1,0 +1,142 @@
+cohort,diet,age,sex,hormone_sample_id,metabolomics_sample_id,metabolomics_tissue,hormone_tissue
+2,CD,Old,F,2M16_SAC,Liver_2M16,Liver,Blood SAC
+2,CD,Old,F,2M17_SAC,Liver_2M17,Liver,Blood SAC
+2,CD,Old,F,2M20_SAC,Liver_2M20,Liver,Blood SAC
+2,ID,Old,F,2M22_SAC,Liver_2M22,Liver,Blood SAC
+2,ID,Old,F,2M23_SAC,Liver_2M23,Liver,Blood SAC
+2,ID,Old,F,2M26_SAC,Liver_2M26,Liver,Blood SAC
+2,ID,Old,F,2M31_SAC,Liver_2M31,Liver,Blood SAC
+4,CD,Young,F,4M1_SAC,Liver_4M1,Liver,Blood SAC
+4,CD,Young,F,4M2_SAC,Liver_4M2,Liver,Blood SAC
+4,CD,Young,F,4M3_SAC,Liver_4M3,Liver,Blood SAC
+4,CD,Young,F,4M4_SAC,Liver_4M4,Liver,Blood SAC
+4,CD,Young,F,4M5_SAC,Liver_4M5,Liver,Blood SAC
+2,CD,Old,F,2M16_SAC,Muscle_2M_16,Muscle,Blood SAC
+2,CD,Old,F,2M17_SAC,Muscle_2M_17,Muscle,Blood SAC
+2,CD,Old,F,2M20_SAC,Muscle_2M_20,Muscle,Blood SAC
+2,ID,Old,F,2M22_SAC,Muscle_2M_22,Muscle,Blood SAC
+2,ID,Old,F,2M23_SAC,Muscle_2M_23,Muscle,Blood SAC
+2,ID,Old,F,2M26_SAC,Muscle_2M_26,Muscle,Blood SAC
+2,ID,Old,F,2M31_SAC,Muscle_2M_31,Muscle,Blood SAC
+4,CD,Young,F,4M1_SAC,Muscle_4M_01,Muscle,Blood SAC
+4,CD,Young,F,4M2_SAC,Muscle_4M_02,Muscle,Blood SAC
+4,CD,Young,F,4M3_SAC,Muscle_4M_03,Muscle,Blood SAC
+4,CD,Young,F,4M4_SAC,Muscle_4M_04,Muscle,Blood SAC
+4,CD,Young,F,4M5_SAC,Muscle_4M_05,Muscle,Blood SAC
+2,CD,Old,F,2M16_SAC,Serum_2M16_pv,Serum PV,Blood SAC
+2,CD,Old,F,2M17_SAC,Serum_2M17_pv,Serum PV,Blood SAC
+2,CD,Old,F,2M20_SAC,Serum_2M20_pv,Serum PV,Blood SAC
+2,ID,Old,F,2M22_SAC,Serum_2M22_pv,Serum PV,Blood SAC
+2,ID,Old,F,2M23_SAC,Serum_2M23_pv,Serum PV,Blood SAC
+2,ID,Old,F,2M26_SAC,Serum_2M26_pv,Serum PV,Blood SAC
+2,ID,Old,F,2M31_SAC,Serum_2M31_pv,Serum PV,Blood SAC
+3,CD,Old,F,3M1_SAC,Serum_3M1_pv,Serum PV,Blood SAC
+3,CD,Old,F,3M4_SAC,Serum_3M4_pv,Serum PV,Blood SAC
+3,CD,Old,F,3M6_SAC,Serum_3M6_pv,Serum PV,Blood SAC
+3,CD,Old,F,3M7_SAC,Serum_3M7_pv,Serum PV,Blood SAC
+3,ID,Old,F,3M11_SAC,Serum_3M11_pv,Serum PV,Blood SAC
+3,ID,Old,F,3M13_SAC,Serum_3M13_pv,Serum PV,Blood SAC
+3,ID,Old,F,3M14_SAC,Serum_3M14_pv,Serum PV,Blood SAC
+3,ID,Old,F,3M15_SAC,Serum_3M15_pv,Serum PV,Blood SAC
+3,ID,Old,F,3M16_SAC,Serum_3M16_pv,Serum PV,Blood SAC
+3,ID,Old,F,3M17_SAC,Serum_3M17_pv,Serum PV,Blood SAC
+3,ID,Old,F,3M18_SAC,Serum_3M18_pv,Serum PV,Blood SAC
+3,CD,Old,M,3M21_SAC,Serum_3M21_pv,Serum PV,Blood SAC
+3,CD,Old,M,3M26_SAC,Serum_3M26_pv,Serum PV,Blood SAC
+3,CD,Old,M,3M27_SAC,Serum_3M27_pv,Serum PV,Blood SAC
+3,CD,Old,M,3M28_SAC,Serum_3M28_pv,Serum PV,Blood SAC
+3,ID,Old,M,3M31_SAC,Serum_3M31_pv,Serum PV,Blood SAC
+3,ID,Old,M,3M33_SAC,Serum_3M33_pv,Serum PV,Blood SAC
+3,ID,Old,M,3M34_SAC,Serum_3M34_pv,Serum PV,Blood SAC
+3,ID,Old,M,3M37_SAC,Serum_3M37_pv,Serum PV,Blood SAC
+3,ID,Old,M,3M38_SAC,Serum_3M38_pv,Serum PV,Blood SAC
+3,ID,Old,M,3M39_SAC,Serum_3M39_pv,Serum PV,Blood SAC
+3,ID,Old,M,3M40_SAC,Serum_3M40_pv,Serum PV,Blood SAC
+4,CD,Young,F,4M1_SAC,Serum_4M1_pv,Serum PV,Blood SAC
+4,CD,Young,F,4M2_SAC,Serum_4M2_pv,Serum PV,Blood SAC
+4,CD,Young,F,4M3_SAC,Serum_4M3_pv,Serum PV,Blood SAC
+4,CD,Young,F,4M4_SAC,Serum_4M4_pv,Serum PV,Blood SAC
+4,CD,Young,F,4M5_SAC,Serum_4M5_pv,Serum PV,Blood SAC
+5,CD,Young,F,5M1_SAC,Serum_5M1_pv,Serum PV,Blood SAC
+5,CD,Young,F,5M2_SAC,Serum_5M2_pv,Serum PV,Blood SAC
+5,CD,Young,F,5M3_SAC,Serum_5M3_pv,Serum PV,Blood SAC
+5,CD,Young,F,5M4_SAC,Serum_5M4_pv,Serum PV,Blood SAC
+5,CD,Young,M,5M6_SAC,Serum_5M6_pv,Serum PV,Blood SAC
+5,CD,Young,M,5M7_SAC,Serum_5M7_pv,Serum PV,Blood SAC
+5,CD,Young,M,5M8_SAC,Serum_5M8_pv,Serum PV,Blood SAC
+5,CD,Young,M,5M9_SAC,Serum_5M9_pv,Serum PV,Blood SAC
+5,CD,Young,M,5M10_SAC,Serum_5M10_pv,Serum PV,Blood SAC
+3,CD,Old,F,3M1_GTT,Serum_3M1_tp4,Serum TP4,Blood GTT
+3,CD,Old,F,3M3_GTT,Serum_3M3_tp4,Serum TP4,Blood GTT
+3,CD,Old,F,3M4_GTT,Serum_3M4_tp4,Serum TP4,Blood GTT
+3,CD,Old,F,3M5_GTT,Serum_3M5_tp4,Serum TP4,Blood GTT
+3,CD,Old,F,3M6_GTT,Serum_3M6_tp4,Serum TP4,Blood GTT
+3,CD,Old,F,3M10_GTT,Serum_3M10_tp4,Serum TP4,Blood GTT
+3,ID,Old,F,3M11_GTT,Serum_3M11_tp4,Serum TP4,Blood GTT
+3,ID,Old,F,3M12_GTT,Serum_3M12_tp4,Serum TP4,Blood GTT
+3,ID,Old,F,3M13_GTT,Serum_3M13_tp4,Serum TP4,Blood GTT
+3,ID,Old,F,3M14_GTT,Serum_3M14_tp4,Serum TP4,Blood GTT
+3,ID,Old,F,3M15_GTT,Serum_3M15_tp4,Serum TP4,Blood GTT
+3,ID,Old,F,3M16_GTT,Serum_3M16_tp4,Serum TP4,Blood GTT
+3,ID,Old,F,3M17_GTT,Serum_3M17_tp4,Serum TP4,Blood GTT
+3,ID,Old,F,3M18_GTT,Serum_3M18_tp4,Serum TP4,Blood GTT
+3,ID,Old,F,3M19_GTT,Serum_3M19_tp4,Serum TP4,Blood GTT
+3,ID,Old,F,3M20_GTT,Serum_3M20_tp4,Serum TP4,Blood GTT
+3,CD,Old,M,3M21_GTT,Serum_3M21_tp4,Serum TP4,Blood GTT
+3,CD,Old,M,3M22_GTT,Serum_3M22_tp4,Serum TP4,Blood GTT
+3,CD,Old,M,3M23_GTT,Serum_3M23_tp4,Serum TP4,Blood GTT
+3,CD,Old,M,3M24_GTT,Serum_3M24_tp4,Serum TP4,Blood GTT
+3,CD,Old,M,3M25_GTT,Serum_3M25_tp4,Serum TP4,Blood GTT
+3,CD,Old,M,3M26_GTT,Serum_3M26_tp4,Serum TP4,Blood GTT
+3,CD,Old,M,3M27_GTT,Serum_3M27_tp4,Serum TP4,Blood GTT
+3,CD,Old,M,3M28_GTT,Serum_3M28_tp4,Serum TP4,Blood GTT
+3,CD,Old,M,3M29_GTT,Serum_3M29_tp4,Serum TP4,Blood GTT
+3,CD,Old,M,3M30_GTT,Serum_3M30_tp4,Serum TP4,Blood GTT
+3,ID,Old,M,3M31_GTT,Serum_3M31_tp4,Serum TP4,Blood GTT
+3,ID,Old,M,3M32_GTT,Serum_3M32_tp4,Serum TP4,Blood GTT
+3,ID,Old,M,3M33_GTT,Serum_3M33_tp4,Serum TP4,Blood GTT
+3,ID,Old,M,3M34_GTT,Serum_3M34_tp4,Serum TP4,Blood GTT
+3,ID,Old,M,3M35_GTT,Serum_3M35_tp4,Serum TP4,Blood GTT
+3,ID,Old,M,3M36_GTT,Serum_3M36_tp4,Serum TP4,Blood GTT
+3,ID,Old,M,3M37_GTT,Serum_3M37_tp4,Serum TP4,Blood GTT
+3,ID,Old,M,3M38_GTT,Serum_3M38_tp4,Serum TP4,Blood GTT
+3,ID,Old,M,3M39_GTT,Serum_3M39_tp4,Serum TP4,Blood GTT
+3,ID,Old,M,3M40_GTT,Serum_3M40_tp4,Serum TP4,Blood GTT
+2,CD,Old,F,2M16_SAC,Serum_2M16_sys_sac,Serum systemic SAC,Blood SAC
+2,CD,Old,F,2M17_SAC,Serum_2M17_sys_sac,Serum systemic SAC,Blood SAC
+2,CD,Old,F,2M20_SAC,Serum_2M20_sys_sac,Serum systemic SAC,Blood SAC
+2,ID,Old,F,2M22_SAC,Serum_2M22_sys_sac,Serum systemic SAC,Blood SAC
+2,ID,Old,F,2M23_SAC,Serum_2M23_sys_sac,Serum systemic SAC,Blood SAC
+2,ID,Old,F,2M26_SAC,Serum_2M26_sys_sac,Serum systemic SAC,Blood SAC
+2,ID,Old,F,2M31_SAC,Serum_2M31_sys_sac,Serum systemic SAC,Blood SAC
+3,CD,Old,F,3M1_SAC,Serum_3M1_sys_sac,Serum systemic SAC,Blood SAC
+3,CD,Old,F,3M4_SAC,Serum_3M4_sys_sac,Serum systemic SAC,Blood SAC
+3,CD,Old,F,3M6_SAC,Serum_3M6_sys_sac,Serum systemic SAC,Blood SAC
+3,CD,Old,F,3M7_SAC,Serum_3M7_sys_sac,Serum systemic SAC,Blood SAC
+3,ID,Old,F,3M11_SAC,Serum_3M11_sys_sac,Serum systemic SAC,Blood SAC
+3,ID,Old,F,3M13_SAC,Serum_3M13_sys_sac,Serum systemic SAC,Blood SAC
+3,ID,Old,F,3M14_SAC,Serum_3M14_sys_sac,Serum systemic SAC,Blood SAC
+3,ID,Old,F,3M15_SAC,Serum_3M15_sys_sac,Serum systemic SAC,Blood SAC
+3,ID,Old,F,3M17_SAC,Serum_3M17_sys_sac,Serum systemic SAC,Blood SAC
+3,ID,Old,F,3M18_SAC,Serum_3M18_sys_sac,Serum systemic SAC,Blood SAC
+3,CD,Old,M,3M21_SAC,Serum_3M21_sys_sac,Serum systemic SAC,Blood SAC
+3,CD,Old,M,3M26_SAC,Serum_3M26_sys_sac,Serum systemic SAC,Blood SAC
+3,CD,Old,M,3M27_SAC,Serum_3M27_sys_sac,Serum systemic SAC,Blood SAC
+3,CD,Old,M,3M28_SAC,Serum_3M28_sys_sac,Serum systemic SAC,Blood SAC
+3,ID,Old,F,3M31_SAC,Serum_3M31_sys_sac,Serum systemic SAC,Blood SAC
+3,ID,Old,F,3M33_SAC,Serum_3M33_sys_sac,Serum systemic SAC,Blood SAC
+3,ID,Old,F,3M34_SAC,Serum_3M34_sys_sac,Serum systemic SAC,Blood SAC
+3,ID,Old,F,3M37_SAC,Serum_3M37_sys_sac,Serum systemic SAC,Blood SAC
+3,ID,Old,F,3M38_SAC,Serum_3M38_sys_sac,Serum systemic SAC,Blood SAC
+3,ID,Old,F,3M39_SAC,Serum_3M39_sys_sac,Serum systemic SAC,Blood SAC
+3,ID,Old,F,3M40_SAC,Serum_3M40_sys_sac,Serum systemic SAC,Blood SAC
+4,CD,Young,F,4M2_SAC,Serum_4M2_sys_sac,Serum systemic SAC,Blood SAC
+4,CD,Young,F,4M3_SAC,Serum_4M3_sys_sac,Serum systemic SAC,Blood SAC
+4,CD,Young,F,4M5_SAC,Serum_4M5_sys_sac,Serum systemic SAC,Blood SAC
+5,CD,Young,F,5M2_SAC,Serum_5M2_sys_sac,Serum systemic SAC,Blood SAC
+5,CD,Young,F,5M3_SAC,Serum_5M3_sys_sac,Serum systemic SAC,Blood SAC
+5,CD,Young,F,5M4_SAC,Serum_5M4_sys_sac,Serum systemic SAC,Blood SAC
+5,CD,Young,M,5M6_SAC,Serum_5M6_sys_sac,Serum systemic SAC,Blood SAC
+5,CD,Young,M,5M7_SAC,Serum_5M7_sys_sac,Serum systemic SAC,Blood SAC
+5,CD,Young,M,5M8_SAC,Serum_5M8_sys_sac,Serum systemic SAC,Blood SAC
+5,CD,Young,M,5M9_SAC,Serum_5M9_sys_sac,Serum systemic SAC,Blood SAC
