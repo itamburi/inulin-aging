@@ -40,26 +40,50 @@ Within `Metabolomics `:
   The project file. Open this first so `here()` resolves paths from the metabolomics project root.
 
 - `Metabolomics/code`
-  Data cleanup and analysis scripts live here.
-
-- `Metabolomics/code/01 Process tissue metabolomics.R`
-  Main processing script. It reshapes Compound Discoverer exports, filters annotations, resolves repeated/isomeric features, assigns cohorts, and writes processed metabolite tables.
+  Data cleanup and analysis scripts live here, organized by analysis domain.
 
 - `Metabolomics/code/z-source.R`
-  Shared helper functions used by the main script, including functions for resolving repeated/isomeric annotations.
+  Shared helper functions used by the main tissue script, including functions for resolving repeated/isomeric annotations.
 
-- `Metabolomics/data/raw tissue`
+- `Metabolomics/code/tissue_metabolomics/01_process_tissue_metabolomics.R`
+  Main processing script. It reshapes Compound Discoverer exports, filters annotations, resolves repeated/isomeric features, assigns cohorts, and writes processed metabolite tables.
+
+- `Metabolomics/code/tissue_metabolomics/02_basic_cohort_comparisons.R`
+  Downstream tissue metabolomics cohort comparisons, heatmaps, and PCA.
+
+- `Metabolomics/code/serum_metabolomics/01_process_serum_metabolomics.R`
+  Serum ion-count processing script. It follows the tissue processing workflow where applicable, with serum-specific sample/timepoint parsing.
+
+- `Metabolomics/code/cytokines`
+  Cytokine assay processing scripts.
+
+- `Metabolomics/code/integrative`
+  Cross-assay metabolite correlation scripts.
+
+- `Metabolomics/data/raw/tissue/compound_discoverer`
   Raw Compound Discoverer Excel exports. Current files are liver and muscle runs in positive and negative mode.
 
-- `Metabolomics/data/processed`
-  Intended home for clean data tables and processed outputs.
+- `Metabolomics/data/raw/tissue/maven`
+  Raw Maven exports for tissue metabolomics.
+
+- `Metabolomics/data/raw/serum`
+  Intended raw input area for serum metabolomics.
+
+- `Metabolomics/data/processed/tissue_metabolomics`
+  Cleaned tissue metabolomics ion-count tables and downstream tissue summaries.
+
+- `Metabolomics/data/processed/serum_metabolomics`
+  Intended processed output area for serum metabolomics.
+
+- `Metabolomics/data/processed/integrative`
+  Cross-assay metabolite correlation tables.
 
 - `Metabolomics/plots`
-  Plot output area.
+  Plot output area, organized by tissue metabolomics, serum metabolomics, and integrative analyses.
 
 ## Metabolomics Workflow, At A High Level
 
-The current tissue metabolomics script `01 Process tissue metabolomics.R` does the following cleanup steps:
+The current tissue metabolomics script `code/tissue_metabolomics/01_process_tissue_metabolomics.R` does the following cleanup steps:
 
 1. Read raw Compound Discoverer exports.
 2. Convert/reformat tables into a long format with one ion-count observation per row.
@@ -76,9 +100,7 @@ We will make subsequent scripts for statistical analysis and plotting
 - Open the metabolomics R project and use `here::here()` for paths.
 - Keep `here::i_am("code/...")` near the top of scripts so the project root is explicit.
 - Do **not** use absolute file paths tied to one computer.
-- Do **not** modify raw files in `data/raw tissue/`.
+- Do **not** modify raw files in `data/raw/`.
 - Write derived tables, cleaned data, and intermediate outputs to `data/processed/`.
-- Put new analysis scripts in `Metabolomics /code/` and give them informative, ordered names.
+- Put new analysis scripts in the appropriate `Metabolomics/code/` subdirectory and give them informative, ordered names.
 - Keep reusable helper functions in `z-source.R` or in another clearly named helper file.
-
-

@@ -1,0 +1,38 @@
+"source","ion.mode","name","formula","mz","rt","med.ic","n.samples"
+"Maven","nega","3-Hydroxybutyric acid","C4H8O3",103.040039,8.624,796391.31,92
+"Maven","nega","Arachidonic acid","C20H32O2",305.741516,2.1925,20394164,92
+"Maven","nega","Citric acid","C6H8O7",191.01976,15.183,75316.34,92
+"Maven","nega","D-Tryptophan","C11H12N2O2",204.5862045,9.496,2663651.5,92
+"Maven","nega","Glycine","C2H5NO2",74.024841,14.387,211409.63,92
+"Maven","nega","L-Alanine","C3H7NO2",88.5421295,14.045,2316644.5,92
+"Maven","nega","L-Arginine","C6H14N4O2",173.104416,18.337,207926.655,92
+"Maven","nega","L-Asparagine","C4H8N2O3",131.045731,14.548,133537.845,92
+"Maven","nega","L-Aspartic acid","C4H7NO4",132.030319,14.634,102302.805,92
+"Maven","nega","L-Cystine","C6H12N2O4S2",239.016739,15.195,1373.69,92
+"Maven","nega","L-Glutamic acid","C5H9NO4",146.5479125,14.5155,339204.83,92
+"Maven","nega","L-Glutamine","C5H10N2O3",146.05928,14.489,3161857.625,92
+"Maven","nega","L-Histidine","C6H9N3O2",154.062378,14.662,170775.285,92
+"Maven","nega","L-Isoleucine","C6H13NO2",130.5890505,10.4725,3769317,92
+"Maven","nega","L-Lactic acid","C3H6O3",89.526058,8.0075,81329264,92
+"Maven","nega","L-Leucine","C6H13NO2",130.589043,9.946,5752120,92
+"Maven","nega","L-Lysine","C6H14N2O2",145.596428,18.448,594590.31,92
+"Maven","nega","L-Methionine","C5H11NO2S",148.0439,10.732,939208,92
+"Maven","nega","L-Phenylalanine","C9H11NO2",165.076538,9.527,3649862.25,92
+"Maven","nega","L-Proline","C5H9NO2",114.5577165,12.663,2372068.75,92
+"Maven","nega","L-Serine","C3H7NO3",104.035301,14.571,162567.215,92
+"Maven","nega","L-Threonine","C4H9NO3",118.050842,14.098,891954.935,92
+"Maven","nega","L-Tyrosine","C9H11NO3",180.066528,11.515,1226220.13,92
+"Maven","nega","Linoleic acid","C18H32O2",279.734528,2.2255,117599472,92
+"Maven","nega","Oleic acid","C18H34O2",282.251953,2.208,103179896,92
+"Maven","nega","Palmitic acid","C16H32O2",256.738342,2.238,99624100,92
+"Maven","nega","Pyruvic acid","C3H4O3",88.0121,3.755,19187419,92
+"Maven","nega","Stearic acid","C18H36O2",284.76947,2.198,52748100,92
+"Maven","nega","Valine","C5H11NO2",116.570152,11.9165,2757274.5,92
+"Maven","nega","Valine-C13N15","C5H11NO2",122.085609,11.926,758381.75,92
+"Maven","nega","alpha-D-Glucose","C6H12O6",180.560341,12.788,8536870,92
+"Maven","posi","D-Tryptophan","C11H12N2O2",206.101288,9.524,1557326.5,88
+"Maven","posi","L-Glutamine","C5H10N2O3",148.073563,14.493,7167255.5,88
+"Maven","posi","L-Isoleucine","C6H13NO2",133.105255,10.493,2494762.375,88
+"Maven","posi","L-Leucine","C6H13NO2",133.10022,9.95,4163103.125,88
+"Maven","posi","L-Proline","C5H9NO2",117.074074,12.675,12679190.5,88
+"Maven","posi","Valine-C13N15","C5H11NO2",124.099861,11.912,668888.595,88
