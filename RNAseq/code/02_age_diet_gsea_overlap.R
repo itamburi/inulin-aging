@@ -5,7 +5,7 @@ library(clusterProfiler)
 library(org.Mm.eg.db)
 library(cowplot)
 
-here::i_am("code/02 Young old CD DESeq2 GSEA overlap.R")
+here::i_am("code/02_age_diet_gsea_overlap.R")
 
 
 # ========== 0.0 - Analysis settings ==========
@@ -23,6 +23,8 @@ here::i_am("code/02 Young old CD DESeq2 GSEA overlap.R")
 gsea_rank_column = "stat"
 gsea_padj_cutoff = 0.10
 top_overlap_pathways_per_panel = 20
+nes_change_threshold = 1.00
+top_changed_pathways_per_ontology = 30
 gsea_seed = 20260514
 
 
@@ -35,7 +37,7 @@ meta = read.csv(here("data/metadata/metadata.csv")) %>%
     diet = factor(diet, levels = c("CD", "ID"))
   )
 
-cnts = read.csv(here("data/processed/counts matrix with mouse gene symbols.csv")) %>%
+cnts = read.csv(here("data/processed/counts/counts matrix with mouse gene symbols.csv")) %>%
   column_to_rownames(var = "gene_id")
 
 cnts = cnts[, meta$sample]
@@ -105,7 +107,7 @@ age_cd_deseq = run_deseq2_contrast(
   design_formula = ~ age.grp,
   contrast_vector = c("age.grp", "young", "old"),
   comparison_label = "young CD vs old CD",
-  output_file = here("data/processed/deseq2 young CD vs old CD.csv")
+  output_file = here("data/processed/deseq2/deseq2 young CD vs old CD.csv")
 )
 
 age_cd_res = age_cd_deseq$res_tbl
@@ -124,7 +126,7 @@ diet_old_deseq = run_deseq2_contrast(
   design_formula = ~ cohort + diet,
   contrast_vector = c("diet", "ID", "CD"),
   comparison_label = "old ID vs old CD",
-  output_file = here("data/processed/deseq2 old ID vs old CD for age overlap.csv")
+  output_file = here("data/processed/deseq2/deseq2 old ID vs old CD for age overlap.csv")
 )
 
 diet_old_res = diet_old_deseq$res_tbl
@@ -185,7 +187,7 @@ run_go_gsea = function(de_tbl, ontology, comparison_slug, comparison_label) {
   write.csv(
     gsea_tbl,
     here(
-      "data/processed",
+      "data/processed/pathway_enrichment/go_gsea",
       paste0("go ", ontology_label, " gsea ", comparison_slug, " stat ranking.csv")
     ),
     row.names = FALSE
@@ -256,7 +258,7 @@ if (nrow(age_gsea_plot_data) > 0) {
 }
 
 ggsave(
-  here("plots/go bp cc gsea young CD vs old CD stat ranking.pdf"),
+  here("plots/pathway_enrichment/go_gsea/go bp cc gsea young CD vs old CD stat ranking.pdf"),
   age_gsea_plot,
   width = 11,
   height = 12
@@ -310,7 +312,7 @@ overlap_pathways = age_sig_pathways %>%
 
 write.csv(
   overlap_pathways,
-  here("data/processed/go gsea overlapping pathways young CD vs old CD and old ID vs old CD.csv"),
+  here("data/processed/pathway_enrichment/go_gsea/go gsea overlapping pathways young CD vs old CD and old ID vs old CD.csv"),
   row.names = FALSE
 )
 
@@ -479,14 +481,243 @@ make_overlap_plot = function(ontology_code, ontology_label, output_file) {
 overlap_bp_plot = make_overlap_plot(
   ontology_code = "BP",
   ontology_label = "GO Biological Process",
-  output_file = here("plots/go bp gsea overlapping pathways young CD vs old CD and old ID vs old CD.pdf")
+  output_file = here("plots/pathway_enrichment/go_gsea/go bp gsea overlapping pathways young CD vs old CD and old ID vs old CD.pdf")
 )
 
 overlap_cc_plot = make_overlap_plot(
   ontology_code = "CC",
   ontology_label = "GO Cellular Component",
-  output_file = here("plots/go cc gsea overlapping pathways young CD vs old CD and old ID vs old CD.pdf")
+  output_file = here("plots/pathway_enrichment/go_gsea/go cc gsea overlapping pathways young CD vs old CD and old ID vs old CD.pdf")
 )
 
 overlap_bp_plot
 overlap_cc_plot
+
+
+# ========== 8.0 - Pathways significant in both contrasts but changed ==========
+# The previous section focuses on same-direction consensus pathways. This section
+# keeps pathways significant in both contrasts and asks where NES direction
+# switches, or where the absolute NES changes substantially between contrasts.
+
+changed_sig_pathways = age_sig_pathways %>%
+  dplyr::rename(
+    age_direction = direction
+  ) %>%
+  inner_join(
+    diet_sig_pathways %>%
+      dplyr::rename(
+        diet_direction = direction
+      ),
+    by = c("ontology", "ID", "Description")
+  ) %>%
+  mutate(
+    NES_delta = diet_NES - age_NES,
+    abs_NES_delta = abs(NES_delta),
+    direction_switch = sign(age_NES) != sign(diet_NES),
+    NES_change_class = case_when(
+      direction_switch & age_NES > 0 & diet_NES < 0 ~ "Switched: young-up, ID-down",
+      direction_switch & age_NES < 0 & diet_NES > 0 ~ "Switched: young-down, ID-up",
+      !direction_switch & abs_NES_delta >= nes_change_threshold & abs(diet_NES) > abs(age_NES) ~ "Same direction, stronger in old ID",
+      !direction_switch & abs_NES_delta >= nes_change_threshold & abs(diet_NES) < abs(age_NES) ~ "Same direction, weaker in old ID",
+      TRUE ~ "Small NES change"
+    ),
+    NES_change_class = factor(
+      NES_change_class,
+      levels = c(
+        "Switched: young-up, ID-down",
+        "Switched: young-down, ID-up",
+        "Same direction, stronger in old ID",
+        "Same direction, weaker in old ID",
+        "Small NES change"
+      )
+    ),
+    best_p.adjust = pmin(age_p.adjust, diet_p.adjust, na.rm = TRUE),
+    worst_p.adjust = pmax(age_p.adjust, diet_p.adjust, na.rm = TRUE)
+  ) %>%
+  dplyr::filter(
+    direction_switch | abs_NES_delta >= nes_change_threshold
+  ) %>%
+  arrange(ontology, NES_change_class, desc(abs_NES_delta), worst_p.adjust)
+
+write.csv(
+  changed_sig_pathways,
+  here("data/processed/pathway_enrichment/go_gsea/go gsea changed pathways significant in both young CD vs old CD and old ID vs old CD.csv"),
+  row.names = FALSE
+)
+
+changed_pathway_colors = c(
+  "Switched: young-up, ID-down" = "#B2182B",
+  "Switched: young-down, ID-up" = "#2166AC",
+  "Same direction, stronger in old ID" = "#D95F02",
+  "Same direction, weaker in old ID" = "#7570B3"
+)
+
+make_changed_pathway_plot = function(ontology_code, ontology_label, output_file) {
+  changed_plot_terms = changed_sig_pathways %>%
+    dplyr::filter(ontology == ontology_code) %>%
+    arrange(desc(direction_switch), desc(abs_NES_delta), worst_p.adjust) %>%
+    slice_head(n = top_changed_pathways_per_ontology) %>%
+    mutate(
+      pathway = str_wrap(Description, width = 76),
+      pathway_for_plot = paste(pathway, NES_change_class, sep = "___")
+    )
+  
+  if (nrow(changed_plot_terms) > 0) {
+    changed_pathway_levels = changed_plot_terms %>%
+      arrange(NES_change_class, desc(abs_NES_delta), worst_p.adjust) %>%
+      pull(pathway_for_plot) %>%
+      unique() %>%
+      rev()
+    
+    changed_plot_terms = changed_plot_terms %>%
+      mutate(
+        pathway_for_plot = factor(pathway_for_plot, levels = changed_pathway_levels)
+      )
+    
+    changed_plot_data = bind_rows(
+      changed_plot_terms %>%
+        transmute(
+          NES_change_class,
+          pathway_for_plot,
+          pathway,
+          comparison = "young CD vs old CD",
+          NES = age_NES,
+          p.adjust = age_p.adjust,
+          setSize = age_setSize
+        ),
+      changed_plot_terms %>%
+        transmute(
+          NES_change_class,
+          pathway_for_plot,
+          pathway,
+          comparison = "old ID vs old CD",
+          NES = diet_NES,
+          p.adjust = diet_p.adjust,
+          setSize = diet_setSize
+        )
+    ) %>%
+      mutate(
+        comparison = factor(comparison, levels = names(comparison_shapes)),
+        neg_log10_padj = -log10(pmax(p.adjust, .Machine$double.xmin)),
+        pathway_for_plot = factor(pathway_for_plot, levels = changed_pathway_levels)
+      )
+    
+    changed_nes_limit = max(abs(changed_plot_data$NES), na.rm = TRUE)
+    changed_nes_limit = ceiling(changed_nes_limit * 2) / 2
+    changed_nes_color_limits = range(changed_plot_data$neg_log10_padj, na.rm = TRUE)
+    changed_nes_size_limits = range(changed_plot_data$setSize, na.rm = TRUE)
+    
+    changed_plot = ggplot(changed_plot_data, aes(NES, pathway_for_plot)) +
+      geom_vline(xintercept = 0, color = "grey75", linewidth = 0.35) +
+      geom_segment(
+        data = changed_plot_terms,
+        aes(
+          x = age_NES,
+          xend = diet_NES,
+          y = pathway_for_plot,
+          yend = pathway_for_plot,
+          color = NES_change_class
+        ),
+        inherit.aes = FALSE,
+        linewidth = 0.7,
+        alpha = 0.85
+      ) +
+      geom_point(
+        aes(
+          shape = comparison,
+          fill = neg_log10_padj,
+          size = setSize
+        ),
+        color = "black",
+        alpha = 0.95,
+        stroke = 0.7
+      ) +
+      facet_wrap(
+        ~ NES_change_class,
+        scales = "free_y",
+        ncol = 1
+      ) +
+      scale_y_discrete(
+        labels = function(x) sub("___.*$", "", x),
+        expand = expansion(add = c(0.55, 0.55))
+      ) +
+      scale_color_manual(values = changed_pathway_colors, name = NULL, drop = FALSE) +
+      scale_shape_manual(values = comparison_shapes, name = NULL) +
+      scale_fill_viridis_c(
+        name = expression(-log[10]~adjusted~italic(P)),
+        limits = changed_nes_color_limits
+      ) +
+      scale_size_continuous(
+        name = "Gene set size",
+        limits = changed_nes_size_limits,
+        range = c(2.4, 6.2)
+      ) +
+      coord_cartesian(xlim = c(-changed_nes_limit, changed_nes_limit)) +
+      labs(
+        title = paste0("Changed significant ", ontology_label, " pathways"),
+        subtitle = paste0(
+          "Both contrasts adjusted P <= ", gsea_padj_cutoff,
+          "; shown if NES sign switches or |delta NES| >= ", nes_change_threshold
+        ),
+        x = "Normalized enrichment score",
+        y = NULL
+      ) +
+      theme_bw(base_size = 12, base_family = "Helvetica") +
+      theme(
+        strip.background = element_blank(),
+        strip.text = element_text(face = "bold", size = 12, color = "black", margin = margin(3, 0, 3, 0)),
+        axis.text.y = element_text(size = 10.5, lineheight = 0.9, color = "black"),
+        axis.text.x = element_text(size = 11.5, color = "black"),
+        axis.title.x = element_text(size = 14, color = "black"),
+        panel.grid.major.y = element_blank(),
+        legend.position = "top",
+        legend.box = "horizontal",
+        legend.justification = "left",
+        plot.margin = margin(4, 10, 6, 10)
+      ) +
+      guides(
+        color = "none",
+        fill = guide_colorbar(
+          title.position = "top",
+          barwidth = grid::unit(35, "mm"),
+          barheight = grid::unit(3, "mm"),
+          order = 1
+        ),
+        size = guide_legend(title.position = "top", order = 2),
+        shape = guide_legend(order = 3)
+      )
+  } else {
+    changed_plot = ggdraw() +
+      draw_label(
+        paste0("No changed ", ontology_label, " pathways at adjusted P <= ", gsea_padj_cutoff),
+        size = 12
+      )
+  }
+  
+  n_change_panels = max(1, n_distinct(changed_plot_terms$NES_change_class))
+  output_height = max(7, 2.4 * n_change_panels + 0.18 * nrow(changed_plot_terms))
+  
+  ggsave(
+    output_file,
+    changed_plot,
+    width = 12,
+    height = output_height
+  )
+  
+  changed_plot
+}
+
+changed_bp_plot = make_changed_pathway_plot(
+  ontology_code = "BP",
+  ontology_label = "GO Biological Process",
+  output_file = here("plots/pathway_enrichment/go_gsea/go bp gsea changed pathways significant in both young CD vs old CD and old ID vs old CD.pdf")
+)
+
+changed_cc_plot = make_changed_pathway_plot(
+  ontology_code = "CC",
+  ontology_label = "GO Cellular Component",
+  output_file = here("plots/pathway_enrichment/go_gsea/go cc gsea changed pathways significant in both young CD vs old CD and old ID vs old CD.pdf")
+)
+
+changed_bp_plot
+changed_cc_plot

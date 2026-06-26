@@ -4,6 +4,8 @@ library(tidyverse)
 library(edgeR)
 library(cowplot)
 
+here::i_am("code/01_prepare_counts_and_diet_deseq2.R")
+
 #library(biomaRt)
 # First translate ENSMUST ids to gene symbols
 # ... biomart is having major issues on this computer so went to marcus sysgen server to make a translation table
@@ -53,7 +55,7 @@ cnts = x %>%
   ) %>%
   dplyr::filter(gene_id != "") %>%
   pivot_wider(names_from = "sample", values_from = "counts") 
-write.csv(cnts,here("data/processed/counts matrix with mouse gene symbols.csv"),row.names = FALSE)
+write.csv(cnts,here("data/processed/counts/counts matrix with mouse gene symbols.csv"),row.names = FALSE)
 
 
 
@@ -65,7 +67,7 @@ meta = read.csv(here("data/metadata/metadata.csv")) %>%
   arrange(diet, age.grp) %>%
   column_to_rownames(var = "sample")
 
-x = read.csv(here("data/processed/counts matrix with mouse gene symbols.csv"))
+x = read.csv(here("data/processed/counts/counts matrix with mouse gene symbols.csv"))
 cnts = x %>% column_to_rownames(var="gene_id")
 cnts <- cnts[, rownames(meta)] 
 
@@ -103,14 +105,20 @@ mx = mx[, -which(colSums(mx) == 0)]
 meta = meta %>% rownames_to_column(var="sample")
 
 pca = prcomp(mx, scale. = TRUE)
+pca_var = round(100 * pca$sdev^2 / sum(pca$sdev^2), 1)
 pc_contributions = as.data.frame(pca$x)
 pc = pc_contributions %>%
   rownames_to_column(var="sample") %>%
   dplyr::select(sample, PC1, PC2, PC3, PC4, PC5, PC6, PC7,PC8) %>%
   left_join(., meta) %>%
   mutate(
-    pca.label = paste0(sample, "\n", age.grp, " ", diet, ", C", cohort)
+    pca.label = paste0(sample, "\n", age.grp, " ", diet, ", C", cohort),
+    pca_set = paste0(
+      "Unfiltered counts\n",
+      "PC1 = ", pca_var[1], "%, PC2 = ", pca_var[2], "%"
+    )
   )
+pca_unfiltered = pc
 
 pc %>%
   ggplot(., aes(PC1, PC2, color = diet, shape = age.grp)) +
@@ -178,14 +186,21 @@ mx_filt = dge$counts %>%
   t()
 
 pca = prcomp(mx_filt, scale. = TRUE)
+pca_var = round(100 * pca$sdev^2 / sum(pca$sdev^2), 1)
+filtered_pca_var = pca_var
 pc_contributions = as.data.frame(pca$x)
 pc = pc_contributions %>%
   rownames_to_column(var="sample") %>%
   dplyr::select(sample, PC1, PC2, PC3, PC4, PC5, PC6, PC7,PC8) %>%
   left_join(., meta) %>%
   mutate(
-    pca.label = paste0(sample, "\n", age.grp, " ", diet, ", C", cohort)
+    pca.label = paste0(sample, "\n", age.grp, " ", diet, ", C", cohort),
+    pca_set = paste0(
+      "Filtered counts\n",
+      "PC1 = ", pca_var[1], "%, PC2 = ", pca_var[2], "%"
+    )
   )
+pca_filtered = pc
 pc %>%
   ggplot(.,aes(PC1, PC2, color = diet) ) +
   geom_point() +
@@ -226,6 +241,117 @@ pc %>%
   ) +
   theme_bw()
 # not substantially different from unfiltered
+
+pca_plot_data = bind_rows(pca_unfiltered, pca_filtered) %>%
+  mutate(
+    pca_set = factor(pca_set, levels = unique(pca_set)),
+    age.grp = factor(age.grp, levels = c("young", "old")),
+    diet = factor(diet, levels = c("CD", "ID")),
+    cohort = factor(cohort)
+  )
+
+rnaseq_pca_plot = ggplot(
+  pca_plot_data,
+  aes(PC1, PC2, color = age.grp, shape = diet)
+) +
+  geom_hline(yintercept = 0, color = "grey85", linewidth = 0.3) +
+  geom_vline(xintercept = 0, color = "grey85", linewidth = 0.3) +
+  geom_point(size = 3.1, alpha = 0.9) +
+  ggrepel::geom_text_repel(
+    aes(label = paste0(sample, "\nC", cohort)),
+    color = "grey20",
+    size = 2.9,
+    box.padding = 0.35,
+    point.padding = 0.25,
+    max.overlaps = Inf,
+    segment.alpha = 0.45,
+    show.legend = FALSE
+  ) +
+  facet_wrap(~ pca_set, scales = "free", nrow = 1) +
+  scale_color_manual(values = c("young" = "#2C7FB8", "old" = "#D95F02"), name = "Age") +
+  scale_shape_manual(values = c("CD" = 16, "ID" = 17), name = "Diet") +
+  labs(
+    title = "RNA-seq sample PCA",
+    subtitle = "Unfiltered and filtered gene-count matrices",
+    x = "PC1",
+    y = "PC2"
+  ) +
+  theme_bw(base_size = 12) +
+  theme(
+    legend.position = "top",
+    strip.text = element_text(face = "bold"),
+    panel.grid.minor = element_blank(),
+    plot.title = element_text(face = "bold")
+  )
+
+rnaseq_pca_plot
+
+dir.create(here("plots/qc"), recursive = TRUE, showWarnings = FALSE)
+ggsave(
+  here("plots/qc/rnaseq pca unfiltered filtered counts.pdf"),
+  rnaseq_pca_plot,
+  width = 11,
+  height = 5.8
+)
+
+filtered_group_pca_data = pca_filtered %>%
+  mutate(
+    analysis_group = case_when(
+      age.grp == "young" & diet == "CD" ~ "Young CD",
+      age.grp == "old" & diet == "CD" ~ "Old CD",
+      age.grp == "old" & diet == "ID" ~ "Old ID",
+      TRUE ~ paste(age.grp, diet)
+    ),
+    analysis_group = factor(analysis_group, levels = c("Young CD", "Old CD", "Old ID")),
+    cohort = factor(cohort)
+  )
+
+filtered_group_pca_colors = c(
+  "Young CD" = "#2C7FB8",
+  "Old CD" = "#4D9221",
+  "Old ID" = "#D95F02"
+)
+
+filtered_group_pca_plot = ggplot(
+  filtered_group_pca_data,
+  aes(PC1, PC2, color = analysis_group)
+) +
+  geom_hline(yintercept = 0, color = "grey85", linewidth = 0.3) +
+  geom_vline(xintercept = 0, color = "grey85", linewidth = 0.3) +
+  stat_ellipse(type = "norm", linewidth = 0.8, alpha = 0.9) +
+  geom_point(size = 3.3, alpha = 0.95) +
+  ggrepel::geom_text_repel(
+    aes(label = paste0(sample, "\nC", cohort)),
+    color = "grey20",
+    size = 3,
+    box.padding = 0.35,
+    point.padding = 0.25,
+    max.overlaps = Inf,
+    segment.alpha = 0.45,
+    show.legend = FALSE
+  ) +
+  scale_color_manual(values = filtered_group_pca_colors, name = NULL) +
+  labs(
+    title = "RNA-seq PCA: filtered counts",
+    subtitle = "Major study groups with normal ellipses",
+    x = paste0("PC1 (", filtered_pca_var[1], "%)"),
+    y = paste0("PC2 (", filtered_pca_var[2], "%)")
+  ) +
+  theme_bw(base_size = 12) +
+  theme(
+    legend.position = "top",
+    panel.grid.minor = element_blank(),
+    plot.title = element_text(face = "bold")
+  )
+
+filtered_group_pca_plot
+
+ggsave(
+  here("plots/qc/rnaseq pca filtered counts major groups.pdf"),
+  filtered_group_pca_plot,
+  width = 7.6,
+  height = 6.2
+)
 
 
 # ========== 2.0 - SVA ==========
@@ -658,7 +784,7 @@ sva_no_sva_summary_figure <- plot_grid(
 sva_no_sva_summary_figure
 
 ggsave(
-  here("plots/sva vs no sva comparison pvalues volcano ora.pdf"),
+  here("plots/sva/sva vs no sva comparison pvalues volcano ora.pdf"),
   sva_no_sva_summary_figure,
   height = 16,
   width = 12
@@ -716,7 +842,7 @@ res2 = data.frame(res) %>%
   )
 
 tmp2 = res2 %>% dplyr::filter(pvalue <= 0.05)
-write.csv(res2, here("data/processed/deseq2 ID vs CD old only cohort adjusted.csv"), row.names = FALSE)
+write.csv(res2, here("data/processed/deseq2/deseq2 ID vs CD old only cohort adjusted.csv"), row.names = FALSE)
 
 dex2 = res2 %>%
   dplyr::filter(pvalue <= 0.05) %>%
@@ -980,7 +1106,7 @@ run_gobp_enrichment = function(gsea_rank_by) {
     as_tibble() %>%
     arrange(p.adjust)
   gsea_gobp_table_file = here(
-    "data/processed",
+    "data/processed/pathway_enrichment/go_gsea",
     paste0("go bp gsea old ID vs CD ", gsea_rank_by, " ranking.csv")
   )
   write.csv(gsea_gobp_tbl, gsea_gobp_table_file, row.names = FALSE)
@@ -1114,7 +1240,7 @@ run_gobp_enrichment = function(gsea_rank_by) {
   )
   
   output_file = here(
-    "plots",
+    "plots/pathway_enrichment/ora",
     paste0("go bp gsea ora old ID vs CD ", gsea_rank_by, " ranking.pdf")
   )
   ggsave(output_file, gobp_enrichment_plot, width = 13, height = 12)
@@ -1213,7 +1339,7 @@ run_gocc_gsea = function(gsea_rank_by) {
     as_tibble() %>%
     arrange(p.adjust)
   gsea_gocc_table_file = here(
-    "data/processed",
+    "data/processed/pathway_enrichment/go_gsea",
     paste0("go cc gsea old ID vs CD ", gsea_rank_by, " ranking.csv")
   )
   write.csv(gsea_gocc_tbl, gsea_gocc_table_file, row.names = FALSE)
@@ -1279,7 +1405,7 @@ run_gocc_gsea = function(gsea_rank_by) {
   }
   
   output_file = here(
-    "plots",
+    "plots/pathway_enrichment/go_gsea",
     paste0("go cc gsea old ID vs CD ", gsea_rank_by, " ranking.pdf")
   )
   ggsave(output_file, gsea_gocc_plot, width = 10, height = 8)
@@ -1356,7 +1482,7 @@ run_hallmark_gsea = function(gsea_rank_by) {
     as_tibble() %>%
     arrange(p.adjust)
   hallmark_gsea_table_file = here(
-    "data/processed",
+    "data/processed/pathway_enrichment/msigdb_hallmark",
     paste0("msigdb hallmark gsea old ID vs CD ", gsea_rank_by, " ranking.csv")
   )
   write.csv(hallmark_gsea_tbl, hallmark_gsea_table_file, row.names = FALSE)
@@ -1426,7 +1552,7 @@ run_hallmark_gsea = function(gsea_rank_by) {
   }
   
   output_file = here(
-    "plots",
+    "plots/pathway_enrichment/msigdb_hallmark",
     paste0("msigdb hallmark gsea old ID vs CD ", gsea_rank_by, " ranking.pdf")
   )
   ggsave(output_file, hallmark_gsea_plot, width = 10, height = 8)
@@ -1607,7 +1733,7 @@ volcano_gsea_summary_figure = plot_grid(
 
 volcano_gsea_summary_figure
 ggsave(
-  here("plots/volcano with top gobp pathways and stat gsea.pdf"),
+  here("plots/deseq2/volcano with top gobp pathways and stat gsea.pdf"),
   volcano_gsea_summary_figure,
   width = 13,
   height = 24
@@ -1619,7 +1745,7 @@ ggsave(
 # label genes with any entry in the MLL_interesting DEGs flag column.
 
 mll_flagged_gene_labels = readr::read_csv(
-  here("data/processed/MLL_interesting DEGs.csv"),
+  here("data/processed/overlaps/MLL_interesting DEGs.csv"),
   show_col_types = FALSE
 ) %>%
   mutate(flag = stringr::str_trim(as.character(flag))) %>%
@@ -1783,7 +1909,7 @@ mll_volcano_gsea_summary_figure = plot_grid(
 
 mll_volcano_gsea_summary_figure
 ggsave(
-  here("plots/volcano with top gobp pathways and stat gsea MLL interesting DEG labels.pdf"),
+  here("plots/deseq2/volcano with top gobp pathways and stat gsea MLL interesting DEG labels.pdf"),
   mll_volcano_gsea_summary_figure,
   width = 13,
   height = 24
@@ -2228,7 +2354,7 @@ mll_refined_volcano_gsea_summary_figure = plot_grid(
 mll_refined_volcano_gsea_summary_figure
 
 ggsave(
-  here("plots/volcano with refined GO superpathways and stat gsea MLL labels.pdf"),
+  here("plots/deseq2/volcano with refined GO superpathways and stat gsea MLL labels.pdf"),
   mll_refined_volcano_gsea_summary_figure,
   width = 13,
   height = 15
@@ -2379,4 +2505,4 @@ gg_mac
 
 
 plot_grid(vol_cat, gg_graber, plot_grid(gg_collagen, gg_top, gg_mac, nrow=1),ncol=1, rel_heights = c(1,.6,.6))
-ggsave(here("plots/volcano and lfc barplots.pdf"),h=13,w=9)
+ggsave(here("plots/deseq2/volcano and lfc barplots.pdf"),h=13,w=9)

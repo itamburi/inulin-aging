@@ -1,0 +1,12 @@
+# RStudio and local R session state
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+# Default plot artifacts from interactive sessions
+Rplots.pdf
+
+# macOS metadata
+.DS_Store
+

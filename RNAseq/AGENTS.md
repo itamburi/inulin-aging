@@ -25,3 +25,5 @@ Before making changes, reference the `README.md` in the parent directory for hig
 
 - Main analysis scripts live in `code/`.
 - Preserve the existing script-oriented workflow unless there is a strong reason to change it.
+- Save generated plots as PDF by default.
+- Do not create PNG plot outputs unless the user explicitly asks for PNG files.
