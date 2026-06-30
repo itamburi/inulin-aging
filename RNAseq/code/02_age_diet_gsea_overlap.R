@@ -326,12 +326,79 @@ comparison_shapes = c(
   "old ID vs old CD" = 24
 )
 
-make_overlap_plot = function(ontology_code, ontology_label, output_file) {
+overlap_bp_pathway_ids_for_plot = c(
+  # Activated
+  "GO:0061138", # morphogenesis of a branching epithelium
+  "GO:0048754", # branching morphogenesis of an epithelial tube
+  "GO:0001763", # morphogenesis of a branching structure
+  "GO:0030198", # extracellular matrix organization
+  "GO:0043062", # extracellular structure organization
+  "GO:0045229", # external encapsulating structure organization
+  "GO:0001501", # skeletal system development
+  #"GO:0042063", # gliogenesis
+  #"GO:0001503", # ossification
+  #"GO:0007492", # endoderm development
+  #"GO:0035567", # non-canonical Wnt signaling pathway
+  #"GO:0060348", # bone development
+  #"GO:0014037", # Schwann cell differentiation
+  #"GO:0030199", # collagen fibril organization
+  #"GO:0001704", # formation of primary germ layer
+  #"GO:0007369", # gastrulation
+  #"GO:0007416", # synapse assembly
+  "GO:1903053", # regulation of extracellular matrix organization
+  "GO:0048705", # skeletal system morphogenesis
+  #"GO:0060562", # epithelial tube morphogenesis
+  # Down
+  "GO:0006805", # xenobiotic metabolic process
+  "GO:0008202", # steroid metabolic process
+  "GO:0042178", # xenobiotic catabolic process
+  "GO:0006720", # isoprenoid metabolic process
+  "GO:0034370", # triglyceride-rich lipoprotein particle remodeling
+  "GO:0034372", # very-low-density lipoprotein particle remodeling
+  "GO:0046394", # carboxylic acid biosynthetic process
+  "GO:0071466", # cellular response to xenobiotic stimulus
+  "GO:0006641", # triglyceride metabolic process
+  "GO:0016053", # organic acid biosynthetic process
+  #"GO:0019373", # epoxygenase P450 pathway
+  #"GO:0006721", # terpenoid metabolic process
+  #"GO:0010038", # response to metal ion
+  "GO:0042775", # mitochondrial ATP synthesis coupled electron transport
+  "GO:0042773", # ATP synthesis coupled electron transport
+  "GO:0006119", # oxidative phosphorylation
+  "GO:0015986", # proton motive force-driven ATP synthesis
+  "GO:0042776", # proton motive force-driven mitochondrial ATP synthesis
+  "GO:0033559", # unsaturated fatty acid metabolic process
+  "GO:1901605" # alpha-amino acid metabolic process
+)
+
+overlap_bp_available_pathways = overlap_pathways %>%
+  dplyr::filter(ontology == "BP") %>%
+  arrange(direction_label, worst_p.adjust) %>%
+  dplyr::select(direction_label, ID, Description, age_NES, diet_NES, worst_p.adjust)
+
+overlap_bp_missing_pathway_ids_for_plot = setdiff(
+  overlap_bp_pathway_ids_for_plot,
+  overlap_bp_available_pathways$ID
+)
+
+overlap_bp_available_pathways
+overlap_bp_missing_pathway_ids_for_plot
+
+make_overlap_plot = function(ontology_code, ontology_label, output_file, pathway_ids_for_plot = NULL) {
   overlap_plot_terms = overlap_pathways %>%
-    dplyr::filter(ontology == ontology_code) %>%
-    group_by(direction_label) %>%
-    slice_min(worst_p.adjust, n = top_overlap_pathways_per_panel, with_ties = FALSE) %>%
-    ungroup() %>%
+    dplyr::filter(ontology == ontology_code)
+  
+  if (!is.null(pathway_ids_for_plot)) {
+    overlap_plot_terms = overlap_plot_terms %>%
+      dplyr::filter(ID %in% pathway_ids_for_plot)
+  } else {
+    overlap_plot_terms = overlap_plot_terms %>%
+      group_by(direction_label) %>%
+      slice_min(worst_p.adjust, n = top_overlap_pathways_per_panel, with_ties = FALSE) %>%
+      ungroup()
+  }
+  
+  overlap_plot_terms = overlap_plot_terms %>%
     mutate(
       pathway = str_wrap(Description, width = 76),
       pathway_for_plot = paste(pathway, direction_label, sep = "___")
@@ -481,7 +548,8 @@ make_overlap_plot = function(ontology_code, ontology_label, output_file) {
 overlap_bp_plot = make_overlap_plot(
   ontology_code = "BP",
   ontology_label = "GO Biological Process",
-  output_file = here("plots/pathway_enrichment/go_gsea/go bp gsea overlapping pathways young CD vs old CD and old ID vs old CD.pdf")
+  output_file = here("plots/pathway_enrichment/go_gsea/go bp gsea overlapping pathways young CD vs old CD and old ID vs old CD.pdf"),
+  pathway_ids_for_plot = overlap_bp_pathway_ids_for_plot
 )
 
 overlap_cc_plot = make_overlap_plot(

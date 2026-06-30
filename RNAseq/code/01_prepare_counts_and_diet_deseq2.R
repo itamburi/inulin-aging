@@ -2234,6 +2234,13 @@ mll_refined_volcano = ggplot(mll_refined_volcano_data, aes(log2FoldChange, neg_l
   ) +
   guides(color = guide_legend(nrow = 1, byrow = TRUE, override.aes = list(size = 4.2, alpha = 0.85)))
 
+ggsave(
+  here("plots/deseq2/volcano with refined GO superpathways and stat gsea MLL labels only.pdf"),
+  mll_refined_volcano,
+  width = 13,
+  height = 5
+)
+
 mll_refined_go_label_width = 76
 
 mll_refined_go_label_overrides = c(
@@ -2243,15 +2250,73 @@ mll_refined_go_label_overrides = c(
     "Mitochon. ATP synthesis/electron transport"
 )
 
-mll_refined_nes_axis_limit = max(abs(mll_selected_go_terms$NES), na.rm = TRUE)
+mll_refined_gsea_terms_for_plot = c(
+  # -- ECM remodeling
+  "GO:0030198", 
+  "GO:0043062", 
+  "GO:0001525", 
+  "GO:0031012", 
+  "GO:0005581", 
+  #"GO:0005604",
+  # -- Cell-matrix adhesion
+  #"GO:0005925",
+  #"GO:0008305",
+  # -- Cytoskeletal dynamics
+  "GO:0061572", 
+  "GO:0015629", 
+  #"GO:0031252",
+  # -- Immune signaling
+  #"GO:0050900",
+  #"GO:0060326",
+  #"GO:0019882",
+  "GO:0001819", 
+  #"GO:0051251",
+  #"GO:0043410",
+  #"GO:0042611",
+  #"GO:0043235",
+  # Mitochondrial respiration
+  "GO:0006119", 
+  "GO:0042775", 
+  "GO:0098798", 
+  "GO:0005743", 
+  "GO:0005741", 
+  "GO:0098803", 
+  "GO:0030964", 
+  # Mitochondrial translation
+  "GO:0032543", 
+  "GO:0005761", 
+  # Proteostasis
+  #"GO:0043161",
+  #"GO:0006413",
+  #"GO:0000502",
+  # ER-Golgi trafficking
+  "GO:0007029", 
+  #"GO:0048193",
+  #"GO:0030133",
+  #"GO:0030134",
+  # Additional NES panel terms
+  #"GO:0000423",
+  "GO:0031929", 
+  #"GO:0005776",
+  "GO:0008203" 
+  #"GO:0045335"
+)
+
+mll_refined_gsea_selected_terms = mll_selected_go_terms %>%
+  dplyr::filter(ID %in% mll_refined_gsea_terms_for_plot)
+
+mll_refined_gsea_selected_terms %>%
+  dplyr::select(superpathway, ontology, direction, ID, Description, NES, p.adjust, qvalue)
+
+mll_refined_nes_axis_limit = max(abs(mll_refined_gsea_selected_terms$NES), na.rm = TRUE)
 mll_refined_nes_axis_limit = ceiling(mll_refined_nes_axis_limit * 2) / 2
 
 mll_refined_nes_color_limits = range(
-  -log10(pmax(mll_selected_go_terms$p.adjust, .Machine$double.xmin)),
+  -log10(pmax(mll_refined_gsea_selected_terms$p.adjust, .Machine$double.xmin)),
   na.rm = TRUE
 )
 
-mll_refined_nes_size_limits = range(mll_selected_go_terms$setSize, na.rm = TRUE)
+mll_refined_nes_size_limits = range(mll_refined_gsea_selected_terms$setSize, na.rm = TRUE)
 
 mll_refined_gsea_facet_levels = c(
   "Activated GOBP",
@@ -2260,7 +2325,14 @@ mll_refined_gsea_facet_levels = c(
   "Suppressed GOCC"
 )
 
-mll_refined_gsea_plot_data = mll_selected_go_terms %>%
+mll_refined_gsea_facet_labels = c(
+  "Activated GOBP" = "Activated\nGOBP",
+  "Activated GOCC" = "Activated\nGOCC",
+  "Suppressed GOBP" = "Suppressed\nGOBP",
+  "Suppressed GOCC" = "Suppressed\nGOCC"
+)
+
+mll_refined_gsea_plot_data = mll_refined_gsea_selected_terms %>%
   mutate(
     direction = factor(direction, levels = c("Activated", "Suppressed")),
     ontology_label = recode(ontology, "GO BP" = "GOBP", "GO CC" = "GOCC"),
@@ -2300,7 +2372,8 @@ mll_refined_gsea_plot = ggplot(mll_refined_gsea_plot_data, aes(NES, pathway_for_
   facet_grid(
     facet_label ~ .,
     scales = "free_y",
-    space = "free_y"
+    space = "free_y",
+    labeller = labeller(facet_label = mll_refined_gsea_facet_labels)
   ) +
   scale_y_discrete(
     labels = function(x) sub("___.*$", "", x),
@@ -2358,6 +2431,14 @@ ggsave(
   mll_refined_volcano_gsea_summary_figure,
   width = 13,
   height = 15
+)
+
+mll_refined_gsea_plot
+ggsave(
+  here("plots/deseq2/gsea with refined GO pathways.pdf"),
+  mll_refined_gsea_plot,
+  width = 12,
+  height = 8
 )
 
 
