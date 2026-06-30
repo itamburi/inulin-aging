@@ -4,7 +4,7 @@ library(edgeR)
 library(mixOmics)
 library(ComplexHeatmap)
 
-here::i_am("code/04_plsda_major_groups.R")
+here::i_am("code/05_plsda_major_groups.R")
 
 
 # ========== 0.0 - Analysis settings ==========

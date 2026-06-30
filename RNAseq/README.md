@@ -37,16 +37,19 @@ Open `RNAseq.Rproj` before running scripts so `here::here()` resolves paths from
 
 ## Current Script Order
 
-1. `code/01_prepare_counts_and_diet_deseq2.R`
-   Converts Ensembl gene IDs to mouse gene symbols, writes the processed count matrix, explores PCA/SVA, runs old ID vs old CD DESeq2 analyses, and generates pathway and volcano outputs.
+1. `code/01 counts qc and diet contrast deseq2.R`
+   Converts Ensembl gene IDs to mouse gene symbols, writes the processed count matrix, runs filtering/PCA QC, performs the old ID vs old CD DESeq2 analysis, and saves reusable `.rds` objects for downstream scripts.
 
-2. `code/02_age_diet_gsea_overlap.R`
-   Compares young CD vs old CD and old ID vs old CD, then generates GO BP/CC GSEA overlap outputs.
+2. `code/02 diet contrast gsea and dex plots.R`
+   Reads the saved old ID vs old CD DESeq2 objects, then generates volcano plots, GO BP/CC GSEA, MSigDB Hallmark GSEA, ORA summaries, and refined pathway figures.
 
-3. `code/03_deg_overlap_and_youth_shift.R`
+3. `code/03 age contrast deseq2 and gsea overlap.R`
+   Runs young CD vs old CD DESeq2, reads the saved old ID vs old CD DESeq2 object, then generates GO BP/CC GSEA overlap outputs.
+
+4. `code/04_deg_overlap_and_youth_shift.R`
    Builds DEG overlap summaries, Venn-style figures, and youth-like old ID shift concordance outputs from saved DESeq2 result tables.
 
-4. `code/04_plsda_major_groups.R`
+5. `code/05_plsda_major_groups.R`
    Runs PLS-DA across young CD, old CD, and old ID samples using TMM-normalized log2 CPM values, then outputs ordination and top VIP gene heatmap figures.
 
 ## Main Inputs
@@ -59,9 +62,11 @@ Open `RNAseq.Rproj` before running scripts so `here::here()` resolves paths from
 ## Main Outputs
 
 - `data/processed/counts/counts matrix with mouse gene symbols.csv`
+- `data/processed/counts/rnaseq filtered counts qc objects.rds`
 - `data/processed/deseq2/deseq2 ID vs CD old only cohort adjusted.csv`
+- `data/processed/deseq2/deseq2 old ID vs CD cohort adjusted objects.rds`
+- `data/processed/sva/sva old ID vs CD sensitivity objects.rds`
 - `data/processed/deseq2/deseq2 young CD vs old CD.csv`
-- `data/processed/deseq2/deseq2 old ID vs old CD for age overlap.csv`
 - `data/processed/pathway_enrichment/go_gsea/go * gsea *.csv`
 - `data/processed/pathway_enrichment/msigdb_hallmark/msigdb hallmark gsea *.csv`
 - `data/processed/overlaps/deseq2 DEG venn overlap *.csv`
@@ -71,9 +76,10 @@ Open `RNAseq.Rproj` before running scripts so `here::here()` resolves paths from
 - `plots/qc/rnaseq pca filtered counts major groups.pdf`
 - `plots/plsda/plsda major groups *.pdf`
 - `plots/youth_shift/deseq2 youth-like old ID shift *.pdf`
-- `plots/deseq2/*.pdf`
-- `plots/pathway_enrichment/**/*.pdf`
-- `plots/overlaps/*.pdf`
+- `plots/diet DEx/*.pdf`
+- `plots/diet DEx/gsea/*.pdf`
+- `plots/age DEx/gsea/*.pdf`
+- `plots/young vs ID/**/*.pdf`
 
 ## Workflow Notes
 

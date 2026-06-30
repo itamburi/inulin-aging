@@ -5,7 +5,7 @@ library(clusterProfiler)
 library(org.Mm.eg.db)
 library(cowplot)
 
-here::i_am("code/02_age_diet_gsea_overlap.R")
+here::i_am("code/03 age contrast deseq2 and gsea overlap.R")
 
 
 # ========== 0.0 - Analysis settings ==========
@@ -17,8 +17,8 @@ here::i_am("code/02_age_diet_gsea_overlap.R")
 #   - young CD vs old CD: higher in young CD.
 #   - old ID vs old CD: higher in old ID.
 #
-# The old ID vs old CD contrast is re-run here so the overlap figure is built
-# from one self-contained script rather than depending on previously saved files.
+# The old ID vs old CD contrast is read from the canonical DESeq2 object saved
+# by script 01 so there is one source of truth for the diet contrast.
 
 gsea_rank_column = "stat"
 gsea_padj_cutoff = 0.10
@@ -26,6 +26,9 @@ top_overlap_pathways_per_panel = 20
 nes_change_threshold = 1.00
 top_changed_pathways_per_ontology = 30
 gsea_seed = 20260514
+
+dir.create(here("plots/age DEx/gsea"), recursive = TRUE, showWarnings = FALSE)
+dir.create(here("plots/young vs ID/gsea"), recursive = TRUE, showWarnings = FALSE)
 
 
 # ========== 1.0 - Read counts and metadata ==========
@@ -113,23 +116,19 @@ age_cd_deseq = run_deseq2_contrast(
 age_cd_res = age_cd_deseq$res_tbl
 
 
-# ========== 4.0 - DESeq2: old ID vs old CD ==========
-# This repeats the diet contrast from the earlier script, adjusted for cohort.
-samples_diet_old = meta %>%
-  dplyr::filter(age.grp == "old") %>%
-  arrange(cohort, diet, sample)
+# ========== 4.0 - Read DESeq2: old ID vs old CD ==========
+# This reuses the diet contrast from script 01, adjusted for cohort.
+diet_old_deseq_file = here("data/processed/deseq2/deseq2 old ID vs CD cohort adjusted objects.rds")
+if (!file.exists(diet_old_deseq_file)) {
+  stop(
+    "Missing saved diet DESeq2 object: ",
+    diet_old_deseq_file,
+    "\nRun code/01 counts qc and diet contrast deseq2.R before this script."
+  )
+}
 
-table(samples_diet_old$diet, samples_diet_old$cohort)
-
-diet_old_deseq = run_deseq2_contrast(
-  samples = samples_diet_old,
-  design_formula = ~ cohort + diet,
-  contrast_vector = c("diet", "ID", "CD"),
-  comparison_label = "old ID vs old CD",
-  output_file = here("data/processed/deseq2/deseq2 old ID vs old CD for age overlap.csv")
-)
-
-diet_old_res = diet_old_deseq$res_tbl
+diet_old_deseq = readRDS(diet_old_deseq_file)
+diet_old_res = diet_old_deseq$res2
 
 
 # ========== 5.0 - GO BP and GO CC GSEA ==========
@@ -258,7 +257,7 @@ if (nrow(age_gsea_plot_data) > 0) {
 }
 
 ggsave(
-  here("plots/pathway_enrichment/go_gsea/go bp cc gsea young CD vs old CD stat ranking.pdf"),
+  here("plots/age DEx/gsea/go bp cc gsea young CD vs old CD stat ranking.pdf"),
   age_gsea_plot,
   width = 11,
   height = 12
@@ -548,14 +547,14 @@ make_overlap_plot = function(ontology_code, ontology_label, output_file, pathway
 overlap_bp_plot = make_overlap_plot(
   ontology_code = "BP",
   ontology_label = "GO Biological Process",
-  output_file = here("plots/pathway_enrichment/go_gsea/go bp gsea overlapping pathways young CD vs old CD and old ID vs old CD.pdf"),
+  output_file = here("plots/young vs ID/gsea/go bp gsea overlapping pathways young CD vs old CD and old ID vs old CD.pdf"),
   pathway_ids_for_plot = overlap_bp_pathway_ids_for_plot
 )
 
 overlap_cc_plot = make_overlap_plot(
   ontology_code = "CC",
   ontology_label = "GO Cellular Component",
-  output_file = here("plots/pathway_enrichment/go_gsea/go cc gsea overlapping pathways young CD vs old CD and old ID vs old CD.pdf")
+  output_file = here("plots/young vs ID/gsea/go cc gsea overlapping pathways young CD vs old CD and old ID vs old CD.pdf")
 )
 
 overlap_bp_plot
@@ -778,13 +777,13 @@ make_changed_pathway_plot = function(ontology_code, ontology_label, output_file)
 changed_bp_plot = make_changed_pathway_plot(
   ontology_code = "BP",
   ontology_label = "GO Biological Process",
-  output_file = here("plots/pathway_enrichment/go_gsea/go bp gsea changed pathways significant in both young CD vs old CD and old ID vs old CD.pdf")
+  output_file = here("plots/young vs ID/gsea/go bp gsea changed pathways significant in both young CD vs old CD and old ID vs old CD.pdf")
 )
 
 changed_cc_plot = make_changed_pathway_plot(
   ontology_code = "CC",
   ontology_label = "GO Cellular Component",
-  output_file = here("plots/pathway_enrichment/go_gsea/go cc gsea changed pathways significant in both young CD vs old CD and old ID vs old CD.pdf")
+  output_file = here("plots/young vs ID/gsea/go cc gsea changed pathways significant in both young CD vs old CD and old ID vs old CD.pdf")
 )
 
 changed_bp_plot

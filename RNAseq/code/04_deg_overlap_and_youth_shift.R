@@ -5,7 +5,7 @@ library(ggforce)
 library(edgeR)
 library(ComplexHeatmap)
 
-here::i_am("code/03_deg_overlap_and_youth_shift.R")
+here::i_am("code/04_deg_overlap_and_youth_shift.R")
 
 
 # ========== 0.0 - Analysis settings ==========
@@ -14,12 +14,14 @@ here::i_am("code/03_deg_overlap_and_youth_shift.R")
 #   2. young CD vs old CD: positive log2FoldChange means higher in young CD.
 #
 # The nominal P cutoff matches the existing old ID vs CD DEG workflow in
-# code/01_prepare_counts_and_diet_deseq2.R.
+# code/01 counts qc and diet contrast deseq2.R.
 
 deg_pvalue_cutoff = 0.05
 min_abs_age_log2fc_for_rescue_fraction = 0.10
 top_youth_shift_genes_to_table = 100
 top_youth_shift_genes_to_plot = 50
+
+dir.create(here("plots/young vs ID"), recursive = TRUE, showWarnings = FALSE)
 
 
 # ========== 1.0 - Read saved DESeq2 results ==========
@@ -272,7 +274,7 @@ deg_venn_figure = plot_grid(
   )
 
 ggsave(
-  here("plots/overlaps/deseq2 DEG venn overlap up down old ID vs CD and young CD vs old CD.pdf"),
+  here("plots/young vs ID/deseq2 DEG venn overlap up down old ID vs CD and young CD vs old CD.pdf"),
   deg_venn_figure,
   width = 9.4,
   height = 4.9,
