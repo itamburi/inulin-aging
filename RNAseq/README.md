@@ -52,6 +52,12 @@ Open `RNAseq.Rproj` before running scripts so `here::here()` resolves paths from
 5. `code/05_plsda_major_groups.R`
    Runs PLS-DA across young CD, old CD, and old ID samples using TMM-normalized log2 CPM values, then outputs ordination and top VIP gene heatmap figures.
 
+6. `code/06_convert_deg_mouse_to_human_symbols.R`
+   Converts nominally significant old ID vs old CD mouse DEGs to human ortholog symbols using `babelgene`, then writes mapping tables and one-gene-per-line human symbol lists.
+
+7. `code/07_summarize_webcsea_results.R`
+   Combines downloaded webCSEA results for upregulated and downregulated human ortholog DEG lists, then writes top tissue/cell-type, organ-system, and general-cell-type summaries.
+
 ## Main Inputs
 
 - `data/raw/rsem_gene_counts_matrix.tsv`
@@ -72,6 +78,12 @@ Open `RNAseq.Rproj` before running scripts so `here::here()` resolves paths from
 - `data/processed/overlaps/deseq2 DEG venn overlap *.csv`
 - `data/processed/youth_shift/deseq2 youth-like old ID shift *.csv`
 - `data/processed/plsda/plsda major groups *.csv`
+- `data/processed/orthologs/old ID vs old CD * human symbols.txt`
+- `data/processed/orthologs/old ID vs old CD nominal DEG mouse to human orthologs.csv`
+- `data/processed/webCSEA/summary/*.csv`
+- `plots/webCSEA/primary webCSEA tissue hit tally among nominal DEGs.pdf`
+- `plots/webCSEA/primary webCSEA organ tissue hit tally adult fetal nominal DEGs.pdf`
+- `plots/webCSEA/primary webCSEA general cell type hit tally adult fetal nominal DEGs.pdf`
 - `plots/qc/rnaseq pca unfiltered filtered counts.pdf`
 - `plots/qc/rnaseq pca filtered counts major groups.pdf`
 - `plots/plsda/plsda major groups *.pdf`
@@ -105,5 +117,6 @@ The current scripts use packages from CRAN and Bioconductor, including:
 - `EnsDb.Mmusculus.v79`
 - `msigdbr`
 - `enrichR`
+- `babelgene`
 - `cowplot`
 - `ggforce`

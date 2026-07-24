@@ -1094,7 +1094,8 @@ mll_superpathway_label_genes = c(
 
 mll_selected_label_genes = c(
   "Glcci1", "Clec11a", "Stab1", "Meg3", "Lep", "Hid1",
-  "Socs2", "Gpx8", "Cish", "Folh1", "Ccr5", "Serpina3n"
+  "Socs2", "Gpx8", "Cish", "Folh1", "Ccr5", "Serpina3n",
+  "Serpina1c", "Ttr", "Ahsg", "Wfdc", "Npr3", "Galr2", "Acsm3", "Chil3"
 )
 
 # -- review GOBP pathways for representative/non-redundant terms
@@ -1307,7 +1308,11 @@ mll_refined_volcano_data = lfc %>%
 mll_refined_volcano_labels = mll_refined_volcano_data %>%
   dplyr::filter(!is.na(label_group))
 
-mll_refined_x_limit = 1.5
+mll_refined_x_limit = max(
+  1.5,
+  max(abs(mll_refined_volcano_labels$log2FoldChange), na.rm = TRUE) + 0.35
+)
+mll_refined_x_limit = ceiling(mll_refined_x_limit * 2) / 2
 mll_refined_y_limit = max(
   2,
   quantile(mll_refined_volcano_data$neg_log10_pvalue, 0.995, na.rm = TRUE),

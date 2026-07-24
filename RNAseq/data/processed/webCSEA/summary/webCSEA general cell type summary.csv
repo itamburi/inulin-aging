@@ -1,0 +1,253 @@
+"direction","General_cell_type","best_combined_p","best_combined_log10p","significant_tissue_cell_type_n"
+"Downregulated","Plasma cell",3.5030534605851e-05,4.45555323480336,10
+"Downregulated","B cell",0.00092330389336936,3.03465533311124,4
+"Downregulated","Hepatocyte",0.00291447789019061,2.53543923497642,5
+"Downregulated","Thyroid follicular cell",0.00363195235933789,2.43985985679533,1
+"Downregulated","Enterocyte",0.00438121660226531,2.35840527527578,4
+"Downregulated","Epithelial cell",0.00478339896333679,2.32026339492781,8
+"Downregulated","Intestinal crypt stem cell",0.00718719742181728,2.14344042554422,1
+"Downregulated","Paneth cell",0.00977743161004985,2.00977521311368,1
+"Downregulated","Duodenum glandular cell",0.00986524399996991,2.0058921687463,1
+"Downregulated","Inhibitory neuron",0.00988343700689387,2.00509200140868,2
+"Downregulated","Cell of skeletal muscle",0.0106853427211653,1.97121154373633,2
+"Downregulated","Muscle cell",0.0106957097640864,1.97079039048484,1
+"Downregulated","Monocyte",0.0133169679139369,1.87559464664807,2
+"Downregulated","Goblet cell",0.0139520369629467,1.85536238183937,2
+"Downregulated","Pneumocyte",0.0170693899059429,1.76778200115928,1
+"Downregulated","Endothelial cell",0.0174599064069298,1.75795808864092,2
+"Downregulated","Transit amplifying cell",0.0181589588633441,1.74090905520186,1
+"Downregulated","Myeloid cell",0.0222055855085516,1.65353777102529,2
+"Downregulated","Alveolar capillary type 2 endothelial cell",0.0233456198832953,1.6317945899996,1
+"Downregulated","Plasmacytoid dendritic cell",0.0250773240057813,1.60071880881134,1
+"Downregulated","Retinal pigment epithelial cell",0.0282924459036971,1.54832950582821,1
+"Downregulated","Hematopoietic stem cell",0.0283124734279457,1.54802218824051,1
+"Downregulated","Pancreatic ductal cell",0.028529693096861,1.54470290016405,1
+"Downregulated","Fibroblast",0.029375700811457,1.53201176370172,1
+"Downregulated","Melanocyte",0.0308527795170471,1.51070570441715,1
+"Downregulated","Macrophage",0.0313811029351058,1.5033317965613,2
+"Downregulated","Granulocyte",0.0332168318628852,1.47864179181478,1
+"Downregulated","Urothelial cell",0.037167572682846,1.42983580061715,1
+"Downregulated","Smooth muscle cell",0.0412919375680919,1.38413473796841,1
+"Downregulated","Schwalbe line",0.0413022154947191,1.38402665170136,1
+"Downregulated","Basal cell",0.0423665807095085,1.37297658530076,1
+"Downregulated","Keratinocyte",0.0424173451225972,1.37245651721239,1
+"Downregulated","Endocrine cell",0.0430498374558058,1.36602848398222,1
+"Downregulated","Ionocyte",0.045029371019218,1.34650411932156,1
+"Downregulated","Neutrophil",0.0461130900695713,1.33617577443645,1
+"Downregulated","Dendritic cell",0.0468005919565549,1.32974865372418,1
+"Downregulated","Type B pancreatic cell",0.0482930376316759,1.3161154766211,1
+"Downregulated","Mesenchymal stem cell",0.0523738114219242,1.28088581984917,0
+"Downregulated","Chondrocyte",0.0538968902192455,1.26843629231945,0
+"Downregulated","Bipolar neuron",0.0570403484004098,1.24381783049291,0
+"Downregulated","Hepatoblast",0.0646357763709705,1.18952703030759,0
+"Downregulated","Pericyte cell",0.0647878672400241,1.18850631641421,0
+"Downregulated","Mueller cell",0.0654749485283158,1.18392483431361,0
+"Downregulated","Myofibroblast cell",0.0672493603546326,1.17231184211774,0
+"Downregulated","T cell",0.0728185880814587,1.13775774608837,0
+"Downregulated","Stromal cell",0.075196082366475,1.12380478508578,0
+"Downregulated","Acinar cell",0.0833999624068152,1.07883414512385,0
+"Downregulated","Erythroblast",0.0859158552751711,1.06592668223274,0
+"Downregulated","Mucus secreting cell",0.0881609620549999,1.05472367923528,0
+"Downregulated","Pancreatic A cell",0.0903019313164446,1.04430296119142,0
+"Downregulated","Erythroid progenitor cell",0.0917937149024105,1.03718705383848,0
+"Downregulated","Luminal cell of prostate epithelium",0.0919096752110951,1.03663876859628,0
+"Downregulated","Club cell",0.0987952815065305,1.00526379695702,0
+"Downregulated","Natural killer cell",0.0996952269476794,1.00132563366333,0
+"Downregulated","Neuron",0.103516300880177,0.98499125576377,0
+"Downregulated","Primordial germ cell",0.103522377820498,0.98496576118792,0
+"Downregulated","Epithelial fate stem cell",0.110322590012327,0.957335550903473,0
+"Downregulated","Photoreceptor cell",0.114537418455604,0.941052609620809,0
+"Downregulated","Mast cell",0.119508000594071,0.922603019422551,0
+"Downregulated","Skeletal muscle satellite cell",0.123510865602042,0.908294834603206,0
+"Downregulated","Myometrial cell",0.12367399487003,0.907721610571005,0
+"Downregulated","Erythrocyte",0.134757389368909,0.870447411119675,0
+"Downregulated","Intrahepatic cholangiocyte",0.142094066042928,0.84742405816417,0
+"Downregulated","Intestinal tuft cell",0.143285653794529,0.843797290340753,0
+"Downregulated","Astrocyte",0.156277898926007,0.80610243626844,0
+"Downregulated","Trophoblast cell",0.157162746712988,0.803650389685441,0
+"Downregulated","Type II cell of adrenal cortex",0.16471178102842,0.78327533675828,0
+"Downregulated","Platelet",0.17334671425028,0.761084385888152,0
+"Downregulated","Innate lymphoid cell",0.173424383813552,0.760889839898055,0
+"Downregulated","Glial cell",0.173489661566045,0.760726400173368,0
+"Downregulated","Excitatory neuron",0.176209068568344,0.753971744460614,0
+"Downregulated","Pancreatic stellate cell",0.176325403921095,0.753685112613083,0
+"Downregulated","Hofbauer cell",0.178135819153542,0.749248744789222,0
+"Downregulated","Enteric neuron",0.178739332470675,0.74777986833733,0
+"Downregulated","Mesothelial cell",0.182369330621288,0.739048195952016,0
+"Downregulated","Stem cell",0.205863410376386,0.686420836887214,0
+"Downregulated","Renal intercalated cell",0.222790779389889,0.65210278720996,0
+"Downregulated","Connective tissue cell",0.225677931028929,0.64651090836119,0
+"Downregulated","Beam B cell",0.230578855200618,0.637180521372359,0
+"Downregulated","Kidney loop of Henle epithelial cell",0.23345612519305,0.63179472699064,0
+"Downregulated","Epithelial cell of proximal tubule",0.23357593783655,0.631571898730249,0
+"Downregulated","Microglial cell",0.234046264848572,0.630698285400022,0
+"Downregulated","Serous cell of epithelium of trachea",0.237307905534769,0.624687793712968,0
+"Downregulated","Salivary gland cell",0.256829175308369,0.590355642769373,0
+"Downregulated","Inflammatory cell",0.265984666811473,0.575143398373077,0
+"Downregulated","Kidney cell",0.27223673190851,0.565053277409968,0
+"Downregulated","Capillary endothelial cell",0.275015781781515,0.560642383464406,0
+"Downregulated","Ciliated cell",0.302571538990232,0.519171925753708,0
+"Downregulated","Pancreas exocrine glandular cell",0.326557847599803,0.48603987512987,0
+"Downregulated","Basophil",0.340338888384754,0.468088423969217,0
+"Downregulated","Thymocyte",0.341366768513571,0.466778759008153,0
+"Downregulated","Epicardial adipocyte",0.351441858819507,0.454146512699372,0
+"Downregulated","Langerhans cell",0.362694032611419,0.440459589788333,0
+"Downregulated","Erythroid lineage cell",0.391816740494556,0.406917012575344,0
+"Downregulated","Purkinje cell",0.428053481576644,0.3685019662612,0
+"Downregulated","Cortical cell of adrenal gland",0.434651648032109,0.36185866935781,0
+"Downregulated","Fetal cardiomyocyte",0.438445810211081,0.358084075685872,0
+"Downregulated","Adventitial cell",0.4394208172492,0.357119372535441,0
+"Downregulated","Enteric neural system glia",0.487806142291306,0.31175273549743,0
+"Downregulated","ENS glia",0.501837783189009,0.29943664391267,0
+"Downregulated","Hepatic stellate cell",0.502914240690688,0.298506066574698,0
+"Downregulated","Oligodendrocyte precursor cell",0.521869833686206,0.282437806502006,0
+"Downregulated","Schwann cell",0.552370684491601,0.25776937843043,0
+"Downregulated","Lens fibre cell",0.55792900227104,0.253421062502699,0
+"Downregulated","Megakaryocyte",0.562396584455256,0.249957325535778,0
+"Downregulated","Retina horizontal cell",0.576890074904097,0.238906932789928,0
+"Downregulated","Oligodendrocyte",0.590726421700217,0.228613603812977,0
+"Downregulated","Trabecular meshwork cell",0.629166564440417,0.201234364982092,0
+"Downregulated","Cerebellar granule cell",0.662047770250776,0.179110672784147,0
+"Downregulated","Alveolar capillary type 1 endothelial cell",0.662716119048428,0.178672466064025,0
+"Downregulated","Mesangial cell",0.686386103543569,0.163431517722636,0
+"Downregulated","Professional antigen presenting cell",0.696706766507064,0.156949971520247,0
+"Downregulated","ENS neuron",0.769642045774564,0.113711214685043,0
+"Downregulated","Unknown",0.821318376992762,0.0854884597280711,0
+"Downregulated","Retinal ganglion cell",0.827492582980242,0.082235890223167,0
+"Downregulated","Cholangiocyte",0.840610714807432,0.0754050785798261,0
+"Downregulated","Immune cell",0.841230542504987,0.0750849677967236,0
+"Downregulated","Endocardial cell",0.841901972593557,0.0747384729185108,0
+"Downregulated","Peptic cell",0.85402383776815,0.0685300069846665,0
+"Downregulated","Beam A cell",0.859762586044431,0.0656214578326294,0
+"Downregulated","Sertoli cell",0.870808429405128,0.0600773756502194,0
+"Downregulated","Pancreatic D cell",0.884215944991994,0.0534416577635544,0
+"Downregulated","Leukocyte",0.924691833863351,0.0340029776948291,0
+"Downregulated","Pancreatic PP cell",0.938124842881848,0.0277393631487526,0
+"Downregulated","B/T doublet",0.943778081780155,0.0251301128931169,0
+"Downregulated","Kupffer cell",0.968342503066048,0.0139710054162428,0
+"Upregulated","Fibroblast",3.10947457340394e-05,4.50731299012092,36
+"Upregulated","Stromal cell",3.69843989266316e-05,4.43198143509289,39
+"Upregulated","Beam A cell",4.04799044999571e-05,4.39276052075301,1
+"Upregulated","Smooth muscle cell",5.68637445893527e-05,4.2451645445586,14
+"Upregulated","Mesenchymal stem cell",8.12534279136523e-05,4.09015830797887,15
+"Upregulated","Macrophage",0.0001141982673537,3.94234048527085,51
+"Upregulated","Microglial cell",0.00013171896241448,3.88035169900051,10
+"Upregulated","Endothelial cell",0.00017462119528399,3.75790304335545,96
+"Upregulated","Adventitial cell",0.00019634544971958,3.70697915899542,2
+"Upregulated","Myeloid cell",0.0002722182500916,3.56508276212906,12
+"Upregulated","Dendritic cell",0.00035463742022723,3.45021544092695,22
+"Upregulated","Connective tissue cell",0.00054680497744596,3.26216754079866,1
+"Upregulated","Monocyte",0.00062442430731735,3.2045201992542,22
+"Upregulated","Innate lymphoid cell",0.00089236888855381,3.04945557931708,5
+"Upregulated","Kupffer cell",0.00105701424411309,2.97591916018734,1
+"Upregulated","Professional antigen presenting cell",0.00109400164758511,2.96098202394721,3
+"Upregulated","Mesothelial cell",0.00141152406682055,2.85031171262988,3
+"Upregulated","Schwann cell",0.0019514116807684,2.70965109973652,5
+"Upregulated","Immune cell",0.00318488957384999,2.49690562087933,1
+"Upregulated","Endocardial cell",0.00358716660851932,2.44524845173769,1
+"Upregulated","Pancreatic D cell",0.00363668690199459,2.43929408761432,1
+"Upregulated","Epithelial cell",0.00651624769816384,2.18600241547753,4
+"Upregulated","Mesangial cell",0.00718613136842061,2.14350484779674,1
+"Upregulated","Melanocyte",0.00838123025159754,2.07669222811616,1
+"Upregulated","Neutrophil",0.0084409556197268,2.07360838312783,2
+"Upregulated","Hepatic stellate cell",0.0084565244811472,2.07280808953644,1
+"Upregulated","Pericyte cell",0.00935425403975865,2.02899083984047,4
+"Upregulated","Muscle cell",0.0128100783902366,1.89244821261729,1
+"Upregulated","T cell",0.0137800681666976,1.86074863407227,4
+"Upregulated","Inhibitory neuron",0.013875232465577,1.8577597319767,1
+"Upregulated","Hematopoietic stem cell",0.0186786237655173,1.72865512559307,1
+"Upregulated","Pancreatic stellate cell",0.0200587702336624,1.69769569629595,1
+"Upregulated","Excitatory neuron",0.0221125326865611,1.65536151211127,2
+"Upregulated","Club cell",0.0235708914323643,1.62762399249324,1
+"Upregulated","Capillary endothelial cell",0.0237236758537281,1.62481801854104,3
+"Upregulated","Megakaryocyte",0.0293740658474313,1.53203593591193,2
+"Upregulated","Glial cell",0.0316624465954486,1.49945552971846,1
+"Upregulated","Astrocyte",0.0341491300991734,1.46662035487969,1
+"Upregulated","Mueller cell",0.0409833117141676,1.38739295074017,1
+"Upregulated","Chondrocyte",0.0445671502471378,1.35098513507494,1
+"Upregulated","Trophoblast cell",0.0452998309610541,1.34390341857919,1
+"Upregulated","Natural killer cell",0.0502681227809454,1.29870733281647,0
+"Upregulated","Skeletal muscle satellite cell",0.0568218483719273,1.24548464311093,0
+"Upregulated","Basal cell",0.057356556511073,1.24141693009358,0
+"Upregulated","Pancreatic PP cell",0.0607690487199998,1.21631756205467,0
+"Upregulated","Neuron",0.0686853313972853,1.16313600200037,0
+"Upregulated","Myometrial cell",0.0797963503716421,1.0980169714275,0
+"Upregulated","Erythroid lineage cell",0.0838032401210383,1.0767391897291,0
+"Upregulated","Enteric neural system glia",0.106748903644697,0.971636576663626,0
+"Upregulated","Hofbauer cell",0.114384467235008,0.941632946278348,0
+"Upregulated","Myofibroblast cell",0.116782766799907,0.932621239722701,0
+"Upregulated","Cell of skeletal muscle",0.118984759286547,0.924508663663307,0
+"Upregulated","Alveolar capillary type 1 endothelial cell",0.144852946956894,0.839072664877903,0
+"Upregulated","Salivary gland cell",0.152005902803972,0.818139546888009,0
+"Upregulated","Stem cell",0.164239049853236,0.784523576086869,0
+"Upregulated","B cell",0.165372156774955,0.78153760951684,0
+"Upregulated","Type B pancreatic cell",0.170958154865964,0.767110178115013,0
+"Upregulated","Oligodendrocyte",0.176464272820731,0.753343209185002,0
+"Upregulated","Goblet cell",0.187473441087909,0.727060249034676,0
+"Upregulated","Pancreatic A cell",0.220676396820036,0.656244115768996,0
+"Upregulated","Epicardial adipocyte",0.223998000989085,0.649755857394781,0
+"Upregulated","Bipolar neuron",0.226709061715458,0.644531120480595,0
+"Upregulated","Mast cell",0.238903354633263,0.6217777519308,0
+"Upregulated","Beam B cell",0.282363070770991,0.549192103686522,0
+"Upregulated","Epithelial fate stem cell",0.299616542156092,0.523434212438582,0
+"Upregulated","Oligodendrocyte precursor cell",0.300621300059959,0.521980251391221,0
+"Upregulated","Leukocyte",0.303664519196691,0.517605949001302,0
+"Upregulated","B/T doublet",0.312225170869496,0.505532088047861,0
+"Upregulated","Lens fibre cell",0.325425014738402,0.48754906681002,0
+"Upregulated","Hepatoblast",0.333280079829671,0.477190643370941,0
+"Upregulated","Pancreatic ductal cell",0.364954805258871,0.43776091374066,0
+"Upregulated","Plasmacytoid dendritic cell",0.371926166236724,0.429543266512042,0
+"Upregulated","Sertoli cell",0.382876360944358,0.416941446471171,0
+"Upregulated","Hepatocyte",0.395290719142146,0.403083382147466,0
+"Upregulated","Ciliated cell",0.403887480694995,0.393739608452558,0
+"Upregulated","Erythroblast",0.411551469008548,0.385575843784353,0
+"Upregulated","Pneumocyte",0.424523797185657,0.372097959844669,0
+"Upregulated","Luminal cell of prostate epithelium",0.433158479391338,0.363353179552351,0
+"Upregulated","Enterocyte",0.436759695580432,0.359757445382597,0
+"Upregulated","Endocrine cell",0.439266324239544,0.357272090059369,0
+"Upregulated","Ionocyte",0.450957295578354,0.345864582673675,0
+"Upregulated","Trabecular meshwork cell",0.474032044122756,0.324192299432865,0
+"Upregulated","Thymocyte",0.476568934054862,0.321874271280962,0
+"Upregulated","Platelet",0.481813245651846,0.317121264872268,0
+"Upregulated","Urothelial cell",0.50163559191603,0.299611657136759,0
+"Upregulated","Retinal pigment epithelial cell",0.521270051881029,0.282937225536103,0
+"Upregulated","Acinar cell",0.529314360666036,0.276286323138127,0
+"Upregulated","Photoreceptor cell",0.561717329519299,0.250482177515151,0
+"Upregulated","Duodenum glandular cell",0.56996522770642,0.244151638846574,0
+"Upregulated","Granulocyte",0.570314169896043,0.243885837899007,0
+"Upregulated","Enteric neuron",0.587891640086615,0.230702715504176,0
+"Upregulated","Fetal cardiomyocyte",0.634013954246752,0.197901183465788,0
+"Upregulated","Paneth cell",0.634989006606195,0.197233793466442,0
+"Upregulated","Alveolar capillary type 2 endothelial cell",0.645898433388169,0.189835768826875,0
+"Upregulated","Cerebellar granule cell",0.65207391440575,0.185703172981064,0
+"Upregulated","Unknown",0.692388262569478,0.159650302934879,0
+"Upregulated","Basophil",0.713304495890781,0.146725038653642,0
+"Upregulated","Purkinje cell",0.71429831778849,0.146120372661453,0
+"Upregulated","Erythroid progenitor cell",0.726498043606883,0.138765550879902,0
+"Upregulated","Intestinal tuft cell",0.731497349307456,0.135787243268309,0
+"Upregulated","Intestinal crypt stem cell",0.748369718079752,0.125883794043403,0
+"Upregulated","Kidney loop of Henle epithelial cell",0.758850348755567,0.11984386194086,0
+"Upregulated","Cholangiocyte",0.76140852033897,0.118382267637892,0
+"Upregulated","ENS neuron",0.766579586479328,0.115442749910031,0
+"Upregulated","Erythrocyte",0.769559442022155,0.113757828925186,0
+"Upregulated","ENS glia",0.777457195272134,0.109323512743384,0
+"Upregulated","Langerhans cell",0.778486506803274,0.108748910483999,0
+"Upregulated","Retina horizontal cell",0.808210860006836,0.0924753181975597,0
+"Upregulated","Plasma cell",0.810868285429704,0.0910496853162587,0
+"Upregulated","Retinal ganglion cell",0.816110324376598,0.0882511279749423,0
+"Upregulated","Renal intercalated cell",0.816218601681148,0.0881935118472125,0
+"Upregulated","Serous cell of epithelium of trachea",0.83406744885395,0.0787988276828385,0
+"Upregulated","Epithelial cell of proximal tubule",0.854413254015336,0.0683320233058309,0
+"Upregulated","Transit amplifying cell",0.879756644034207,0.0556374446331539,0
+"Upregulated","Intrahepatic cholangiocyte",0.890014014581189,0.0506031546951364,0
+"Upregulated","Primordial germ cell",0.899368060006721,0.0460625399492451,0
+"Upregulated","Peptic cell",0.907008547280465,0.0423886203056701,0
+"Upregulated","Cortical cell of adrenal gland",0.915188615997797,0.0384893906927553,0
+"Upregulated","Keratinocyte",0.928100425860752,0.0324050280511657,0
+"Upregulated","Pancreas exocrine glandular cell",0.943854650857233,0.0250948798447568,0
+"Upregulated","Kidney cell",0.951470373738221,0.0216047299437738,0
+"Upregulated","Thyroid follicular cell",0.951953850399104,0.0213841051899187,0
+"Upregulated","Schwalbe line",0.958795250557363,0.0182741259335841,0
+"Upregulated","Inflammatory cell",0.962042776854653,0.0168056167990928,0
+"Upregulated","Type II cell of adrenal cortex",0.962089901317904,0.016784343947601,0
+"Upregulated","Mucus secreting cell",0.967452914530023,0.0143701626991298,0
