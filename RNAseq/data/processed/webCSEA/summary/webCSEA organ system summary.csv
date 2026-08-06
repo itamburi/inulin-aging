@@ -1,25 +1,49 @@
-"direction","Organ_system","best_combined_p","best_combined_log10p","significant_cell_type_n"
-"Downregulated","Lymphatic system",3.5030534605851e-05,4.45555323480336,22
-"Downregulated","Digestive system",0.00092330389336936,3.03465533311124,24
-"Downregulated","Reproductive system",0.00298641741363326,2.52484949072748,4
-"Downregulated","Endocrine system",0.00363195235933789,2.43985985679533,3
-"Downregulated","Respiratory system",0.00435391224085124,2.36112032901522,4
-"Downregulated","Nervous system",0.00988343700689387,2.00509200140868,2
-"Downregulated","Cardiovascular system",0.0106957097640864,1.97079039048484,1
-"Downregulated","Integumentary system",0.0174599064069298,1.75795808864092,2
-"Downregulated","Urinary system",0.0210610934337527,1.67651908519622,4
-"Downregulated","Sensory system",0.0282924459036971,1.54832950582821,4
-"Downregulated","Muscular system",0.0562947464755684,1.24953213238006,0
-"Downregulated","Skeletal system",0.623035409822723,0.205487269787704,0
-"Upregulated","Cardiovascular system",3.10947457340394e-05,4.50731299012092,19
-"Upregulated","Digestive system",3.69843989266316e-05,4.43198143509289,108
-"Upregulated","Respiratory system",3.7374119779221e-05,4.42742902688233,43
-"Upregulated","Sensory system",4.04799044999571e-05,4.39276052075301,33
-"Upregulated","Muscular system",5.68637445893527e-05,4.2451645445586,14
-"Upregulated","Endocrine system",8.77830949692626e-05,4.05658911129718,31
-"Upregulated","Urinary system",0.00011349240048785,3.94503321808923,23
-"Upregulated","Nervous system",0.00013171896241448,3.88035169900051,25
-"Upregulated","Reproductive system",0.00039039207540281,3.40849900669121,39
-"Upregulated","Integumentary system",0.0004529149273027,3.34398336547654,9
-"Upregulated","Lymphatic system",0.00051965598710657,3.28428406471686,27
-"Upregulated","Skeletal system",0.00091990429533639,3.03625735327328,4
+"contrast","direction","Organ_system","best_combined_p","best_combined_log10p","significant_cell_type_n"
+"young CD vs old CD","Downregulated","Lymphatic system",5.5631854001259e-07,6.25467646641008,164
+"young CD vs old CD","Downregulated","Digestive system",1.56881353052807e-06,5.80442867366948,256
+"young CD vs old CD","Downregulated","Respiratory system",4.40601432283305e-06,5.35595409540194,113
+"young CD vs old CD","Downregulated","Sensory system",4.86355828888119e-06,5.31304587481517,58
+"young CD vs old CD","Downregulated","Reproductive system",6.21899255959235e-06,5.20627996277643,102
+"young CD vs old CD","Downregulated","Urinary system",7.11054010504863e-06,5.1480974097156,51
+"young CD vs old CD","Downregulated","Endocrine system",7.99396095874094e-06,5.09723797709728,49
+"young CD vs old CD","Downregulated","Muscular system",1.10341252708146e-05,4.95726208978967,30
+"young CD vs old CD","Downregulated","Integumentary system",1.69401186708162e-05,4.77108355162632,42
+"young CD vs old CD","Downregulated","Cardiovascular system",2.10573285595039e-05,4.67659672647708,41
+"old ID vs old CD","Downregulated","Lymphatic system",3.5030534605851e-05,4.45555323480336,22
+"young CD vs old CD","Downregulated","Nervous system",6.65649640233523e-05,4.17675429838256,47
+"young CD vs old CD","Downregulated","Skeletal system",0.00018576719230889,3.73103098279286,3
+"old ID vs old CD","Downregulated","Digestive system",0.00092330389336936,3.03465533311124,24
+"old ID vs old CD","Downregulated","Reproductive system",0.00298641741363326,2.52484949072748,4
+"old ID vs old CD","Downregulated","Endocrine system",0.00363195235933789,2.43985985679533,3
+"old ID vs old CD","Downregulated","Respiratory system",0.00435391224085124,2.36112032901522,4
+"old ID vs old CD","Downregulated","Nervous system",0.00988343700689387,2.00509200140868,2
+"old ID vs old CD","Downregulated","Cardiovascular system",0.0106957097640864,1.97079039048484,1
+"old ID vs old CD","Downregulated","Integumentary system",0.0174599064069298,1.75795808864092,2
+"old ID vs old CD","Downregulated","Urinary system",0.0210610934337527,1.67651908519622,4
+"old ID vs old CD","Downregulated","Sensory system",0.0282924459036971,1.54832950582821,4
+"old ID vs old CD","Downregulated","Muscular system",0.0562947464755684,1.24953213238006,0
+"old ID vs old CD","Downregulated","Skeletal system",0.623035409822723,0.205487269787704,0
+"young CD vs old CD","Upregulated","Sensory system",5.5631854001259e-07,6.25467646641008,21
+"young CD vs old CD","Upregulated","Muscular system",2.5370835176064e-06,5.59566523611347,13
+"young CD vs old CD","Upregulated","Digestive system",3.01126181323497e-06,5.52125148324509,78
+"young CD vs old CD","Upregulated","Urinary system",3.94508732914911e-06,5.40394337872889,18
+"young CD vs old CD","Upregulated","Integumentary system",4.86355828888119e-06,5.31304587481517,12
+"young CD vs old CD","Upregulated","Reproductive system",7.11054010504863e-06,5.1480974097156,31
+"young CD vs old CD","Upregulated","Respiratory system",8.43293290242464e-06,5.07402135517185,26
+"young CD vs old CD","Upregulated","Lymphatic system",1.18904023789224e-05,4.9248034483259,86
+"young CD vs old CD","Upregulated","Cardiovascular system",1.90075763077946e-05,4.72107325731957,11
+"old ID vs old CD","Upregulated","Cardiovascular system",3.10947457340394e-05,4.50731299012092,19
+"young CD vs old CD","Upregulated","Endocrine system",3.38538564003121e-05,4.470391852297,9
+"old ID vs old CD","Upregulated","Digestive system",3.69843989266316e-05,4.43198143509289,108
+"old ID vs old CD","Upregulated","Respiratory system",3.7374119779221e-05,4.42742902688233,43
+"old ID vs old CD","Upregulated","Sensory system",4.04799044999571e-05,4.39276052075301,33
+"old ID vs old CD","Upregulated","Muscular system",5.68637445893527e-05,4.2451645445586,14
+"old ID vs old CD","Upregulated","Endocrine system",8.77830949692626e-05,4.05658911129718,31
+"old ID vs old CD","Upregulated","Urinary system",0.00011349240048785,3.94503321808923,23
+"old ID vs old CD","Upregulated","Nervous system",0.00013171896241448,3.88035169900051,25
+"old ID vs old CD","Upregulated","Reproductive system",0.00039039207540281,3.40849900669121,39
+"old ID vs old CD","Upregulated","Integumentary system",0.0004529149273027,3.34398336547654,9
+"old ID vs old CD","Upregulated","Lymphatic system",0.00051965598710657,3.28428406471686,27
+"old ID vs old CD","Upregulated","Skeletal system",0.00091990429533639,3.03625735327328,4
+"young CD vs old CD","Upregulated","Nervous system",0.00249956290785247,2.60213592864958,6
+"young CD vs old CD","Upregulated","Skeletal system",0.0700599690862642,1.15453005864933,0

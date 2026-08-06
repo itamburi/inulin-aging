@@ -53,10 +53,10 @@ Open `RNAseq.Rproj` before running scripts so `here::here()` resolves paths from
    Runs PLS-DA across young CD, old CD, and old ID samples using TMM-normalized log2 CPM values, then outputs ordination and top VIP gene heatmap figures.
 
 6. `code/06_convert_deg_mouse_to_human_symbols.R`
-   Converts nominally significant old ID vs old CD mouse DEGs to human ortholog symbols using `babelgene`, then writes mapping tables and one-gene-per-line human symbol lists.
+   Converts nominally significant old ID vs old CD and young CD vs old CD mouse DEGs to human ortholog symbols using `babelgene`, then writes mapping tables and one-gene-per-line human symbol lists for webCSEA upload.
 
 7. `code/07_summarize_webcsea_results.R`
-   Combines downloaded webCSEA results for upregulated and downregulated human ortholog DEG lists, then writes top tissue/cell-type, organ-system, and general-cell-type summaries.
+   Combines downloaded webCSEA results for upregulated and downregulated human ortholog DEG lists, separates contrasts by job-folder name, then writes top tissue/cell-type, organ-system, and general-cell-type summaries.
 
 ## Main Inputs
 
@@ -78,11 +78,15 @@ Open `RNAseq.Rproj` before running scripts so `here::here()` resolves paths from
 - `data/processed/overlaps/deseq2 DEG venn overlap *.csv`
 - `data/processed/youth_shift/deseq2 youth-like old ID shift *.csv`
 - `data/processed/plsda/plsda major groups *.csv`
-- `data/processed/orthologs/old ID vs old CD * human symbols.txt`
-- `data/processed/orthologs/old ID vs old CD nominal DEG mouse to human orthologs.csv`
+- `data/processed/webCSEA/orthologs/* human symbols.txt`
+- `data/processed/webCSEA/orthologs/* nominal DEG mouse to human orthologs.csv`
 - `data/processed/webCSEA/summary/*.csv`
+- `data/processed/webCSEA/summary/gene composition for adult webCSEA tissue tally bar plots.csv`
+- `data/processed/webCSEA/summary/gene lists for adult webCSEA tissue tally bar plots.csv`
 - `plots/webCSEA/primary webCSEA tissue hit tally among nominal DEGs.pdf`
 - `plots/webCSEA/primary webCSEA organ tissue hit tally adult fetal nominal DEGs.pdf`
+- `plots/webCSEA/primary webCSEA adult tissue hit tally old ID vs old CD nominal DEGs.pdf`
+- `plots/webCSEA/primary webCSEA adult tissue hit tally young CD vs old CD nominal DEGs.pdf`
 - `plots/webCSEA/primary webCSEA general cell type hit tally adult fetal nominal DEGs.pdf`
 - `plots/qc/rnaseq pca unfiltered filtered counts.pdf`
 - `plots/qc/rnaseq pca filtered counts major groups.pdf`

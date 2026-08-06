@@ -1,99 +1,296 @@
-"direction","Developmental_stage","primary_general_cell_type","gene_n","direction_stage_total_genes_with_hit","fraction_of_direction_stage_genes_with_hit"
-"Downregulated","Adult","Plasma cell",45,140,0.321428571428571
-"Downregulated","Adult","Enterocyte",18,140,0.128571428571429
-"Downregulated","Adult","Monocyte",8,140,0.0571428571428571
-"Downregulated","Adult","Muscle cell",8,140,0.0571428571428571
-"Downregulated","Adult","Hepatocyte",7,140,0.05
-"Downregulated","Adult","B cell",6,140,0.0428571428571429
-"Downregulated","Adult","Inhibitory neuron",6,140,0.0428571428571429
-"Downregulated","Adult","Thyroid follicular cell",6,140,0.0428571428571429
-"Downregulated","Adult","Epithelial cell",5,140,0.0357142857142857
-"Downregulated","Adult","Paneth cell",5,140,0.0357142857142857
-"Downregulated","Adult","Cell of skeletal muscle",4,140,0.0285714285714286
-"Downregulated","Adult","Endothelial cell",3,140,0.0214285714285714
-"Downregulated","Adult","Duodenum glandular cell",2,140,0.0142857142857143
-"Downregulated","Adult","Intestinal crypt stem cell",2,140,0.0142857142857143
-"Downregulated","Adult","Macrophage",2,140,0.0142857142857143
-"Downregulated","Adult","Pneumocyte",2,140,0.0142857142857143
-"Downregulated","Adult","Smooth muscle cell",2,140,0.0142857142857143
-"Downregulated","Adult","Acinar cell",1,140,0.00714285714285714
-"Downregulated","Adult","Basal cell",1,140,0.00714285714285714
-"Downregulated","Adult","Endocrine cell",1,140,0.00714285714285714
-"Downregulated","Adult","Goblet cell",1,140,0.00714285714285714
-"Downregulated","Adult","Hematopoietic stem cell",1,140,0.00714285714285714
-"Downregulated","Adult","Keratinocyte",1,140,0.00714285714285714
-"Downregulated","Adult","Mueller cell",1,140,0.00714285714285714
-"Downregulated","Adult","Myeloid cell",1,140,0.00714285714285714
-"Downregulated","Adult","T cell",1,140,0.00714285714285714
-"Downregulated","Fetal","Hepatocyte",32,136,0.235294117647059
-"Downregulated","Fetal","Epithelial cell",13,136,0.0955882352941176
-"Downregulated","Fetal","Neuron",12,136,0.0882352941176471
-"Downregulated","Fetal","Epithelial fate stem cell",10,136,0.0735294117647059
-"Downregulated","Fetal","Erythroblast",9,136,0.0661764705882353
-"Downregulated","Fetal","Bipolar neuron",8,136,0.0588235294117647
-"Downregulated","Fetal","Primordial germ cell",7,136,0.0514705882352941
-"Downregulated","Fetal","Enterocyte",5,136,0.0367647058823529
-"Downregulated","Fetal","Trophoblast cell",5,136,0.0367647058823529
-"Downregulated","Fetal","Mesenchymal stem cell",4,136,0.0294117647058824
-"Downregulated","Fetal","Neutrophil",4,136,0.0294117647058824
-"Downregulated","Fetal","Smooth muscle cell",4,136,0.0294117647058824
-"Downregulated","Fetal","Stromal cell",3,136,0.0220588235294118
-"Downregulated","Fetal","Type II cell of adrenal cortex",3,136,0.0220588235294118
-"Downregulated","Fetal","Endothelial cell",2,136,0.0147058823529412
-"Downregulated","Fetal","Erythroid lineage cell",2,136,0.0147058823529412
-"Downregulated","Fetal","Microglial cell",2,136,0.0147058823529412
-"Downregulated","Fetal","Acinar cell",1,136,0.00735294117647059
-"Downregulated","Fetal","Chondrocyte",1,136,0.00735294117647059
-"Downregulated","Fetal","Enteric neuron",1,136,0.00735294117647059
-"Downregulated","Fetal","Erythroid progenitor cell",1,136,0.00735294117647059
-"Downregulated","Fetal","Hepatoblast",1,136,0.00735294117647059
-"Downregulated","Fetal","Kidney loop of Henle epithelial cell",1,136,0.00735294117647059
-"Downregulated","Fetal","Megakaryocyte",1,136,0.00735294117647059
-"Downregulated","Fetal","Mesothelial cell",1,136,0.00735294117647059
-"Downregulated","Fetal","Myeloid cell",1,136,0.00735294117647059
-"Downregulated","Fetal","Professional antigen presenting cell",1,136,0.00735294117647059
-"Downregulated","Fetal","Retina horizontal cell",1,136,0.00735294117647059
-"Upregulated","Adult","Fibroblast",76,204,0.372549019607843
-"Upregulated","Adult","Endothelial cell",30,204,0.147058823529412
-"Upregulated","Adult","Macrophage",30,204,0.147058823529412
-"Upregulated","Adult","Stromal cell",27,204,0.132352941176471
-"Upregulated","Adult","Microglial cell",12,204,0.0588235294117647
-"Upregulated","Adult","Smooth muscle cell",8,204,0.0392156862745098
-"Upregulated","Adult","Beam A cell",4,204,0.0196078431372549
-"Upregulated","Adult","Schwann cell",4,204,0.0196078431372549
-"Upregulated","Adult","T cell",3,204,0.0147058823529412
-"Upregulated","Adult","Immune cell",2,204,0.00980392156862745
-"Upregulated","Adult","Innate lymphoid cell",2,204,0.00980392156862745
-"Upregulated","Adult","B cell",1,204,0.00490196078431373
-"Upregulated","Adult","Dendritic cell",1,204,0.00490196078431373
-"Upregulated","Adult","Inhibitory neuron",1,204,0.00490196078431373
-"Upregulated","Adult","Neutrophil",1,204,0.00490196078431373
-"Upregulated","Adult","Pancreatic D cell",1,204,0.00490196078431373
-"Upregulated","Adult","Pericyte cell",1,204,0.00490196078431373
-"Upregulated","Fetal","Stromal cell",61,202,0.301980198019802
-"Upregulated","Fetal","Mesenchymal stem cell",37,202,0.183168316831683
-"Upregulated","Fetal","Myeloid cell",33,202,0.163366336633663
-"Upregulated","Fetal","Endothelial cell",28,202,0.138613861386139
-"Upregulated","Fetal","Macrophage",5,202,0.0247524752475248
-"Upregulated","Fetal","Mesothelial cell",5,202,0.0247524752475248
-"Upregulated","Fetal","Microglial cell",4,202,0.0198019801980198
-"Upregulated","Fetal","Dendritic cell",3,202,0.0148514851485149
-"Upregulated","Fetal","Innate lymphoid cell",3,202,0.0148514851485149
-"Upregulated","Fetal","Neutrophil",3,202,0.0148514851485149
-"Upregulated","Fetal","Chondrocyte",2,202,0.0099009900990099
-"Upregulated","Fetal","Enteric neural system glia",2,202,0.0099009900990099
-"Upregulated","Fetal","Erythroid lineage cell",2,202,0.0099009900990099
-"Upregulated","Fetal","Astrocyte",1,202,0.00495049504950495
-"Upregulated","Fetal","Epithelial cell",1,202,0.00495049504950495
-"Upregulated","Fetal","Epithelial fate stem cell",1,202,0.00495049504950495
-"Upregulated","Fetal","Erythroid progenitor cell",1,202,0.00495049504950495
-"Upregulated","Fetal","Fibroblast",1,202,0.00495049504950495
-"Upregulated","Fetal","Glial cell",1,202,0.00495049504950495
-"Upregulated","Fetal","Hematopoietic stem cell",1,202,0.00495049504950495
-"Upregulated","Fetal","Kidney loop of Henle epithelial cell",1,202,0.00495049504950495
-"Upregulated","Fetal","Megakaryocyte",1,202,0.00495049504950495
-"Upregulated","Fetal","Monocyte",1,202,0.00495049504950495
-"Upregulated","Fetal","Mueller cell",1,202,0.00495049504950495
-"Upregulated","Fetal","Neuron",1,202,0.00495049504950495
-"Upregulated","Fetal","Skeletal muscle satellite cell",1,202,0.00495049504950495
-"Upregulated","Fetal","Smooth muscle cell",1,202,0.00495049504950495
+"contrast","direction","Developmental_stage","primary_general_cell_type","gene_n","contrast_direction_stage_total_genes_with_hit","fraction_of_contrast_direction_stage_genes_with_hit"
+"old ID vs old CD","Downregulated","Adult","Plasma cell",45,140,0.321428571428571
+"old ID vs old CD","Downregulated","Adult","Enterocyte",18,140,0.128571428571429
+"old ID vs old CD","Downregulated","Adult","Monocyte",8,140,0.0571428571428571
+"old ID vs old CD","Downregulated","Adult","Muscle cell",8,140,0.0571428571428571
+"old ID vs old CD","Downregulated","Adult","Hepatocyte",7,140,0.05
+"old ID vs old CD","Downregulated","Adult","B cell",6,140,0.0428571428571429
+"old ID vs old CD","Downregulated","Adult","Inhibitory neuron",6,140,0.0428571428571429
+"old ID vs old CD","Downregulated","Adult","Thyroid follicular cell",6,140,0.0428571428571429
+"old ID vs old CD","Downregulated","Adult","Epithelial cell",5,140,0.0357142857142857
+"old ID vs old CD","Downregulated","Adult","Paneth cell",5,140,0.0357142857142857
+"old ID vs old CD","Downregulated","Adult","Cell of skeletal muscle",4,140,0.0285714285714286
+"old ID vs old CD","Downregulated","Adult","Endothelial cell",3,140,0.0214285714285714
+"old ID vs old CD","Downregulated","Adult","Duodenum glandular cell",2,140,0.0142857142857143
+"old ID vs old CD","Downregulated","Adult","Intestinal crypt stem cell",2,140,0.0142857142857143
+"old ID vs old CD","Downregulated","Adult","Macrophage",2,140,0.0142857142857143
+"old ID vs old CD","Downregulated","Adult","Pneumocyte",2,140,0.0142857142857143
+"old ID vs old CD","Downregulated","Adult","Smooth muscle cell",2,140,0.0142857142857143
+"old ID vs old CD","Downregulated","Adult","Acinar cell",1,140,0.00714285714285714
+"old ID vs old CD","Downregulated","Adult","Basal cell",1,140,0.00714285714285714
+"old ID vs old CD","Downregulated","Adult","Endocrine cell",1,140,0.00714285714285714
+"old ID vs old CD","Downregulated","Adult","Goblet cell",1,140,0.00714285714285714
+"old ID vs old CD","Downregulated","Adult","Hematopoietic stem cell",1,140,0.00714285714285714
+"old ID vs old CD","Downregulated","Adult","Keratinocyte",1,140,0.00714285714285714
+"old ID vs old CD","Downregulated","Adult","Mueller cell",1,140,0.00714285714285714
+"old ID vs old CD","Downregulated","Adult","Myeloid cell",1,140,0.00714285714285714
+"old ID vs old CD","Downregulated","Adult","T cell",1,140,0.00714285714285714
+"old ID vs old CD","Downregulated","Fetal","Hepatocyte",32,136,0.235294117647059
+"old ID vs old CD","Downregulated","Fetal","Epithelial cell",13,136,0.0955882352941176
+"old ID vs old CD","Downregulated","Fetal","Neuron",12,136,0.0882352941176471
+"old ID vs old CD","Downregulated","Fetal","Epithelial fate stem cell",10,136,0.0735294117647059
+"old ID vs old CD","Downregulated","Fetal","Erythroblast",9,136,0.0661764705882353
+"old ID vs old CD","Downregulated","Fetal","Bipolar neuron",8,136,0.0588235294117647
+"old ID vs old CD","Downregulated","Fetal","Primordial germ cell",7,136,0.0514705882352941
+"old ID vs old CD","Downregulated","Fetal","Enterocyte",5,136,0.0367647058823529
+"old ID vs old CD","Downregulated","Fetal","Trophoblast cell",5,136,0.0367647058823529
+"old ID vs old CD","Downregulated","Fetal","Mesenchymal stem cell",4,136,0.0294117647058824
+"old ID vs old CD","Downregulated","Fetal","Neutrophil",4,136,0.0294117647058824
+"old ID vs old CD","Downregulated","Fetal","Smooth muscle cell",4,136,0.0294117647058824
+"old ID vs old CD","Downregulated","Fetal","Stromal cell",3,136,0.0220588235294118
+"old ID vs old CD","Downregulated","Fetal","Type II cell of adrenal cortex",3,136,0.0220588235294118
+"old ID vs old CD","Downregulated","Fetal","Endothelial cell",2,136,0.0147058823529412
+"old ID vs old CD","Downregulated","Fetal","Erythroid lineage cell",2,136,0.0147058823529412
+"old ID vs old CD","Downregulated","Fetal","Microglial cell",2,136,0.0147058823529412
+"old ID vs old CD","Downregulated","Fetal","Acinar cell",1,136,0.00735294117647059
+"old ID vs old CD","Downregulated","Fetal","Chondrocyte",1,136,0.00735294117647059
+"old ID vs old CD","Downregulated","Fetal","Enteric neuron",1,136,0.00735294117647059
+"old ID vs old CD","Downregulated","Fetal","Erythroid progenitor cell",1,136,0.00735294117647059
+"old ID vs old CD","Downregulated","Fetal","Hepatoblast",1,136,0.00735294117647059
+"old ID vs old CD","Downregulated","Fetal","Kidney loop of Henle epithelial cell",1,136,0.00735294117647059
+"old ID vs old CD","Downregulated","Fetal","Megakaryocyte",1,136,0.00735294117647059
+"old ID vs old CD","Downregulated","Fetal","Mesothelial cell",1,136,0.00735294117647059
+"old ID vs old CD","Downregulated","Fetal","Myeloid cell",1,136,0.00735294117647059
+"old ID vs old CD","Downregulated","Fetal","Professional antigen presenting cell",1,136,0.00735294117647059
+"old ID vs old CD","Downregulated","Fetal","Retina horizontal cell",1,136,0.00735294117647059
+"old ID vs old CD","Upregulated","Adult","Fibroblast",76,204,0.372549019607843
+"old ID vs old CD","Upregulated","Adult","Endothelial cell",30,204,0.147058823529412
+"old ID vs old CD","Upregulated","Adult","Macrophage",30,204,0.147058823529412
+"old ID vs old CD","Upregulated","Adult","Stromal cell",27,204,0.132352941176471
+"old ID vs old CD","Upregulated","Adult","Microglial cell",12,204,0.0588235294117647
+"old ID vs old CD","Upregulated","Adult","Smooth muscle cell",8,204,0.0392156862745098
+"old ID vs old CD","Upregulated","Adult","Beam A cell",4,204,0.0196078431372549
+"old ID vs old CD","Upregulated","Adult","Schwann cell",4,204,0.0196078431372549
+"old ID vs old CD","Upregulated","Adult","T cell",3,204,0.0147058823529412
+"old ID vs old CD","Upregulated","Adult","Immune cell",2,204,0.00980392156862745
+"old ID vs old CD","Upregulated","Adult","Innate lymphoid cell",2,204,0.00980392156862745
+"old ID vs old CD","Upregulated","Adult","B cell",1,204,0.00490196078431373
+"old ID vs old CD","Upregulated","Adult","Dendritic cell",1,204,0.00490196078431373
+"old ID vs old CD","Upregulated","Adult","Inhibitory neuron",1,204,0.00490196078431373
+"old ID vs old CD","Upregulated","Adult","Neutrophil",1,204,0.00490196078431373
+"old ID vs old CD","Upregulated","Adult","Pancreatic D cell",1,204,0.00490196078431373
+"old ID vs old CD","Upregulated","Adult","Pericyte cell",1,204,0.00490196078431373
+"old ID vs old CD","Upregulated","Fetal","Stromal cell",61,202,0.301980198019802
+"old ID vs old CD","Upregulated","Fetal","Mesenchymal stem cell",37,202,0.183168316831683
+"old ID vs old CD","Upregulated","Fetal","Myeloid cell",33,202,0.163366336633663
+"old ID vs old CD","Upregulated","Fetal","Endothelial cell",28,202,0.138613861386139
+"old ID vs old CD","Upregulated","Fetal","Macrophage",5,202,0.0247524752475248
+"old ID vs old CD","Upregulated","Fetal","Mesothelial cell",5,202,0.0247524752475248
+"old ID vs old CD","Upregulated","Fetal","Microglial cell",4,202,0.0198019801980198
+"old ID vs old CD","Upregulated","Fetal","Dendritic cell",3,202,0.0148514851485149
+"old ID vs old CD","Upregulated","Fetal","Innate lymphoid cell",3,202,0.0148514851485149
+"old ID vs old CD","Upregulated","Fetal","Neutrophil",3,202,0.0148514851485149
+"old ID vs old CD","Upregulated","Fetal","Chondrocyte",2,202,0.0099009900990099
+"old ID vs old CD","Upregulated","Fetal","Enteric neural system glia",2,202,0.0099009900990099
+"old ID vs old CD","Upregulated","Fetal","Erythroid lineage cell",2,202,0.0099009900990099
+"old ID vs old CD","Upregulated","Fetal","Astrocyte",1,202,0.00495049504950495
+"old ID vs old CD","Upregulated","Fetal","Epithelial cell",1,202,0.00495049504950495
+"old ID vs old CD","Upregulated","Fetal","Epithelial fate stem cell",1,202,0.00495049504950495
+"old ID vs old CD","Upregulated","Fetal","Erythroid progenitor cell",1,202,0.00495049504950495
+"old ID vs old CD","Upregulated","Fetal","Fibroblast",1,202,0.00495049504950495
+"old ID vs old CD","Upregulated","Fetal","Glial cell",1,202,0.00495049504950495
+"old ID vs old CD","Upregulated","Fetal","Hematopoietic stem cell",1,202,0.00495049504950495
+"old ID vs old CD","Upregulated","Fetal","Kidney loop of Henle epithelial cell",1,202,0.00495049504950495
+"old ID vs old CD","Upregulated","Fetal","Megakaryocyte",1,202,0.00495049504950495
+"old ID vs old CD","Upregulated","Fetal","Monocyte",1,202,0.00495049504950495
+"old ID vs old CD","Upregulated","Fetal","Mueller cell",1,202,0.00495049504950495
+"old ID vs old CD","Upregulated","Fetal","Neuron",1,202,0.00495049504950495
+"old ID vs old CD","Upregulated","Fetal","Skeletal muscle satellite cell",1,202,0.00495049504950495
+"old ID vs old CD","Upregulated","Fetal","Smooth muscle cell",1,202,0.00495049504950495
+"young CD vs old CD","Downregulated","Adult","Monocyte",922,2559,0.360296991012114
+"young CD vs old CD","Downregulated","Adult","Epithelial cell",572,2559,0.223524814380617
+"young CD vs old CD","Downregulated","Adult","Macrophage",199,2559,0.0777647518561938
+"young CD vs old CD","Downregulated","Adult","Enterocyte",147,2559,0.0574443141852286
+"young CD vs old CD","Downregulated","Adult","T cell",120,2559,0.0468933177022274
+"young CD vs old CD","Downregulated","Adult","B cell",97,2559,0.0379054318093005
+"young CD vs old CD","Downregulated","Adult","Granulocyte",94,2559,0.0367330988667448
+"young CD vs old CD","Downregulated","Adult","Hepatocyte",77,2559,0.0300898788589293
+"young CD vs old CD","Downregulated","Adult","Myeloid cell",73,2559,0.028526768268855
+"young CD vs old CD","Downregulated","Adult","Endothelial cell",42,2559,0.0164126611957796
+"young CD vs old CD","Downregulated","Adult","Mesenchymal stem cell",28,2559,0.0109417741305197
+"young CD vs old CD","Downregulated","Adult","Plasma cell",21,2559,0.0082063305978898
+"young CD vs old CD","Downregulated","Adult","Dendritic cell",14,2559,0.00547088706525987
+"young CD vs old CD","Downregulated","Adult","Pancreatic stellate cell",13,2559,0.0050801094177413
+"young CD vs old CD","Downregulated","Adult","Skeletal muscle satellite cell",13,2559,0.0050801094177413
+"young CD vs old CD","Downregulated","Adult","Basal cell",11,2559,0.00429855412270418
+"young CD vs old CD","Downregulated","Adult","Pancreatic ductal cell",11,2559,0.00429855412270418
+"young CD vs old CD","Downregulated","Adult","Mast cell",10,2559,0.00390777647518562
+"young CD vs old CD","Downregulated","Adult","Paneth cell",9,2559,0.00351699882766706
+"young CD vs old CD","Downregulated","Adult","Keratinocyte",7,2559,0.00273544353262993
+"young CD vs old CD","Downregulated","Adult","Natural killer cell",7,2559,0.00273544353262993
+"young CD vs old CD","Downregulated","Adult","Neutrophil",7,2559,0.00273544353262993
+"young CD vs old CD","Downregulated","Adult","Intestinal crypt stem cell",6,2559,0.00234466588511137
+"young CD vs old CD","Downregulated","Adult","Cell of skeletal muscle",5,2559,0.00195388823759281
+"young CD vs old CD","Downregulated","Adult","Melanocyte",5,2559,0.00195388823759281
+"young CD vs old CD","Downregulated","Adult","Goblet cell",4,2559,0.00156311059007425
+"young CD vs old CD","Downregulated","Adult","Hematopoietic stem cell",4,2559,0.00156311059007425
+"young CD vs old CD","Downregulated","Adult","Innate lymphoid cell",4,2559,0.00156311059007425
+"young CD vs old CD","Downregulated","Adult","Muscle cell",4,2559,0.00156311059007425
+"young CD vs old CD","Downregulated","Adult","Smooth muscle cell",4,2559,0.00156311059007425
+"young CD vs old CD","Downregulated","Adult","Stromal cell",4,2559,0.00156311059007425
+"young CD vs old CD","Downregulated","Adult","Fibroblast",3,2559,0.00117233294255569
+"young CD vs old CD","Downregulated","Adult","Ionocyte",3,2559,0.00117233294255569
+"young CD vs old CD","Downregulated","Adult","Transit amplifying cell",3,2559,0.00117233294255569
+"young CD vs old CD","Downregulated","Adult","Basophil",2,2559,0.000781555295037124
+"young CD vs old CD","Downregulated","Adult","Microglial cell",2,2559,0.000781555295037124
+"young CD vs old CD","Downregulated","Adult","Pericyte cell",2,2559,0.000781555295037124
+"young CD vs old CD","Downregulated","Adult","Type B pancreatic cell",2,2559,0.000781555295037124
+"young CD vs old CD","Downregulated","Adult","Acinar cell",1,2559,0.000390777647518562
+"young CD vs old CD","Downregulated","Adult","Club cell",1,2559,0.000390777647518562
+"young CD vs old CD","Downregulated","Adult","Endocrine cell",1,2559,0.000390777647518562
+"young CD vs old CD","Downregulated","Adult","Erythroid progenitor cell",1,2559,0.000390777647518562
+"young CD vs old CD","Downregulated","Adult","Excitatory neuron",1,2559,0.000390777647518562
+"young CD vs old CD","Downregulated","Adult","Langerhans cell",1,2559,0.000390777647518562
+"young CD vs old CD","Downregulated","Adult","Pneumocyte",1,2559,0.000390777647518562
+"young CD vs old CD","Downregulated","Adult","Type II cell of adrenal cortex",1,2559,0.000390777647518562
+"young CD vs old CD","Downregulated","Fetal","Innate lymphoid cell",369,2460,0.15
+"young CD vs old CD","Downregulated","Fetal","Primordial germ cell",273,2460,0.110975609756098
+"young CD vs old CD","Downregulated","Fetal","Dendritic cell",265,2460,0.107723577235772
+"young CD vs old CD","Downregulated","Fetal","Enterocyte",204,2460,0.0829268292682927
+"young CD vs old CD","Downregulated","Fetal","Epithelial cell",198,2460,0.0804878048780488
+"young CD vs old CD","Downregulated","Fetal","Hepatocyte",108,2460,0.0439024390243902
+"young CD vs old CD","Downregulated","Fetal","Erythroid progenitor cell",107,2460,0.0434959349593496
+"young CD vs old CD","Downregulated","Fetal","Hepatoblast",96,2460,0.0390243902439024
+"young CD vs old CD","Downregulated","Fetal","Cell of skeletal muscle",79,2460,0.0321138211382114
+"young CD vs old CD","Downregulated","Fetal","Epithelial fate stem cell",71,2460,0.0288617886178862
+"young CD vs old CD","Downregulated","Fetal","Endothelial cell",60,2460,0.024390243902439
+"young CD vs old CD","Downregulated","Fetal","Neuron",57,2460,0.0231707317073171
+"young CD vs old CD","Downregulated","Fetal","Myeloid cell",56,2460,0.0227642276422764
+"young CD vs old CD","Downregulated","Fetal","Macrophage",50,2460,0.0203252032520325
+"young CD vs old CD","Downregulated","Fetal","Neutrophil",48,2460,0.0195121951219512
+"young CD vs old CD","Downregulated","Fetal","Professional antigen presenting cell",46,2460,0.0186991869918699
+"young CD vs old CD","Downregulated","Fetal","Microglial cell",33,2460,0.0134146341463415
+"young CD vs old CD","Downregulated","Fetal","Fibroblast",30,2460,0.0121951219512195
+"young CD vs old CD","Downregulated","Fetal","Monocyte",30,2460,0.0121951219512195
+"young CD vs old CD","Downregulated","Fetal","Hematopoietic stem cell",29,2460,0.0117886178861789
+"young CD vs old CD","Downregulated","Fetal","Acinar cell",23,2460,0.00934959349593496
+"young CD vs old CD","Downregulated","Fetal","B cell",21,2460,0.00853658536585366
+"young CD vs old CD","Downregulated","Fetal","Mesenchymal stem cell",21,2460,0.00853658536585366
+"young CD vs old CD","Downregulated","Fetal","Chondrocyte",20,2460,0.00813008130081301
+"young CD vs old CD","Downregulated","Fetal","T cell",20,2460,0.00813008130081301
+"young CD vs old CD","Downregulated","Fetal","Smooth muscle cell",16,2460,0.00650406504065041
+"young CD vs old CD","Downregulated","Fetal","Kidney cell",13,2460,0.00528455284552846
+"young CD vs old CD","Downregulated","Fetal","Trophoblast cell",13,2460,0.00528455284552846
+"young CD vs old CD","Downregulated","Fetal","Renal intercalated cell",12,2460,0.0048780487804878
+"young CD vs old CD","Downregulated","Fetal","Endocardial cell",11,2460,0.00447154471544715
+"young CD vs old CD","Downregulated","Fetal","Stromal cell",11,2460,0.00447154471544715
+"young CD vs old CD","Downregulated","Fetal","Epithelial cell of proximal tubule",10,2460,0.0040650406504065
+"young CD vs old CD","Downregulated","Fetal","Goblet cell",10,2460,0.0040650406504065
+"young CD vs old CD","Downregulated","Fetal","Type II cell of adrenal cortex",10,2460,0.0040650406504065
+"young CD vs old CD","Downregulated","Fetal","Erythroblast",8,2460,0.0032520325203252
+"young CD vs old CD","Downregulated","Fetal","Erythroid lineage cell",8,2460,0.0032520325203252
+"young CD vs old CD","Downregulated","Fetal","Mesothelial cell",6,2460,0.0024390243902439
+"young CD vs old CD","Downregulated","Fetal","Excitatory neuron",4,2460,0.0016260162601626
+"young CD vs old CD","Downregulated","Fetal","Endocrine cell",3,2460,0.00121951219512195
+"young CD vs old CD","Downregulated","Fetal","Fetal cardiomyocyte",2,2460,0.000813008130081301
+"young CD vs old CD","Downregulated","Fetal","Megakaryocyte",2,2460,0.000813008130081301
+"young CD vs old CD","Downregulated","Fetal","Astrocyte",1,2460,0.00040650406504065
+"young CD vs old CD","Downregulated","Fetal","Ciliated cell",1,2460,0.00040650406504065
+"young CD vs old CD","Downregulated","Fetal","Inhibitory neuron",1,2460,0.00040650406504065
+"young CD vs old CD","Downregulated","Fetal","Oligodendrocyte",1,2460,0.00040650406504065
+"young CD vs old CD","Downregulated","Fetal","Pancreatic ductal cell",1,2460,0.00040650406504065
+"young CD vs old CD","Downregulated","Fetal","Photoreceptor cell",1,2460,0.00040650406504065
+"young CD vs old CD","Downregulated","Fetal","Retina horizontal cell",1,2460,0.00040650406504065
+"young CD vs old CD","Upregulated","Adult","Glial cell",426,2348,0.181431005110733
+"young CD vs old CD","Upregulated","Adult","Endothelial cell",379,2348,0.161413969335605
+"young CD vs old CD","Upregulated","Adult","Stem cell",260,2348,0.110732538330494
+"young CD vs old CD","Upregulated","Adult","Pericyte cell",221,2348,0.0941226575809199
+"young CD vs old CD","Upregulated","Adult","Fibroblast",191,2348,0.0813458262350937
+"young CD vs old CD","Upregulated","Adult","Basal cell",119,2348,0.0506814310051107
+"young CD vs old CD","Upregulated","Adult","Mesenchymal stem cell",83,2348,0.0353492333901193
+"young CD vs old CD","Upregulated","Adult","Smooth muscle cell",83,2348,0.0353492333901193
+"young CD vs old CD","Upregulated","Adult","Pneumocyte",62,2348,0.0264054514480409
+"young CD vs old CD","Upregulated","Adult","Cell of skeletal muscle",56,2348,0.0238500851788756
+"young CD vs old CD","Upregulated","Adult","Skeletal muscle satellite cell",54,2348,0.0229982964224872
+"young CD vs old CD","Upregulated","Adult","T cell",53,2348,0.022572402044293
+"young CD vs old CD","Upregulated","Adult","Epithelial cell",48,2348,0.020442930153322
+"young CD vs old CD","Upregulated","Adult","Natural killer cell",45,2348,0.0191652470187394
+"young CD vs old CD","Upregulated","Adult","Monocyte",39,2348,0.0166098807495741
+"young CD vs old CD","Upregulated","Adult","Epicardial adipocyte",31,2348,0.0132027257240204
+"young CD vs old CD","Upregulated","Adult","Capillary endothelial cell",25,2348,0.0106473594548552
+"young CD vs old CD","Upregulated","Adult","Melanocyte",25,2348,0.0106473594548552
+"young CD vs old CD","Upregulated","Adult","Neutrophil",20,2348,0.00851788756388416
+"young CD vs old CD","Upregulated","Adult","Club cell",14,2348,0.00596252129471891
+"young CD vs old CD","Upregulated","Adult","Photoreceptor cell",14,2348,0.00596252129471891
+"young CD vs old CD","Upregulated","Adult","Macrophage",13,2348,0.0055366269165247
+"young CD vs old CD","Upregulated","Adult","Intestinal tuft cell",12,2348,0.00511073253833049
+"young CD vs old CD","Upregulated","Adult","Enterocyte",7,2348,0.00298126064735946
+"young CD vs old CD","Upregulated","Adult","Myeloid cell",7,2348,0.00298126064735946
+"young CD vs old CD","Upregulated","Adult","Acinar cell",6,2348,0.00255536626916525
+"young CD vs old CD","Upregulated","Adult","Retinal pigment epithelial cell",6,2348,0.00255536626916525
+"young CD vs old CD","Upregulated","Adult","Stromal cell",5,2348,0.00212947189097104
+"young CD vs old CD","Upregulated","Adult","Goblet cell",4,2348,0.00170357751277683
+"young CD vs old CD","Upregulated","Adult","Hematopoietic stem cell",3,2348,0.00127768313458262
+"young CD vs old CD","Upregulated","Adult","Muscle cell",3,2348,0.00127768313458262
+"young CD vs old CD","Upregulated","Adult","Pancreatic ductal cell",3,2348,0.00127768313458262
+"young CD vs old CD","Upregulated","Adult","Thymocyte",3,2348,0.00127768313458262
+"young CD vs old CD","Upregulated","Adult","B cell",2,2348,0.000851788756388416
+"young CD vs old CD","Upregulated","Adult","Erythroid progenitor cell",2,2348,0.000851788756388416
+"young CD vs old CD","Upregulated","Adult","Excitatory neuron",2,2348,0.000851788756388416
+"young CD vs old CD","Upregulated","Adult","Inhibitory neuron",2,2348,0.000851788756388416
+"young CD vs old CD","Upregulated","Adult","Innate lymphoid cell",2,2348,0.000851788756388416
+"young CD vs old CD","Upregulated","Adult","Intestinal crypt stem cell",2,2348,0.000851788756388416
+"young CD vs old CD","Upregulated","Adult","Keratinocyte",2,2348,0.000851788756388416
+"young CD vs old CD","Upregulated","Adult","Myofibroblast cell",2,2348,0.000851788756388416
+"young CD vs old CD","Upregulated","Adult","Plasma cell",2,2348,0.000851788756388416
+"young CD vs old CD","Upregulated","Adult","Salivary gland cell",2,2348,0.000851788756388416
+"young CD vs old CD","Upregulated","Adult","Type B pancreatic cell",2,2348,0.000851788756388416
+"young CD vs old CD","Upregulated","Adult","Endocrine cell",1,2348,0.000425894378194208
+"young CD vs old CD","Upregulated","Adult","Erythrocyte",1,2348,0.000425894378194208
+"young CD vs old CD","Upregulated","Adult","Langerhans cell",1,2348,0.000425894378194208
+"young CD vs old CD","Upregulated","Adult","Luminal cell of prostate epithelium",1,2348,0.000425894378194208
+"young CD vs old CD","Upregulated","Adult","Mast cell",1,2348,0.000425894378194208
+"young CD vs old CD","Upregulated","Adult","Purkinje cell",1,2348,0.000425894378194208
+"young CD vs old CD","Upregulated","Fetal","Stromal cell",375,2303,0.162831089882762
+"young CD vs old CD","Upregulated","Fetal","Endothelial cell",232,2303,0.100738167607469
+"young CD vs old CD","Upregulated","Fetal","Mesenchymal stem cell",194,2303,0.0842379504993487
+"young CD vs old CD","Upregulated","Fetal","Sertoli cell",193,2303,0.0838037342596613
+"young CD vs old CD","Upregulated","Fetal","Smooth muscle cell",167,2303,0.0725141120277898
+"young CD vs old CD","Upregulated","Fetal","Erythroblast",158,2303,0.0686061658706036
+"young CD vs old CD","Upregulated","Fetal","Erythroid lineage cell",143,2303,0.0620929222752931
+"young CD vs old CD","Upregulated","Fetal","Neuron",91,2303,0.0395136778115502
+"young CD vs old CD","Upregulated","Fetal","Epithelial fate stem cell",86,2303,0.0373425966131133
+"young CD vs old CD","Upregulated","Fetal","Epithelial cell",80,2303,0.0347372991749891
+"young CD vs old CD","Upregulated","Fetal","Fetal cardiomyocyte",76,2303,0.0330004342162397
+"young CD vs old CD","Upregulated","Fetal","Cortical cell of adrenal gland",60,2303,0.0260529743812419
+"young CD vs old CD","Upregulated","Fetal","Cell of skeletal muscle",50,2303,0.0217108119843682
+"young CD vs old CD","Upregulated","Fetal","Enterocyte",43,2303,0.0186712983065567
+"young CD vs old CD","Upregulated","Fetal","Mesangial cell",39,2303,0.0169344333478072
+"young CD vs old CD","Upregulated","Fetal","Megakaryocyte",34,2303,0.0147633521493704
+"young CD vs old CD","Upregulated","Fetal","Chondrocyte",27,2303,0.0117238384715588
+"young CD vs old CD","Upregulated","Fetal","Hematopoietic stem cell",26,2303,0.0112896222318715
+"young CD vs old CD","Upregulated","Fetal","Neutrophil",25,2303,0.0108554059921841
+"young CD vs old CD","Upregulated","Fetal","Primordial germ cell",20,2303,0.00868432479374729
+"young CD vs old CD","Upregulated","Fetal","Kidney loop of Henle epithelial cell",19,2303,0.00825010855405992
+"young CD vs old CD","Upregulated","Fetal","Acinar cell",18,2303,0.00781589231437256
+"young CD vs old CD","Upregulated","Fetal","Astrocyte",13,2303,0.00564481111593574
+"young CD vs old CD","Upregulated","Fetal","Macrophage",12,2303,0.00521059487624837
+"young CD vs old CD","Upregulated","Fetal","Oligodendrocyte",11,2303,0.00477637863656101
+"young CD vs old CD","Upregulated","Fetal","Photoreceptor cell",11,2303,0.00477637863656101
+"young CD vs old CD","Upregulated","Fetal","T cell",11,2303,0.00477637863656101
+"young CD vs old CD","Upregulated","Fetal","Inhibitory neuron",10,2303,0.00434216239687364
+"young CD vs old CD","Upregulated","Fetal","Fibroblast",8,2303,0.00347372991749891
+"young CD vs old CD","Upregulated","Fetal","Lens fibre cell",8,2303,0.00347372991749891
+"young CD vs old CD","Upregulated","Fetal","Erythroid progenitor cell",6,2303,0.00260529743812419
+"young CD vs old CD","Upregulated","Fetal","Mesothelial cell",6,2303,0.00260529743812419
+"young CD vs old CD","Upregulated","Fetal","Bipolar neuron",5,2303,0.00217108119843682
+"young CD vs old CD","Upregulated","Fetal","Glial cell",5,2303,0.00217108119843682
+"young CD vs old CD","Upregulated","Fetal","Schwann cell",5,2303,0.00217108119843682
+"young CD vs old CD","Upregulated","Fetal","Skeletal muscle satellite cell",5,2303,0.00217108119843682
+"young CD vs old CD","Upregulated","Fetal","Endocrine cell",4,2303,0.00173686495874946
+"young CD vs old CD","Upregulated","Fetal","Hepatic stellate cell",3,2303,0.00130264871906209
+"young CD vs old CD","Upregulated","Fetal","Renal intercalated cell",3,2303,0.00130264871906209
+"young CD vs old CD","Upregulated","Fetal","B cell",2,2303,0.000868432479374729
+"young CD vs old CD","Upregulated","Fetal","ENS glia",2,2303,0.000868432479374729
+"young CD vs old CD","Upregulated","Fetal","Excitatory neuron",2,2303,0.000868432479374729
+"young CD vs old CD","Upregulated","Fetal","Innate lymphoid cell",2,2303,0.000868432479374729
+"young CD vs old CD","Upregulated","Fetal","Monocyte",2,2303,0.000868432479374729
+"young CD vs old CD","Upregulated","Fetal","Myeloid cell",2,2303,0.000868432479374729
+"young CD vs old CD","Upregulated","Fetal","Type II cell of adrenal cortex",2,2303,0.000868432479374729
+"young CD vs old CD","Upregulated","Fetal","Dendritic cell",1,2303,0.000434216239687364
+"young CD vs old CD","Upregulated","Fetal","Enteric neural system glia",1,2303,0.000434216239687364
+"young CD vs old CD","Upregulated","Fetal","Epithelial cell of proximal tubule",1,2303,0.000434216239687364
+"young CD vs old CD","Upregulated","Fetal","Microglial cell",1,2303,0.000434216239687364
+"young CD vs old CD","Upregulated","Fetal","Professional antigen presenting cell",1,2303,0.000434216239687364
+"young CD vs old CD","Upregulated","Fetal","Retina horizontal cell",1,2303,0.000434216239687364
+"young CD vs old CD","Upregulated","Fetal","Trophoblast cell",1,2303,0.000434216239687364
