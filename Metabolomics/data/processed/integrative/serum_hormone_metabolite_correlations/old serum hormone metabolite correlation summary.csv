@@ -1,0 +1,37 @@
+analysis_id,analysis_label,output_file,diet_correlation_group,correlation_method,n_combinations,n_tested,n_significant,significance_definition,n_nominal_p_lt_0_05
+pv_metabolite_vs_sac_hormone,metabolite PV vs hormone SAC,old serum pv metabolite vs sac hormone correlations.csv,CD,bicor,27708,25399,0,BH adjusted p < 0.05,1467
+pv_metabolite_vs_sac_hormone,metabolite PV vs hormone SAC,old serum pv metabolite vs sac hormone correlations.csv,CD,pearson,27708,25399,65,BH adjusted p < 0.05,1636
+pv_metabolite_vs_sac_hormone,metabolite PV vs hormone SAC,old serum pv metabolite vs sac hormone correlations.csv,CD,spearman,27708,25399,843,BH adjusted p < 0.05,2422
+pv_metabolite_vs_sac_hormone,metabolite PV vs hormone SAC,old serum pv metabolite vs sac hormone correlations.csv,CD_ID_combined,bicor,27708,25399,0,BH adjusted p < 0.05,1749
+pv_metabolite_vs_sac_hormone,metabolite PV vs hormone SAC,old serum pv metabolite vs sac hormone correlations.csv,CD_ID_combined,pearson,27708,25399,261,BH adjusted p < 0.05,2064
+pv_metabolite_vs_sac_hormone,metabolite PV vs hormone SAC,old serum pv metabolite vs sac hormone correlations.csv,CD_ID_combined,spearman,27708,25399,26,BH adjusted p < 0.05,2178
+pv_metabolite_vs_sac_hormone,metabolite PV vs hormone SAC,old serum pv metabolite vs sac hormone correlations.csv,ID,bicor,25399,25399,0,BH adjusted p < 0.05,1364
+pv_metabolite_vs_sac_hormone,metabolite PV vs hormone SAC,old serum pv metabolite vs sac hormone correlations.csv,ID,pearson,25399,25399,199,BH adjusted p < 0.05,1808
+pv_metabolite_vs_sac_hormone,metabolite PV vs hormone SAC,old serum pv metabolite vs sac hormone correlations.csv,ID,spearman,25399,25399,3,BH adjusted p < 0.05,1673
+sys_sac_metabolite_vs_sac_hormone,metabolite sys_sac vs hormone SAC,old serum sys_sac metabolite vs sac hormone correlations.csv,CD,bicor,27708,25399,0,BH adjusted p < 0.05,1259
+sys_sac_metabolite_vs_sac_hormone,metabolite sys_sac vs hormone SAC,old serum sys_sac metabolite vs sac hormone correlations.csv,CD,pearson,27708,25399,26,BH adjusted p < 0.05,1950
+sys_sac_metabolite_vs_sac_hormone,metabolite sys_sac vs hormone SAC,old serum sys_sac metabolite vs sac hormone correlations.csv,CD,spearman,27708,25399,944,BH adjusted p < 0.05,2485
+sys_sac_metabolite_vs_sac_hormone,metabolite sys_sac vs hormone SAC,old serum sys_sac metabolite vs sac hormone correlations.csv,CD_ID_combined,bicor,27708,25399,0,BH adjusted p < 0.05,1504
+sys_sac_metabolite_vs_sac_hormone,metabolite sys_sac vs hormone SAC,old serum sys_sac metabolite vs sac hormone correlations.csv,CD_ID_combined,pearson,27708,25399,114,BH adjusted p < 0.05,1591
+sys_sac_metabolite_vs_sac_hormone,metabolite sys_sac vs hormone SAC,old serum sys_sac metabolite vs sac hormone correlations.csv,CD_ID_combined,spearman,27708,25399,2,BH adjusted p < 0.05,1765
+sys_sac_metabolite_vs_sac_hormone,metabolite sys_sac vs hormone SAC,old serum sys_sac metabolite vs sac hormone correlations.csv,ID,bicor,25399,25399,0,BH adjusted p < 0.05,1431
+sys_sac_metabolite_vs_sac_hormone,metabolite sys_sac vs hormone SAC,old serum sys_sac metabolite vs sac hormone correlations.csv,ID,pearson,25399,25399,114,BH adjusted p < 0.05,1511
+sys_sac_metabolite_vs_sac_hormone,metabolite sys_sac vs hormone SAC,old serum sys_sac metabolite vs sac hormone correlations.csv,ID,spearman,25399,25399,6,BH adjusted p < 0.05,1584
+tp4_and_sys_sac_metabolite_vs_matched_gtt_and_sac_hormone,metabolite TP4 and sys_sac vs hormone GTT and SAC,old serum tp4 and sys_sac metabolite vs matched gtt and sac hormone correlations.csv,CD,bicor,27264,27264,182,BH adjusted p < 0.05,2921
+tp4_and_sys_sac_metabolite_vs_matched_gtt_and_sac_hormone,metabolite TP4 and sys_sac vs hormone GTT and SAC,old serum tp4 and sys_sac metabolite vs matched gtt and sac hormone correlations.csv,CD,pearson,27264,27264,158,BH adjusted p < 0.05,2749
+tp4_and_sys_sac_metabolite_vs_matched_gtt_and_sac_hormone,metabolite TP4 and sys_sac vs hormone GTT and SAC,old serum tp4 and sys_sac metabolite vs matched gtt and sac hormone correlations.csv,CD,spearman,27264,27264,419,BH adjusted p < 0.05,3597
+tp4_and_sys_sac_metabolite_vs_matched_gtt_and_sac_hormone,metabolite TP4 and sys_sac vs hormone GTT and SAC,old serum tp4 and sys_sac metabolite vs matched gtt and sac hormone correlations.csv,CD_ID_combined,bicor,27264,27264,1343,BH adjusted p < 0.05,4824
+tp4_and_sys_sac_metabolite_vs_matched_gtt_and_sac_hormone,metabolite TP4 and sys_sac vs hormone GTT and SAC,old serum tp4 and sys_sac metabolite vs matched gtt and sac hormone correlations.csv,CD_ID_combined,pearson,27264,27264,646,BH adjusted p < 0.05,3670
+tp4_and_sys_sac_metabolite_vs_matched_gtt_and_sac_hormone,metabolite TP4 and sys_sac vs hormone GTT and SAC,old serum tp4 and sys_sac metabolite vs matched gtt and sac hormone correlations.csv,CD_ID_combined,spearman,27264,27264,2409,BH adjusted p < 0.05,5889
+tp4_and_sys_sac_metabolite_vs_matched_gtt_and_sac_hormone,metabolite TP4 and sys_sac vs hormone GTT and SAC,old serum tp4 and sys_sac metabolite vs matched gtt and sac hormone correlations.csv,ID,bicor,24992,24992,692,BH adjusted p < 0.05,3873
+tp4_and_sys_sac_metabolite_vs_matched_gtt_and_sac_hormone,metabolite TP4 and sys_sac vs hormone GTT and SAC,old serum tp4 and sys_sac metabolite vs matched gtt and sac hormone correlations.csv,ID,pearson,24992,24992,678,BH adjusted p < 0.05,3208
+tp4_and_sys_sac_metabolite_vs_matched_gtt_and_sac_hormone,metabolite TP4 and sys_sac vs hormone GTT and SAC,old serum tp4 and sys_sac metabolite vs matched gtt and sac hormone correlations.csv,ID,spearman,24992,24992,1644,BH adjusted p < 0.05,5016
+tp4_metabolite_vs_gtt_hormone,metabolite TP4 vs hormone GTT,old serum tp4 metabolite vs gtt hormone correlations.csv,CD,bicor,27264,27264,0,BH adjusted p < 0.05,2313
+tp4_metabolite_vs_gtt_hormone,metabolite TP4 vs hormone GTT,old serum tp4 metabolite vs gtt hormone correlations.csv,CD,pearson,27264,27264,56,BH adjusted p < 0.05,2630
+tp4_metabolite_vs_gtt_hormone,metabolite TP4 vs hormone GTT,old serum tp4 metabolite vs gtt hormone correlations.csv,CD,spearman,27264,27264,372,BH adjusted p < 0.05,2945
+tp4_metabolite_vs_gtt_hormone,metabolite TP4 vs hormone GTT,old serum tp4 metabolite vs gtt hormone correlations.csv,CD_ID_combined,bicor,27264,27264,55,BH adjusted p < 0.05,2651
+tp4_metabolite_vs_gtt_hormone,metabolite TP4 vs hormone GTT,old serum tp4 metabolite vs gtt hormone correlations.csv,CD_ID_combined,pearson,27264,27264,122,BH adjusted p < 0.05,2808
+tp4_metabolite_vs_gtt_hormone,metabolite TP4 vs hormone GTT,old serum tp4 metabolite vs gtt hormone correlations.csv,CD_ID_combined,spearman,27264,27264,189,BH adjusted p < 0.05,3189
+tp4_metabolite_vs_gtt_hormone,metabolite TP4 vs hormone GTT,old serum tp4 metabolite vs gtt hormone correlations.csv,ID,bicor,27264,22720,5,BH adjusted p < 0.05,1496
+tp4_metabolite_vs_gtt_hormone,metabolite TP4 vs hormone GTT,old serum tp4 metabolite vs gtt hormone correlations.csv,ID,pearson,27264,22720,1,BH adjusted p < 0.05,1428
+tp4_metabolite_vs_gtt_hormone,metabolite TP4 vs hormone GTT,old serum tp4 metabolite vs gtt hormone correlations.csv,ID,spearman,27264,22720,8,BH adjusted p < 0.05,1780

@@ -1,0 +1,6 @@
+"source","ion.mode","name","formula","mz","rt","med.ic","n.samples"
+"Maven","nega","Inosine-N15","C10H12N4O5",271.06189,9.423,1131544.94,68
+"Maven","nega","Phenylalanine-D2","C9H11NO2",172.122055,9.913,722487.25,68
+"Maven","nega","Valine-C13N15","C5H11NO2",122.085503,12.335,493108.645,68
+"Maven","posi","Phenylalanine-D2","C9H11NO2",174.136276,9.906,762674.375,68
+"Maven","posi","Valine-C13N15","C5H11NO2",124.099709,12.323,427671.735,68

@@ -1,11 +1,14 @@
-# ****** Inulin Aging Mouse Serum Hormone-Metabolite Correlations
+# ****** Inulin Aging Mouse Blood Metabolite-Hormone Correlations
 # ****** Summer 2026 - Ian T, Jessie K, Randa L
 #
 # Pairings:
-# - PV and systemic sacrifice serum metabolites are matched to SAC hormone levels.
+# - PV serum metabolites are matched to SAC hormone levels.
+# - Systemic sacrifice serum metabolites are matched to SAC hormone levels.
 # - TP4 serum metabolites are matched to GTT hormone levels.
-# - Metabolite abundance uses median-adjusted ion count when available, with raw
-#   ion count as fallback for samples lacking normalization, such as TP4.
+# - TP4/GTT and systemic sacrifice/SAC matched observations are combined.
+#
+# Correlations are run among old animals only, separately for CD, ID, and the
+# combined CD/ID group. No filtering or plotting is applied in this script.
 
 
 here::i_am("code/integrative/03_serum_hormone_metabolite_correlations.R")
@@ -18,60 +21,71 @@ library(tidyr)
 library(readr)
 library(stringr)
 library(purrr)
-library(ggplot2)
 
 output_dir = here::here("data/processed/integrative/serum_hormone_metabolite_correlations")
-plot_dir = here::here("plots/integrative/serum_hormone_metabolite_correlations")
 dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
-dir.create(plot_dir, recursive = TRUE, showWarnings = FALSE)
 
-top_n_scatter_hits = 96
+hormone_columns = c(
+  "C-Peptide 2", "Ghrelin", "GIP", "GLP-1", "Glucagon", "Insulin",
+  "Leptin", "Secretin", "PP", "PYY", "Resistin", "Amylin"
+)
 
-# Cairo PDF needs a writable font cache when this script runs in a sandboxed shell.
-Sys.setenv(XDG_CACHE_HOME = tempdir())
+correlation_methods = c("pearson", "spearman", "bicor")
+minimum_n_for_correlation = 3
 
 
-# ========== 1.0 - Read processed serum metabolite and raw hormone data ==========
+# ========== 1.0 - Read serum sample inventory, serum metabolites, and hormones ==========
 # --
 
-official_sample_mapping = readr::read_csv(
-  here::here("data/libraries/hormone to metabolomics sample mapping MLL.csv"),
+serum_sample_inventory = readr::read_csv(
+  here::here("data/processed/sample_inventory/serum_compound_discoverer_sample_inventory.csv"),
   show_col_types = FALSE,
   na = c("", "NA", "N/A")
 ) %>%
   filter(
-    metabolomics_tissue %in% c("Serum PV", "Serum systemic SAC", "Serum TP4")
+    dataset == "serum",
+    sample_type %in% c("pv", "sys_sac", "tp4")
   ) %>%
   mutate(
-    sample = stringr::str_extract(hormone_sample_id, "^[^_]+"),
-    metabolite_timepoint = dplyr::case_when(
-      metabolomics_tissue == "Serum PV" ~ "pv",
-      metabolomics_tissue == "Serum systemic SAC" ~ "sys_sac",
-      metabolomics_tissue == "Serum TP4" ~ "tp4",
+    metabolite_sample_id = paste0("Serum_", sample, "_", sample_type),
+    metabolite_timepoint = sample_type,
+    hormone_sampling_time = case_when(
+      metabolite_timepoint %in% c("pv", "sys_sac") ~ "SAC",
+      metabolite_timepoint == "tp4" ~ "GTT",
       TRUE ~ NA_character_
     ),
-    hormone_sampling_time = dplyr::case_when(
-      hormone_tissue == "Blood SAC" ~ "SAC",
-      hormone_tissue == "Blood GTT" ~ "GTT",
+    hormone_sample_id = paste0(sample, "_", hormone_sampling_time),
+    metabolomics_tissue = case_when(
+      metabolite_timepoint == "pv" ~ "Serum PV",
+      metabolite_timepoint == "sys_sac" ~ "Serum systemic SAC",
+      metabolite_timepoint == "tp4" ~ "Serum TP4",
       TRUE ~ NA_character_
     ),
-    metabolite_diet = factor(diet, levels = c("CD", "ID")),
+    hormone_tissue = paste("Blood", hormone_sampling_time),
+    metabolite_cohort = as.integer(cohort),
+    metabolite_animal = as.integer(stringr::str_extract(sample, "\\d+$")),
     metabolite_age = factor(age, levels = c("Young", "Old")),
-    metabolite_sex = sex,
-    metabolite_cohort = cohort,
-    metabolite_animal = as.integer(stringr::str_extract(sample, "\\d+$"))
+    metabolite_diet = factor(diet, levels = c("CD", "ID")),
+    metabolite_gender = gender,
+    metabolite_sex = dplyr::recode(gender, Female = "F", Male = "M", .default = gender)
   ) %>%
-  select(
-    sample,
-    hormone_sample_id,
-    metabolite_sample_id = metabolomics_sample_id,
-    metabolite_timepoint,
-    hormone_sampling_time,
-    metabolite_cohort,
-    metabolite_animal,
-    metabolite_diet,
-    metabolite_age,
-    metabolite_sex
+  group_by(
+    sample, sample_type, hormone_sample_id, metabolite_sample_id,
+    metabolite_timepoint, hormone_sampling_time,
+    metabolomics_tissue, hormone_tissue
+  ) %>%
+  summarise(
+    metabolite_cohort = first(metabolite_cohort),
+    metabolite_animal = first(metabolite_animal),
+    metabolite_diet = first(metabolite_diet),
+    metabolite_age = first(metabolite_age),
+    metabolite_gender = first(metabolite_gender),
+    metabolite_sex = first(metabolite_sex),
+    died = paste(sort(unique(died[!is.na(died)])), collapse = ";"),
+    timepoint_months = first(timepoint_months),
+    blood_type = first(blood_type),
+    collection_protocol = first(collection_protocol),
+    .groups = "drop"
   )
 
 serum_metabolite_data = readr::read_csv(
@@ -108,7 +122,7 @@ serum_metabolite_data = readr::read_csv(
     !is.na(metabolite_abundance)
   )
 
-hormone_data = readr::read_csv(
+raw_hormone_data = readr::read_csv(
   here::here("data/raw/hormones/luminex_hormone_inulin_aging_raw.csv"),
   show_col_types = FALSE,
   na = c("", "NA", "N/A", "-")
@@ -125,13 +139,51 @@ hormone_data = readr::read_csv(
     hormone_sampling_time = stringr::str_extract(raw_sample_id, "(?<=_).*"),
     hormone_cohort = stringr::str_extract(sample, "^\\d+"),
     hormone_animal = as.integer(stringr::str_extract(sample, "\\d+$"))
+  )
+
+serum_metabolite_samples = serum_metabolite_data %>%
+  distinct(metabolite_sample_id, metabolite_timepoint)
+
+hormone_samples = raw_hormone_data %>%
+  filter(hormone_sampling_time %in% c("SAC", "GTT")) %>%
+  distinct(
+    hormone_sample_id = raw_sample_id,
+    hormone_sampling_time,
+    hormone_sample_mouse_id = sample,
+    hormone_sample_cohort = hormone_cohort,
+    hormone_sample_animal = hormone_animal
+  )
+
+serum_hormone_sample_matches = serum_sample_inventory %>%
+  inner_join(
+    serum_metabolite_samples,
+    by = c("metabolite_sample_id", "metabolite_timepoint")
   ) %>%
+  inner_join(
+    hormone_samples,
+    by = c("hormone_sample_id", "hormone_sampling_time")
+  ) %>%
+  arrange(metabolite_timepoint, sample, hormone_sample_id)
+
+readr::write_csv(
+  serum_hormone_sample_matches %>%
+    transmute(
+      sample,
+      metabolite_sample_id,
+      `metabolite timepoint` = metabolite_timepoint,
+      `hormone sample` = hormone_sample_id,
+      `collection protocol` = collection_protocol,
+      `blood type` = blood_type,
+      `timepoint months` = timepoint_months
+    ),
+  file.path(output_dir, "serum hormone metabolomics sample matches.csv"),
+  na = "N/A"
+)
+
+hormone_data = raw_hormone_data %>%
   filter(hormone_sampling_time %in% c("SAC", "GTT")) %>%
   pivot_longer(
-    cols = c(
-      `C-Peptide 2`, Ghrelin, GIP, `GLP-1`, Glucagon, Insulin,
-      Leptin, Secretin, PP, PYY, Resistin, Amylin
-    ),
+    cols = all_of(hormone_columns),
     names_to = "hormone",
     values_to = "hormone_abundance"
   ) %>%
@@ -139,17 +191,20 @@ hormone_data = readr::read_csv(
     !(sample == "2M33" & raw_sample_id == "2M33_SAC" & hormone == "Secretin")
   ) %>%
   select(
-    hormone_mouse_id = sample, raw_sample_id, hormone_sampling_time,
-    hormone, hormone_abundance,
-    hormone_cohort, hormone_animal,
-    plate, assay_group, well_id
+    hormone_mouse_id = sample,
+    hormone_sample_id = raw_sample_id,
+    hormone_sampling_time,
+    hormone,
+    hormone_abundance,
+    hormone_cohort,
+    hormone_animal
   )
 
 
-# ========== 2.0 - Join matching serum metabolite and hormone observations ==========
+# ========== 2.0 - Join old-animal matched serum metabolite and hormone observations ==========
 # --
 
-matched_observations = official_sample_mapping %>%
+matched_observations = serum_hormone_sample_matches %>%
   inner_join(
     serum_metabolite_data,
     by = c("metabolite_sample_id", "metabolite_timepoint"),
@@ -157,408 +212,283 @@ matched_observations = official_sample_mapping %>%
   ) %>%
   inner_join(
     hormone_data,
-    by = c(
-      "hormone_sample_id" = "raw_sample_id",
-      "hormone_sampling_time"
-    ),
+    by = c("hormone_sample_id", "hormone_sampling_time"),
     relationship = "many-to-many"
   ) %>%
-  filter(!is.na(hormone_abundance))
-
-readr::write_csv(
-  matched_observations,
-  file.path(output_dir, "matched serum hormone metabolite observations.csv"),
-  na = "N/A"
-)
+  filter(
+    metabolite_age == "Old",
+    metabolite_diet %in% c("CD", "ID"),
+    !is.na(metabolite_abundance),
+    !is.na(hormone_abundance)
+  ) %>%
+  mutate(
+    matched_observation_pair = paste0(
+      metabolite_timepoint, "_metabolite_vs_",
+      hormone_sampling_time, "_hormone"
+    )
+  )
 
 matched_sample_summary = matched_observations %>%
-  distinct(sample, metabolite_timepoint, hormone_sampling_time) %>%
-  count(metabolite_timepoint, hormone_sampling_time, name = "n_matched_samples")
+  distinct(sample, metabolite_diet, metabolite_timepoint, hormone_sampling_time) %>%
+  count(metabolite_timepoint, hormone_sampling_time, metabolite_diet, name = "n_matched_old_samples") %>%
+  arrange(metabolite_timepoint, hormone_sampling_time, metabolite_diet)
 
 readr::write_csv(
   matched_sample_summary,
-  file.path(output_dir, "matched serum hormone sample summary.csv"),
+  file.path(output_dir, "old serum hormone matched sample summary.csv"),
   na = "N/A"
 )
 
 
-# ========== 3.0 - Calculate Pearson and Spearman correlations ==========
+# ========== 3.0 - Define requested correlation sets ==========
 # --
 
-calculate_correlations = function(data, correlation_method) {
-  data %>%
-    group_by(
-      metabolite_timepoint, hormone_sampling_time,
-      metabolite_source, metabolite_ion_mode,
-      metabolite, metabolite_formula, metabolite_mz, metabolite_rt,
-      hormone
-    ) %>%
-    summarise(
-      n = n(),
-      n_unique_samples = n_distinct(sample),
-      n_med_adj_ic = sum(metabolite_abundance_source == "med.adj.ic", na.rm = TRUE),
-      n_raw_ion_count_fallback = sum(metabolite_abundance_source == "ion.count", na.rm = TRUE),
-      metabolite_min = min(metabolite_abundance, na.rm = TRUE),
-      metabolite_max = max(metabolite_abundance, na.rm = TRUE),
-      hormone_min = min(hormone_abundance, na.rm = TRUE),
-      hormone_max = max(hormone_abundance, na.rm = TRUE),
-      test = list(
-        if (
-          n() >= 3 &&
-            dplyr::n_distinct(metabolite_abundance) > 1 &&
-            dplyr::n_distinct(hormone_abundance) > 1
-        ) {
-          cor.test(
-            metabolite_abundance,
-            hormone_abundance,
-            method = correlation_method,
-            exact = FALSE
-          )
-        } else {
-          NULL
-        }
-      ),
-      .groups = "drop"
-    ) %>%
-    mutate(
-      correlation_method = correlation_method,
-      correlation = purrr::map_dbl(test, ~ if (is.null(.x)) NA_real_ else unname(.x$estimate)),
-      p_value = purrr::map_dbl(test, ~ if (is.null(.x)) NA_real_ else .x$p.value),
-      p_adj_bh = p.adjust(p_value, method = "BH")
-    ) %>%
-    select(
-      correlation_method,
-      metabolite_timepoint, hormone_sampling_time,
-      metabolite_source, metabolite_ion_mode,
-      metabolite, metabolite_formula, metabolite_mz, metabolite_rt,
-      hormone,
-      n, n_unique_samples, n_med_adj_ic, n_raw_ion_count_fallback,
-      correlation, p_value, p_adj_bh,
-      metabolite_min, metabolite_max,
-      hormone_min, hormone_max
-    ) %>%
-    arrange(p_value, metabolite_timepoint, metabolite_source, metabolite, hormone)
+analysis_specs = tibble::tibble(
+  analysis_id = c(
+    "pv_metabolite_vs_sac_hormone",
+    "sys_sac_metabolite_vs_sac_hormone",
+    "tp4_metabolite_vs_gtt_hormone",
+    "tp4_and_sys_sac_metabolite_vs_matched_gtt_and_sac_hormone"
+  ),
+  analysis_label = c(
+    "metabolite PV vs hormone SAC",
+    "metabolite sys_sac vs hormone SAC",
+    "metabolite TP4 vs hormone GTT",
+    "metabolite TP4 and sys_sac vs hormone GTT and SAC"
+  ),
+  output_file = c(
+    "old serum pv metabolite vs sac hormone correlations.csv",
+    "old serum sys_sac metabolite vs sac hormone correlations.csv",
+    "old serum tp4 metabolite vs gtt hormone correlations.csv",
+    "old serum tp4 and sys_sac metabolite vs matched gtt and sac hormone correlations.csv"
+  ),
+  allowed_pairs = list(
+    tibble::tibble(metabolite_timepoint = "pv", hormone_sampling_time = "SAC"),
+    tibble::tibble(metabolite_timepoint = "sys_sac", hormone_sampling_time = "SAC"),
+    tibble::tibble(metabolite_timepoint = "tp4", hormone_sampling_time = "GTT"),
+    tibble::tibble(
+      metabolite_timepoint = c("tp4", "sys_sac"),
+      hormone_sampling_time = c("GTT", "SAC")
+    )
+  )
+)
+
+
+# ========== 4.0 - Calculate correlations ==========
+# --
+
+add_diet_correlation_groups = function(data) {
+  bind_rows(
+    data %>%
+      filter(metabolite_diet == "CD") %>%
+      mutate(diet_correlation_group = "CD"),
+    data %>%
+      filter(metabolite_diet == "ID") %>%
+      mutate(diet_correlation_group = "ID"),
+    data %>%
+      filter(metabolite_diet %in% c("CD", "ID")) %>%
+      mutate(diet_correlation_group = "CD_ID_combined")
+  )
 }
 
-pearson_correlations = calculate_correlations(matched_observations, "pearson")
-
-spearman_correlations = calculate_correlations(matched_observations, "spearman")
-
-readr::write_csv(
-  pearson_correlations,
-  file.path(output_dir, "pearson serum hormone metabolite correlations.csv"),
-  na = "N/A"
-)
-
-readr::write_csv(
-  spearman_correlations,
-  file.path(output_dir, "spearman serum hormone metabolite correlations.csv"),
-  na = "N/A"
-)
-
-
-# ========== 4.0 - Export nominal Pearson hits for quick review ==========
-# --
-
-pearson_nominal_correlations = pearson_correlations %>%
-  filter(!is.na(p_value), p_value < 0.05) %>%
-  arrange(p_value, metabolite_timepoint, hormone_sampling_time, metabolite, hormone)
-
-readr::write_csv(
-  pearson_nominal_correlations,
-  file.path(output_dir, "pearson nominal p 0.05 serum hormone metabolite correlations.csv"),
-  na = "N/A"
-)
-
-
-# ========== 5.0 - Recalculate Pearson correlations after outlier triage ==========
-# --
-# Match the tissue-hormone triage: flag observations with absolute modified
-# z-score > 3.5 within each serum metabolite-hormone scatter, then recompute
-# Pearson after removing flagged points.
-calculate_modified_z = function(value) {
-  value_median = median(value, na.rm = TRUE)
-  value_mad = stats::mad(value, constant = 1, na.rm = TRUE)
-
-  if (is.na(value_mad) || value_mad == 0) {
-    rep(0, length(value))
+calculate_correlation_test = function(metabolite_abundance, hormone_abundance, correlation_method) {
+  if (
+    length(metabolite_abundance) >= minimum_n_for_correlation &&
+      dplyr::n_distinct(metabolite_abundance) > 1 &&
+      dplyr::n_distinct(hormone_abundance) > 1
+  ) {
+    tryCatch(
+      if (correlation_method == "bicor") {
+        WGCNA::bicorAndPvalue(
+          metabolite_abundance,
+          hormone_abundance,
+          use = "pairwise.complete.obs"
+        )
+      } else {
+        cor.test(
+          metabolite_abundance,
+          hormone_abundance,
+          method = correlation_method,
+          exact = FALSE
+        )
+      },
+      error = function(error) NULL
+    )
   } else {
-    0.6745 * (value - value_median) / value_mad
+    NULL
   }
 }
 
-pearson_outlier_flagged_observations = matched_observations %>%
-  group_by(
-    metabolite_timepoint, hormone_sampling_time,
-    metabolite_source, metabolite_ion_mode,
-    metabolite, metabolite_formula, metabolite_mz, metabolite_rt,
-    hormone
-  ) %>%
-  mutate(
-    metabolite_modified_z = calculate_modified_z(metabolite_abundance),
-    hormone_modified_z = calculate_modified_z(hormone_abundance),
-    metabolite_outlier = abs(metabolite_modified_z) > 3.5,
-    hormone_outlier = abs(hormone_modified_z) > 3.5,
-    pearson_triage_outlier = metabolite_outlier | hormone_outlier
-  ) %>%
-  ungroup()
+extract_correlation = function(test, correlation_method) {
+  if (is.null(test)) {
+    NA_real_
+  } else if (correlation_method == "bicor") {
+    unname(test$bicor[1, 1])
+  } else {
+    unname(test$estimate)
+  }
+}
 
-readr::write_csv(
-  pearson_outlier_flagged_observations %>%
-    filter(pearson_triage_outlier) %>%
-    arrange(desc(abs(metabolite_modified_z)), desc(abs(hormone_modified_z))),
-  file.path(output_dir, "pearson triage outlier flagged serum hormone metabolite observations.csv"),
-  na = "N/A"
-)
+extract_p_value = function(test, correlation_method) {
+  if (is.null(test)) {
+    NA_real_
+  } else if (correlation_method == "bicor") {
+    unname(test$p[1, 1])
+  } else {
+    test$p.value
+  }
+}
 
-pearson_outlier_summary = pearson_outlier_flagged_observations %>%
-  group_by(
-    metabolite_timepoint, hormone_sampling_time,
-    metabolite_source, metabolite_ion_mode,
-    metabolite, metabolite_formula, metabolite_mz, metabolite_rt,
-    hormone
-  ) %>%
-  summarise(
-    n_before_outlier_filter = n(),
-    n_outlier_removed = sum(pearson_triage_outlier),
-    removed_samples = paste(sample[pearson_triage_outlier], collapse = ";"),
-    removed_for_metabolite = paste(sample[metabolite_outlier], collapse = ";"),
-    removed_for_hormone = paste(sample[hormone_outlier], collapse = ";"),
-    .groups = "drop"
-  )
-
-readr::write_csv(
-  pearson_outlier_summary,
-  file.path(output_dir, "pearson outlier summary serum hormone metabolite correlations.csv"),
-  na = "N/A"
-)
-
-pearson_outlier_filtered_observations = pearson_outlier_flagged_observations %>%
-  filter(!pearson_triage_outlier)
-
-calculate_outlier_filtered_pearson = function(data) {
-  data %>%
+calculate_correlations = function(data, current_correlation_method, required_observation_pairs) {
+  summarised_correlations = data %>%
     group_by(
-      metabolite_timepoint, hormone_sampling_time,
-      metabolite_source, metabolite_ion_mode,
-      metabolite, metabolite_formula, metabolite_mz, metabolite_rt,
+      diet_correlation_group,
+      analysis_id,
+      analysis_label,
+      metabolite_source,
+      metabolite_ion_mode,
+      metabolite,
+      metabolite_formula,
+      metabolite_mz,
+      metabolite_rt,
       hormone
     ) %>%
     summarise(
+      matched_observation_pairs = paste(sort(unique(matched_observation_pair)), collapse = ";"),
+      n_matched_observation_pairs = n_distinct(matched_observation_pair),
+      metabolite_timepoints = paste(sort(unique(metabolite_timepoint)), collapse = ";"),
+      hormone_sampling_times = paste(sort(unique(hormone_sampling_time)), collapse = ";"),
       n = n(),
       n_unique_samples = n_distinct(sample),
-      n_med_adj_ic = sum(metabolite_abundance_source == "med.adj.ic", na.rm = TRUE),
-      n_raw_ion_count_fallback = sum(metabolite_abundance_source == "ion.count", na.rm = TRUE),
+      n_unique_metabolite_samples = n_distinct(metabolite_sample_id),
+      n_unique_hormone_samples = n_distinct(hormone_sample_id),
       n_cd = n_distinct(sample[metabolite_diet == "CD"]),
       n_id = n_distinct(sample[metabolite_diet == "ID"]),
-      n_young = n_distinct(sample[metabolite_age == "Young"]),
-      n_old = n_distinct(sample[metabolite_age == "Old"]),
+      n_med_adj_ic = sum(metabolite_abundance_source == "med.adj.ic", na.rm = TRUE),
+      n_raw_ion_count_fallback = sum(metabolite_abundance_source == "ion.count", na.rm = TRUE),
       metabolite_min = min(metabolite_abundance, na.rm = TRUE),
       metabolite_max = max(metabolite_abundance, na.rm = TRUE),
       hormone_min = min(hormone_abundance, na.rm = TRUE),
       hormone_max = max(hormone_abundance, na.rm = TRUE),
-      test = list(
-        if (
-          n() >= 8 &&
-            dplyr::n_distinct(metabolite_abundance) > 1 &&
-            dplyr::n_distinct(hormone_abundance) > 1
-        ) {
-          cor.test(
-            metabolite_abundance,
-            hormone_abundance,
-            method = "pearson",
-            exact = FALSE
-          )
-        } else {
-          NULL
-        }
-      ),
+      test = list(calculate_correlation_test(
+        metabolite_abundance,
+        hormone_abundance,
+        current_correlation_method
+      )),
       .groups = "drop"
-    ) %>%
-    mutate(
-      correlation_method = "pearson",
-      correlation = purrr::map_dbl(test, ~ if (is.null(.x)) NA_real_ else unname(.x$estimate)),
-      p_value = purrr::map_dbl(test, ~ if (is.null(.x)) NA_real_ else .x$p.value),
-      p_adj_bh = p.adjust(p_value, method = "BH")
-    ) %>%
-    left_join(
-      pearson_outlier_summary,
-      by = c(
-        "metabolite_timepoint", "hormone_sampling_time",
-        "metabolite_source", "metabolite_ion_mode",
-        "metabolite", "metabolite_formula", "metabolite_mz", "metabolite_rt",
-        "hormone"
-      )
-    ) %>%
-    select(
-      correlation_method,
-      metabolite_timepoint, hormone_sampling_time,
-      metabolite_source, metabolite_ion_mode,
-      metabolite, metabolite_formula, metabolite_mz, metabolite_rt,
-      hormone,
-      n, n_unique_samples,
-      n_before_outlier_filter, n_outlier_removed,
-      removed_samples, removed_for_metabolite, removed_for_hormone,
-      n_med_adj_ic, n_raw_ion_count_fallback,
-      n_cd, n_id, n_young, n_old,
-      correlation, p_value, p_adj_bh,
-      metabolite_min, metabolite_max,
-      hormone_min, hormone_max
-    ) %>%
-    arrange(p_value, metabolite_timepoint, metabolite_source, metabolite, hormone)
-}
-
-pearson_outlier_filtered_correlations = calculate_outlier_filtered_pearson(
-  pearson_outlier_filtered_observations
-)
-
-pearson_outlier_filtered_nominal_correlations = pearson_outlier_filtered_correlations %>%
-  filter(!is.na(p_value), p_value < 0.05) %>%
-  arrange(p_value, metabolite_timepoint, hormone_sampling_time, metabolite, hormone)
-
-readr::write_csv(
-  pearson_outlier_filtered_correlations,
-  file.path(output_dir, "pearson outlier filtered serum hormone metabolite correlations.csv"),
-  na = "N/A"
-)
-
-readr::write_csv(
-  pearson_outlier_filtered_nominal_correlations,
-  file.path(output_dir, "pearson outlier filtered nominal p 0.05 serum hormone metabolite correlations.csv"),
-  na = "N/A"
-)
-
-
-# ========== 6.0 - Plot top outlier-filtered Pearson hits by serum-hormone pairing ==========
-# --
-
-make_plot_metabolite_label = function(metabolite) {
-  metabolite %>%
-    stringr::str_replace("^\\([^)]{1,25}\\)-", "") %>%
-    stringr::str_replace("^\\([^)]{1,25}\\)", "") %>%
-    stringr::str_replace_all("α", "alpha") %>%
-    stringr::str_replace_all("β", "beta") %>%
-    stringr::str_replace_all("γ", "gamma") %>%
-    stringr::str_replace_all("δ", "delta") %>%
-    stringr::str_squish() %>%
-    stringr::str_trunc(width = 55)
-}
-
-plot_top_pearson_hits = function(current_metabolite_timepoint, current_hormone_sampling_time, output_file) {
-  current_correlations = pearson_outlier_filtered_correlations %>%
-    filter(
-      metabolite_timepoint == current_metabolite_timepoint,
-      hormone_sampling_time == current_hormone_sampling_time,
-      !is.na(p_value)
-    ) %>%
-    arrange(p_value, desc(abs(correlation)), metabolite, hormone) %>%
-    slice_head(n = top_n_scatter_hits) %>%
-    mutate(
-      plot_label = paste0(
-        make_plot_metabolite_label(metabolite), " | ", hormone,
-        "\nr = ", round(correlation, 2),
-        ", p = ", signif(p_value, 3),
-        ", p_adj = ", signif(p_adj_bh, 3),
-        ", n = ", n_unique_samples,
-        ", outliers removed = ", n_outlier_removed,
-        "\n", metabolite_source, " ", metabolite_ion_mode,
-        " | med.adj n = ", n_med_adj_ic,
-        ", raw n = ", n_raw_ion_count_fallback
-      ),
-      plot_page = ceiling(row_number() / 12)
     )
 
-  if (nrow(current_correlations) == 0) {
-    if (file.exists(output_file)) {
-      file.remove(output_file)
-    }
-    return(invisible(NULL))
-  }
+  summarised_correlations %>%
+    filter(n_matched_observation_pairs == required_observation_pairs) %>%
+    mutate(
+      correlation_method = current_correlation_method,
+      correlation = purrr::map_dbl(test, ~ extract_correlation(.x, current_correlation_method)),
+      p_value = purrr::map_dbl(test, ~ extract_p_value(.x, current_correlation_method))
+    ) %>%
+    group_by(analysis_id, diet_correlation_group, correlation_method) %>%
+    mutate(p_adj_bh = p.adjust(p_value, method = "BH")) %>%
+    ungroup() %>%
+    select(
+      diet_correlation_group,
+      analysis_id,
+      analysis_label,
+      correlation_method,
+      matched_observation_pairs,
+      n_matched_observation_pairs,
+      metabolite_timepoints,
+      hormone_sampling_times,
+      metabolite_source,
+      metabolite_ion_mode,
+      metabolite,
+      metabolite_formula,
+      metabolite_mz,
+      metabolite_rt,
+      hormone,
+      n,
+      n_unique_samples,
+      n_unique_metabolite_samples,
+      n_unique_hormone_samples,
+      n_cd,
+      n_id,
+      n_med_adj_ic,
+      n_raw_ion_count_fallback,
+      correlation,
+      p_value,
+      p_adj_bh,
+      metabolite_min,
+      metabolite_max,
+      hormone_min,
+      hormone_max
+    ) %>%
+    arrange(
+      diet_correlation_group,
+      correlation_method,
+      p_value,
+      metabolite_source,
+      metabolite_ion_mode,
+      metabolite,
+      hormone
+    )
+}
 
-  grDevices::cairo_pdf(
-    output_file,
-    width = 14,
-    height = 10
+calculate_analysis_correlations = function(spec_row) {
+  required_observation_pairs = nrow(spec_row$allowed_pairs[[1]])
+
+  analysis_observations = matched_observations %>%
+    semi_join(
+      spec_row$allowed_pairs[[1]],
+      by = c("metabolite_timepoint", "hormone_sampling_time")
+    ) %>%
+    mutate(
+      analysis_id = spec_row$analysis_id,
+      analysis_label = spec_row$analysis_label
+    ) %>%
+    add_diet_correlation_groups()
+
+  correlations = purrr::map_dfr(
+    correlation_methods,
+    ~ calculate_correlations(analysis_observations, .x, required_observation_pairs)
   )
 
-  for (current_page in sort(unique(current_correlations$plot_page))) {
-    page_correlations = current_correlations %>%
-      filter(plot_page == current_page)
+  readr::write_csv(
+    correlations,
+    file.path(output_dir, spec_row$output_file),
+    na = "N/A"
+  )
 
-    page_observations = pearson_outlier_filtered_observations %>%
-      inner_join(
-        page_correlations %>%
-          select(
-            metabolite_timepoint, hormone_sampling_time,
-            metabolite_source, metabolite_ion_mode,
-            metabolite, metabolite_formula, metabolite_mz, metabolite_rt,
-            hormone, plot_label
-          ),
-        by = c(
-          "metabolite_timepoint", "hormone_sampling_time",
-          "metabolite_source", "metabolite_ion_mode",
-          "metabolite", "metabolite_formula", "metabolite_mz", "metabolite_rt",
-          "hormone"
-        )
-      ) %>%
-      mutate(
-        plot_label = factor(plot_label, levels = page_correlations$plot_label)
-      )
-
-    print(
-      ggplot(
-        page_observations,
-        aes(x = metabolite_abundance, y = hormone_abundance)
-      ) +
-        geom_point(aes(color = metabolite_diet, shape = metabolite_age), size = 2.1, alpha = 0.85) +
-        geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "black", linewidth = 0.35) +
-        facet_wrap(~ plot_label, scales = "free", ncol = 4) +
-        scale_color_manual(
-          values = c(CD = "#0057b8", ID = "#00843d"),
-          na.value = "grey50"
-        ) +
-        scale_shape_manual(
-          values = c("Young" = 17, "Old" = 16),
-          na.value = 4
-        ) +
-        labs(
-          title = paste0(
-            "Top ", top_n_scatter_hits, " outlier-filtered Pearson serum hormone-metabolite hits: ",
-            current_metabolite_timepoint, " metabolites vs ", current_hormone_sampling_time, " hormones"
-          ),
-          subtitle = paste("Page", current_page, "of", max(current_correlations$plot_page)),
-          x = "Serum metabolite abundance",
-          y = "Hormone abundance",
-          color = "Diet",
-          shape = "Age"
-        ) +
-        theme_bw(base_size = 9) +
-        theme(
-          strip.text = element_text(size = 6.5),
-          axis.text = element_text(size = 6),
-          legend.position = "bottom",
-          plot.title = element_text(face = "bold")
-        )
-    )
-  }
-
-  dev.off()
+  correlations %>%
+    mutate(output_file = spec_row$output_file, .after = analysis_label)
 }
 
-plot_top_pearson_hits(
-  "pv",
-  "SAC",
-  file.path(plot_dir, "pearson outlier filtered top 96 hits pv vs sac hormones.pdf")
+correlation_results = purrr::map_dfr(
+  seq_len(nrow(analysis_specs)),
+  ~ calculate_analysis_correlations(analysis_specs[.x, ])
 )
 
-plot_top_pearson_hits(
-  "sys_sac",
-  "SAC",
-  file.path(plot_dir, "pearson outlier filtered top 96 hits sys sac vs sac hormones.pdf")
-)
 
-plot_top_pearson_hits(
-  "tp4",
-  "GTT",
-  file.path(plot_dir, "pearson outlier filtered top 96 hits tp4 vs gtt hormones.pdf")
+# ========== 5.0 - Summarise correlation output sizes and significant results ==========
+# --
+
+correlation_summary = correlation_results %>%
+  group_by(
+    analysis_id,
+    analysis_label,
+    output_file,
+    diet_correlation_group,
+    correlation_method
+  ) %>%
+  summarise(
+    n_combinations = n(),
+    n_tested = sum(!is.na(p_value)),
+    n_significant = sum(!is.na(p_adj_bh) & p_adj_bh < 0.05),
+    n_nominal_p_lt_0_05 = sum(!is.na(p_value) & p_value < 0.05),
+    .groups = "drop"
+  ) %>%
+  mutate(significance_definition = "BH adjusted p < 0.05", .after = n_significant) %>%
+  arrange(analysis_id, diet_correlation_group, correlation_method)
+
+readr::write_csv(
+  correlation_summary,
+  file.path(output_dir, "old serum hormone metabolite correlation summary.csv"),
+  na = "N/A"
 )

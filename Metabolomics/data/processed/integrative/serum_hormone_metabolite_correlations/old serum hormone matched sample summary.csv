@@ -1,0 +1,7 @@
+metabolite_timepoint,hormone_sampling_time,metabolite_diet,n_matched_old_samples
+pv,SAC,CD,16
+pv,SAC,ID,19
+sys_sac,SAC,CD,14
+sys_sac,SAC,ID,18
+tp4,GTT,CD,16
+tp4,GTT,ID,20
