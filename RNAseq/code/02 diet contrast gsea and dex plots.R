@@ -18,6 +18,25 @@ dir.create(here("data/processed/pathway_enrichment/go_gsea"), recursive = TRUE, 
 dir.create(here("data/processed/pathway_enrichment/msigdb_hallmark"), recursive = TRUE, showWarnings = FALSE)
 dir.create(here("plots/diet DEx/gsea"), recursive = TRUE, showWarnings = FALSE)
 
+ggsave = function(filename, plot = ggplot2::last_plot(), ...) {
+  file_ext = tools::file_ext(filename)
+  if (identical(file_ext, "")) file_ext = "pdf"
+
+  temp_file = tempfile(fileext = paste0(".", file_ext))
+  on.exit(unlink(temp_file), add = TRUE)
+
+  if (identical(tolower(file_ext), "pdf")) {
+    ggplot2::ggsave(filename = temp_file, plot = plot, device = grDevices::cairo_pdf, ...)
+  } else {
+    ggplot2::ggsave(filename = temp_file, plot = plot, ...)
+  }
+  if (!file.copy(temp_file, filename, overwrite = TRUE)) {
+    stop("Could not copy plot file to: ", filename)
+  }
+
+  invisible(filename)
+}
+
 # ========== 1.0 - Volcano ~cohort + diet (old only) ====
 
 # -- Some aging genes I got from GPT
@@ -207,10 +226,6 @@ vol_cat = ggplot(voldata, aes(x = log2FoldChange, y = neg_log10_pvalue)) +
       override.aes = list(size = 3, alpha = 1)
     )
   )
-
-vol_cat
-
-
 
 # ========== 2.0 - GO BP GSEA and ORA ==========
 # Uses the old ID vs CD DESeq2 result from the ~ cohort + diet model above.
@@ -447,10 +462,6 @@ ora_down_gobp_tbl = gobp_stat$ora_down_tbl
 ora_gobp_plot = gobp_stat$ora_plot
 
 gobp_enrichment_plot = gobp_stat$combined_plot
-gobp_enrichment_plot
-
-
-gsea_gobp_plot
 ggsave(here("plots/diet DEx/gsea/go bp gsea.pdf"),h=9,w=7)
 
 
@@ -601,7 +612,6 @@ gocc_logFC = gocc_enrichment_results$logFC
 gsea_gocc = gocc_stat$gsea
 gsea_gocc_tbl = gocc_stat$gsea_tbl
 gsea_gocc_plot = gocc_stat$gsea_plot
-gsea_gocc_plot
 ggsave(here("plots/diet DEx/gsea/go cc gsea.pdf"),h=9,w=7)
 
 # ========== 2.2 - MSigDB Hallmark GSEA ==========
@@ -749,8 +759,6 @@ hallmark_stat = hallmark_enrichment_results$stat
 hallmark_gsea = hallmark_stat$gsea
 hallmark_gsea_tbl = hallmark_stat$gsea_tbl
 hallmark_gsea_plot = hallmark_stat$gsea_plot
-hallmark_gsea_plot
-
 
 # ========== 3.0 - Summary figure: volcano plus stat-ranked GSEA (not final) ==========
 # Volcano highlights significant genes in the top activated/suppressed GO BP
@@ -1313,6 +1321,7 @@ mll_refined_x_limit = max(
   max(abs(mll_refined_volcano_labels$log2FoldChange), na.rm = TRUE) + 0.35
 )
 mll_refined_x_limit = ceiling(mll_refined_x_limit * 2) / 2
+mll_refined_x_limit = min(3, mll_refined_x_limit)
 mll_refined_y_limit = max(
   2,
   quantile(mll_refined_volcano_data$neg_log10_pvalue, 0.995, na.rm = TRUE),
@@ -1333,7 +1342,7 @@ mll_refined_volcano = ggplot(mll_refined_volcano_data, aes(log2FoldChange, neg_l
   ) +
   geom_point(
     data = mll_refined_volcano_data %>% dplyr::filter(
-      label_group == "MLL selected",
+      !is.na(label_group),
       superpathway == "Other"
     ),
     color = "black",
@@ -1354,28 +1363,36 @@ mll_refined_volcano = ggplot(mll_refined_volcano_data, aes(log2FoldChange, neg_l
     aes(label = gene_label),
     color = "black",
     fontface = "bold",
-    size = 4.8,
-    box.padding = 0.45,
-    point.padding = 0.2,
+    size = 5.6,
+    box.padding = 0.65,
+    point.padding = 0.12,
     min.segment.length = 0,
     max.overlaps = Inf,
     segment.color = "grey35",
     segment.size = 0.45,
     segment.alpha = 0.95,
     segment.linetype = "solid",
-    force = 1.5,
-    force_pull = 1,
+    force = 4,
+    force_pull = 0.25,
+    max.time = 2,
+    max.iter = 10000,
     show.legend = FALSE
   ) +
   scale_color_manual(
     values = mll_visual_category_colors,
     breaks = mll_visual_category_levels,
-    name = "GSEA core enrichment groups:",
+    labels = c(
+      "ECM / Adhesion / Cytoskeleton",
+      "Immune signaling",
+      "Mitochondrial / Translation",
+      "Proteostasis / Trafficking"
+    ),
+    name = NULL,
     drop = FALSE
   ) +
-  coord_cartesian(xlim = c(-mll_refined_x_limit, mll_refined_x_limit), ylim = c(0, mll_refined_y_limit)) +
+  coord_cartesian(xlim = c(-mll_refined_x_limit, mll_refined_x_limit), ylim = c(0, mll_refined_y_limit), clip = "off") +
   labs(
-    x = expression(log[2]~fold~change~"(Inulin Diet/Control Diet)"),
+    x = expression(log[2]*"FC (Inulin Diet/Control Diet)"),
     y = expression(-log[10]~italic(P))
   ) +
   theme_classic(base_size = 12, base_family = "Helvetica") +
@@ -1389,15 +1406,16 @@ mll_refined_volcano = ggplot(mll_refined_volcano_data, aes(log2FoldChange, neg_l
     legend.position = "top",
     legend.direction = "horizontal",
     legend.title = element_text(face = "bold", size = 14),
-    legend.text = element_text(size = 12),
-    legend.key.size = grid::unit(6, "mm")
+    legend.text = element_text(size = 15),
+    legend.key.size = grid::unit(8, "mm"),
+    plot.margin = margin(5.5, 18, 5.5, 18)
   ) +
-  guides(color = guide_legend(nrow = 1, byrow = TRUE, override.aes = list(size = 4.2, alpha = 0.85)))
+  guides(color = guide_legend(nrow = 2, byrow = TRUE, override.aes = list(size = 5.4, alpha = 0.85)))
 
 ggsave(
   here("plots/diet DEx/volcano with refined GO superpathways MLL labels.pdf"),
   mll_refined_volcano,
-  width = 13,
+  width = 11,
   height = 7
 )
 
@@ -1584,8 +1602,6 @@ mll_refined_volcano_gsea_summary_figure = plot_grid(
   rel_heights = c(1, 2)
 )
 
-mll_refined_volcano_gsea_summary_figure
-
 ggsave(
   here("plots/diet DEx/volcano and gsea with refined GO superpathways MLL labels.pdf"),
   mll_refined_volcano_gsea_summary_figure,
@@ -1593,7 +1609,6 @@ ggsave(
   height = 15
 )
 
-mll_refined_gsea_plot
 ggsave(
   here("plots/diet DEx/gsea/go bp and cc refined pathways.pdf"),
   mll_refined_gsea_plot,

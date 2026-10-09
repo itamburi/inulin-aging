@@ -12,10 +12,13 @@ here::i_am("code/03 age contrast deseq2 and gsea overlap.R")
 # This script compares two pathway-level contrasts:
 #   1. young CD vs old CD: aging signal among control-diet mice.
 #   2. old ID vs old CD: inulin diet signal among old mice.
+# It also writes an auxiliary pairwise DESeq2 contrast:
+#   3. old ID vs young CD: combined age/diet difference for selected summaries.
 #
 # Positive log2FoldChange/stat/NES values mean higher in the first group listed:
 #   - young CD vs old CD: higher in young CD.
 #   - old ID vs old CD: higher in old ID.
+#   - old ID vs young CD: higher in old ID.
 #
 # The old ID vs old CD contrast is read from the canonical DESeq2 object saved
 # by script 01 so there is one source of truth for the diet contrast.
@@ -40,7 +43,7 @@ meta = read.csv(here("data/metadata/metadata.csv")) %>%
     diet = factor(diet, levels = c("CD", "ID"))
   )
 
-cnts = read.csv(here("data/processed/counts/counts matrix with mouse gene symbols.csv")) %>%
+cnts = read.csv(here("data/processed/counts/raw counts matrix with mouse gene symbols.csv")) %>%
   column_to_rownames(var = "gene_id")
 
 cnts = cnts[, meta$sample]
@@ -116,9 +119,39 @@ age_cd_deseq = run_deseq2_contrast(
 age_cd_res = age_cd_deseq$res_tbl
 
 
-# ========== 4.0 - Read DESeq2: old ID vs old CD ==========
+# ========== 4.0 - DESeq2: old ID vs young CD ==========
+# This pairwise comparison spans both age and diet. Cohort is confounded with
+# group, so the model is group only. Positive values mean higher in old ID.
+samples_old_id_young_cd = meta %>%
+  dplyr::filter(
+    (age.grp == "old" & diet == "ID") |
+      (age.grp == "young" & diet == "CD")
+  ) %>%
+  mutate(
+    comparison_group = case_when(
+      age.grp == "old" & diet == "ID" ~ "old_ID",
+      age.grp == "young" & diet == "CD" ~ "young_CD"
+    ),
+    comparison_group = factor(comparison_group, levels = c("young_CD", "old_ID"))
+  ) %>%
+  arrange(comparison_group, cohort, sample)
+
+table(samples_old_id_young_cd$comparison_group, samples_old_id_young_cd$cohort)
+
+old_id_young_cd_deseq = run_deseq2_contrast(
+  samples = samples_old_id_young_cd,
+  design_formula = ~ comparison_group,
+  contrast_vector = c("comparison_group", "old_ID", "young_CD"),
+  comparison_label = "old ID vs young CD",
+  output_file = here("data/processed/deseq2/deseq2 old ID vs young CD.csv")
+)
+
+old_id_young_cd_res = old_id_young_cd_deseq$res_tbl
+
+
+# ========== 5.0 - Read DESeq2: old ID vs old CD ==========
 # This reuses the diet contrast from script 01, adjusted for cohort.
-diet_old_deseq_file = here("data/processed/deseq2/deseq2 old ID vs CD cohort adjusted objects.rds")
+diet_old_deseq_file = here("data/processed/deseq2/deseq2 ID vs CD old only cohort adjusted objects.rds")
 if (!file.exists(diet_old_deseq_file)) {
   stop(
     "Missing saved diet DESeq2 object: ",
@@ -131,7 +164,7 @@ diet_old_deseq = readRDS(diet_old_deseq_file)
 diet_old_res = diet_old_deseq$res2
 
 
-# ========== 5.0 - GO BP and GO CC GSEA ==========
+# ========== 6.0 - GO BP and GO CC GSEA ==========
 gene_symbol_to_entrez = AnnotationDbi::select(
   org.Mm.eg.db,
   keys = unique(c(age_cd_res$gene.id, diet_old_res$gene.id)),

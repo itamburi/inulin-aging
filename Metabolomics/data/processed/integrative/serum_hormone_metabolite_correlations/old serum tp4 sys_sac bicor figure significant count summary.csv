@@ -1,0 +1,63 @@
+diet_correlation_group,hormone,correlation_direction,n_hits
+CD,C-Peptide 2,positive,8
+CD,GIP,negative,11
+CD,GIP,positive,14
+CD,GLP-1,negative,2
+CD,GLP-1,positive,4
+CD,Ghrelin,negative,1
+CD,Ghrelin,positive,7
+CD,Glucagon,negative,32
+CD,Glucagon,positive,51
+CD,Insulin,negative,3
+CD,Insulin,positive,6
+CD,Leptin,negative,3
+CD,Leptin,positive,6
+CD,PP,positive,1
+CD,PYY,negative,2
+CD,PYY,positive,10
+CD,Resistin,positive,2
+CD,Secretin,negative,1
+CD,Secretin,positive,18
+ID,Amylin,negative,2
+ID,Amylin,positive,4
+ID,C-Peptide 2,negative,9
+ID,C-Peptide 2,positive,13
+ID,GIP,negative,7
+ID,GIP,positive,25
+ID,GLP-1,negative,39
+ID,GLP-1,positive,69
+ID,Glucagon,negative,28
+ID,Glucagon,positive,35
+ID,Insulin,positive,5
+ID,Leptin,negative,4
+ID,PP,negative,5
+ID,PP,positive,1
+ID,PYY,negative,74
+ID,PYY,positive,102
+ID,Resistin,negative,71
+ID,Resistin,positive,90
+ID,Secretin,negative,32
+ID,Secretin,positive,77
+CD+ID,Amylin,negative,13
+CD+ID,Amylin,positive,8
+CD+ID,C-Peptide 2,negative,33
+CD+ID,C-Peptide 2,positive,47
+CD+ID,GIP,negative,60
+CD+ID,GIP,positive,101
+CD+ID,GLP-1,negative,48
+CD+ID,GLP-1,positive,56
+CD+ID,Ghrelin,negative,2
+CD+ID,Ghrelin,positive,2
+CD+ID,Glucagon,negative,126
+CD+ID,Glucagon,positive,172
+CD+ID,Insulin,negative,12
+CD+ID,Insulin,positive,31
+CD+ID,Leptin,negative,16
+CD+ID,Leptin,positive,25
+CD+ID,PP,negative,1
+CD+ID,PYY,negative,118
+CD+ID,PYY,positive,155
+CD+ID,Resistin,negative,41
+CD+ID,Resistin,positive,78
+CD+ID,Secretin,negative,80
+CD+ID,Secretin,positive,118

@@ -492,3 +492,203 @@ readr::write_csv(
   file.path(output_dir, "old serum hormone metabolite correlation summary.csv"),
   na = "N/A"
 )
+
+
+# ========== 6.0 - Export compact CD+ID bicor table for TP4/GTT and sys_sac/SAC analysis ==========
+# --
+
+tp4_sys_sac_cd_id_bicor_results = correlation_results %>%
+  filter(
+    analysis_id == "tp4_and_sys_sac_metabolite_vs_matched_gtt_and_sac_hormone",
+    diet_correlation_group == "CD_ID_combined",
+    correlation_method == "bicor"
+  ) %>%
+  mutate(
+    abs_correlation = abs(correlation),
+    correlation_direction = case_when(
+      correlation > 0 ~ "positive",
+      correlation < 0 ~ "negative",
+      TRUE ~ "zero"
+    )
+  ) %>%
+  arrange(p_adj_bh, p_value, desc(abs_correlation), metabolite, hormone) %>%
+  mutate(result_rank = row_number(), .before = 1) %>%
+  select(
+    result_rank,
+    analysis_label,
+    diet_correlation_group,
+    correlation_method,
+    metabolite_timepoints,
+    hormone_sampling_times,
+    metabolite_source,
+    metabolite_ion_mode,
+    metabolite,
+    metabolite_formula,
+    metabolite_mz,
+    metabolite_rt,
+    hormone,
+    n,
+    n_unique_samples,
+    n_unique_metabolite_samples,
+    n_unique_hormone_samples,
+    n_cd,
+    n_id,
+    correlation,
+    abs_correlation,
+    correlation_direction,
+    p_value,
+    p_adj_bh,
+    n_raw_ion_count_fallback,
+    metabolite_min,
+    metabolite_max,
+    hormone_min,
+    hormone_max
+  ) %>%
+  mutate(
+    across(
+      where(is.character),
+      ~ trimws(gsub("[[:space:]]+", " ", .x))
+    )
+  )
+
+readr::write_csv(
+  tp4_sys_sac_cd_id_bicor_results,
+  file.path(output_dir, "old serum tp4 sys_sac matched gtt sac CD ID combined bicor essential results.csv"),
+  na = "N/A"
+)
+
+
+# ========== 7.0 - Export nominal bicor hits with metabolite diet statistics ==========
+# --
+
+safe_mean = function(x) {
+  if (length(x) == 0 || all(is.na(x))) {
+    NA_real_
+  } else {
+    mean(x, na.rm = TRUE)
+  }
+}
+
+calculate_welch_t_test_p_value = function(metabolite_abundance, metabolite_diet) {
+  test_data = tibble::tibble(
+    metabolite_abundance = metabolite_abundance,
+    metabolite_diet = as.character(metabolite_diet)
+  ) %>%
+    filter(
+      !is.na(metabolite_abundance),
+      metabolite_diet %in% c("CD", "ID")
+    )
+
+  if (
+    n_distinct(test_data$metabolite_diet) < 2 ||
+      sum(test_data$metabolite_diet == "CD") < 2 ||
+      sum(test_data$metabolite_diet == "ID") < 2
+  ) {
+    return(NA_real_)
+  }
+
+  tryCatch(
+    t.test(
+      metabolite_abundance ~ metabolite_diet,
+      data = test_data
+    )$p.value,
+    error = function(error) NA_real_
+  )
+}
+
+metabolite_diet_statistics = serum_sample_inventory %>%
+  inner_join(
+    serum_metabolite_data,
+    by = c("metabolite_sample_id", "metabolite_timepoint")
+  ) %>%
+  filter(
+    metabolite_age == "Old",
+    metabolite_diet %in% c("CD", "ID"),
+    metabolite_timepoint %in% c("tp4", "sys_sac"),
+    !is.na(metabolite_abundance)
+  ) %>%
+  mutate(
+    across(
+      c(metabolite_source, metabolite_ion_mode, metabolite, metabolite_formula),
+      ~ trimws(gsub("[[:space:]]+", " ", .x))
+    )
+  ) %>%
+  group_by(
+    metabolite_timepoint,
+    metabolite_source,
+    metabolite_ion_mode,
+    metabolite,
+    metabolite_formula,
+    metabolite_mz,
+    metabolite_rt
+  ) %>%
+  summarise(
+    n_cd = n_distinct(sample[metabolite_diet == "CD"]),
+    n_id = n_distinct(sample[metabolite_diet == "ID"]),
+    mean_cd = safe_mean(metabolite_abundance[metabolite_diet == "CD"]),
+    mean_id = safe_mean(metabolite_abundance[metabolite_diet == "ID"]),
+    fc_id_vs_cd = if_else(!is.na(mean_cd) & mean_cd > 0, mean_id / mean_cd, NA_real_),
+    log2_fc_id_vs_cd = if_else(
+      !is.na(mean_cd) & mean_cd > 0 & !is.na(mean_id) & mean_id > 0,
+      log2(mean_id / mean_cd),
+      NA_real_
+    ),
+    ttest_p_value = calculate_welch_t_test_p_value(
+      metabolite_abundance,
+      metabolite_diet
+    ),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    metabolite_timepoint = recode(
+      metabolite_timepoint,
+      tp4 = "gtt",
+      sys_sac = "sac"
+    )
+  ) %>%
+  pivot_wider(
+    id_cols = c(
+      metabolite_source,
+      metabolite_ion_mode,
+      metabolite,
+      metabolite_formula,
+      metabolite_mz,
+      metabolite_rt
+    ),
+    names_from = metabolite_timepoint,
+    values_from = c(
+      n_cd,
+      n_id,
+      mean_cd,
+      mean_id,
+      fc_id_vs_cd,
+      log2_fc_id_vs_cd,
+      ttest_p_value
+    ),
+    names_glue = "metabolite_{metabolite_timepoint}_{.value}"
+  )
+
+tp4_sys_sac_cd_id_bicor_nominal_results = tp4_sys_sac_cd_id_bicor_results %>%
+  filter(!is.na(p_value), p_value < 0.05) %>%
+  left_join(
+    metabolite_diet_statistics,
+    by = c(
+      "metabolite_source",
+      "metabolite_ion_mode",
+      "metabolite",
+      "metabolite_formula",
+      "metabolite_mz",
+      "metabolite_rt"
+    )
+  ) %>%
+  arrange(p_value, p_adj_bh, desc(abs_correlation), metabolite, hormone) %>%
+  mutate(nominal_result_rank = row_number(), .before = 1)
+
+readr::write_csv(
+  tp4_sys_sac_cd_id_bicor_nominal_results,
+  file.path(
+    output_dir,
+    "old serum tp4 sys_sac matched gtt sac CD ID combined bicor nominal p significant with metabolite diet stats.csv"
+  ),
+  na = "N/A"
+)

@@ -1,0 +1,261 @@
+pair_id,pair_label,hormone,correlation_column,correlation,p_value,p_adj_bh,n,significance_level,correlation_label
+CD||posi||Dimethylguanidino valeric acid||C8H15N3O3||202.11855||10.539||GLP-1,"Dimethylguanidino valeric acid
+GLP-1",GLP-1,CD pooled states,0.4516502570909139,0.01223096013685165,0.2699922286419448,30,p < 0.05,0.45
+CD||posi||Anserine||C10H16N4O3||241.1294||15.19||Insulin,"Anserine
+Insulin",Insulin,CD pooled states,0.6570895513354702,7.995070589231322e-5,0.02675543760106091,30,BH < 0.05,0.66
+CD||nega||Tetrahydrocortisol||C21H34O5||365.23342||3.806||C-Peptide 2,"Tetrahydrocortisol
+C-Peptide 2",C-Peptide 2,CD pooled states,-0.5681100306918792,0.0010568635303098,0.08376435609106568,30,p < 0.05,-0.57
+CD||posi||Anserine||C10H16N4O3||241.1294||15.19||C-Peptide 2,"Anserine
+C-Peptide 2",C-Peptide 2,CD pooled states,0.6366655144287747,1.5526477529067542e-4,0.03515075767622734,30,BH < 0.05,0.64
+CD||posi||Uracil||C4H4N2O2||113.03457||4.899||Leptin,"Uracil
+Leptin",Leptin,CD pooled states,-0.577278687756559,8.378068185498351e-4,0.07639453211017626,30,p < 0.05,-0.58
+CD||posi||L-Valine||C5H11NO2||118.08624||12.014||Resistin,"L-Valine
+Resistin",Resistin,CD pooled states,0.4413955926086641,0.01461545076509065,0.2896656864013517,30,p < 0.05,0.44
+CD||posi||SM(d16:1/24:1(15Z))||C45H89N2O6P||785.65103||3.835||Insulin,"SM(d16:1/24:1(15Z))
+Insulin",Insulin,CD pooled states,0.7017499365292115,1.552704259111998e-5,0.01787185251622037,30,BH < 0.05,0.70
+"CD||nega||PS(16:0/22:6(4Z,7Z,10Z,13Z,16Z,19Z))||C44H74NO10P||806.49857||3.79||C-Peptide 2","PS(16:0/22:6(4Z,7Z,10Z,13Z,16Z,19Z))
+C-Peptide 2",C-Peptide 2,CD pooled states,0.571854458356074,9.620030198370778e-4,0.08065291291591258,30,p < 0.05,0.57
+CD||posi||3-hydroxyoctanoylcarnitine||C15H29NO5||624.44625||2.485||Leptin,"3-hydroxyoctanoylcarnitine
+Leptin",Leptin,CD pooled states,0.40081165635140714,0.02816274108831848,0.3730947390825632,30,p < 0.05,0.40
+CD||posi||Talinolol||C20H33N3O3||364.261||2.833||C-Peptide 2,"Talinolol
+C-Peptide 2",C-Peptide 2,CD pooled states,0.4769624535433811,0.00769940822722344,0.21708031634645297,30,p < 0.05,0.48
+"CD||nega||13,14-dihydro-15-keto-tetranor prostaglandin f1?||C16H28O5||299.18632||3.681||C-Peptide 2","13,14-dihydro-15-keto-tetranor
+prostaglandin f1?
+C-Peptide 2",C-Peptide 2,CD pooled states,-0.4151725658447475,0.02252213525218765,0.34066082984599105,30,p < 0.05,-0.42
+CD||posi||PE(18:1(11Z)/P-18:1(11Z))||C41H78NO7P||728.5592||2.883||Resistin,"PE(18:1(11Z)/P-18:1(11Z))
+Resistin",Resistin,CD pooled states,0.6826533043796892,3.238653311440602e-5,0.02253263952906147,30,BH < 0.05,0.68
+"CD||nega||PS(18:0/18:2(9Z,12Z))||C42H78NO10P||786.53076||3.759||Insulin","PS(18:0/18:2(9Z,12Z))
+Insulin",Insulin,CD pooled states,0.4388234249620396,0.01527075332721833,0.2940267081308478,30,p < 0.05,0.44
+CD||nega||12-Hydroxydodecanoic acid||C12H24O3||215.1651||2.223||C-Peptide 2,"12-Hydroxydodecanoic acid
+C-Peptide 2",C-Peptide 2,CD pooled states,0.5281170243480147,0.0027026041067373,0.1351996300295155,30,p < 0.05,0.53
+"CD||posi||3,4-dehydrothiomorpholine-3-carboxylic acid||C5H7NO2S||146.02707||7.168||Resistin","3,4-dehydrothiomorpholine-3-carboxylic
+acid
+Resistin",Resistin,CD pooled states,-0.4439765317863376,0.01398162254622151,0.28375765526332486,30,p < 0.05,-0.44
+"CD||nega||PS(16:0/22:6(4Z,7Z,10Z,13Z,16Z,19Z))||C44H74NO10P||806.49857||3.79||Insulin","PS(16:0/22:6(4Z,7Z,10Z,13Z,16Z,19Z))
+Insulin",Insulin,CD pooled states,0.512975629116606,0.00374655638668144,0.15691762510254248,30,p < 0.05,0.51
+CD||posi||5-Hydroxy-L-tryptophan||C11H12N2O3||221.09192||10.457||C-Peptide 2,"5-Hydroxy-L-tryptophan
+C-Peptide 2",C-Peptide 2,CD pooled states,-0.41694884083974937,0.02189407088914226,0.3378017264235771,30,p < 0.05,-0.42
+"CD||posi||N-{4-[(4R)-4-methyl-6-oxo-1,4,5,6-tetrahydropyridazin-3-yl]phenyl}acetamide||C13H15N3O2||246.12383||9.048||Insulin","N-{4-[(4R)-4-methyl-6-oxo-1,4,5,6-tetrahydropyridazin-3-yl]phenyl}acetamide
+Insulin",Insulin,CD pooled states,-0.461171751588446,0.0103173936707615,0.24761744809827613,30,p < 0.05,-0.46
+CD||posi||SM(d18:1/23:0)||C46H93N2O6P||816.29226||3.523||C-Peptide 2,"SM(d18:1/23:0)
+C-Peptide 2",C-Peptide 2,CD pooled states,-0.4041427094490934,0.02676154029315119,0.365727636367155,30,p < 0.05,-0.40
+CD||posi||SM(d18:1/18:0)||C41H83N2O6P||731.60594||3.868||C-Peptide 2,"SM(d18:1/18:0)
+C-Peptide 2",C-Peptide 2,CD pooled states,-0.37228482246942785,0.04277241182078459,0.4421530736193613,30,p < 0.05,-0.37
+CD||posi||quindoxin||C8H6N2O2||163.05015||7.855||Leptin,"quindoxin
+Leptin",Leptin,CD pooled states,-0.6253319236610075,2.1994347676806896e-4,0.04252864503974916,30,BH < 0.05,-0.63
+"CD||posi||2,4-Diaminotoluene||C7H10N2||123.09176||7.317||Insulin","2,4-Diaminotoluene
+Insulin",Insulin,CD pooled states,0.4200456530394759,0.02083354057778496,0.3319102270508452,30,p < 0.05,0.42
+CD||posi||Biguanide||C2H7N5||124.05915||6.141||Insulin,"Biguanide
+Insulin",Insulin,CD pooled states,0.5098506950526054,0.00400050995082743,0.1630533306048008,30,p < 0.05,0.51
+CD||posi||4-Bromophenylthiourea||C7H7BrN2S||230.95768||15.116||Leptin,"4-Bromophenylthiourea
+Leptin",Leptin,CD pooled states,0.4764177203296339,0.0077792914165844,0.21820432220345384,30,p < 0.05,0.48
+CD||nega||Hexadecanedioic acid||C16H30O4||285.20703||3.919||C-Peptide 2,"Hexadecanedioic acid
+C-Peptide 2",C-Peptide 2,CD pooled states,-0.5136492182856,0.0036936674648507,0.15540763852112574,30,p < 0.05,-0.51
+CD||posi||Dimethylguanidino valeric acid||C8H15N3O3||202.11855||10.539||GLP-1,"Dimethylguanidino valeric acid
+GLP-1",GLP-1,ID pooled states,0.6299589643939489,2.9416138374760263e-5,0.00534420014455581,37,BH < 0.05,0.63
+CD||posi||Anserine||C10H16N4O3||241.1294||15.19||Insulin,"Anserine
+Insulin",Insulin,ID pooled states,0.5596179124700535,2.593150803174636e-4,0.01900528588649281,38,BH < 0.05,0.56
+CD||nega||Tetrahydrocortisol||C21H34O5||365.23342||3.806||C-Peptide 2,"Tetrahydrocortisol
+C-Peptide 2",C-Peptide 2,ID pooled states,-0.5497288337531008,5.149115785653589e-4,0.02720649084884873,36,BH < 0.05,-0.55
+CD||posi||Anserine||C10H16N4O3||241.1294||15.19||C-Peptide 2,"Anserine
+C-Peptide 2",C-Peptide 2,ID pooled states,0.4645199301656241,0.00431559472764365,0.09310540246923532,36,p < 0.05,0.46
+CD||posi||Uracil||C4H4N2O2||113.03457||4.899||Leptin,"Uracil
+Leptin",Leptin,ID pooled states,-0.4088055729645904,0.01199908847942501,0.15956710246652422,37,p < 0.05,-0.41
+CD||posi||L-Valine||C5H11NO2||118.08624||12.014||Resistin,"L-Valine
+Resistin",Resistin,ID pooled states,0.5746338754977524,1.995713554620788e-4,0.01635463317497909,37,BH < 0.05,0.57
+CD||posi||SM(d16:1/24:1(15Z))||C45H89N2O6P||785.65103||3.835||Insulin,"SM(d16:1/24:1(15Z))
+Insulin",Insulin,ID pooled states,0.3290418633207715,0.04367960396791242,0.30184324435818094,38,p < 0.05,0.33
+"CD||nega||PS(16:0/22:6(4Z,7Z,10Z,13Z,16Z,19Z))||C44H74NO10P||806.49857||3.79||C-Peptide 2","PS(16:0/22:6(4Z,7Z,10Z,13Z,16Z,19Z))
+C-Peptide 2",C-Peptide 2,ID pooled states,0.4475967378278825,0.00619536453905594,0.11325795241861654,36,p < 0.05,0.45
+CD||posi||3-hydroxyoctanoylcarnitine||C15H29NO5||624.44625||2.485||Leptin,"3-hydroxyoctanoylcarnitine
+Leptin",Leptin,ID pooled states,0.32796052271133297,0.04752116546072748,0.31428869833160467,37,p < 0.05,0.33
+CD||posi||Talinolol||C20H33N3O3||364.261||2.833||C-Peptide 2,"Talinolol
+C-Peptide 2",C-Peptide 2,ID pooled states,0.42343273180596736,0.01007441749737713,0.1451180646077518,36,p < 0.05,0.42
+"CD||nega||13,14-dihydro-15-keto-tetranor prostaglandin f1?||C16H28O5||299.18632||3.681||C-Peptide 2","13,14-dihydro-15-keto-tetranor
+prostaglandin f1?
+C-Peptide 2",C-Peptide 2,ID pooled states,-0.5671639462300833,3.0982858956148606e-4,0.02115638281508377,36,BH < 0.05,-0.57
+CD||posi||PE(18:1(11Z)/P-18:1(11Z))||C41H78NO7P||728.5592||2.883||Resistin,"PE(18:1(11Z)/P-18:1(11Z))
+Resistin",Resistin,ID pooled states,0.33691673126102856,0.04144074029315234,0.2957415709327422,37,p < 0.05,0.34
+"CD||nega||PS(18:0/18:2(9Z,12Z))||C42H78NO10P||786.53076||3.759||Insulin","PS(18:0/18:2(9Z,12Z))
+Insulin",Insulin,ID pooled states,0.4512764197616673,0.00505622190278747,0.10150834128778288,37,p < 0.05,0.45
+CD||nega||12-Hydroxydodecanoic acid||C12H24O3||215.1651||2.223||C-Peptide 2,"12-Hydroxydodecanoic acid
+C-Peptide 2",C-Peptide 2,ID pooled states,0.38471424819541744,0.02051515771504427,0.21017771148551131,36,p < 0.05,0.38
+"CD||posi||3,4-dehydrothiomorpholine-3-carboxylic acid||C5H7NO2S||146.02707||7.168||Resistin","3,4-dehydrothiomorpholine-3-carboxylic
+acid
+Resistin",Resistin,ID pooled states,-0.55345155016516,3.8072249919236833e-4,0.0233211193622933,37,BH < 0.05,-0.55
+"CD||nega||PS(16:0/22:6(4Z,7Z,10Z,13Z,16Z,19Z))||C44H74NO10P||806.49857||3.79||Insulin","PS(16:0/22:6(4Z,7Z,10Z,13Z,16Z,19Z))
+Insulin",Insulin,ID pooled states,0.4189739707586273,0.00985104647805553,0.14297175004620438,37,p < 0.05,0.42
+CD||posi||5-Hydroxy-L-tryptophan||C11H12N2O3||221.09192||10.457||C-Peptide 2,"5-Hydroxy-L-tryptophan
+C-Peptide 2",C-Peptide 2,ID pooled states,-0.5000664343918672,0.00189884706543035,0.05909836346106519,36,p < 0.05,-0.50
+"CD||posi||N-{4-[(4R)-4-methyl-6-oxo-1,4,5,6-tetrahydropyridazin-3-yl]phenyl}acetamide||C13H15N3O2||246.12383||9.048||Insulin","N-{4-[(4R)-4-methyl-6-oxo-1,4,5,6-tetrahydropyridazin-3-yl]phenyl}acetamide
+Insulin",Insulin,ID pooled states,-0.4084043942980776,0.01091026705418585,0.15165149845284362,38,p < 0.05,-0.41
+CD||posi||SM(d18:1/23:0)||C46H93N2O6P||816.29226||3.523||C-Peptide 2,"SM(d18:1/23:0)
+C-Peptide 2",C-Peptide 2,ID pooled states,-0.4402913195001637,0.00720247822302943,0.12241547645433644,36,p < 0.05,-0.44
+CD||posi||SM(d18:1/18:0)||C41H83N2O6P||731.60594||3.868||C-Peptide 2,"SM(d18:1/18:0)
+C-Peptide 2",C-Peptide 2,ID pooled states,-0.4918890324102302,0.0023114674798451,0.06678404075871547,36,p < 0.05,-0.49
+CD||posi||quindoxin||C8H6N2O2||163.05015||7.855||Leptin,"quindoxin
+Leptin",Leptin,ID pooled states,-0.3436082251230266,0.03732218212117797,0.2822257112170892,37,p < 0.05,-0.34
+"CD||posi||2,4-Diaminotoluene||C7H10N2||123.09176||7.317||Insulin","2,4-Diaminotoluene
+Insulin",Insulin,ID pooled states,0.4441634860393797,0.00521325169577306,0.10307720441515864,38,p < 0.05,0.44
+CD||posi||Biguanide||C2H7N5||124.05915||6.141||Insulin,"Biguanide
+Insulin",Insulin,ID pooled states,0.379707177482407,0.01870769523198821,0.20037574204480008,38,p < 0.05,0.38
+CD||posi||4-Bromophenylthiourea||C7H7BrN2S||230.95768||15.116||Leptin,"4-Bromophenylthiourea
+Leptin",Leptin,ID pooled states,0.38993919494896934,0.01704199259809801,0.19120181585825935,37,p < 0.05,0.39
+CD||nega||Hexadecanedioic acid||C16H30O4||285.20703||3.919||C-Peptide 2,"Hexadecanedioic acid
+C-Peptide 2",C-Peptide 2,ID pooled states,-0.3517532012540774,0.03539650721308549,0.274388805294489,36,p < 0.05,-0.35
+CD||posi||Dimethylguanidino valeric acid||C8H15N3O3||202.11855||10.539||GLP-1,"Dimethylguanidino valeric acid
+GLP-1",GLP-1,CD+ID pooled states,0.5962243600724703,1.0172856502213177e-7,7.971277427063189e-5,67,BH < 0.05,0.60
+CD||posi||Anserine||C10H16N4O3||241.1294||15.19||Insulin,"Anserine
+Insulin",Insulin,CD+ID pooled states,0.5666771949807337,4.717175329310321e-7,1.9786010488971785e-4,68,BH < 0.05,0.57
+CD||nega||Tetrahydrocortisol||C21H34O5||365.23342||3.806||C-Peptide 2,"Tetrahydrocortisol
+C-Peptide 2",C-Peptide 2,CD+ID pooled states,-0.5262354493156663,5.676514181232096e-6,0.00116364272659482,66,BH < 0.05,-0.53
+CD||posi||Anserine||C10H16N4O3||241.1294||15.19||C-Peptide 2,"Anserine
+C-Peptide 2",C-Peptide 2,CD+ID pooled states,0.5207583862976727,7.378714065086063e-6,0.00141671310049652,66,BH < 0.05,0.52
+CD||posi||Uracil||C4H4N2O2||113.03457||4.899||Leptin,"Uracil
+Leptin",Leptin,CD+ID pooled states,-0.5082581436471593,1.1289091979010303e-5,0.00183205835545081,67,BH < 0.05,-0.51
+CD||posi||L-Valine||C5H11NO2||118.08624||12.014||Resistin,"L-Valine
+Resistin",Resistin,CD+ID pooled states,0.5076774551593457,1.159657867403336e-5,0.00185423904244494,67,BH < 0.05,0.51
+CD||posi||SM(d16:1/24:1(15Z))||C45H89N2O6P||785.65103||3.835||Insulin,"SM(d16:1/24:1(15Z))
+Insulin",Insulin,CD+ID pooled states,0.5042721834125137,1.1629800332236136e-5,0.00185423904244494,68,BH < 0.05,0.50
+"CD||nega||PS(16:0/22:6(4Z,7Z,10Z,13Z,16Z,19Z))||C44H74NO10P||806.49857||3.79||C-Peptide 2","PS(16:0/22:6(4Z,7Z,10Z,13Z,16Z,19Z))
+C-Peptide 2",C-Peptide 2,CD+ID pooled states,0.4966948524650116,2.2167107257646395e-5,0.00281099540591847,66,BH < 0.05,0.50
+CD||posi||3-hydroxyoctanoylcarnitine||C15H29NO5||624.44625||2.485||Leptin,"3-hydroxyoctanoylcarnitine
+Leptin",Leptin,CD+ID pooled states,0.48748344706423474,2.865836501967588e-5,0.00327127622263047,67,BH < 0.05,0.49
+CD||posi||Talinolol||C20H33N3O3||364.261||2.833||C-Peptide 2,"Talinolol
+C-Peptide 2",C-Peptide 2,CD+ID pooled states,0.4751477846171968,5.546177135779224e-5,0.00488484657585549,66,BH < 0.05,0.48
+"CD||nega||13,14-dihydro-15-keto-tetranor prostaglandin f1?||C16H28O5||299.18632||3.681||C-Peptide 2","13,14-dihydro-15-keto-tetranor
+prostaglandin f1?
+C-Peptide 2",C-Peptide 2,CD+ID pooled states,-0.46398380784321175,8.711725598319359e-5,0.00626555043592279,66,BH < 0.05,-0.46
+CD||posi||PE(18:1(11Z)/P-18:1(11Z))||C41H78NO7P||728.5592||2.883||Resistin,"PE(18:1(11Z)/P-18:1(11Z))
+Resistin",Resistin,CD+ID pooled states,0.45949261252432994,9.174077956148278e-5,0.00636442904316607,67,BH < 0.05,0.46
+"CD||nega||PS(18:0/18:2(9Z,12Z))||C42H78NO10P||786.53076||3.759||Insulin","PS(18:0/18:2(9Z,12Z))
+Insulin",Insulin,CD+ID pooled states,0.45842302949262353,9.5722701829883e-5,0.00649199935992519,67,BH < 0.05,0.46
+CD||nega||12-Hydroxydodecanoic acid||C12H24O3||215.1651||2.223||C-Peptide 2,"12-Hydroxydodecanoic acid
+C-Peptide 2",C-Peptide 2,CD+ID pooled states,0.4612457324962325,9.709033477163634e-5,0.00655215566142052,66,BH < 0.05,0.46
+"CD||posi||3,4-dehydrothiomorpholine-3-carboxylic acid||C5H7NO2S||146.02707||7.168||Resistin","3,4-dehydrothiomorpholine-3-carboxylic
+acid
+Resistin",Resistin,CD+ID pooled states,-0.449480934925636,1.358061444885243e-4,0.00818231232709892,67,BH < 0.05,-0.45
+"CD||nega||PS(16:0/22:6(4Z,7Z,10Z,13Z,16Z,19Z))||C44H74NO10P||806.49857||3.79||Insulin","PS(16:0/22:6(4Z,7Z,10Z,13Z,16Z,19Z))
+Insulin",Insulin,CD+ID pooled states,0.4403985280351034,1.918534416681259e-4,0.0098321282587214,67,BH < 0.05,0.44
+CD||posi||5-Hydroxy-L-tryptophan||C11H12N2O3||221.09192||10.457||C-Peptide 2,"5-Hydroxy-L-tryptophan
+C-Peptide 2",C-Peptide 2,CD+ID pooled states,-0.44246241744837134,1.9933039263848908e-4,0.01011049360523964,66,BH < 0.05,-0.44
+"CD||posi||N-{4-[(4R)-4-methyl-6-oxo-1,4,5,6-tetrahydropyridazin-3-yl]phenyl}acetamide||C13H15N3O2||246.12383||9.048||Insulin","N-{4-[(4R)-4-methyl-6-oxo-1,4,5,6-tetrahydropyridazin-3-yl]phenyl}acetamide
+Insulin",Insulin,CD+ID pooled states,-0.43280534600387077,2.2762461368896537e-4,0.01099442408615105,68,BH < 0.05,-0.43
+CD||posi||SM(d18:1/23:0)||C46H93N2O6P||816.29226||3.523||C-Peptide 2,"SM(d18:1/23:0)
+C-Peptide 2",C-Peptide 2,CD+ID pooled states,-0.4295642137127286,3.1903701244219174e-4,0.01342318689386406,66,BH < 0.05,-0.43
+CD||posi||SM(d18:1/18:0)||C41H83N2O6P||731.60594||3.868||C-Peptide 2,"SM(d18:1/18:0)
+C-Peptide 2",C-Peptide 2,CD+ID pooled states,-0.4277476737643563,3.403783521102124e-4,0.0138508587939296,66,BH < 0.05,-0.43
+CD||posi||quindoxin||C8H6N2O2||163.05015||7.855||Leptin,"quindoxin
+Leptin",Leptin,CD+ID pooled states,-0.4237595952799166,3.525131902494912e-4,0.01408116676419221,67,BH < 0.05,-0.42
+"CD||posi||2,4-Diaminotoluene||C7H10N2||123.09176||7.317||Insulin","2,4-Diaminotoluene
+Insulin",Insulin,CD+ID pooled states,0.41895261935389305,3.768375778582038e-4,0.01463546969049297,68,BH < 0.05,0.42
+CD||posi||Biguanide||C2H7N5||124.05915||6.141||Insulin,"Biguanide
+Insulin",Insulin,CD+ID pooled states,0.4127135586575281,4.6960730853684395e-4,0.01678030623846463,68,BH < 0.05,0.41
+CD||posi||4-Bromophenylthiourea||C7H7BrN2S||230.95768||15.116||Leptin,"4-Bromophenylthiourea
+Leptin",Leptin,CD+ID pooled states,0.410954690933946,5.513777876423371e-4,0.01862796034979018,67,BH < 0.05,0.41
+CD||nega||Hexadecanedioic acid||C16H30O4||285.20703||3.919||C-Peptide 2,"Hexadecanedioic acid
+C-Peptide 2",C-Peptide 2,CD+ID pooled states,-0.40058504964514086,8.593408803343828e-4,0.02495108600791971,66,BH < 0.05,-0.40
+CD||posi||Dimethylguanidino valeric acid||C8H15N3O3||202.11855||10.539||GLP-1,"Dimethylguanidino valeric acid
+GLP-1",GLP-1,TP4/GTT CD+ID,0.6108427439927091,9.727770108311255e-5,0.04822144076963601,35,BH < 0.05,0.61
+CD||posi||Anserine||C10H16N4O3||241.1294||15.19||Insulin,"Anserine
+Insulin",Insulin,TP4/GTT CD+ID,0.4550230172874637,0.00529809657243505,0.2331948915931988,36,p < 0.05,0.46
+CD||nega||Tetrahydrocortisol||C21H34O5||365.23342||3.806||C-Peptide 2,"Tetrahydrocortisol
+C-Peptide 2",C-Peptide 2,TP4/GTT CD+ID,-0.5057922641245683,0.00227604625539711,0.16736212001635567,34,p < 0.05,-0.51
+CD||posi||Anserine||C10H16N4O3||241.1294||15.19||C-Peptide 2,"Anserine
+C-Peptide 2",C-Peptide 2,TP4/GTT CD+ID,0.5324442260557596,0.00118911464755042,0.13396703202816063,34,p < 0.05,0.53
+CD||posi||Uracil||C4H4N2O2||113.03457||4.899||Leptin,"Uracil
+Leptin",Leptin,TP4/GTT CD+ID,-0.6516056516191571,2.2363114286404287e-5,0.0298613670494353,35,BH < 0.05,-0.65
+CD||posi||L-Valine||C5H11NO2||118.08624||12.014||Resistin,"L-Valine
+Resistin",Resistin,TP4/GTT CD+ID,0.4161931600012723,0.01288995996236999,0.32690777307516933,35,p < 0.05,0.42
+CD||posi||SM(d16:1/24:1(15Z))||C45H89N2O6P||785.65103||3.835||Insulin,"SM(d16:1/24:1(15Z))
+Insulin",Insulin,TP4/GTT CD+ID,0.5348474535865531,7.775375217120358e-4,0.1065265476982761,36,p < 0.05,0.53
+"CD||nega||PS(16:0/22:6(4Z,7Z,10Z,13Z,16Z,19Z))||C44H74NO10P||806.49857||3.79||C-Peptide 2","PS(16:0/22:6(4Z,7Z,10Z,13Z,16Z,19Z))
+C-Peptide 2",C-Peptide 2,TP4/GTT CD+ID,0.5474649635002042,8.051780664878126e-4,0.10795970348881569,34,p < 0.05,0.55
+CD||posi||3-hydroxyoctanoylcarnitine||C15H29NO5||624.44625||2.485||Leptin,"3-hydroxyoctanoylcarnitine
+Leptin",Leptin,TP4/GTT CD+ID,0.576953157017806,2.8543339642264474e-4,0.07816617480051116,35,p < 0.05,0.58
+CD||posi||Talinolol||C20H33N3O3||364.261||2.833||C-Peptide 2,"Talinolol
+C-Peptide 2",C-Peptide 2,TP4/GTT CD+ID,0.5777534033228009,3.4613276904603765e-4,0.08297025730977892,34,p < 0.05,0.58
+"CD||nega||13,14-dihydro-15-keto-tetranor prostaglandin f1?||C16H28O5||299.18632||3.681||C-Peptide 2","13,14-dihydro-15-keto-tetranor
+prostaglandin f1?
+C-Peptide 2",C-Peptide 2,TP4/GTT CD+ID,-0.6016938326089516,1.671399179763805e-4,0.06158016623207356,34,p < 0.05,-0.60
+CD||posi||PE(18:1(11Z)/P-18:1(11Z))||C41H78NO7P||728.5592||2.883||Resistin,"PE(18:1(11Z)/P-18:1(11Z))
+Resistin",Resistin,TP4/GTT CD+ID,0.3728503459018125,0.02738870818444233,0.4324023911536722,35,p < 0.05,0.37
+"CD||nega||PS(18:0/18:2(9Z,12Z))||C42H78NO10P||786.53076||3.759||Insulin","PS(18:0/18:2(9Z,12Z))
+Insulin",Insulin,TP4/GTT CD+ID,0.34638855318360395,0.04150679284127185,0.4892525724273393,35,p < 0.05,0.35
+CD||nega||12-Hydroxydodecanoic acid||C12H24O3||215.1651||2.223||C-Peptide 2,"12-Hydroxydodecanoic acid
+C-Peptide 2",C-Peptide 2,TP4/GTT CD+ID,0.45293621208916574,0.00714714830114481,0.26082332002224795,34,p < 0.05,0.45
+"CD||posi||3,4-dehydrothiomorpholine-3-carboxylic acid||C5H7NO2S||146.02707||7.168||Resistin","3,4-dehydrothiomorpholine-3-carboxylic
+acid
+Resistin",Resistin,TP4/GTT CD+ID,-0.3915132562759964,0.02002845453981791,0.3867250598963142,35,p < 0.05,-0.39
+"CD||nega||PS(16:0/22:6(4Z,7Z,10Z,13Z,16Z,19Z))||C44H74NO10P||806.49857||3.79||Insulin","PS(16:0/22:6(4Z,7Z,10Z,13Z,16Z,19Z))
+Insulin",Insulin,TP4/GTT CD+ID,0.5353847228995391,9.19320178310632e-4,0.11497406119936272,35,p < 0.05,0.54
+CD||posi||5-Hydroxy-L-tryptophan||C11H12N2O3||221.09192||10.457||C-Peptide 2,"5-Hydroxy-L-tryptophan
+C-Peptide 2",C-Peptide 2,TP4/GTT CD+ID,-0.5096705470042145,0.00207755114951822,0.16414852429092017,34,p < 0.05,-0.51
+"CD||posi||N-{4-[(4R)-4-methyl-6-oxo-1,4,5,6-tetrahydropyridazin-3-yl]phenyl}acetamide||C13H15N3O2||246.12383||9.048||Insulin","N-{4-[(4R)-4-methyl-6-oxo-1,4,5,6-tetrahydropyridazin-3-yl]phenyl}acetamide
+Insulin",Insulin,TP4/GTT CD+ID,-0.4803162121531424,0.0030285505300931,0.18519637435766317,36,p < 0.05,-0.48
+CD||posi||SM(d18:1/23:0)||C46H93N2O6P||816.29226||3.523||C-Peptide 2,"SM(d18:1/23:0)
+C-Peptide 2",C-Peptide 2,TP4/GTT CD+ID,-0.4546430752838071,0.00690657004325903,0.2584718426468477,34,p < 0.05,-0.45
+CD||posi||SM(d18:1/18:0)||C41H83N2O6P||731.60594||3.868||C-Peptide 2,"SM(d18:1/18:0)
+C-Peptide 2",C-Peptide 2,TP4/GTT CD+ID,-0.48662813365655694,0.00351881912930367,0.2015484973557467,34,p < 0.05,-0.49
+CD||posi||quindoxin||C8H6N2O2||163.05015||7.855||Leptin,"quindoxin
+Leptin",Leptin,TP4/GTT CD+ID,-0.36951907830135305,0.02891149295207559,0.4391907751156492,35,p < 0.05,-0.37
+"CD||posi||2,4-Diaminotoluene||C7H10N2||123.09176||7.317||Insulin","2,4-Diaminotoluene
+Insulin",Insulin,TP4/GTT CD+ID,0.47079610829189256,0.00375654912719674,0.20541777585593485,36,p < 0.05,0.47
+CD||posi||Biguanide||C2H7N5||124.05915||6.141||Insulin,"Biguanide
+Insulin",Insulin,TP4/GTT CD+ID,0.3982231555663125,0.01615240036020605,0.354860151219481,36,p < 0.05,0.40
+CD||posi||4-Bromophenylthiourea||C7H7BrN2S||230.95768||15.116||Leptin,"4-Bromophenylthiourea
+Leptin",Leptin,TP4/GTT CD+ID,0.5068511274342321,0.00188859990259459,0.1612735489689156,35,p < 0.05,0.51
+CD||nega||Hexadecanedioic acid||C16H30O4||285.20703||3.919||C-Peptide 2,"Hexadecanedioic acid
+C-Peptide 2",C-Peptide 2,TP4/GTT CD+ID,-0.4513999444326518,0.0073697676199991,0.2647290439942761,34,p < 0.05,-0.45
+CD||posi||Dimethylguanidino valeric acid||C8H15N3O3||202.11855||10.539||GLP-1,"Dimethylguanidino valeric acid
+GLP-1",GLP-1,sys_sac/SAC CD+ID,0.420327403334259,0.01660805621875893,0.7385963498787752,32,p < 0.05,0.42
+CD||posi||Anserine||C10H16N4O3||241.1294||15.19||Insulin,"Anserine
+Insulin",Insulin,sys_sac/SAC CD+ID,0.6489828419234102,5.8698462346579465e-5,0.25257506353805503,32,p < 0.05,0.65
+CD||nega||Tetrahydrocortisol||C21H34O5||365.23342||3.806||C-Peptide 2,"Tetrahydrocortisol
+C-Peptide 2",C-Peptide 2,sys_sac/SAC CD+ID,-0.4522421554143552,0.00935828580962236,0.6873421472597289,32,p < 0.05,-0.45
+CD||posi||Anserine||C10H16N4O3||241.1294||15.19||C-Peptide 2,"Anserine
+C-Peptide 2",C-Peptide 2,sys_sac/SAC CD+ID,0.5766213980280503,5.516231005707055e-4,0.5107560924000647,32,p < 0.05,0.58
+CD||posi||Uracil||C4H4N2O2||113.03457||4.899||Leptin,"Uracil
+Leptin",Leptin,sys_sac/SAC CD+ID,-0.3768071393623761,0.0335200038227511,0.7905056426128647,32,p < 0.05,-0.38
+CD||posi||L-Valine||C5H11NO2||118.08624||12.014||Resistin,"L-Valine
+Resistin",Resistin,sys_sac/SAC CD+ID,0.35222281083048496,0.04803321037246928,0.8370687225447927,32,p < 0.05,0.35
+CD||posi||SM(d16:1/24:1(15Z))||C45H89N2O6P||785.65103||3.835||Insulin,"SM(d16:1/24:1(15Z))
+Insulin",Insulin,sys_sac/SAC CD+ID,0.4762351834122501,0.00586357792967267,0.6442469648796713,32,p < 0.05,0.48
+"CD||nega||PS(16:0/22:6(4Z,7Z,10Z,13Z,16Z,19Z))||C44H74NO10P||806.49857||3.79||C-Peptide 2","PS(16:0/22:6(4Z,7Z,10Z,13Z,16Z,19Z))
+C-Peptide 2",C-Peptide 2,sys_sac/SAC CD+ID,0.4210527731942505,0.01640237834871171,0.7385963498787752,32,p < 0.05,0.42
+CD||posi||3-hydroxyoctanoylcarnitine||C15H29NO5||624.44625||2.485||Leptin,"3-hydroxyoctanoylcarnitine
+Leptin",Leptin,sys_sac/SAC CD+ID,0.36633990212209683,0.03918954641490261,0.8146812808684469,32,p < 0.05,0.37
+CD||posi||Talinolol||C20H33N3O3||364.261||2.833||C-Peptide 2,"Talinolol
+C-Peptide 2",C-Peptide 2,sys_sac/SAC CD+ID,0.35390026614886105,0.04690584448941033,0.8340780007502843,32,p < 0.05,0.35
+"CD||nega||13,14-dihydro-15-keto-tetranor prostaglandin f1?||C16H28O5||299.18632||3.681||C-Peptide 2","13,14-dihydro-15-keto-tetranor
+prostaglandin f1?
+C-Peptide 2",C-Peptide 2,sys_sac/SAC CD+ID,-0.38242473096629986,0.03076349619232627,0.7778191053048797,32,p < 0.05,-0.38
+CD||posi||PE(18:1(11Z)/P-18:1(11Z))||C41H78NO7P||728.5592||2.883||Resistin,"PE(18:1(11Z)/P-18:1(11Z))
+Resistin",Resistin,sys_sac/SAC CD+ID,0.3911887769567107,0.02683400079654988,0.7679395289606824,32,p < 0.05,0.39
+"CD||nega||PS(18:0/18:2(9Z,12Z))||C42H78NO10P||786.53076||3.759||Insulin","PS(18:0/18:2(9Z,12Z))
+Insulin",Insulin,sys_sac/SAC CD+ID,0.5673697819482851,7.080976720352091e-4,0.5107560924000647,32,p < 0.05,0.57
+CD||nega||12-Hydroxydodecanoic acid||C12H24O3||215.1651||2.223||C-Peptide 2,"12-Hydroxydodecanoic acid
+C-Peptide 2",C-Peptide 2,sys_sac/SAC CD+ID,0.4230026778261596,0.01585998113984052,0.7385963498787752,32,p < 0.05,0.42
+"CD||posi||3,4-dehydrothiomorpholine-3-carboxylic acid||C5H7NO2S||146.02707||7.168||Resistin","3,4-dehydrothiomorpholine-3-carboxylic
+acid
+Resistin",Resistin,sys_sac/SAC CD+ID,-0.388052743830531,0.02818990499760348,0.7679395289606824,32,p < 0.05,-0.39
+"CD||nega||PS(16:0/22:6(4Z,7Z,10Z,13Z,16Z,19Z))||C44H74NO10P||806.49857||3.79||Insulin","PS(16:0/22:6(4Z,7Z,10Z,13Z,16Z,19Z))
+Insulin",Insulin,sys_sac/SAC CD+ID,0.3538990251322931,0.04690667066083603,0.8340780007502843,32,p < 0.05,0.35
+CD||posi||5-Hydroxy-L-tryptophan||C11H12N2O3||221.09192||10.457||C-Peptide 2,"5-Hydroxy-L-tryptophan
+C-Peptide 2",C-Peptide 2,sys_sac/SAC CD+ID,-0.3872099658499417,0.0285636846396925,0.7679395289606824,32,p < 0.05,-0.39
+"CD||posi||N-{4-[(4R)-4-methyl-6-oxo-1,4,5,6-tetrahydropyridazin-3-yl]phenyl}acetamide||C13H15N3O2||246.12383||9.048||Insulin","N-{4-[(4R)-4-methyl-6-oxo-1,4,5,6-tetrahydropyridazin-3-yl]phenyl}acetamide
+Insulin",Insulin,sys_sac/SAC CD+ID,-0.3581853627470255,0.04412166040338943,0.8298646613050195,32,p < 0.05,-0.36
+CD||posi||SM(d18:1/23:0)||C46H93N2O6P||816.29226||3.523||C-Peptide 2,"SM(d18:1/23:0)
+C-Peptide 2",C-Peptide 2,sys_sac/SAC CD+ID,-0.3600292852559781,0.04296507582272859,0.821015883688065,32,p < 0.05,-0.36
+CD||posi||SM(d18:1/18:0)||C41H83N2O6P||731.60594||3.868||C-Peptide 2,"SM(d18:1/18:0)
+C-Peptide 2",C-Peptide 2,sys_sac/SAC CD+ID,-0.4679914527280992,0.00691080129892353,0.6781600986901895,32,p < 0.05,-0.47
+CD||posi||quindoxin||C8H6N2O2||163.05015||7.855||Leptin,"quindoxin
+Leptin",Leptin,sys_sac/SAC CD+ID,-0.5414135268022613,0.00137411557419954,0.528170348484016,32,p < 0.05,-0.54
+"CD||posi||2,4-Diaminotoluene||C7H10N2||123.09176||7.317||Insulin","2,4-Diaminotoluene
+Insulin",Insulin,sys_sac/SAC CD+ID,0.4410271111009862,0.01151757518614488,0.7235277609656202,32,p < 0.05,0.44
+CD||posi||Biguanide||C2H7N5||124.05915||6.141||Insulin,"Biguanide
+Insulin",Insulin,sys_sac/SAC CD+ID,0.4503753153232105,0.00969189027937344,0.6924048366308394,32,p < 0.05,0.45
+CD||posi||4-Bromophenylthiourea||C7H7BrN2S||230.95768||15.116||Leptin,"4-Bromophenylthiourea
+Leptin",Leptin,sys_sac/SAC CD+ID,0.35467075766066736,0.04639514935224172,0.833415279655137,32,p < 0.05,0.35
+CD||nega||Hexadecanedioic acid||C16H30O4||285.20703||3.919||C-Peptide 2,"Hexadecanedioic acid
+C-Peptide 2",C-Peptide 2,sys_sac/SAC CD+ID,-0.3880389841927781,0.02819597525223415,0.7679395289606824,32,p < 0.05,-0.39
